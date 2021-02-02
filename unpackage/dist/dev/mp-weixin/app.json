@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/team/team",
+    "pages/msg/msg",
+    "pages/qa/qa",
+    "pages/login/login"
+  ],
+  "subPackages": [],
+  "window": {
+    "backgroundColor": "#f5f5f5",
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "color": "#afafaf",
+    "selectedColor": "#298FFE",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "static/home_.png",
+        "selectedIconPath": "static/home.png"
+      },
+      {
+        "pagePath": "pages/team/team",
+        "text": "组队",
+        "iconPath": "static/team_.png",
+        "selectedIconPath": "static/team.png"
+      },
+      {
+        "pagePath": "pages/msg/msg",
+        "text": "信息",
+        "iconPath": "static/msg_.png",
+        "selectedIconPath": "static/msg.png"
+      },
+      {
+        "pagePath": "pages/qa/qa",
+        "text": "问答",
+        "iconPath": "static/qa_.png",
+        "selectedIconPath": "static/qa.png"
+      }
+    ]
+  },
+  "usingComponents": {}
+}

@@ -1,0 +1,95 @@
+.header {
+  padding: 34px 10px 10px 10px;
+  background-color: #0055ff;
+  /* #ifndef APP-NVUE */
+  display: flex;
+  /* #endif */
+  flex-direction: row;
+}
+.header .sidebar-btn {
+  width: 60rpx;
+  display: flex;
+  align-items: center;
+  margin-left: 0;
+}
+.header .input-view {
+  color: #666666;
+  margin-left: 10rpx;
+  /* #ifndef APP-NVUE */
+  display: flex;
+  /* #endif */
+  flex-direction: row;
+  flex: 1;
+  align-items: center;
+  background-color: #e7e7e7;
+  height: 60rpx;
+  border-radius: 30rpx;
+  padding: 0 10px;
+  background-color: #f5f5f5;
+}
+.header .input-view .input {
+  flex: 1;
+  padding: 0 5px;
+  height: 48rpx;
+  line-height: 48rpx;
+  font-size: 40rpx;
+  background-color: transparent;
+}
+.example-body .scroll-view-box {
+  background-color: $uni-bg-color-grey;
+  display: flex;
+  flex-direction: column;
+  padding: 20rpx;
+  width: auto;
+}
+.example-body .scroll-view-box .side-header {
+  background-color: $uni-bg-color;
+  margin-bottom: 80rpx;
+  height: 100rpx;
+  position: absolute;
+  top: 80rpx;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  height: 60rpx;
+  font-size: 40rpx;
+  line-height: 60rpx;
+  text-align: center;
+}
+.example-body .scroll-view-box .side-header .avatar-alias {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
+.example-body .scroll-view-box .side-header .avatar-alias .avatar {
+  width: 60rpx;
+  margin-right: 10rpx;
+}
+.example-body .scroll-view-box .side-header .avatar-alias .avatar .avatarimg {
+  height: 60rpx;
+  width: 60rpx;
+  border-radius: 30rpx;
+}
+.example-body .scroll-view-box .side-header .avatar-alias .alias {
+  text-align: left;
+  flex: 1;
+}
+.example-body .scroll-view-box .side-header .scan {
+  width: 60rpx;
+}
+.example-body .scroll-view-box .side-header .card {
+  width: 60rpx;
+}
+.example-body .scroll-view-box .side-card-first {
+  margin-top: 180rpx;
+}
+.example-body .scroll-view-box .side-card {
+  background-color: $uni-bg-color;
+  margin-bottom: 30rpx;
+  position: relative;
+  height: 200rpx;
+  box-shadow: 6rpx 6rpx 15rpx 3rpx rgba(0, 0, 0, 0.21);
+  border-radius: 15rpx;
+}

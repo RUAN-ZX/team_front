@@ -1,0 +1,154 @@
+.header {
+	padding: 0 10px @padding-nav @padding-nav;
+	background-color: @themeColor;
+	/* #ifndef APP-NVUE */
+	display: flex;
+	/* #endif */
+	flex-direction: row;
+
+    .sidebar-btn {
+		// width: @width;
+		display: flex;
+		align-items: center;
+		margin-left: 0;
+    }
+
+    .input-view {
+		// width: 100%;
+		color: @labelColor;
+		margin-left: 10px;
+		/* #ifndef APP-NVUE */
+		display: flex;
+		/* #endif */
+		flex-direction: row;
+		flex: 1;
+
+		align-items: center;
+
+		background-color: @bgColor;
+		// height: @width;
+		// border-radius: @width/2;
+		padding: 0 10px;
+
+		.input {
+			flex: 1;
+			padding: 0 5px;
+			// height: @width*0.8;
+			// line-height: @width*0.8;
+			// font-size: @width*0.7;
+			background-color: transparent;
+		}
+	}
+}
+.sidebar {
+		z-index: 1;
+		/* #ifndef APP-NVUE */
+		display: flex;
+		/* #endif */
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		.side-header {
+			width: 100%;
+			z-index: 2;
+			background-color: @themeColor;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			padding: @padding-nav-top @padding @padding-nav @padding;
+			position: relative;
+			display: flex;
+			flex-direction: row;
+			height: 60rpx;
+			
+			font-size: 40rpx;
+			line-height: 60rpx;
+			text-align: center;
+			color: @cardColor;
+			.avatar-alias {
+				
+				flex: 1;
+				display: flex;
+				flex-direction: row;
+				.avatar {
+					width: 60rpx;
+					margin-right: 10rpx;
+					.avatarimg{
+						height: 60rpx;
+						width: 60rpx;
+						border-radius: 30rpx;
+					}
+				}
+				.alias {
+					font-size: 30rpx;
+					margin-right: 10rpx;
+					word-break: break-all;
+					text-overflow: ellipsis;  /* 超出部分省略号 */
+					display: -webkit-box; /** 对象作为伸缩盒子模型显示 **/
+					overflow: hidden;  /*超出隐藏*/
+					-webkit-box-orient: horizontal; /** 设置或检索伸缩盒对象的子元素的排列方式 **/
+					-webkit-line-clamp: 1; /** 显示的行数 **/
+			
+					flex: 1;
+				}
+				
+				
+			}
+			.scan{
+				width: 60rpx;
+				//
+			}
+			.bscard{
+				width: 60rpx;
+				height: 60rpx;
+			}
+		}
+		.scroll-view {
+			flex: 1;
+			display: flex;
+			flex-direction: row;
+			.scroll-view-box {
+				flex: 1;
+				padding: @padding;
+				background-color: @bgColor;
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				
+				.side-card-first {
+				
+					margin-top: 150rpx;
+				}
+				.side-card {
+					
+					background-color: @cardColor;
+					margin-bottom: @padding;
+					position: relative;
+					// width: 95%;
+					height: 200rpx;
+					// box-shadow: 6rpx 6rpx 15rpx 3rpx rgba(0,0,0,0.21);
+					// 平面化设计看看效果吧
+					border-radius: 15rpx;
+				}
+			}
+		}
+	}
+	
+.content{
+	padding: @padding;
+	.project{
+		height: 300rpx;
+	}
+	
+}	
+.card {
+	background-color: @cardColor;
+	position: relative;
+	
+	min-height: 200rpx;
+	box-shadow: 6rpx 6rpx 15rpx 3rpx rgba(0,0,0,0.21);
+	border-radius: 15rpx;
+}
