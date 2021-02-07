@@ -72,23 +72,26 @@
 					class="foundation-label"
 					:set="projectItem.foundation">
 				</uni-tag-set>
-				<view class="project-talent trans"
+				<view class="project-talent"
 					v-for="(ptItem,ptIndex) in projectItem.talent"
 					:key="ptIndex">
-						<view class="project-talent-name">
-							<span class="project-talent-name-num">
-								{{ptItem.name}}
-								<span class="project-talent-num">
-									{{ptItem.num}}
+						<lu-button-ripple></lu-button-ripple>
+						
+							<view class="project-talent-name">
+								<span class="project-talent-name-num">
+									{{ptItem.name}}
+									<span class="project-talent-num">
+										{{ptItem.num}}
+									</span>
+									人
 								</span>
-								人
-							</span>
-							
-						</view>
-						<uni-tag-set
-							class="project-talent-demand"
-							:set="ptItem.demand">
-						</uni-tag-set>
+								
+							</view>
+							<uni-tag-set
+								class="project-talent-demand"
+								:set="ptItem.demand">
+							</uni-tag-set>
+						
 				</view>
 			</view>
 		</view>
@@ -134,7 +137,7 @@
 			<view class="title">
 				问答圈
 			</view>
-			
+			<luButtonRipple>默认</luButtonRipple>
 			
 		</view>
 		
@@ -142,6 +145,7 @@
 	</view>
 </template>
 <script>
+	import luButtonRipple from '@/components/lu-button-ripple/lu-button-ripple.vue';
 	import uniTagSet from "@/components/uni-tag-set/uni-tag-set.vue"
 	import aliasAvatar from "@/components/aliasAvatar/aliasAvatar.vue"
 	import org from '@/components/org/org.vue';
@@ -150,7 +154,8 @@
 		components: {
 			uniTagSet,
 			aliasAvatar,
-			org
+			org,
+			luButtonRipple
 		},
 		data() {
 			return {

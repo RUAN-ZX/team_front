@@ -170,6 +170,10 @@ page {
   margin-bottom: 15rpx;
 }
 .project .project-content .project-talent {
+  z-index: 0;
+  position: relative;
+  height: auto;
+  width: auto;
   padding: 15rpx;
   border: 1px solid #efefef;
   border-radius: 10rpx;
@@ -182,14 +186,20 @@ page {
   -webkit-flex-direction: column;
           flex-direction: column;
 }
-.project .project-content .project-talent .project-talent-name {
+.project .project-content .project-talent .project-talent-ripple {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+}
+.project .project-content .project-talent .project-talent-ripple .project-talent-name {
   font-size: 27rpx;
 }
-.project .project-content .project-talent .project-talent-name .project-talent-name-num {
+.project .project-content .project-talent .project-talent-ripple .project-talent-name .project-talent-name-num {
   font-weight: bolder;
-}
-.project .project-content .project-talent:active {
-  opacity: 0.1;
 }
 .talent {
   height: auto;

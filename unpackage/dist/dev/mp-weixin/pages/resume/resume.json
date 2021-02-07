@@ -2,6 +2,6 @@
   "navigationBarTitleText": "",
   "enablePullDownRefresh": false,
   "usingComponents": {
-    "mp-html": "/components/mp-html/mp-html"
+    "lu-button-ripple": "/components/lu-button-ripple/lu-button-ripple"
   }
 }

@@ -168,25 +168,31 @@ page{
 		}
 		
 		.project-talent{
+			z-index: 0;
+			position: relative;
+			height: auto;
+			width: auto;
 			padding: @padding/2;
 			border: 1px solid @lineColor;
 			border-radius: 10rpx;
 			margin-bottom: @padding/1.5;
 			display: flex;
 			flex-direction: column;
-			.project-talent-name{
-				font-size: @height_header*0.45;
+			.project-talent-ripple{
+				display: flex;
+				flex-direction: column;
 				
-				.project-talent-name-num{
-					font-weight: bolder;
+				.project-talent-name{
+					font-size: @height_header*0.45;
+					
+					.project-talent-name-num{
+						font-weight: bolder;
+					}
+				}
+				.project-talent-demand{
+					
 				}
 			}
-			.project-talent-demand{
-				
-			}
-		}
-		.project-talent:active{
-			opacity: 0.1;
 		}
 	}
 }

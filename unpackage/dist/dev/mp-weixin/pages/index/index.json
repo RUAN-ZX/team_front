@@ -3,6 +3,7 @@
   "usingComponents": {
     "alias-avatar": "/components/aliasAvatar/aliasAvatar",
     "org": "/components/org/org",
-    "uni-tag-set": "/components/uni-tag-set/uni-tag-set"
+    "uni-tag-set": "/components/uni-tag-set/uni-tag-set",
+    "lu-button-ripple": "/components/lu-button-ripple/lu-button-ripple"
   }
 }

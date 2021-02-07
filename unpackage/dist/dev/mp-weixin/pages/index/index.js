@@ -103,13 +103,16 @@ var components
 try {
   components = {
     aliasAvatar: function() {
-      return __webpack_require__.e(/*! import() | components/aliasAvatar/aliasAvatar */ "components/aliasAvatar/aliasAvatar").then(__webpack_require__.bind(null, /*! @/components/aliasAvatar/aliasAvatar.vue */ 55))
+      return __webpack_require__.e(/*! import() | components/aliasAvatar/aliasAvatar */ "components/aliasAvatar/aliasAvatar").then(__webpack_require__.bind(null, /*! @/components/aliasAvatar/aliasAvatar.vue */ 57))
     },
     org: function() {
-      return __webpack_require__.e(/*! import() | components/org/org */ "components/org/org").then(__webpack_require__.bind(null, /*! @/components/org/org.vue */ 62))
+      return __webpack_require__.e(/*! import() | components/org/org */ "components/org/org").then(__webpack_require__.bind(null, /*! @/components/org/org.vue */ 64))
     },
     uniTagSet: function() {
-      return __webpack_require__.e(/*! import() | components/uni-tag-set/uni-tag-set */ "components/uni-tag-set/uni-tag-set").then(__webpack_require__.bind(null, /*! @/components/uni-tag-set/uni-tag-set.vue */ 69))
+      return __webpack_require__.e(/*! import() | components/uni-tag-set/uni-tag-set */ "components/uni-tag-set/uni-tag-set").then(__webpack_require__.bind(null, /*! @/components/uni-tag-set/uni-tag-set.vue */ 71))
+    },
+    luButtonRipple: function() {
+      return __webpack_require__.e(/*! import() | components/lu-button-ripple/lu-button-ripple */ "components/lu-button-ripple/lu-button-ripple").then(__webpack_require__.bind(null, /*! @/components/lu-button-ripple/lu-button-ripple.vue */ 78))
     }
   }
 } catch (e) {
@@ -164,7 +167,11 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var uniTagSet = function uniTagSet() {__webpack_require__.e(/*! require.ensure | components/uni-tag-set/uni-tag-set */ "components/uni-tag-set/uni-tag-set").then((function () {return resolve(__webpack_require__(/*! @/components/uni-tag-set/uni-tag-set.vue */ 69));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var aliasAvatar = function aliasAvatar() {__webpack_require__.e(/*! require.ensure | components/aliasAvatar/aliasAvatar */ "components/aliasAvatar/aliasAvatar").then((function () {return resolve(__webpack_require__(/*! @/components/aliasAvatar/aliasAvatar.vue */ 55));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var org = function org() {__webpack_require__.e(/*! require.ensure | components/org/org */ "components/org/org").then((function () {return resolve(__webpack_require__(/*! @/components/org/org.vue */ 62));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var luButtonRipple = function luButtonRipple() {__webpack_require__.e(/*! require.ensure | components/lu-button-ripple/lu-button-ripple */ "components/lu-button-ripple/lu-button-ripple").then((function () {return resolve(__webpack_require__(/*! @/components/lu-button-ripple/lu-button-ripple.vue */ 78));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var uniTagSet = function uniTagSet() {__webpack_require__.e(/*! require.ensure | components/uni-tag-set/uni-tag-set */ "components/uni-tag-set/uni-tag-set").then((function () {return resolve(__webpack_require__(/*! @/components/uni-tag-set/uni-tag-set.vue */ 71));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var aliasAvatar = function aliasAvatar() {__webpack_require__.e(/*! require.ensure | components/aliasAvatar/aliasAvatar */ "components/aliasAvatar/aliasAvatar").then((function () {return resolve(__webpack_require__(/*! @/components/aliasAvatar/aliasAvatar.vue */ 57));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var org = function org() {__webpack_require__.e(/*! require.ensure | components/org/org */ "components/org/org").then((function () {return resolve(__webpack_require__(/*! @/components/org/org.vue */ 64));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+
+
+
+
 
 
 
@@ -316,7 +323,8 @@ __webpack_require__.r(__webpack_exports__);
   components: {
     uniTagSet: uniTagSet,
     aliasAvatar: aliasAvatar,
-    org: org },
+    org: org,
+    luButtonRipple: luButtonRipple },
 
   data: function data() {
     return {
