@@ -1,0 +1,1 @@
+<view class="_notice"><view class="textSec" style="{{('width:'+textWidth+'px;'+'animation-duration:'+duration+'s')}}"><block wx:for="{{list}}" wx:for-item="item" wx:for-index="index" wx:key="index"><view class="textItem" id="{{'textItem'+index}}">{{item}}</view></block></view></view>

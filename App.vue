@@ -13,10 +13,9 @@
 			uni.setStorageSync("top",data.top);
 			uni.setStorageSync("width",data.height);
 			uni.setStorageSync("left",data.left);
-			// uni.setStorageSync("sidebar",uni.getSystemInfoSync().screenWidth-100);
-			
 			// this.top = data.top;
-			// uni.getSystemInfoSync().statusBarHeight;
+			var height = uni.getSystemInfoSync().statusBarHeight;
+			uni.setStorageSync("statusHeight",height);
 			// this.width = data.height;
 			// this.left = data.left;
 		},
@@ -30,6 +29,10 @@
 </script>
 
 <style>
+	.trans {
+		transition: 0.3s opacity ease-out;
+	}
+	
 	/*每个页面公共css */
 	scroll-view ::-webkit-scrollbar {  
 		    display: none !important;  

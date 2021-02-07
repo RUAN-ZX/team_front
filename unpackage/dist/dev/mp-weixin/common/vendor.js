@@ -7904,148 +7904,6 @@ internalMixin(Vue);
 
 /***/ }),
 
-/***/ 24:
-/*!***********************************************************************************!*\
-  !*** D:/Users/Ryan/Documents/HBuilderProjects/team/components/uni-icons/icons.js ***!
-  \***********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
-  "pulldown": "\uE588",
-  "refreshempty": "\uE461",
-  "back": "\uE471",
-  "forward": "\uE470",
-  "more": "\uE507",
-  "more-filled": "\uE537",
-  "scan": "\uE612",
-  "qq": "\uE264",
-  "weibo": "\uE260",
-  "weixin": "\uE261",
-  "pengyouquan": "\uE262",
-  "loop": "\uE565",
-  "refresh": "\uE407",
-  "refresh-filled": "\uE437",
-  "arrowthindown": "\uE585",
-  "arrowthinleft": "\uE586",
-  "arrowthinright": "\uE587",
-  "arrowthinup": "\uE584",
-  "undo-filled": "\uE7D6",
-  "undo": "\uE406",
-  "redo": "\uE405",
-  "redo-filled": "\uE7D9",
-  "bars": "\uE563",
-  "chatboxes": "\uE203",
-  "camera": "\uE301",
-  "chatboxes-filled": "\uE233",
-  "camera-filled": "\uE7EF",
-  "cart-filled": "\uE7F4",
-  "cart": "\uE7F5",
-  "checkbox-filled": "\uE442",
-  "checkbox": "\uE7FA",
-  "arrowleft": "\uE582",
-  "arrowdown": "\uE581",
-  "arrowright": "\uE583",
-  "smallcircle-filled": "\uE801",
-  "arrowup": "\uE580",
-  "circle": "\uE411",
-  "eye-filled": "\uE568",
-  "eye-slash-filled": "\uE822",
-  "eye-slash": "\uE823",
-  "eye": "\uE824",
-  "flag-filled": "\uE825",
-  "flag": "\uE508",
-  "gear-filled": "\uE532",
-  "reload": "\uE462",
-  "gear": "\uE502",
-  "hand-thumbsdown-filled": "\uE83B",
-  "hand-thumbsdown": "\uE83C",
-  "hand-thumbsup-filled": "\uE83D",
-  "heart-filled": "\uE83E",
-  "hand-thumbsup": "\uE83F",
-  "heart": "\uE840",
-  "home": "\uE500",
-  "info": "\uE504",
-  "home-filled": "\uE530",
-  "info-filled": "\uE534",
-  "circle-filled": "\uE441",
-  "chat-filled": "\uE847",
-  "chat": "\uE263",
-  "mail-open-filled": "\uE84D",
-  "email-filled": "\uE231",
-  "mail-open": "\uE84E",
-  "email": "\uE201",
-  "checkmarkempty": "\uE472",
-  "list": "\uE562",
-  "locked-filled": "\uE856",
-  "locked": "\uE506",
-  "map-filled": "\uE85C",
-  "map-pin": "\uE85E",
-  "map-pin-ellipse": "\uE864",
-  "map": "\uE364",
-  "minus-filled": "\uE440",
-  "mic-filled": "\uE332",
-  "minus": "\uE410",
-  "micoff": "\uE360",
-  "mic": "\uE302",
-  "clear": "\uE434",
-  "smallcircle": "\uE868",
-  "close": "\uE404",
-  "closeempty": "\uE460",
-  "paperclip": "\uE567",
-  "paperplane": "\uE503",
-  "paperplane-filled": "\uE86E",
-  "person-filled": "\uE131",
-  "contact-filled": "\uE130",
-  "person": "\uE101",
-  "contact": "\uE100",
-  "images-filled": "\uE87A",
-  "phone": "\uE200",
-  "images": "\uE87B",
-  "image": "\uE363",
-  "image-filled": "\uE877",
-  "location-filled": "\uE333",
-  "location": "\uE303",
-  "plus-filled": "\uE439",
-  "plus": "\uE409",
-  "plusempty": "\uE468",
-  "help-filled": "\uE535",
-  "help": "\uE505",
-  "navigate-filled": "\uE884",
-  "navigate": "\uE501",
-  "mic-slash-filled": "\uE892",
-  "search": "\uE466",
-  "settings": "\uE560",
-  "sound": "\uE590",
-  "sound-filled": "\uE8A1",
-  "spinner-cycle": "\uE465",
-  "download-filled": "\uE8A4",
-  "personadd-filled": "\uE132",
-  "videocam-filled": "\uE8AF",
-  "personadd": "\uE102",
-  "upload": "\uE402",
-  "upload-filled": "\uE8B1",
-  "starhalf": "\uE463",
-  "star-filled": "\uE438",
-  "star": "\uE408",
-  "trash": "\uE401",
-  "phone-filled": "\uE230",
-  "compose": "\uE400",
-  "videocam": "\uE300",
-  "trash-filled": "\uE8DC",
-  "download": "\uE403",
-  "chatbubble-filled": "\uE232",
-  "chatbubble": "\uE202",
-  "cloud-download": "\uE8E4",
-  "cloud-upload-filled": "\uE8E5",
-  "cloud-upload": "\uE8E6",
-  "cloud-download-filled": "\uE8E9",
-  "headphones": "\uE8BF",
-  "shop": "\uE609" };exports.default = _default;
-
-/***/ }),
-
 /***/ 3:
 /*!***********************************!*\
   !*** (webpack)/buildin/global.js ***!
@@ -8085,6 +7943,2019 @@ module.exports = g;
 /***/ (function(module, exports) {
 
 
+
+/***/ }),
+
+/***/ 88:
+/*!******************************************************************************************!*\
+  !*** D:/Users/Ryan/Documents/HBuilderProjects/team/components/mp-html/markdown/index.js ***!
+  \******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/**
+               * @fileoverview markdown 插件
+               * Include marked (https://github.com/markedjs/marked)
+               * Include github-markdown-css (https://github.com/sindresorhus/github-markdown-css)
+               */
+var marked = __webpack_require__(/*! ./marked.min */ 89);
+
+var index = 0;
+
+function markdown(vm) {
+  this.vm = vm;
+  vm._ids = {};
+}
+
+markdown.prototype.onUpdate = function (content) {
+  if (this.vm.markdown) return marked(content);
+};
+
+markdown.prototype.onParse = function (node, vm) {
+  if (vm.options.markdown) {
+    // 中文 id 需要转换，否则无法跳转
+    if (vm.options.useAnchor && node.attrs && /[\u4e00-\u9fa5]/.test(node.attrs.id)) {
+      var id = 't' + index++;
+      this.vm._ids[node.attrs.id] = id;
+      node.attrs.id = id;
+    }
+
+    if (node.name == 'p' || node.name == 'table' || node.name == 'tr' || node.name == 'th' || node.name == 'td' || node.name == 'blockquote' || node.name == 'pre' || node.name == 'code') node.attrs["class"] = "md-".concat(node.name, " ").concat(node.attrs["class"] || '');
+  }
+};
+
+module.exports = markdown;
+
+/***/ }),
+
+/***/ 89:
+/*!***********************************************************************************************!*\
+  !*** D:/Users/Ryan/Documents/HBuilderProjects/team/components/mp-html/markdown/marked.min.js ***!
+  \***********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/*!
+ * marked - a markdown parser
+ * Copyright (c) 2011-2020, Christopher Jeffrey. (MIT Licensed)
+ * https://github.com/markedjs/marked
+ */
+!function (e, t) { true ? module.exports = t() : undefined;}(this, function () {"use strict";function i(e, t) {for (var n = 0; n < t.length; n++) {var r = t[n];r.enumerable = r.enumerable || !1, r.configurable = !0, "value" in r && (r.writable = !0), Object.defineProperty(e, r.key, r);}}function s(e, t) {(null == t || t > e.length) && (t = e.length);for (var n = 0, r = new Array(t); n < t; n++) {r[n] = e[n];}return r;}function p(e, t) {var n;if ("undefined" != typeof Symbol && null != e[Symbol.iterator]) return (n = e[Symbol.iterator]()).next.bind(n);if (Array.isArray(e) || (n = function (e, t) {if (e) {if ("string" == typeof e) return s(e, t);var n = Object.prototype.toString.call(e).slice(8, -1);return "Object" === n && e.constructor && (n = e.constructor.name), "Map" === n || "Set" === n ? Array.from(e) : "Arguments" === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n) ? s(e, t) : void 0;}}(e)) || t && e && "number" == typeof e.length) {n && (e = n);var r = 0;return function () {return r >= e.length ? { done: !0 } : { done: !1, value: e[r++] };};}throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function n(e) {return c[e];}var e,t = (function (t) {function e() {return { baseUrl: null, breaks: !1, gfm: !0, headerIds: !0, headerPrefix: "", highlight: null, langPrefix: "language-", mangle: !0, pedantic: !1, renderer: null, sanitize: !1, sanitizer: null, silent: !1, smartLists: !1, smartypants: !1, tokenizer: null, walkTokens: null, xhtml: !1 };}t.exports = { defaults: e(), getDefaults: e, changeDefaults: function changeDefaults(e) {t.exports.defaults = e;} };}(e = { exports: {} }), e.exports),r = (t.defaults, t.getDefaults, t.changeDefaults, /[&<>"']/),l = /[&<>"']/g,a = /[<>"']|&(?!#?\w+;)/,o = /[<>"']|&(?!#?\w+;)/g,c = { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" };var u = /&(#(?:\d+)|(?:#x[0-9A-Fa-f]+)|(?:\w+));?/gi;function h(e) {return e.replace(u, function (e, t) {return "colon" === (t = t.toLowerCase()) ? ":" : "#" === t.charAt(0) ? "x" === t.charAt(1) ? String.fromCharCode(parseInt(t.substring(2), 16)) : String.fromCharCode(+t.substring(1)) : "";});}var g = /(^|[^\[])\^/g;var f = /[^\w:]/g,d = /^$|^[a-z][a-z0-9+.-]*:|^[?#]/i;var k = {},b = /^[^:]+:\/*[^/]*$/,m = /^([^:]+:)[\s\S]*$/,x = /^([^:]+:\/*[^/]*)[\s\S]*$/;function w(e, t) {k[" " + e] || (b.test(e) ? k[" " + e] = e + "/" : k[" " + e] = v(e, "/", !0));var n = -1 === (e = k[" " + e]).indexOf(":");return "//" === t.substring(0, 2) ? n ? t : e.replace(m, "$1") + t : "/" === t.charAt(0) ? n ? t : e.replace(x, "$1") + t : e + t;}function v(e, t, n) {var r = e.length;if (0 === r) return "";for (var i = 0; i < r;) {var s = e.charAt(r - i - 1);if (s !== t || n) {if (s === t || !n) break;i++;} else i++;}return e.substr(0, r - i);}var _ = function _(e, t) {if (t) {if (r.test(e)) return e.replace(l, n);} else if (a.test(e)) return e.replace(o, n);return e;},y = h,z = function z(n, e) {n = n.source || n, e = e || "";var r = { replace: function replace(e, t) {return t = (t = t.source || t).replace(g, "$1"), n = n.replace(e, t), r;}, getRegex: function getRegex() {return new RegExp(n, e);} };return r;},S = function S(e, t, n) {if (e) {var r;try {r = decodeURIComponent(h(n)).replace(f, "").toLowerCase();} catch (e) {return null;}if (0 === r.indexOf("javascript:") || 0 === r.indexOf("vbscript:") || 0 === r.indexOf("data:")) return null;}t && !d.test(n) && (n = w(t, n));try {n = encodeURI(n).replace(/%25/g, "%");} catch (e) {return null;}return n;},$ = { exec: function exec() {} },A = function A(e) {for (var t, n, r = 1; r < arguments.length; r++) {for (n in t = arguments[r]) {Object.prototype.hasOwnProperty.call(t, n) && (e[n] = t[n]);}}return e;},R = function R(e, t) {var n = e.replace(/\|/g, function (e, t, n) {for (var r = !1, i = t; 0 <= --i && "\\" === n[i];) {r = !r;}return r ? "|" : " |";}).split(/ \|/),r = 0;if (n.length > t) n.splice(t);else for (; n.length < t;) {n.push("");}for (; r < n.length; r++) {n[r] = n[r].trim().replace(/\\\|/g, "|");}return n;},T = function T(e, t) {if (-1 === e.indexOf(t[1])) return -1;for (var n = e.length, r = 0, i = 0; i < n; i++) {if ("\\" === e[i]) i++;else if (e[i] === t[0]) r++;else if (e[i] === t[1] && --r < 0) return i;}return -1;},I = function I(e) {e && e.sanitize && !e.silent && console.warn("marked(): sanitize and sanitizer parameters are deprecated since version 0.7.0, should not be used and will be removed in the future. Read more here: https://marked.js.org/#/USING_ADVANCED.md#options");},Z = function Z(e, t) {if (t < 1) return "";for (var n = ""; 1 < t;) {1 & t && (n += e), t >>= 1, e += e;}return n + e;},q = t.defaults,O = v,C = R,U = _,j = T;function E(e, t, n) {var r = t.href,i = t.title ? U(t.title) : null,t = e[1].replace(/\\([\[\]])/g, "$1");return "!" !== e[0].charAt(0) ? { type: "link", raw: n, href: r, title: i, text: t } : { type: "image", raw: n, href: r, title: i, text: U(t) };}var D = function () {function e(e) {this.options = e || q;}var t = e.prototype;return t.space = function (e) {e = this.rules.block.newline.exec(e);if (e) return 1 < e[0].length ? { type: "space", raw: e[0] } : { raw: "\n" };}, t.code = function (e, t) {e = this.rules.block.code.exec(e);if (e) {t = t[t.length - 1];if (t && "paragraph" === t.type) return { raw: e[0], text: e[0].trimRight() };t = e[0].replace(/^ {4}/gm, "");return { type: "code", raw: e[0], codeBlockStyle: "indented", text: this.options.pedantic ? t : O(t, "\n") };}}, t.fences = function (e) {var t = this.rules.block.fences.exec(e);if (t) {var n = t[0],e = function (e, t) {if (null === (e = e.match(/^(\s+)(?:```)/))) return t;var n = e[1];return t.split("\n").map(function (e) {var t = e.match(/^\s+/);return null !== t && t[0].length >= n.length ? e.slice(n.length) : e;}).join("\n");}(n, t[3] || "");return { type: "code", raw: n, lang: t[2] && t[2].trim(), text: e };}}, t.heading = function (e) {e = this.rules.block.heading.exec(e);if (e) return { type: "heading", raw: e[0], depth: e[1].length, text: e[2] };}, t.nptable = function (e) {e = this.rules.block.nptable.exec(e);if (e) {var t = { type: "table", header: C(e[1].replace(/^ *| *\| *$/g, "")), align: e[2].replace(/^ *|\| *$/g, "").split(/ *\| */), cells: e[3] ? e[3].replace(/\n$/, "").split("\n") : [], raw: e[0] };if (t.header.length === t.align.length) {for (var n = t.align.length, r = 0; r < n; r++) {/^ *-+: *$/.test(t.align[r]) ? t.align[r] = "right" : /^ *:-+: *$/.test(t.align[r]) ? t.align[r] = "center" : /^ *:-+ *$/.test(t.align[r]) ? t.align[r] = "left" : t.align[r] = null;}for (n = t.cells.length, r = 0; r < n; r++) {t.cells[r] = C(t.cells[r], t.header.length);}return t;}}}, t.hr = function (e) {e = this.rules.block.hr.exec(e);if (e) return { type: "hr", raw: e[0] };}, t.blockquote = function (e) {var t = this.rules.block.blockquote.exec(e);if (t) {e = t[0].replace(/^ *> ?/gm, "");return { type: "blockquote", raw: t[0], text: e };}}, t.list = function (e) {e = this.rules.block.list.exec(e);if (e) {for (var t, n, r, i, s, l = e[0], a = e[2], o = 1 < a.length, c = { type: "list", raw: l, ordered: o, start: o ? +a.slice(0, -1) : "", loose: !1, items: [] }, u = e[0].match(this.rules.block.item), p = !1, h = u.length, g = this.rules.block.listItemStart.exec(u[0]), f = 0; f < h; f++) {if (l = t = u[f], f !== h - 1) {if ((r = this.rules.block.listItemStart.exec(u[f + 1]))[1].length > g[0].length || 3 < r[1].length) {u.splice(f, 2, u[f] + "\n" + u[f + 1]), f--, h--;continue;}(!this.options.pedantic || this.options.smartLists ? r[2][r[2].length - 1] !== a[a.length - 1] : o == (1 === r[2].length)) && (n = u.slice(f + 1).join("\n"), c.raw = c.raw.substring(0, c.raw.length - n.length), f = h - 1), g = r;}r = t.length, ~(t = t.replace(/^ *([*+-]|\d+[.)]) ?/, "")).indexOf("\n ") && (r -= t.length, t = this.options.pedantic ? t.replace(/^ {1,4}/gm, "") : t.replace(new RegExp("^ {1," + r + "}", "gm"), "")), r = p || /\n\n(?!\s*$)/.test(t), f !== h - 1 && (p = "\n" === t.charAt(t.length - 1), r = r || p), r && (c.loose = !0), this.options.gfm && (s = void 0, (i = /^\[[ xX]\] /.test(t)) && (s = " " !== t[1], t = t.replace(/^\[[ xX]\] +/, ""))), c.items.push({ type: "list_item", raw: l, task: i, checked: s, loose: r, text: t });}return c;}}, t.html = function (e) {e = this.rules.block.html.exec(e);if (e) return { type: this.options.sanitize ? "paragraph" : "html", raw: e[0], pre: !this.options.sanitizer && ("pre" === e[1] || "script" === e[1] || "style" === e[1]), text: this.options.sanitize ? this.options.sanitizer ? this.options.sanitizer(e[0]) : U(e[0]) : e[0] };}, t.def = function (e) {e = this.rules.block.def.exec(e);if (e) return e[3] && (e[3] = e[3].substring(1, e[3].length - 1)), { tag: e[1].toLowerCase().replace(/\s+/g, " "), raw: e[0], href: e[2], title: e[3] };}, t.table = function (e) {e = this.rules.block.table.exec(e);if (e) {var t = { type: "table", header: C(e[1].replace(/^ *| *\| *$/g, "")), align: e[2].replace(/^ *|\| *$/g, "").split(/ *\| */), cells: e[3] ? e[3].replace(/\n$/, "").split("\n") : [] };if (t.header.length === t.align.length) {t.raw = e[0];for (var n = t.align.length, r = 0; r < n; r++) {/^ *-+: *$/.test(t.align[r]) ? t.align[r] = "right" : /^ *:-+: *$/.test(t.align[r]) ? t.align[r] = "center" : /^ *:-+ *$/.test(t.align[r]) ? t.align[r] = "left" : t.align[r] = null;}for (n = t.cells.length, r = 0; r < n; r++) {t.cells[r] = C(t.cells[r].replace(/^ *\| *| *\| *$/g, ""), t.header.length);}return t;}}}, t.lheading = function (e) {e = this.rules.block.lheading.exec(e);if (e) return { type: "heading", raw: e[0], depth: "=" === e[2].charAt(0) ? 1 : 2, text: e[1] };}, t.paragraph = function (e) {e = this.rules.block.paragraph.exec(e);if (e) return { type: "paragraph", raw: e[0], text: "\n" === e[1].charAt(e[1].length - 1) ? e[1].slice(0, -1) : e[1] };}, t.text = function (e, t) {e = this.rules.block.text.exec(e);if (e) {t = t[t.length - 1];return t && "text" === t.type ? { raw: e[0], text: e[0] } : { type: "text", raw: e[0], text: e[0] };}}, t.escape = function (e) {e = this.rules.inline.escape.exec(e);if (e) return { type: "escape", raw: e[0], text: U(e[1]) };}, t.tag = function (e, t, n) {e = this.rules.inline.tag.exec(e);if (e) return !t && /^<a /i.test(e[0]) ? t = !0 : t && /^<\/a>/i.test(e[0]) && (t = !1), !n && /^<(pre|code|kbd|script)(\s|>)/i.test(e[0]) ? n = !0 : n && /^<\/(pre|code|kbd|script)(\s|>)/i.test(e[0]) && (n = !1), { type: this.options.sanitize ? "text" : "html", raw: e[0], inLink: t, inRawBlock: n, text: this.options.sanitize ? this.options.sanitizer ? this.options.sanitizer(e[0]) : U(e[0]) : e[0] };}, t.link = function (e) {var t = this.rules.inline.link.exec(e);if (t) {e = j(t[2], "()");-1 < e && (r = (0 === t[0].indexOf("!") ? 5 : 4) + t[1].length + e, t[2] = t[2].substring(0, e), t[0] = t[0].substring(0, r).trim(), t[3] = "");var n,e = t[2],r = "";return r = this.options.pedantic ? (n = /^([^'"]*[^\s])\s+(['"])(.*)\2/.exec(e), n ? (e = n[1], n[3]) : "") : t[3] ? t[3].slice(1, -1) : "", E(t, { href: (e = e.trim().replace(/^<([\s\S]*)>$/, "$1")) && e.replace(this.rules.inline._escapes, "$1"), title: r && r.replace(this.rules.inline._escapes, "$1") }, t[0]);}}, t.reflink = function (e, t) {if ((n = this.rules.inline.reflink.exec(e)) || (n = this.rules.inline.nolink.exec(e))) {e = (n[2] || n[1]).replace(/\s+/g, " ");if ((e = t[e.toLowerCase()]) && e.href) return E(n, e, n[0]);var n = n[0].charAt(0);return { type: "text", raw: n, text: n };}}, t.strong = function (e, t, n) {void 0 === n && (n = "");var r = this.rules.inline.strong.start.exec(e);if (r && (!r[1] || r[1] && ("" === n || this.rules.inline.punctuation.exec(n)))) {t = t.slice(-1 * e.length);var i,s = "**" === r[0] ? this.rules.inline.strong.endAst : this.rules.inline.strong.endUnd;for (s.lastIndex = 0; null != (r = s.exec(t));) {if (i = this.rules.inline.strong.middle.exec(t.slice(0, r.index + 3))) return { type: "strong", raw: e.slice(0, i[0].length), text: e.slice(2, i[0].length - 2) };}}}, t.em = function (e, t, n) {void 0 === n && (n = "");var r = this.rules.inline.em.start.exec(e);if (r && (!r[1] || r[1] && ("" === n || this.rules.inline.punctuation.exec(n)))) {t = t.slice(-1 * e.length);var i,s = "*" === r[0] ? this.rules.inline.em.endAst : this.rules.inline.em.endUnd;for (s.lastIndex = 0; null != (r = s.exec(t));) {if (i = this.rules.inline.em.middle.exec(t.slice(0, r.index + 2))) return { type: "em", raw: e.slice(0, i[0].length), text: e.slice(1, i[0].length - 1) };}}}, t.codespan = function (e) {var t = this.rules.inline.code.exec(e);if (t) {var n = t[2].replace(/\n/g, " "),r = /[^ ]/.test(n),e = n.startsWith(" ") && n.endsWith(" ");return r && e && (n = n.substring(1, n.length - 1)), n = U(n, !0), { type: "codespan", raw: t[0], text: n };}}, t.br = function (e) {e = this.rules.inline.br.exec(e);if (e) return { type: "br", raw: e[0] };}, t.del = function (e) {e = this.rules.inline.del.exec(e);if (e) return { type: "del", raw: e[0], text: e[2] };}, t.autolink = function (e, t) {e = this.rules.inline.autolink.exec(e);if (e) {var n,t = "@" === e[2] ? "mailto:" + (n = U(this.options.mangle ? t(e[1]) : e[1])) : n = U(e[1]);return { type: "link", raw: e[0], text: n, href: t, tokens: [{ type: "text", raw: n, text: n }] };}}, t.url = function (e, t) {var n, r, i, s;if (n = this.rules.inline.url.exec(e)) {if ("@" === n[2]) i = "mailto:" + (r = U(this.options.mangle ? t(n[0]) : n[0]));else {for (; s = n[0], n[0] = this.rules.inline._backpedal.exec(n[0])[0], s !== n[0];) {;}r = U(n[0]), i = "www." === n[1] ? "http://" + r : r;}return { type: "link", raw: n[0], text: r, href: i, tokens: [{ type: "text", raw: r, text: r }] };}}, t.inlineText = function (e, t, n) {e = this.rules.inline.text.exec(e);if (e) {n = t ? this.options.sanitize ? this.options.sanitizer ? this.options.sanitizer(e[0]) : U(e[0]) : e[0] : U(this.options.smartypants ? n(e[0]) : e[0]);return { type: "text", raw: e[0], text: n };}}, e;}(),R = $,T = z,$ = A,z = { newline: /^\n+/, code: /^( {4}[^\n]+\n*)+/, fences: /^ {0,3}(`{3,}(?=[^`\n]*\n)|~{3,})([^\n]*)\n(?:|([\s\S]*?)\n)(?: {0,3}\1[~`]* *(?:\n+|$)|$)/, hr: /^ {0,3}((?:- *){3,}|(?:_ *){3,}|(?:\* *){3,})(?:\n+|$)/, heading: /^ {0,3}(#{1,6}) +([^\n]*?)(?: +#+)? *(?:\n+|$)/, blockquote: /^( {0,3}> ?(paragraph|[^\n]*)(?:\n|$))+/, list: /^( {0,3})(bull) [\s\S]+?(?:hr|def|\n{2,}(?! )(?! {0,3}bull )\n*|\s*$)/, html: "^ {0,3}(?:<(script|pre|style)[\\s>][\\s\\S]*?(?:</\\1>[^\\n]*\\n+|$)|comment[^\\n]*(\\n+|$)|<\\?[\\s\\S]*?(?:\\?>\\n*|$)|<![A-Z][\\s\\S]*?(?:>\\n*|$)|<!\\[CDATA\\[[\\s\\S]*?(?:\\]\\]>\\n*|$)|</?(tag)(?: +|\\n|/?>)[\\s\\S]*?(?:\\n{2,}|$)|<(?!script|pre|style)([a-z][\\w-]*)(?:attribute)*? */?>(?=[ \\t]*(?:\\n|$))[\\s\\S]*?(?:\\n{2,}|$)|</(?!script|pre|style)[a-z][\\w-]*\\s*>(?=[ \\t]*(?:\\n|$))[\\s\\S]*?(?:\\n{2,}|$))", def: /^ {0,3}\[(label)\]: *\n? *<?([^\s>]+)>?(?:(?: +\n? *| *\n *)(title))? *(?:\n+|$)/, nptable: R, table: R, lheading: /^([^\n]+)\n {0,3}(=+|-+) *(?:\n+|$)/, _paragraph: /^([^\n]+(?:\n(?!hr|heading|lheading|blockquote|fences|list|html)[^\n]+)*)/, text: /^[^\n]+/, _label: /(?!\s*\])(?:\\[\[\]]|[^\[\]])+/, _title: /(?:"(?:\\"?|[^"\\])*"|'[^'\n]*(?:\n[^'\n]+)*\n?'|\([^()]*\))/ };z.def = T(z.def).replace("label", z._label).replace("title", z._title).getRegex(), z.bullet = /(?:[*+-]|\d{1,9}[.)])/, z.item = /^( *)(bull) ?[^\n]*(?:\n(?! *bull ?)[^\n]*)*/, z.item = T(z.item, "gm").replace(/bull/g, z.bullet).getRegex(), z.listItemStart = T(/^( *)(bull)/).replace("bull", z.bullet).getRegex(), z.list = T(z.list).replace(/bull/g, z.bullet).replace("hr", "\\n+(?=\\1?(?:(?:- *){3,}|(?:_ *){3,}|(?:\\* *){3,})(?:\\n+|$))").replace("def", "\\n+(?=" + z.def.source + ")").getRegex(), z._tag = "address|article|aside|base|basefont|blockquote|body|caption|center|col|colgroup|dd|details|dialog|dir|div|dl|dt|fieldset|figcaption|figure|footer|form|frame|frameset|h[1-6]|head|header|hr|html|iframe|legend|li|link|main|menu|menuitem|meta|nav|noframes|ol|optgroup|option|p|param|section|source|summary|table|tbody|td|tfoot|th|thead|title|tr|track|ul", z._comment = /<!--(?!-?>)[\s\S]*?(?:-->|$)/, z.html = T(z.html, "i").replace("comment", z._comment).replace("tag", z._tag).replace("attribute", / +[a-zA-Z:_][\w.:-]*(?: *= *"[^"\n]*"| *= *'[^'\n]*'| *= *[^\s"'=<>`]+)?/).getRegex(), z.paragraph = T(z._paragraph).replace("hr", z.hr).replace("heading", " {0,3}#{1,6} ").replace("|lheading", "").replace("blockquote", " {0,3}>").replace("fences", " {0,3}(?:`{3,}(?=[^`\\n]*\\n)|~{3,})[^\\n]*\\n").replace("list", " {0,3}(?:[*+-]|1[.)]) ").replace("html", "</?(?:tag)(?: +|\\n|/?>)|<(?:script|pre|style|!--)").replace("tag", z._tag).getRegex(), z.blockquote = T(z.blockquote).replace("paragraph", z.paragraph).getRegex(), z.normal = $({}, z), z.gfm = $({}, z.normal, { nptable: "^ *([^|\\n ].*\\|.*)\\n {0,3}([-:]+ *\\|[-| :]*)(?:\\n((?:(?!\\n|hr|heading|blockquote|code|fences|list|html).*(?:\\n|$))*)\\n*|$)", table: "^ *\\|(.+)\\n {0,3}\\|?( *[-:]+[-| :]*)(?:\\n *((?:(?!\\n|hr|heading|blockquote|code|fences|list|html).*(?:\\n|$))*)\\n*|$)" }), z.gfm.nptable = T(z.gfm.nptable).replace("hr", z.hr).replace("heading", " {0,3}#{1,6} ").replace("blockquote", " {0,3}>").replace("code", " {4}[^\\n]").replace("fences", " {0,3}(?:`{3,}(?=[^`\\n]*\\n)|~{3,})[^\\n]*\\n").replace("list", " {0,3}(?:[*+-]|1[.)]) ").replace("html", "</?(?:tag)(?: +|\\n|/?>)|<(?:script|pre|style|!--)").replace("tag", z._tag).getRegex(), z.gfm.table = T(z.gfm.table).replace("hr", z.hr).replace("heading", " {0,3}#{1,6} ").replace("blockquote", " {0,3}>").replace("code", " {4}[^\\n]").replace("fences", " {0,3}(?:`{3,}(?=[^`\\n]*\\n)|~{3,})[^\\n]*\\n").replace("list", " {0,3}(?:[*+-]|1[.)]) ").replace("html", "</?(?:tag)(?: +|\\n|/?>)|<(?:script|pre|style|!--)").replace("tag", z._tag).getRegex(), z.pedantic = $({}, z.normal, { html: T("^ *(?:comment *(?:\\n|\\s*$)|<(tag)[\\s\\S]+?</\\1> *(?:\\n{2,}|\\s*$)|<tag(?:\"[^\"]*\"|'[^']*'|\\s[^'\"/>\\s]*)*?/?> *(?:\\n{2,}|\\s*$))").replace("comment", z._comment).replace(/tag/g, "(?!(?:a|em|strong|small|s|cite|q|dfn|abbr|data|time|code|var|samp|kbd|sub|sup|i|b|u|mark|ruby|rt|rp|bdi|bdo|span|br|wbr|ins|del|img)\\b)\\w+(?!:|[^\\w\\s@]*@)\\b").getRegex(), def: /^ *\[([^\]]+)\]: *<?([^\s>]+)>?(?: +(["(][^\n]+[")]))? *(?:\n+|$)/, heading: /^ *(#{1,6}) *([^\n]+?) *(?:#+ *)?(?:\n+|$)/, fences: R, paragraph: T(z.normal._paragraph).replace("hr", z.hr).replace("heading", " *#{1,6} *[^\n]").replace("lheading", z.lheading).replace("blockquote", " {0,3}>").replace("|fences", "").replace("|list", "").replace("|html", "").getRegex() });R = { escape: /^\\([!"#$%&'()*+,\-./:;<=>?@\[\]\\^_`{|}~])/, autolink: /^<(scheme:[^\s\x00-\x1f<>]*|email)>/, url: R, tag: "^comment|^</[a-zA-Z][\\w:-]*\\s*>|^<[a-zA-Z][\\w-]*(?:attribute)*?\\s*/?>|^<\\?[\\s\\S]*?\\?>|^<![a-zA-Z]+\\s[\\s\\S]*?>|^<!\\[CDATA\\[[\\s\\S]*?\\]\\]>", link: /^!?\[(label)\]\(\s*(href)(?:\s+(title))?\s*\)/, reflink: /^!?\[(label)\]\[(?!\s*\])((?:\\[\[\]]?|[^\[\]\\])+)\]/, nolink: /^!?\[(?!\s*\])((?:\[[^\[\]]*\]|\\[\[\]]|[^\[\]])*)\](?:\[\])?/, reflinkSearch: "reflink|nolink(?!\\()", strong: { start: /^(?:(\*\*(?=[*punctuation]))|\*\*)(?![\s])|__/, middle: /^\*\*(?:(?:(?!overlapSkip)(?:[^*]|\\\*)|overlapSkip)|\*(?:(?!overlapSkip)(?:[^*]|\\\*)|overlapSkip)*?\*)+?\*\*$|^__(?![\s])((?:(?:(?!overlapSkip)(?:[^_]|\\_)|overlapSkip)|_(?:(?!overlapSkip)(?:[^_]|\\_)|overlapSkip)*?_)+?)__$/, endAst: /[^punctuation\s]\*\*(?!\*)|[punctuation]\*\*(?!\*)(?:(?=[punctuation_\s]|$))/, endUnd: /[^\s]__(?!_)(?:(?=[punctuation*\s])|$)/ }, em: { start: /^(?:(\*(?=[punctuation]))|\*)(?![*\s])|_/, middle: /^\*(?:(?:(?!overlapSkip)(?:[^*]|\\\*)|overlapSkip)|\*(?:(?!overlapSkip)(?:[^*]|\\\*)|overlapSkip)*?\*)+?\*$|^_(?![_\s])(?:(?:(?!overlapSkip)(?:[^_]|\\_)|overlapSkip)|_(?:(?!overlapSkip)(?:[^_]|\\_)|overlapSkip)*?_)+?_$/, endAst: /[^punctuation\s]\*(?!\*)|[punctuation]\*(?!\*)(?:(?=[punctuation_\s]|$))/, endUnd: /[^\s]_(?!_)(?:(?=[punctuation*\s])|$)/ }, code: /^(`+)([^`]|[^`][\s\S]*?[^`])\1(?!`)/, br: /^( {2,}|\\)\n(?!\s*$)/, del: R, text: /^(`+|[^`])(?:(?= {2,}\n)|[\s\S]*?(?:(?=[\\<!\[`*]|\b_|$)|[^ ](?= {2,}\n)))/, punctuation: /^([\s*punctuation])/, _punctuation: "!\"#$%&'()+\\-.,/:;<=>?@\\[\\]`^{|}~" };R.punctuation = T(R.punctuation).replace(/punctuation/g, R._punctuation).getRegex(), R._blockSkip = "\\[[^\\]]*?\\]\\([^\\)]*?\\)|`[^`]*?`|<[^>]*?>", R._overlapSkip = "__[^_]*?__|\\*\\*\\[^\\*\\]*?\\*\\*", R._comment = T(z._comment).replace("(?:--\x3e|$)", "--\x3e").getRegex(), R.em.start = T(R.em.start).replace(/punctuation/g, R._punctuation).getRegex(), R.em.middle = T(R.em.middle).replace(/punctuation/g, R._punctuation).replace(/overlapSkip/g, R._overlapSkip).getRegex(), R.em.endAst = T(R.em.endAst, "g").replace(/punctuation/g, R._punctuation).getRegex(), R.em.endUnd = T(R.em.endUnd, "g").replace(/punctuation/g, R._punctuation).getRegex(), R.strong.start = T(R.strong.start).replace(/punctuation/g, R._punctuation).getRegex(), R.strong.middle = T(R.strong.middle).replace(/punctuation/g, R._punctuation).replace(/overlapSkip/g, R._overlapSkip).getRegex(), R.strong.endAst = T(R.strong.endAst, "g").replace(/punctuation/g, R._punctuation).getRegex(), R.strong.endUnd = T(R.strong.endUnd, "g").replace(/punctuation/g, R._punctuation).getRegex(), R.blockSkip = T(R._blockSkip, "g").getRegex(), R.overlapSkip = T(R._overlapSkip, "g").getRegex(), R._escapes = /\\([!"#$%&'()*+,\-./:;<=>?@\[\]\\^_`{|}~])/g, R._scheme = /[a-zA-Z][a-zA-Z0-9+.-]{1,31}/, R._email = /[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+(@)[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+(?![-_])/, R.autolink = T(R.autolink).replace("scheme", R._scheme).replace("email", R._email).getRegex(), R._attribute = /\s+[a-zA-Z:_][\w.:-]*(?:\s*=\s*"[^"]*"|\s*=\s*'[^']*'|\s*=\s*[^\s"'=<>`]+)?/, R.tag = T(R.tag).replace("comment", R._comment).replace("attribute", R._attribute).getRegex(), R._label = /(?:\[(?:\\.|[^\[\]\\])*\]|\\.|`[^`]*`|[^\[\]\\`])*?/, R._href = /<(?:\\[<>]?|[^\s<>\\])*>|[^\s\x00-\x1f]*/, R._title = /"(?:\\"?|[^"\\])*"|'(?:\\'?|[^'\\])*'|\((?:\\\)?|[^)\\])*\)/, R.link = T(R.link).replace("label", R._label).replace("href", R._href).replace("title", R._title).getRegex(), R.reflink = T(R.reflink).replace("label", R._label).getRegex(), R.reflinkSearch = T(R.reflinkSearch, "g").replace("reflink", R.reflink).replace("nolink", R.nolink).getRegex(), R.normal = $({}, R), R.pedantic = $({}, R.normal, { strong: { start: /^__|\*\*/, middle: /^__(?=\S)([\s\S]*?\S)__(?!_)|^\*\*(?=\S)([\s\S]*?\S)\*\*(?!\*)/, endAst: /\*\*(?!\*)/g, endUnd: /__(?!_)/g }, em: { start: /^_|\*/, middle: /^()\*(?=\S)([\s\S]*?\S)\*(?!\*)|^_(?=\S)([\s\S]*?\S)_(?!_)/, endAst: /\*(?!\*)/g, endUnd: /_(?!_)/g }, link: T(/^!?\[(label)\]\((.*?)\)/).replace("label", R._label).getRegex(), reflink: T(/^!?\[(label)\]\s*\[([^\]]*)\]/).replace("label", R._label).getRegex() }), R.gfm = $({}, R.normal, { escape: T(R.escape).replace("])", "~|])").getRegex(), _extended_email: /[A-Za-z0-9._+-]+(@)[a-zA-Z0-9-_]+(?:\.[a-zA-Z0-9-_]*[a-zA-Z0-9])+(?![-_])/, url: /^((?:ftp|https?):\/\/|www\.)(?:[a-zA-Z0-9\-]+\.?)+[^\s<]*|^email/, _backpedal: /(?:[^?!.,:;*_~()&]+|\([^)]*\)|&(?![a-zA-Z0-9]+;$)|[?!.,:;*_~)]+(?!$))+/, del: /^(~~?)(?=[^\s~])([\s\S]*?[^\s~])\1(?=[^~]|$)/, text: /^([`~]+|[^`~])(?:(?= {2,}\n)|[\s\S]*?(?:(?=[\\<!\[`*~]|\b_|https?:\/\/|ftp:\/\/|www\.|$)|[^ ](?= {2,}\n)|[^a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-](?=[a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-]+@))|(?=[a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-]+@))/ }), R.gfm.url = T(R.gfm.url, "i").replace("email", R.gfm._extended_email).getRegex(), R.breaks = $({}, R.gfm, { br: T(R.br).replace("{2,}", "*").getRegex(), text: T(R.gfm.text).replace("\\b_", "\\b_| {2,}\\n").replace(/\{2,\}/g, "*").getRegex() });var R = { block: z, inline: R },P = t.defaults,L = R.block,N = R.inline,B = Z;function F(e) {return e.replace(/---/g, "—").replace(/--/g, "–").replace(/(^|[-\u2014/(\[{"\s])'/g, "$1‘").replace(/'/g, "’").replace(/(^|[-\u2014/(\[{\u2018\s])"/g, "$1“").replace(/"/g, "”").replace(/\.{3}/g, "…");}function M(e) {for (var t, n = "", r = e.length, i = 0; i < r; i++) {t = e.charCodeAt(i), .5 < Math.random() && (t = "x" + t.toString(16)), n += "&#" + t + ";";}return n;}var W = function () {function n(e) {this.tokens = [], this.tokens.links = Object.create(null), this.options = e || P, this.options.tokenizer = this.options.tokenizer || new D(), this.tokenizer = this.options.tokenizer, this.tokenizer.options = this.options;e = { block: L.normal, inline: N.normal };this.options.pedantic ? (e.block = L.pedantic, e.inline = N.pedantic) : this.options.gfm && (e.block = L.gfm, this.options.breaks ? e.inline = N.breaks : e.inline = N.gfm), this.tokenizer.rules = e;}n.lex = function (e, t) {return new n(t).lex(e);}, n.lexInline = function (e, t) {return new n(t).inlineTokens(e);};var e,t,r = n.prototype;return r.lex = function (e) {return e = e.replace(/\r\n|\r/g, "\n").replace(/\t/g, "    "), this.blockTokens(e, this.tokens, !0), this.inline(this.tokens), this.tokens;}, r.blockTokens = function (e, t, n) {var r, i, s, l;for (void 0 === t && (t = []), void 0 === n && (n = !0), e = e.replace(/^ +$/gm, ""); e;) {if (r = this.tokenizer.space(e)) e = e.substring(r.raw.length), r.type && t.push(r);else if (r = this.tokenizer.code(e, t)) e = e.substring(r.raw.length), r.type ? t.push(r) : ((l = t[t.length - 1]).raw += "\n" + r.raw, l.text += "\n" + r.text);else if (r = this.tokenizer.fences(e)) e = e.substring(r.raw.length), t.push(r);else if (r = this.tokenizer.heading(e)) e = e.substring(r.raw.length), t.push(r);else if (r = this.tokenizer.nptable(e)) e = e.substring(r.raw.length), t.push(r);else if (r = this.tokenizer.hr(e)) e = e.substring(r.raw.length), t.push(r);else if (r = this.tokenizer.blockquote(e)) e = e.substring(r.raw.length), r.tokens = this.blockTokens(r.text, [], n), t.push(r);else if (r = this.tokenizer.list(e)) {for (e = e.substring(r.raw.length), s = r.items.length, i = 0; i < s; i++) {r.items[i].tokens = this.blockTokens(r.items[i].text, [], !1);}t.push(r);} else if (r = this.tokenizer.html(e)) e = e.substring(r.raw.length), t.push(r);else if (n && (r = this.tokenizer.def(e))) e = e.substring(r.raw.length), this.tokens.links[r.tag] || (this.tokens.links[r.tag] = { href: r.href, title: r.title });else if (r = this.tokenizer.table(e)) e = e.substring(r.raw.length), t.push(r);else if (r = this.tokenizer.lheading(e)) e = e.substring(r.raw.length), t.push(r);else if (n && (r = this.tokenizer.paragraph(e))) e = e.substring(r.raw.length), t.push(r);else if (r = this.tokenizer.text(e, t)) e = e.substring(r.raw.length), r.type ? t.push(r) : ((l = t[t.length - 1]).raw += "\n" + r.raw, l.text += "\n" + r.text);else if (e) {var a = "Infinite loop on byte: " + e.charCodeAt(0);if (this.options.silent) {console.error(a);break;}throw new Error(a);}}return t;}, r.inline = function (e) {for (var t, n, r, i, s, l = e.length, a = 0; a < l; a++) {switch ((s = e[a]).type) {case "paragraph":case "text":case "heading":s.tokens = [], this.inlineTokens(s.text, s.tokens);break;case "table":for (s.tokens = { header: [], cells: [] }, r = s.header.length, t = 0; t < r; t++) {s.tokens.header[t] = [], this.inlineTokens(s.header[t], s.tokens.header[t]);}for (r = s.cells.length, t = 0; t < r; t++) {for (i = s.cells[t], s.tokens.cells[t] = [], n = 0; n < i.length; n++) {s.tokens.cells[t][n] = [], this.inlineTokens(i[n], s.tokens.cells[t][n]);}}break;case "blockquote":this.inline(s.tokens);break;case "list":for (r = s.items.length, t = 0; t < r; t++) {this.inline(s.items[t].tokens);}}}return e;}, r.inlineTokens = function (e, t, n, r) {var i;void 0 === t && (t = []), void 0 === n && (n = !1), void 0 === r && (r = !1);var s,l,a,o = e;if (this.tokens.links) {var c = Object.keys(this.tokens.links);if (0 < c.length) for (; null != (s = this.tokenizer.rules.inline.reflinkSearch.exec(o));) {c.includes(s[0].slice(s[0].lastIndexOf("[") + 1, -1)) && (o = o.slice(0, s.index) + "[" + B("a", s[0].length - 2) + "]" + o.slice(this.tokenizer.rules.inline.reflinkSearch.lastIndex));}}for (; null != (s = this.tokenizer.rules.inline.blockSkip.exec(o));) {o = o.slice(0, s.index) + "[" + B("a", s[0].length - 2) + "]" + o.slice(this.tokenizer.rules.inline.blockSkip.lastIndex);}for (; e;) {if (l || (a = ""), l = !1, i = this.tokenizer.escape(e)) e = e.substring(i.raw.length), t.push(i);else if (i = this.tokenizer.tag(e, n, r)) e = e.substring(i.raw.length), n = i.inLink, r = i.inRawBlock, t.push(i);else if (i = this.tokenizer.link(e)) e = e.substring(i.raw.length), "link" === i.type && (i.tokens = this.inlineTokens(i.text, [], !0, r)), t.push(i);else if (i = this.tokenizer.reflink(e, this.tokens.links)) e = e.substring(i.raw.length), "link" === i.type && (i.tokens = this.inlineTokens(i.text, [], !0, r)), t.push(i);else if (i = this.tokenizer.strong(e, o, a)) e = e.substring(i.raw.length), i.tokens = this.inlineTokens(i.text, [], n, r), t.push(i);else if (i = this.tokenizer.em(e, o, a)) e = e.substring(i.raw.length), i.tokens = this.inlineTokens(i.text, [], n, r), t.push(i);else if (i = this.tokenizer.codespan(e)) e = e.substring(i.raw.length), t.push(i);else if (i = this.tokenizer.br(e)) e = e.substring(i.raw.length), t.push(i);else if (i = this.tokenizer.del(e)) e = e.substring(i.raw.length), i.tokens = this.inlineTokens(i.text, [], n, r), t.push(i);else if (i = this.tokenizer.autolink(e, M)) e = e.substring(i.raw.length), t.push(i);else if (n || !(i = this.tokenizer.url(e, M))) {if (i = this.tokenizer.inlineText(e, r, F)) e = e.substring(i.raw.length), a = i.raw.slice(-1), l = !0, t.push(i);else if (e) {var u = "Infinite loop on byte: " + e.charCodeAt(0);if (this.options.silent) {console.error(u);break;}throw new Error(u);}} else e = e.substring(i.raw.length), t.push(i);}return t;}, e = n, t = [{ key: "rules", get: function get() {return { block: L, inline: N };} }], (r = null) && i(e.prototype, r), t && i(e, t), n;}(),X = t.defaults,G = S,V = _,H = function () {function e(e) {this.options = e || X;}var t = e.prototype;return t.code = function (e, t, n) {var r = (t || "").match(/\S*/)[0];return !this.options.highlight || null != (t = this.options.highlight(e, r)) && t !== e && (n = !0, e = t), r ? '<pre><code class="' + this.options.langPrefix + V(r, !0) + '">' + (n ? e : V(e, !0)) + "</code></pre>\n" : "<pre><code>" + (n ? e : V(e, !0)) + "</code></pre>\n";}, t.blockquote = function (e) {return "<blockquote>\n" + e + "</blockquote>\n";}, t.html = function (e) {return e;}, t.heading = function (e, t, n, r) {return this.options.headerIds ? "<h" + t + ' id="' + this.options.headerPrefix + r.slug(n) + '">' + e + "</h" + t + ">\n" : "<h" + t + ">" + e + "</h" + t + ">\n";}, t.hr = function () {return this.options.xhtml ? "<hr/>\n" : "<hr>\n";}, t.list = function (e, t, n) {var r = t ? "ol" : "ul";return "<" + r + (t && 1 !== n ? ' start="' + n + '"' : "") + ">\n" + e + "</" + r + ">\n";}, t.listitem = function (e) {return "<li>" + e + "</li>\n";}, t.checkbox = function (e) {return "<input " + (e ? 'checked="" ' : "") + 'disabled="" type="checkbox"' + (this.options.xhtml ? " /" : "") + "> ";}, t.paragraph = function (e) {return "<p>" + e + "</p>\n";}, t.table = function (e, t) {return "<table>\n<thead>\n" + e + "</thead>\n" + (t = t && "<tbody>" + t + "</tbody>") + "</table>\n";}, t.tablerow = function (e) {return "<tr>\n" + e + "</tr>\n";}, t.tablecell = function (e, t) {var n = t.header ? "th" : "td";return (t.align ? "<" + n + ' align="' + t.align + '">' : "<" + n + ">") + e + "</" + n + ">\n";}, t.strong = function (e) {return "<strong>" + e + "</strong>";}, t.em = function (e) {return "<em>" + e + "</em>";}, t.codespan = function (e) {return "<code>" + e + "</code>";}, t.br = function () {return this.options.xhtml ? "<br/>" : "<br>";}, t.del = function (e) {return "<del>" + e + "</del>";}, t.link = function (e, t, n) {if (null === (e = G(this.options.sanitize, this.options.baseUrl, e))) return n;e = '<a href="' + V(e) + '"';return t && (e += ' title="' + t + '"'), e += ">" + n + "</a>";}, t.image = function (e, t, n) {if (null === (e = G(this.options.sanitize, this.options.baseUrl, e))) return n;n = '<img src="' + e + '" alt="' + n + '"';return t && (n += ' title="' + t + '"'), n += this.options.xhtml ? "/>" : ">";}, t.text = function (e) {return e;}, e;}(),J = function () {function e() {}var t = e.prototype;return t.strong = function (e) {return e;}, t.em = function (e) {return e;}, t.codespan = function (e) {return e;}, t.del = function (e) {return e;}, t.html = function (e) {return e;}, t.text = function (e) {return e;}, t.link = function (e, t, n) {return "" + n;}, t.image = function (e, t, n) {return "" + n;}, t.br = function () {return "";}, e;}(),K = function () {function e() {this.seen = {};}var t = e.prototype;return t.serialize = function (e) {return e.toLowerCase().trim().replace(/<[!\/a-z].*?>/gi, "").replace(/[\u2000-\u206F\u2E00-\u2E7F\\'!"#$%&()*+,./:;<=>?@[\]^`{|}~]/g, "").replace(/\s/g, "-");}, t.getNextSafeSlug = function (e, t) {var n = e,r = 0;if (this.seen.hasOwnProperty(n)) for (r = this.seen[e]; n = e + "-" + ++r, this.seen.hasOwnProperty(n);) {;}return t || (this.seen[e] = r, this.seen[n] = 0), n;}, t.slug = function (e, t) {void 0 === t && (t = {});var n = this.serialize(e);return this.getNextSafeSlug(n, t.dryrun);}, e;}(),Q = t.defaults,Y = y,ee = function () {function n(e) {this.options = e || Q, this.options.renderer = this.options.renderer || new H(), this.renderer = this.options.renderer, this.renderer.options = this.options, this.textRenderer = new J(), this.slugger = new K();}n.parse = function (e, t) {return new n(t).parse(e);}, n.parseInline = function (e, t) {return new n(t).parseInline(e);};var e = n.prototype;return e.parse = function (e, t) {void 0 === t && (t = !0);for (var n, r, i, s, l, a, o, c, u, p, h, g, f, d, k, b = "", m = e.length, x = 0; x < m; x++) {switch ((c = e[x]).type) {case "space":continue;case "hr":b += this.renderer.hr();continue;case "heading":b += this.renderer.heading(this.parseInline(c.tokens), c.depth, Y(this.parseInline(c.tokens, this.textRenderer)), this.slugger);continue;case "code":b += this.renderer.code(c.text, c.lang, c.escaped);continue;case "table":for (a = u = "", i = c.header.length, n = 0; n < i; n++) {a += this.renderer.tablecell(this.parseInline(c.tokens.header[n]), { header: !0, align: c.align[n] });}for (u += this.renderer.tablerow(a), o = "", i = c.cells.length, n = 0; n < i; n++) {for (a = "", s = (l = c.tokens.cells[n]).length, r = 0; r < s; r++) {a += this.renderer.tablecell(this.parseInline(l[r]), { header: !1, align: c.align[r] });}o += this.renderer.tablerow(a);}b += this.renderer.table(u, o);continue;case "blockquote":o = this.parse(c.tokens), b += this.renderer.blockquote(o);continue;case "list":for (u = c.ordered, w = c.start, p = c.loose, i = c.items.length, o = "", n = 0; n < i; n++) {f = (g = c.items[n]).checked, d = g.task, h = "", g.task && (k = this.renderer.checkbox(f), p ? 0 < g.tokens.length && "text" === g.tokens[0].type ? (g.tokens[0].text = k + " " + g.tokens[0].text, g.tokens[0].tokens && 0 < g.tokens[0].tokens.length && "text" === g.tokens[0].tokens[0].type && (g.tokens[0].tokens[0].text = k + " " + g.tokens[0].tokens[0].text)) : g.tokens.unshift({ type: "text", text: k }) : h += k), h += this.parse(g.tokens, p), o += this.renderer.listitem(h, d, f);}b += this.renderer.list(o, u, w);continue;case "html":b += this.renderer.html(c.text);continue;case "paragraph":b += this.renderer.paragraph(this.parseInline(c.tokens));continue;case "text":for (o = c.tokens ? this.parseInline(c.tokens) : c.text; x + 1 < m && "text" === e[x + 1].type;) {o += "\n" + ((c = e[++x]).tokens ? this.parseInline(c.tokens) : c.text);}b += t ? this.renderer.paragraph(o) : o;continue;default:var w = 'Token with "' + c.type + '" type was not found.';if (this.options.silent) return void console.error(w);throw new Error(w);}}return b;}, e.parseInline = function (e, t) {t = t || this.renderer;for (var n, r = "", i = e.length, s = 0; s < i; s++) {switch ((n = e[s]).type) {case "escape":r += t.text(n.text);break;case "html":r += t.html(n.text);break;case "link":r += t.link(n.href, n.title, this.parseInline(n.tokens, t));break;case "image":r += t.image(n.href, n.title, n.text);break;case "strong":r += t.strong(this.parseInline(n.tokens, t));break;case "em":r += t.em(this.parseInline(n.tokens, t));break;case "codespan":r += t.codespan(n.text);break;case "br":r += t.br();break;case "del":r += t.del(this.parseInline(n.tokens, t));break;case "text":r += t.text(n.text);break;default:var l = 'Token with "' + n.type + '" type was not found.';if (this.options.silent) return void console.error(l);throw new Error(l);}}return r;}, n;}(),te = A,ne = I,re = _,_ = t.getDefaults,ie = t.changeDefaults,t = t.defaults;function se(e, n, r) {if (null == e) throw new Error("marked(): input parameter is undefined or null");if ("string" != typeof e) throw new Error("marked(): input parameter is of type " + Object.prototype.toString.call(e) + ", string expected");if ("function" == typeof n && (r = n, n = null), n = te({}, se.defaults, n || {}), ne(n), r) {var i,s = n.highlight;try {i = W.lex(e, n);} catch (e) {return r(e);}var l = function l(t) {var e;if (!t) try {e = ee.parse(i, n);} catch (e) {t = e;}return n.highlight = s, t ? r(t) : r(null, e);};if (!s || s.length < 3) return l();if (delete n.highlight, !i.length) return l();var a = 0;return se.walkTokens(i, function (n) {"code" === n.type && (a++, setTimeout(function () {s(n.text, n.lang, function (e, t) {return e ? l(e) : (null != t && t !== n.text && (n.text = t, n.escaped = !0), void (0 === --a && l()));});}, 0));}), void (0 === a && l());}try {var t = W.lex(e, n);return n.walkTokens && se.walkTokens(t, n.walkTokens), ee.parse(t, n);} catch (e) {if (e.message += "\nPlease report this to https://github.com/markedjs/marked.", n.silent) return "<p>An error occurred:</p><pre>" + re(e.message + "", !0) + "</pre>";throw e;}}return se.options = se.setOptions = function (e) {return te(se.defaults, e), ie(se.defaults), se;}, se.getDefaults = _, se.defaults = t, se.use = function (a) {var t,n = te({}, a);a.renderer && function () {var e,l = se.defaults.renderer || new H();for (e in a.renderer) {!function (i) {var s = l[i];l[i] = function () {for (var e = arguments.length, t = new Array(e), n = 0; n < e; n++) {t[n] = arguments[n];}var r = a.renderer[i].apply(l, t);return !1 === r && (r = s.apply(l, t)), r;};}(e);}n.renderer = l;}(), a.tokenizer && function () {var e,l = se.defaults.tokenizer || new D();for (e in a.tokenizer) {!function (i) {var s = l[i];l[i] = function () {for (var e = arguments.length, t = new Array(e), n = 0; n < e; n++) {t[n] = arguments[n];}var r = a.tokenizer[i].apply(l, t);return !1 === r && (r = s.apply(l, t)), r;};}(e);}n.tokenizer = l;}(), a.walkTokens && (t = se.defaults.walkTokens, n.walkTokens = function (e) {a.walkTokens(e), t && t(e);}), se.setOptions(n);}, se.walkTokens = function (e, t) {for (var n, r = p(e); !(n = r()).done;) {var i = n.value;switch (t(i), i.type) {case "table":for (var s = p(i.tokens.header); !(l = s()).done;) {var l = l.value;se.walkTokens(l, t);}for (var a, o = p(i.tokens.cells); !(a = o()).done;) {for (var c = p(a.value); !(u = c()).done;) {var u = u.value;se.walkTokens(u, t);}}break;case "list":se.walkTokens(i.items, t);break;default:i.tokens && se.walkTokens(i.tokens, t);}}}, se.parseInline = function (e, t) {if (null == e) throw new Error("marked.parseInline(): input parameter is undefined or null");if ("string" != typeof e) throw new Error("marked.parseInline(): input parameter is of type " + Object.prototype.toString.call(e) + ", string expected");t = te({}, se.defaults, t || {}), ne(t);try {var n = W.lexInline(e, t);return t.walkTokens && se.walkTokens(n, t.walkTokens), ee.parseInline(n, t);} catch (e) {if (e.message += "\nPlease report this to https://github.com/markedjs/marked.", t.silent) return "<p>An error occurred:</p><pre>" + re(e.message + "", !0) + "</pre>";throw e;}}, se.Parser = ee, se.parser = ee.parse, se.Renderer = H, se.TextRenderer = J, se.Lexer = W, se.lexer = W.lex, se.Tokenizer = D, se.Slugger = K, se.parse = se;});
+
+/***/ }),
+
+/***/ 90:
+/*!***************************************************************************************!*\
+  !*** D:/Users/Ryan/Documents/HBuilderProjects/team/components/mp-html/emoji/index.js ***!
+  \***************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/**
+               * @fileoverview emoji 插件
+               */
+var reg = /\[(\S+?)\]/g;
+var data = {
+  '笑脸': '😄',
+  '生病': '😷',
+  '破涕为笑': '😂',
+  '吐舌': '😝',
+  '脸红': '😳',
+  '恐惧': '😱',
+  '失望': '😔',
+  '无语': '😒',
+  '眨眼': '😉',
+  '酷': '😎',
+  '哭': '😭',
+  '痴迷': '😍',
+  '吻': '😘',
+  '思考': '🤔',
+  '困惑': '😕',
+  '颠倒': '🙃',
+  '钱': '🤑',
+  '惊讶': '😲',
+  '白眼': '🙄',
+  '叹气': '😤',
+  '睡觉': '😴',
+  '书呆子': '🤓',
+  '愤怒': '😡',
+  '面无表情': '😑',
+  '张嘴': '😮',
+  '量体温': '🤒',
+  '呕吐': '🤮',
+  '光环': '😇',
+  '幽灵': '👻',
+  '外星人': '👽',
+  '机器人': '🤖',
+  '捂眼镜': '🙈',
+  '捂耳朵': '🙉',
+  '捂嘴': '🙊',
+  '婴儿': '👶',
+  '男孩': '👦',
+  '女孩': '👧',
+  '男人': '👨',
+  '女人': '👩',
+  '老人': '👴',
+  '老妇人': '👵',
+  '警察': '👮',
+  '王子': '🤴',
+  '公主': '🤴',
+  '举手': '🙋',
+  '跑步': '🏃',
+  '家庭': '👪',
+  '眼睛': '👀',
+  '鼻子': '👃',
+  '耳朵': '👂',
+  '舌头': '👅',
+  '嘴': '👄',
+  '心': '❤️',
+  '心碎': '💔',
+  '雪人': '☃️',
+  '情书': '💌',
+  '大便': '💩',
+  '闹钟': '⏰',
+  '眼镜': '👓',
+  '雨伞': '☂️',
+  '音乐': '🎵',
+  '话筒': '🎤',
+  '游戏机': '🎮',
+  '喇叭': '📢',
+  '耳机': '🎧',
+  '礼物': '🎁',
+  '电话': '📞',
+  '电脑': '💻',
+  '打印机': '🖨️',
+  '手电筒': '🔦',
+  '灯泡': '💡',
+  '书本': '📖',
+  '信封': '✉️',
+  '药丸': '💊',
+  '口红': '💄',
+  '手机': '📱',
+  '相机': '📷',
+  '电视': '📺',
+  '中': '🀄',
+  '垃圾桶': '🚮',
+  '厕所': '🚾',
+  '感叹号': '❗',
+  '禁': '🈲',
+  '可': '🉑',
+  '彩虹': '🌈',
+  '旋风': '🌀',
+  '雷电': '⚡',
+  '雪花': '❄️',
+  '星星': '⭐',
+  '水滴': '💧',
+  '玫瑰': '🌹',
+  '加油': '💪',
+  '左': '👈',
+  '右': '👉',
+  '上': '👆',
+  '下': '👇',
+  '手掌': '🖐️',
+  '好的': '👌',
+  '好': '👍',
+  '差': '👎',
+  '胜利': '✌',
+  '拳头': '👊',
+  '挥手': '👋',
+  '鼓掌': '👏',
+  '猴子': '🐒',
+  '狗': '🐶',
+  '狼': '🐺',
+  '猫': '🐱',
+  '老虎': '🐯',
+  '马': '🐎',
+  '独角兽': '🦄',
+  '斑马': '🦓',
+  '鹿': '🦌',
+  '牛': '🐮',
+  '猪': '🐷',
+  '羊': '🐏',
+  '长颈鹿': '🦒',
+  '大象': '🐘',
+  '老鼠': '🐭',
+  '蝙蝠': '🦇',
+  '刺猬': '🦔',
+  '熊猫': '🐼',
+  '鸽子': '🕊️',
+  '鸭子': '🦆',
+  '兔子': '🐇',
+  '老鹰': '🦅',
+  '青蛙': '🐸',
+  '蛇': '🐍',
+  '龙': '🐉',
+  '鲸鱼': '🐳',
+  '海豚': '🐬',
+  '足球': '⚽',
+  '棒球': '⚾',
+  '篮球': '🏀',
+  '排球': '🏐',
+  '橄榄球': '🏉',
+  '网球': '🎾',
+  '骰子': '🎲',
+  '鸡腿': '🍗',
+  '蛋糕': '🎂',
+  '啤酒': '🍺',
+  '饺子': '🥟',
+  '汉堡': '🍔',
+  '薯条': '🍟',
+  '意大利面': '🍝',
+  '干杯': '🥂',
+  '筷子': '🥢',
+  '糖果': '🍬',
+  '奶瓶': '🍼',
+  '爆米花': '🍿',
+  '邮局': '🏤',
+  '医院': '🏥',
+  '银行': '🏦',
+  '酒店': '🏨',
+  '学校': '🏫',
+  '城堡': '🏰',
+  '火车': '🚂',
+  '高铁': '🚄',
+  '地铁': '🚇',
+  '公交': '🚌',
+  '救护车': '🚑',
+  '消防车': '🚒',
+  '警车': '🚓',
+  '出租车': '🚕',
+  '汽车': '🚗',
+  '货车': '🚛',
+  '自行车': '🚲',
+  '摩托': '🛵',
+  '红绿灯': '🚥',
+  '帆船': '⛵',
+  '游轮': '🛳️',
+  '轮船': '⛴️',
+  '飞机': '✈️',
+  '直升机': '🚁',
+  '缆车': '🚠',
+  '警告': '⚠️',
+  '禁止': '⛔' };
+
+
+function emoji() {}
+
+emoji.prototype.onUpdate = function (content) {
+  return content.replace(reg, function ($, $1) {
+    if (data[$1]) return data[$1];
+    return $;
+  });
+};
+
+emoji.prototype.onGetContent = function (content) {
+  for (var item in data) {
+    content = content.replace(new RegExp(data[item], 'g'), '[' + item + ']');
+  }
+
+  return content;
+};
+
+module.exports = emoji;
+
+/***/ }),
+
+/***/ 91:
+/*!*******************************************************************************************!*\
+  !*** D:/Users/Ryan/Documents/HBuilderProjects/team/components/mp-html/highlight/index.js ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/**
+               * @fileoverview highlight 插件
+               * Include prismjs (https://prismjs.com)
+               */
+var prism = __webpack_require__(/*! ./prism.min */ 92);
+
+var config = __webpack_require__(/*! ./config */ 93);
+
+var parser = __webpack_require__(/*! ../parser */ 94);
+
+var highlight = function highlight(vm) {
+  this.vm = vm;
+};
+
+highlight.prototype.onParse = function (node, vm) {
+  if (node.name == 'pre') {
+    for (var i = node.children.length; i--;) {
+      if (node.children[i].name == 'code') break;
+    }
+
+    if (i == -1) return;
+    var code = node.children[i],
+    className = code.attrs["class"] || '';
+    i = className.indexOf('language-');
+
+    if (i == -1) {
+      className = node.attrs["class"] || '';
+      i = className.indexOf('language-');
+    }
+
+    if (i != -1) {
+      i += 9;
+
+      for (var j = i; j < className.length; j++) {
+        if (className[j] == ' ') break;
+      }
+
+      var lang = className.substring(i, j);
+
+      if (code.children.length && code.children[0].type == 'text') {
+        if (prism.languages[lang]) {
+          var text = code.children[0].text.replace(/&amp;/g, '&');
+          code.children = new parser(this.vm).parse( // 加一层 pre 保留空白符
+          '<pre>' + prism.highlight(text, prism.languages[lang], lang).replace(/token /g, 'hl-') + '</pre>')[0].children;
+        }
+
+        node.attrs["class"] = 'hl-pre';
+        code.attrs["class"] = 'hl-code';
+        if (config.showLanguageName) node.children.push({
+          name: 'div',
+          attrs: {
+            "class": 'hl-language',
+            style: 'user-select:none' },
+
+          children: [{
+            type: 'text',
+            text: lang }] });
+
+
+
+        if (config.copyByLongPress) {
+          node.attrs.style += (node.attrs.style || '') + ';user-select:none';
+          node.attrs['data-content'] = text;
+          vm.expose();
+        }
+
+        if (config.showLineNumber) {
+          var line = text.split('\n').length,
+          children = [];
+
+          for (var k = line; k--;) {
+            children.push({
+              name: 'span',
+              attrs: {
+                "class": 'span' } });
+
+
+          }
+
+          node.children.push({
+            name: 'span',
+            attrs: {
+              "class": 'line-numbers-rows' },
+
+            children: children });
+
+        }
+      }
+    }
+  }
+};
+
+module.exports = highlight;
+
+/***/ }),
+
+/***/ 92:
+/*!***********************************************************************************************!*\
+  !*** D:/Users/Ryan/Documents/HBuilderProjects/team/components/mp-html/highlight/prism.min.js ***!
+  \***********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global) {/*! PrismJS 1.22.0
+https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript */
+var _self = "undefined" != typeof window ? window : "undefined" != typeof WorkerGlobalScope && self instanceof WorkerGlobalScope ? self : {},Prism = function (u) {var c = /\blang(?:uage)?-([\w-]+)\b/i,n = 0,M = { manual: u.Prism && u.Prism.manual, disableWorkerMessageHandler: u.Prism && u.Prism.disableWorkerMessageHandler, util: { encode: function e(n) {return n instanceof W ? new W(n.type, e(n.content), n.alias) : Array.isArray(n) ? n.map(e) : n.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/\u00a0/g, " ");}, type: function type(e) {return Object.prototype.toString.call(e).slice(8, -1);}, objId: function objId(e) {return e.__id || Object.defineProperty(e, "__id", { value: ++n }), e.__id;}, clone: function t(e, r) {var a, n;switch (r = r || {}, M.util.type(e)) {case "Object":if (n = M.util.objId(e), r[n]) return r[n];for (var i in a = {}, r[n] = a, e) {e.hasOwnProperty(i) && (a[i] = t(e[i], r));}return a;case "Array":return n = M.util.objId(e), r[n] ? r[n] : (a = [], r[n] = a, e.forEach(function (e, n) {a[n] = t(e, r);}), a);default:return e;}}, getLanguage: function getLanguage(e) {for (; e && !c.test(e.className);) {e = e.parentElement;}return e ? (e.className.match(c) || [, "none"])[1].toLowerCase() : "none";}, currentScript: function currentScript() {if ("undefined" == typeof document) return null;if ("currentScript" in document) return document.currentScript;try {throw new Error();} catch (e) {var n = (/at [^(\r\n]*\((.*):.+:.+\)$/i.exec(e.stack) || [])[1];if (n) {var t = document.getElementsByTagName("script");for (var r in t) {if (t[r].src == n) return t[r];}}return null;}}, isActive: function isActive(e, n, t) {for (var r = "no-" + n; e;) {var a = e.classList;if (a.contains(n)) return !0;if (a.contains(r)) return !1;e = e.parentElement;}return !!t;} }, languages: { extend: function extend(e, n) {var t = M.util.clone(M.languages[e]);for (var r in n) {t[r] = n[r];}return t;}, insertBefore: function insertBefore(t, e, n, r) {var a = (r = r || M.languages)[t],i = {};for (var l in a) {if (a.hasOwnProperty(l)) {if (l == e) for (var o in n) {n.hasOwnProperty(o) && (i[o] = n[o]);}n.hasOwnProperty(l) || (i[l] = a[l]);}}var s = r[t];return r[t] = i, M.languages.DFS(M.languages, function (e, n) {n === s && e != t && (this[e] = i);}), i;}, DFS: function e(n, t, r, a) {a = a || {};var i = M.util.objId;for (var l in n) {if (n.hasOwnProperty(l)) {t.call(n, l, n[l], r || l);var o = n[l],s = M.util.type(o);"Object" !== s || a[i(o)] ? "Array" !== s || a[i(o)] || (a[i(o)] = !0, e(o, t, l, a)) : (a[i(o)] = !0, e(o, t, null, a));}}} }, plugins: {}, highlightAll: function highlightAll(e, n) {M.highlightAllUnder(document, e, n);}, highlightAllUnder: function highlightAllUnder(e, n, t) {var r = { callback: t, container: e, selector: 'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code' };M.hooks.run("before-highlightall", r), r.elements = Array.prototype.slice.apply(r.container.querySelectorAll(r.selector)), M.hooks.run("before-all-elements-highlight", r);for (var a, i = 0; a = r.elements[i++];) {M.highlightElement(a, !0 === n, r.callback);}}, highlightElement: function highlightElement(e, n, t) {var r = M.util.getLanguage(e),a = M.languages[r];e.className = e.className.replace(c, "").replace(/\s+/g, " ") + " language-" + r;var i = e.parentElement;i && "pre" === i.nodeName.toLowerCase() && (i.className = i.className.replace(c, "").replace(/\s+/g, " ") + " language-" + r);var l = { element: e, language: r, grammar: a, code: e.textContent };function o(e) {l.highlightedCode = e, M.hooks.run("before-insert", l), l.element.innerHTML = l.highlightedCode, M.hooks.run("after-highlight", l), M.hooks.run("complete", l), t && t.call(l.element);}if (M.hooks.run("before-sanity-check", l), !l.code) return M.hooks.run("complete", l), void (t && t.call(l.element));if (M.hooks.run("before-highlight", l), l.grammar) {if (n && u.Worker) {var s = new Worker(M.filename);s.onmessage = function (e) {o(e.data);}, s.postMessage(JSON.stringify({ language: l.language, code: l.code, immediateClose: !0 }));} else o(M.highlight(l.code, l.grammar, l.language));} else o(M.util.encode(l.code));}, highlight: function highlight(e, n, t) {var r = { code: e, grammar: n, language: t };return M.hooks.run("before-tokenize", r), r.tokens = M.tokenize(r.code, r.grammar), M.hooks.run("after-tokenize", r), W.stringify(M.util.encode(r.tokens), r.language);}, tokenize: function tokenize(e, n) {var t = n.rest;if (t) {for (var r in t) {n[r] = t[r];}delete n.rest;}var a = new i();return I(a, a.head, e), function e(n, t, r, a, i, l) {for (var o in r) {if (r.hasOwnProperty(o) && r[o]) {var s = r[o];s = Array.isArray(s) ? s : [s];for (var u = 0; u < s.length; ++u) {if (l && l.cause == o + "," + u) return;var c = s[u],g = c.inside,f = !!c.lookbehind,h = !!c.greedy,d = 0,v = c.alias;if (h && !c.pattern.global) {var p = c.pattern.toString().match(/[imsuy]*$/)[0];c.pattern = RegExp(c.pattern.source, p + "g");}for (var m = c.pattern || c, y = a.next, k = i; y !== t.tail && !(l && k >= l.reach); k += y.value.length, y = y.next) {var b = y.value;if (t.length > n.length) return;if (!(b instanceof W)) {var x = 1;if (h && y != t.tail.prev) {m.lastIndex = k;var w = m.exec(n);if (!w) break;var A = w.index + (f && w[1] ? w[1].length : 0),P = w.index + w[0].length,S = k;for (S += y.value.length; S <= A;) {y = y.next, S += y.value.length;}if (S -= y.value.length, k = S, y.value instanceof W) continue;for (var E = y; E !== t.tail && (S < P || "string" == typeof E.value); E = E.next) {x++, S += E.value.length;}x--, b = n.slice(k, S), w.index -= k;} else {m.lastIndex = 0;var w = m.exec(b);}if (w) {f && (d = w[1] ? w[1].length : 0);var A = w.index + d,O = w[0].slice(d),P = A + O.length,L = b.slice(0, A),N = b.slice(P),j = k + b.length;l && j > l.reach && (l.reach = j);var C = y.prev;L && (C = I(t, C, L), k += L.length), z(t, C, x);var _ = new W(o, g ? M.tokenize(O, g) : O, v, O);y = I(t, C, _), N && I(t, y, N), 1 < x && e(n, t, r, y.prev, k, { cause: o + "," + u, reach: j });}}}}}}}(e, a, n, a.head, 0), function (e) {var n = [],t = e.head.next;for (; t !== e.tail;) {n.push(t.value), t = t.next;}return n;}(a);}, hooks: { all: {}, add: function add(e, n) {var t = M.hooks.all;t[e] = t[e] || [], t[e].push(n);}, run: function run(e, n) {var t = M.hooks.all[e];if (t && t.length) for (var r, a = 0; r = t[a++];) {r(n);}} }, Token: W };function W(e, n, t, r) {this.type = e, this.content = n, this.alias = t, this.length = 0 | (r || "").length;}function i() {var e = { value: null, prev: null, next: null },n = { value: null, prev: e, next: null };e.next = n, this.head = e, this.tail = n, this.length = 0;}function I(e, n, t) {var r = n.next,a = { value: t, prev: n, next: r };return n.next = a, r.prev = a, e.length++, a;}function z(e, n, t) {for (var r = n.next, a = 0; a < t && r !== e.tail; a++) {r = r.next;}(n.next = r).prev = n, e.length -= a;}if (u.Prism = M, W.stringify = function n(e, t) {if ("string" == typeof e) return e;if (Array.isArray(e)) {var r = "";return e.forEach(function (e) {r += n(e, t);}), r;}var a = { type: e.type, content: n(e.content, t), tag: "span", classes: ["token", e.type], attributes: {}, language: t },i = e.alias;i && (Array.isArray(i) ? Array.prototype.push.apply(a.classes, i) : a.classes.push(i)), M.hooks.run("wrap", a);var l = "";for (var o in a.attributes) {l += " " + o + '="' + (a.attributes[o] || "").replace(/"/g, "&quot;") + '"';}return "<" + a.tag + ' class="' + a.classes.join(" ") + '"' + l + ">" + a.content + "</" + a.tag + ">";}, !u.document) return u.addEventListener && (M.disableWorkerMessageHandler || u.addEventListener("message", function (e) {var n = JSON.parse(e.data),t = n.language,r = n.code,a = n.immediateClose;u.postMessage(M.highlight(r, M.languages[t], t)), a && u.close();}, !1)), M;var e = M.util.currentScript();function t() {M.manual || M.highlightAll();}if (e && (M.filename = e.src, e.hasAttribute("data-manual") && (M.manual = !0)), !M.manual) {var r = document.readyState;"loading" === r || "interactive" === r && e && e.defer ? document.addEventListener("DOMContentLoaded", t) : window.requestAnimationFrame ? window.requestAnimationFrame(t) : window.setTimeout(t, 16);}return M;}(_self); true && module.exports && (module.exports = Prism), "undefined" != typeof global && (global.Prism = Prism);
+Prism.languages.markup = { comment: /<!--[\s\S]*?-->/, prolog: /<\?[\s\S]+?\?>/, doctype: { pattern: /<!DOCTYPE(?:[^>"'[\]]|"[^"]*"|'[^']*')+(?:\[(?:[^<"'\]]|"[^"]*"|'[^']*'|<(?!!--)|<!--(?:[^-]|-(?!->))*-->)*\]\s*)?>/i, greedy: !0, inside: { "internal-subset": { pattern: /(\[)[\s\S]+(?=\]>$)/, lookbehind: !0, greedy: !0, inside: null }, string: { pattern: /"[^"]*"|'[^']*'/, greedy: !0 }, punctuation: /^<!|>$|[[\]]/, "doctype-tag": /^DOCTYPE/, name: /[^\s<>'"]+/ } }, cdata: /<!\[CDATA\[[\s\S]*?]]>/i, tag: { pattern: /<\/?(?!\d)[^\s>\/=$<%]+(?:\s(?:\s*[^\s>\/=]+(?:\s*=\s*(?:"[^"]*"|'[^']*'|[^\s'">=]+(?=[\s>]))|(?=[\s/>])))+)?\s*\/?>/, greedy: !0, inside: { tag: { pattern: /^<\/?[^\s>\/]+/, inside: { punctuation: /^<\/?/, namespace: /^[^\s>\/:]+:/ } }, "attr-value": { pattern: /=\s*(?:"[^"]*"|'[^']*'|[^\s'">=]+)/, inside: { punctuation: [{ pattern: /^=/, alias: "attr-equals" }, /"|'/] } }, punctuation: /\/?>/, "attr-name": { pattern: /[^\s>\/]+/, inside: { namespace: /^[^\s>\/:]+:/ } } } }, entity: [{ pattern: /&[\da-z]{1,8};/i, alias: "named-entity" }, /&#x?[\da-f]{1,8};/i] }, Prism.languages.markup.tag.inside["attr-value"].inside.entity = Prism.languages.markup.entity, Prism.languages.markup.doctype.inside["internal-subset"].inside = Prism.languages.markup, Prism.hooks.add("wrap", function (a) {"entity" === a.type && (a.attributes.title = a.content.replace(/&amp;/, "&"));}), Object.defineProperty(Prism.languages.markup.tag, "addInlined", { value: function value(a, e) {var s = {};s["language-" + e] = { pattern: /(^<!\[CDATA\[)[\s\S]+?(?=\]\]>$)/i, lookbehind: !0, inside: Prism.languages[e] }, s.cdata = /^<!\[CDATA\[|\]\]>$/i;var n = { "included-cdata": { pattern: /<!\[CDATA\[[\s\S]*?\]\]>/i, inside: s } };n["language-" + e] = { pattern: /[\s\S]+/, inside: Prism.languages[e] };var t = {};t[a] = { pattern: RegExp("(<__[^]*?>)(?:<!\\[CDATA\\[(?:[^\\]]|\\](?!\\]>))*\\]\\]>|(?!<!\\[CDATA\\[)[^])*?(?=</__>)".replace(/__/g, function () {return a;}), "i"), lookbehind: !0, greedy: !0, inside: n }, Prism.languages.insertBefore("markup", "cdata", t);} }), Prism.languages.html = Prism.languages.markup, Prism.languages.mathml = Prism.languages.markup, Prism.languages.svg = Prism.languages.markup, Prism.languages.xml = Prism.languages.extend("markup", {}), Prism.languages.ssml = Prism.languages.xml, Prism.languages.atom = Prism.languages.xml, Prism.languages.rss = Prism.languages.xml;
+!function (e) {var t = /("|')(?:\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/;e.languages.css = { comment: /\/\*[\s\S]*?\*\//, atrule: { pattern: /@[\w-]+[\s\S]*?(?:;|(?=\s*\{))/, inside: { rule: /^@[\w-]+/, "selector-function-argument": { pattern: /(\bselector\s*\((?!\s*\))\s*)(?:[^()]|\((?:[^()]|\([^()]*\))*\))+?(?=\s*\))/, lookbehind: !0, alias: "selector" }, keyword: { pattern: /(^|[^\w-])(?:and|not|only|or)(?![\w-])/, lookbehind: !0 } } }, url: { pattern: RegExp("\\burl\\((?:" + t.source + "|(?:[^\\\\\r\n()\"']|\\\\[^])*)\\)", "i"), greedy: !0, inside: { function: /^url/i, punctuation: /^\(|\)$/, string: { pattern: RegExp("^" + t.source + "$"), alias: "url" } } }, selector: RegExp("[^{}\\s](?:[^{};\"']|" + t.source + ")*?(?=\\s*\\{)"), string: { pattern: t, greedy: !0 }, property: /[-_a-z\xA0-\uFFFF][-\w\xA0-\uFFFF]*(?=\s*:)/i, important: /!important\b/i, function: /[-a-z0-9]+(?=\()/i, punctuation: /[(){};:,]/ }, e.languages.css.atrule.inside.rest = e.languages.css;var s = e.languages.markup;s && (s.tag.addInlined("style", "css"), e.languages.insertBefore("inside", "attr-value", { "style-attr": { pattern: /(^|["'\s])style\s*=\s*(?:"[^"]*"|'[^']*')/i, lookbehind: !0, inside: { "attr-value": { pattern: /=\s*(?:"[^"]*"|'[^']*'|[^\s'">=]+)/, inside: { style: { pattern: /(["'])[\s\S]+(?=["']$)/, lookbehind: !0, alias: "language-css", inside: e.languages.css }, punctuation: [{ pattern: /^=/, alias: "attr-equals" }, /"|'/] } }, "attr-name": /^style/i } } }, s.tag));}(Prism);
+Prism.languages.clike = { comment: [{ pattern: /(^|[^\\])\/\*[\s\S]*?(?:\*\/|$)/, lookbehind: !0 }, { pattern: /(^|[^\\:])\/\/.*/, lookbehind: !0, greedy: !0 }], string: { pattern: /(["'])(?:\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/, greedy: !0 }, "class-name": { pattern: /(\b(?:class|interface|extends|implements|trait|instanceof|new)\s+|\bcatch\s+\()[\w.\\]+/i, lookbehind: !0, inside: { punctuation: /[.\\]/ } }, keyword: /\b(?:if|else|while|do|for|return|in|instanceof|function|new|try|throw|catch|finally|null|break|continue)\b/, boolean: /\b(?:true|false)\b/, function: /\w+(?=\()/, number: /\b0x[\da-f]+\b|(?:\b\d+\.?\d*|\B\.\d+)(?:e[+-]?\d+)?/i, operator: /[<>]=?|[!=]=?=?|--?|\+\+?|&&?|\|\|?|[?*/~^%]/, punctuation: /[{}[\];(),.:]/ };
+Prism.languages.javascript = Prism.languages.extend("clike", { "class-name": [Prism.languages.clike["class-name"], { pattern: /(^|[^$\w\xA0-\uFFFF])[_$A-Z\xA0-\uFFFF][$\w\xA0-\uFFFF]*(?=\.(?:prototype|constructor))/, lookbehind: !0 }], keyword: [{ pattern: /((?:^|})\s*)(?:catch|finally)\b/, lookbehind: !0 }, { pattern: /(^|[^.]|\.\.\.\s*)\b(?:as|async(?=\s*(?:function\b|\(|[$\w\xA0-\uFFFF]|$))|await|break|case|class|const|continue|debugger|default|delete|do|else|enum|export|extends|for|from|function|(?:get|set)(?=\s*[\[$\w\xA0-\uFFFF])|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|static|super|switch|this|throw|try|typeof|undefined|var|void|while|with|yield)\b/, lookbehind: !0 }], number: /\b(?:(?:0[xX](?:[\dA-Fa-f](?:_[\dA-Fa-f])?)+|0[bB](?:[01](?:_[01])?)+|0[oO](?:[0-7](?:_[0-7])?)+)n?|(?:\d(?:_\d)?)+n|NaN|Infinity)\b|(?:\b(?:\d(?:_\d)?)+\.?(?:\d(?:_\d)?)*|\B\.(?:\d(?:_\d)?)+)(?:[Ee][+-]?(?:\d(?:_\d)?)+)?/, function: /#?[_$a-zA-Z\xA0-\uFFFF][$\w\xA0-\uFFFF]*(?=\s*(?:\.\s*(?:apply|bind|call)\s*)?\()/, operator: /--|\+\+|\*\*=?|=>|&&=?|\|\|=?|[!=]==|<<=?|>>>?=?|[-+*/%&|^!=<>]=?|\.{3}|\?\?=?|\?\.?|[~:]/ }), Prism.languages.javascript["class-name"][0].pattern = /(\b(?:class|interface|extends|implements|instanceof|new)\s+)[\w.\\]+/, Prism.languages.insertBefore("javascript", "keyword", { regex: { pattern: /((?:^|[^$\w\xA0-\uFFFF."'\])\s]|\b(?:return|yield))\s*)\/(?:\[(?:[^\]\\\r\n]|\\.)*]|\\.|[^/\\\[\r\n])+\/[gimyus]{0,6}(?=(?:\s|\/\*(?:[^*]|\*(?!\/))*\*\/)*(?:$|[\r\n,.;:})\]]|\/\/))/, lookbehind: !0, greedy: !0, inside: { "regex-source": { pattern: /^(\/)[\s\S]+(?=\/[a-z]*$)/, lookbehind: !0, alias: "language-regex", inside: Prism.languages.regex }, "regex-flags": /[a-z]+$/, "regex-delimiter": /^\/|\/$/ } }, "function-variable": { pattern: /#?[_$a-zA-Z\xA0-\uFFFF][$\w\xA0-\uFFFF]*(?=\s*[=:]\s*(?:async\s*)?(?:\bfunction\b|(?:\((?:[^()]|\([^()]*\))*\)|[_$a-zA-Z\xA0-\uFFFF][$\w\xA0-\uFFFF]*)\s*=>))/, alias: "function" }, parameter: [{ pattern: /(function(?:\s+[_$A-Za-z\xA0-\uFFFF][$\w\xA0-\uFFFF]*)?\s*\(\s*)(?!\s)(?:[^()]|\([^()]*\))+?(?=\s*\))/, lookbehind: !0, inside: Prism.languages.javascript }, { pattern: /[_$a-z\xA0-\uFFFF][$\w\xA0-\uFFFF]*(?=\s*=>)/i, inside: Prism.languages.javascript }, { pattern: /(\(\s*)(?!\s)(?:[^()]|\([^()]*\))+?(?=\s*\)\s*=>)/, lookbehind: !0, inside: Prism.languages.javascript }, { pattern: /((?:\b|\s|^)(?!(?:as|async|await|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|set|static|super|switch|this|throw|try|typeof|undefined|var|void|while|with|yield)(?![$\w\xA0-\uFFFF]))(?:[_$A-Za-z\xA0-\uFFFF][$\w\xA0-\uFFFF]*\s*)\(\s*|\]\s*\(\s*)(?!\s)(?:[^()]|\([^()]*\))+?(?=\s*\)\s*\{)/, lookbehind: !0, inside: Prism.languages.javascript }], constant: /\b[A-Z](?:[A-Z_]|\dx?)*\b/ }), Prism.languages.insertBefore("javascript", "string", { "template-string": { pattern: /`(?:\\[\s\S]|\${(?:[^{}]|{(?:[^{}]|{[^}]*})*})+}|(?!\${)[^\\`])*`/, greedy: !0, inside: { "template-punctuation": { pattern: /^`|`$/, alias: "string" }, interpolation: { pattern: /((?:^|[^\\])(?:\\{2})*)\${(?:[^{}]|{(?:[^{}]|{[^}]*})*})+}/, lookbehind: !0, inside: { "interpolation-punctuation": { pattern: /^\${|}$/, alias: "punctuation" }, rest: Prism.languages.javascript } }, string: /[\s\S]+/ } } }), Prism.languages.markup && Prism.languages.markup.tag.addInlined("script", "javascript"), Prism.languages.js = Prism.languages.javascript;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../../../../Program Files/HBuilderX/plugins/uniapp-cli/node_modules/webpack/buildin/global.js */ 3)))
+
+/***/ }),
+
+/***/ 93:
+/*!********************************************************************************************!*\
+  !*** D:/Users/Ryan/Documents/HBuilderProjects/team/components/mp-html/highlight/config.js ***!
+  \********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = {
+  copyByLongPress: false,
+  // 是否需要长按代码块时显示复制代码内容菜单
+  showLanguageName: false,
+  // 是否在代码块右上角显示语言的名称
+  showLineNumber: false // 是否显示行号
+};
+
+/***/ }),
+
+/***/ 94:
+/*!**********************************************************************************!*\
+  !*** D:/Users/Ryan/Documents/HBuilderProjects/team/components/mp-html/parser.js ***!
+  \**********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {
+
+/**
+               * @fileoverview html 解析器
+               */
+// 配置
+var config = {
+  // 信任的标签（保持标签名不变）
+  trustTags: makeMap('a,abbr,ad,audio,b,blockquote,br,code,col,colgroup,dd,del,dl,dt,div,em,fieldset,h1,h2,h3,h4,h5,h6,hr,i,img,ins,label,legend,li,ol,p,q,ruby,rt,source,span,strong,sub,sup,table,tbody,td,tfoot,th,thead,tr,title,ul,video'),
+  // 块级标签（转为 div，其他的非信任标签转为 span）
+  blockTags: makeMap('address,article,aside,body,caption,center,cite,footer,header,html,nav,pre,section'),
+  // 要移除的标签
+  ignoreTags: makeMap('area,base,canvas,embed,frame,head,iframe,input,link,map,meta,param,rp,script,source,style,textarea,title,track,wbr'),
+  // 自闭合的标签
+  voidTags: makeMap('area,base,br,col,circle,ellipse,embed,frame,hr,img,input,line,link,meta,param,path,polygon,rect,source,track,use,wbr'),
+  // html 实体
+  entities: {
+    lt: '<',
+    gt: '>',
+    quot: '"',
+    apos: "'",
+    ensp: "\u2002",
+    emsp: "\u2003",
+    nbsp: '\xA0',
+    semi: ';',
+    ndash: '–',
+    mdash: '—',
+    middot: '·',
+    lsquo: '‘',
+    rsquo: '’',
+    ldquo: '“',
+    rdquo: '”',
+    bull: '•',
+    hellip: '…' },
+
+  // 默认的标签样式
+  tagStyle: {
+
+    address: 'font-style:italic',
+    big: 'display:inline;font-size:1.2em',
+    caption: 'display:table-caption;text-align:center',
+    center: 'text-align:center',
+    cite: 'font-style:italic',
+    dd: 'margin-left:40px',
+    mark: 'background-color:yellow',
+    pre: 'font-family:monospace;white-space:pre',
+    s: 'text-decoration:line-through',
+    small: 'display:inline;font-size:0.8em',
+    u: 'text-decoration:underline' } };
+
+
+
+var windowWidth = uni.getSystemInfoSync().windowWidth;
+var blankChar = makeMap(' ,\r,\n,\t,\f');
+var idIndex = 0;
+
+
+
+
+
+
+
+
+
+
+/**
+                  * @description 创建 map
+                  * @param {String} str 逗号分隔
+                  */
+
+function makeMap(str) {
+  var map = Object.create(null),
+  list = str.split(',');
+
+  for (var i = list.length; i--;) {
+    map[list[i]] = true;
+  }
+
+  return map;
+}
+/**
+   * @description 解码 html 实体
+   * @param {String} str 要解码的字符串
+   * @param {Boolean} amp 要不要解码 &amp;
+   * @returns {String} 解码后的字符串
+   */
+
+
+function decodeEntity(str, amp) {
+  var i = str.indexOf('&');
+
+  while (i != -1) {
+    var j = str.indexOf(';', i + 3),
+    code = void 0;
+    if (j == -1) break;
+
+    if (str[i + 1] == '#') {
+      // &#123; 形式的实体
+      code = parseInt((str[i + 2] == 'x' ? '0' : '') + str.substring(i + 2, j));
+      if (!isNaN(code)) str = str.substr(0, i) + String.fromCharCode(code) + str.substr(j + 1);
+    } else {
+      // &nbsp; 形式的实体
+      code = str.substring(i + 1, j);
+      if (config.entities[code] || code == 'amp' && amp) str = str.substr(0, i) + (config.entities[code] || '&') + str.substr(j + 1);
+    }
+
+    i = str.indexOf('&', i + 1);
+  }
+
+  return str;
+}
+/**
+   * @description html 解析器
+   * @param {Object} vm 组件实例
+   */
+
+
+function parser(vm) {
+  this.options = vm || {};
+  this.tagStyle = Object.assign(config.tagStyle, this.options.tagStyle);
+  this.imgList = vm.imgList || [];
+  this.plugins = vm.plugins || [];
+  this.attrs = Object.create(null);
+  this.stack = [];
+  this.nodes = [];
+}
+/**
+   * @description 执行解析
+   * @param {String} content 要解析的文本
+   */
+
+
+parser.prototype.parse = function (content) {
+  // 插件处理
+  for (var i = this.plugins.length; i--;) {
+    if (this.plugins[i].onUpdate) content = this.plugins[i].onUpdate(content, config) || content;
+  }
+
+  new lexer(this).parse(content); // 出栈未闭合的标签
+
+  while (this.stack.length) {
+    this.popNode();
+  }
+
+  return this.nodes;
+};
+/**
+    * @description 将标签暴露出来（不被 rich-text 包含）
+    */
+
+
+parser.prototype.expose = function () {
+  if (this.options.editable) return;
+
+  for (var i = this.stack.length; i--;) {
+    var item = this.stack[i];
+    if (item.name == 'a' || item.c) return;
+    item.c = 1;
+  }
+
+};
+/**
+    * @description 处理插件
+    * @param {Object} node 要处理的标签
+    * @returns {Boolean} 是否要移除此标签
+    */
+
+
+parser.prototype.hook = function (node) {
+  for (var i = this.plugins.length; i--;) {
+    if (this.plugins[i].onParse && this.plugins[i].onParse(node, this) == false) return false;
+  }
+
+  return true;
+};
+/**
+    * @description 将链接拼接上主域名
+    * @param {String} url 需要拼接的链接
+    * @returns {String} 拼接后的链接
+    */
+
+
+parser.prototype.getUrl = function (url) {
+  var domain = this.options.domain;
+
+  if (url[0] == '/') {
+    // // 开头的补充协议名
+    if (url[1] == '/') url = (domain ? domain.split('://')[0] : 'http') + ':' + url; // 否则补充整个域名
+    else if (domain) url = domain + url;
+  } else if (domain && !url.includes('data:') && !url.includes('://')) url = domain + '/' + url;
+
+  return url;
+};
+/**
+    * @description 解析样式表
+    * @param {Object} node 标签
+    * @returns {Object} 
+    */
+
+
+parser.prototype.parseStyle = function (node) {
+  var attrs = node.attrs,
+  list = (this.tagStyle[node.name] || '').split(';').concat((attrs.style || '').split(';')),
+  styleObj = {},
+  tmp = '';
+
+  if (attrs.id) {
+    // 暴露锚点
+    if (this.options.useAnchor) this.expose();else if (node.name != 'img' && node.name != 'a' && node.name != 'video' && node.name != 'audio') attrs.id = void 0;
+  } // 转换 width 和 height 属性
+
+
+  if (attrs.width) {
+    styleObj.width = parseFloat(attrs.width) + (attrs.width.includes('%') ? '%' : 'px');
+    attrs.width = void 0;
+  }
+
+  if (attrs.height) {
+    styleObj.height = parseFloat(attrs.height) + (attrs.height.includes('%') ? '%' : 'px');
+    attrs.height = void 0;
+  }
+
+  for (var i = 0, len = list.length; i < len; i++) {
+    var info = list[i].split(':');
+    if (info.length < 2) continue;
+    var key = info.shift().trim().toLowerCase(),
+    value = info.join(':').trim(); // 兼容性的 css 不压缩
+
+    if (value[0] == '-' && value.lastIndexOf('-') > 0 || value.includes('safe')) tmp += ";".concat(key, ":").concat(value); // 重复的样式进行覆盖
+    else if (!styleObj[key] || value.includes('import') || !styleObj[key].includes('import')) {
+        // 填充链接
+        if (value.includes('url')) {
+          var j = value.indexOf('(') + 1;
+
+          if (j) {
+            while (value[j] == '"' || value[j] == "'" || blankChar[value[j]]) {
+              j++;
+            }
+
+            value = value.substr(0, j) + this.getUrl(value.substr(j));
+          }
+        } // 转换 rpx（rich-text 内部不支持 rpx）
+        else if (value.includes('rpx')) value = value.replace(/[0-9.]+\s*rpx/g, function ($) {
+            return parseFloat($) * windowWidth / 750 + 'px';
+          });
+
+        styleObj[key] = value;
+      }
+  }
+
+  node.attrs.style = tmp;
+  return styleObj;
+};
+/**
+    * @description 解析到标签名
+    * @param {String} name 标签名
+    * @private
+    */
+
+
+parser.prototype.onTagName = function (name) {
+  this.tagName = this.xml ? name : name.toLowerCase();
+  if (this.tagName == 'svg') this.xml = true; // svg 标签内大小写敏感
+};
+/**
+    * @description 解析到属性名
+    * @param {String} name 属性名
+    * @private
+    */
+
+
+parser.prototype.onAttrName = function (name) {
+  name = this.xml ? name : name.toLowerCase();
+
+  if (name.substr(0, 5) == 'data-') {
+    // data-src 自动转为 src
+    if (name == 'data-src' && !this.attrs.src) this.attrName = 'src'; // a 和 img 标签保留 data- 的属性，可以在 imgtap 和 linktap 事件中使用
+    else if (this.tagName == 'img' || this.tagName == 'a') this.attrName = name; // 剩余的移除以减小大小
+      else this.attrName = void 0;
+  } else {
+    this.attrName = name;
+    this.attrs[name] = 'T'; // boolean 型属性缺省设置
+  }
+};
+/**
+    * @description 解析到属性值
+    * @param {String} val 属性值
+    * @private
+    */
+
+
+parser.prototype.onAttrVal = function (val) {
+  var name = this.attrName || ''; // 部分属性进行实体解码
+
+  if (name == 'style' || name == 'href') this.attrs[name] = decodeEntity(val, true); // 拼接主域名
+  else if (name.includes('src')) this.attrs[name] = this.getUrl(decodeEntity(val, true));else if (name) this.attrs[name] = val;
+};
+/**
+    * @description 解析到标签开始
+    * @param {Boolean} selfClose 是否有自闭合标识 />
+    * @private
+    */
+
+
+parser.prototype.onOpenTag = function (selfClose) {
+  // 拼装 node
+  var node = Object.create(null);
+  node.name = this.tagName;
+  node.attrs = this.attrs;
+  this.attrs = Object.create(null);
+  var attrs = node.attrs,
+  parent = this.stack[this.stack.length - 1],
+  siblings = parent ? parent.children : this.nodes,
+  close = this.xml ? selfClose : config.voidTags[node.name]; // 转换 embed 标签
+
+  if (node.name == 'embed') {
+
+    var src = attrs.src || ''; // 按照后缀名和 type 将 embed 转为 video 或 audio
+
+    if (src.includes('.mp4') || src.includes('.3gp') || src.includes('.m3u8') || (attrs.type || '').includes('video')) node.name = 'video';else if (src.includes('.mp3') || src.includes('.wav') || src.includes('.aac') || src.includes('.m4a') || (attrs.type || '').includes('audio')) node.name = 'audio';
+    if (attrs.autostart) attrs.autoplay = 'T';
+    attrs.controls = 'T';
+
+
+
+  }
+  // 处理音视频
+
+
+  if (node.name == 'video' || node.name == 'audio') {
+    // 设置 id 以便获取 context
+    if (node.name == 'video' && !attrs.id) attrs.id = 'v' + idIndex++; // 没有设置 controls 也没有设置 autoplay 的自动设置 controls
+
+    if (!attrs.controls && !attrs.autoplay) attrs.controls = 'T'; // 用数组存储所有可用的 source
+
+    node.src = [];
+
+    if (attrs.src) {
+      node.src.push(attrs.src);
+      attrs.src = void 0;
+    }
+
+    this.expose();
+  }
+  // 处理自闭合标签
+
+
+  if (close) {
+    if (!this.hook(node) || config.ignoreTags[node.name]) {
+      // 通过 base 标签设置主域名
+      if (node.name == 'base' && !this.options.domain) this.options.domain = attrs.href;
+      // 设置 source 标签（仅父节点为 video 或 audio 时有效）
+      else if (node.name == 'source' && parent && (parent.name == 'video' || parent.name == 'audio') && attrs.src) parent.src.push(attrs.src);
+
+      return;
+    } // 解析 style
+
+
+    var styleObj = this.parseStyle(node); // 处理图片
+
+    if (node.name == 'img') {
+      if (attrs.src) {
+        // 标记 webp
+        if (attrs.src.includes('webp')) node.webp = 'T'; // data url 图片如果没有设置 original-src 默认为不可预览的小图片
+
+        if (attrs.src.includes('data:') && !attrs['original-src']) attrs.ignore = 'T';
+
+        if (!attrs.ignore || node.webp || attrs.src.includes('cloud://')) {
+          for (var i = this.stack.length; i--;) {
+            var item = this.stack[i];
+
+            if (item.name == 'a') {
+              node.a = item.attrs;
+              break;
+            }
+
+
+            var style = item.attrs.style || '';
+
+            if (style.includes('flex:') && !style.includes('flex:0') && !style.includes('flex: 0') && (!styleObj.width || !styleObj.width.includes('%'))) {
+              styleObj.width = '100% !important';
+              styleObj.height = '';
+
+              for (var j = i + 1; j < this.stack.length; j++) {
+                this.stack[j].attrs.style = (this.stack[j].attrs.style || '').replace('inline-', '');
+              }
+            } else if (style.includes('flex') && styleObj.width == '100%') {
+              for (var _j = i + 1; _j < this.stack.length; _j++) {
+                var _style = this.stack[_j].attrs.style || '';
+
+                if (!_style.includes(';width') && !_style.includes(' width') && _style.indexOf('width') != 0) {
+                  styleObj.width = '';
+                  break;
+                }
+              }
+            } else if (style.includes('inline-block')) {
+              if (styleObj.width && styleObj.width[styleObj.width.length - 1] == '%') {
+                item.attrs.style += ';max-width:' + styleObj.width;
+                styleObj.width = '';
+              } else item.attrs.style += ';max-width:100%';
+            }
+
+
+            item.c = 1;
+          }
+
+          attrs.i = this.imgList.length.toString();
+
+          var _src = attrs['original-src'] || attrs.src;
+
+
+          if (this.imgList.includes(_src)) {
+            // 如果有重复的链接则对域名进行随机大小写变换避免预览时错位
+            var _i = _src.indexOf('://');
+
+            if (_i != -1) {
+              _i += 3;
+
+              var newSrc = _src.substr(0, _i);
+
+              for (; _i < _src.length; _i++) {
+                if (_src[_i] == '/') break;
+                newSrc += Math.random() > 0.5 ? _src[_i].toUpperCase() : _src[_i];
+              }
+
+              newSrc += _src.substr(_i);
+              _src = newSrc;
+            }
+          }
+
+
+          this.imgList.push(_src);
+
+
+
+
+
+
+        }
+      }
+
+      if (styleObj.display == 'inline') styleObj.display = '';
+
+      if (attrs.ignore) {
+        styleObj['max-width'] = styleObj['max-width'] || '100%';
+        attrs.style += ';-webkit-touch-callout:none';
+      }
+      // 设置的宽度超出屏幕，为避免变形，高度转为自动
+
+
+      if (parseInt(styleObj.width) > windowWidth) styleObj.height = void 0; // 记录是否设置了宽高
+
+      if (styleObj.width) {
+        if (styleObj.width.includes('auto')) styleObj.width = '';else {
+          node.w = 'T';
+          if (styleObj.height && !styleObj.height.includes('auto')) node.h = 'T';
+        }
+      }
+    } else if (node.name == 'svg') {
+      siblings.push(node);
+      this.stack.push(node);
+      this.popNode();
+      return;
+    }
+
+    for (var key in styleObj) {
+      if (styleObj[key]) attrs.style += ";".concat(key, ":").concat(styleObj[key].replace(' !important', ''));
+    }
+
+    attrs.style = attrs.style.substr(1) || void 0;
+  } else {
+    if (node.name == 'pre' || (attrs.style || '').includes('white-space') && attrs.style.includes('pre')) this.pre = node.pre = true;
+    node.children = [];
+    this.stack.push(node);
+  } // 加入节点树
+
+
+  siblings.push(node);
+};
+/**
+    * @description 解析到标签结束
+    * @param {String} name 标签名
+    * @private
+    */
+
+
+parser.prototype.onCloseTag = function (name) {
+  // 依次出栈到匹配为止
+  name = this.xml ? name : name.toLowerCase();
+  var i;
+
+  for (i = this.stack.length; i--;) {
+    if (this.stack[i].name == name) break;
+  }
+
+  if (i != -1) {
+    while (this.stack.length > i) {
+      this.popNode();
+    }
+  } else if (name == 'p' || name == 'br') {
+    var siblings = this.stack.length ? this.stack[this.stack.length - 1].children : this.nodes;
+    siblings.push({
+      name: name,
+      attrs: {} });
+
+  }
+};
+/**
+    * @description 处理标签出栈
+    * @private
+    */
+
+
+parser.prototype.popNode = function () {
+  var editable = this.options.editable;
+  var node = this.stack.pop(),
+  attrs = node.attrs,
+  children = node.children,
+  parent = this.stack[this.stack.length - 1],
+  siblings = parent ? parent.children : this.nodes;
+
+  if (!this.hook(node) || config.ignoreTags[node.name]) {
+    // 获取标题
+    if (node.name == 'title' && children.length && children[0].type == 'text' && this.options.setTitle) uni.setNavigationBarTitle({
+      title: children[0].text });
+
+    siblings.pop();
+    return;
+  }
+
+  if (node.pre) {
+    // 是否合并空白符标识
+    node.pre = this.pre = void 0;
+
+    for (var i = this.stack.length; i--;) {
+      if (this.stack[i].pre) this.pre = true;
+    }
+  }
+
+  var styleObj = {}; // 转换 svg
+
+  if (node.name == 'svg') {
+
+    var src = '',
+    style = attrs.style;
+    attrs.style = '';
+    attrs.xmlns = 'http://www.w3.org/2000/svg';
+
+    (function traversal(node) {
+      src += '<' + node.name;
+
+      for (var item in node.attrs) {
+        var val = node.attrs[item];
+
+        if (val) {
+          if (item == 'viewbox') item = 'viewBox';
+          src += " ".concat(item, "=\"").concat(val, "\"");
+        }
+      }
+
+      if (!node.children) src += '/>';else {
+        src += '>';
+
+        for (var _i2 = 0; _i2 < node.children.length; _i2++) {
+          traversal(node.children[_i2]);
+        }
+
+        src += '</' + node.name + '>';
+      }
+    })(node);
+
+    node.name = 'img';
+    node.attrs = {
+      src: 'data:image/svg+xml;utf8,' + src.replace(/#/g, '%23'),
+      style: style,
+      ignore: 'T' };
+
+    node.children = void 0;
+
+    this.xml = false;
+    return;
+  }
+  // 转换 align 属性
+
+
+  if (attrs.align) {
+    if (node.name == 'table') {
+      if (attrs.align == 'center') styleObj['margin-inline-start'] = styleObj['margin-inline-end'] = 'auto';else styleObj["float"] = attrs.align;
+    } else styleObj['text-align'] = attrs.align;
+
+    attrs.align = void 0;
+  } // 转换 font 标签的属性
+
+
+  if (node.name == 'font') {
+    if (attrs.color) {
+      styleObj.color = attrs.color;
+      attrs.color = void 0;
+    }
+
+    if (attrs.face) {
+      styleObj['font-family'] = attrs.face;
+      attrs.face = void 0;
+    }
+
+    if (attrs.size) {
+      var size = parseInt(attrs.size);
+
+      if (!isNaN(size)) {
+        if (size < 1) size = 1;else if (size > 7) size = 7;
+        styleObj['font-size'] = ['xx-small', 'x-small', 'small', 'medium', 'large', 'x-large', 'xx-large'][size - 1];
+      }
+
+      attrs.size = void 0;
+    }
+  }
+  // 一些编辑器的自带 class
+
+
+  if ((attrs["class"] || '').includes('align-center')) styleObj['text-align'] = 'center';
+  Object.assign(styleObj, this.parseStyle(node));
+
+  if (parseInt(styleObj.width) > windowWidth) {
+    styleObj['max-width'] = '100%';
+    styleObj['box-sizing'] = 'border-box';
+  }
+
+
+  if (config.blockTags[node.name]) {
+    if (!editable) node.name = 'div';
+  } // 未知标签转为 span，避免无法显示
+  else if (!config.trustTags[node.name] && !this.xml) node.name = 'span';
+
+  if (node.name == 'a' || node.name == 'ad')
+
+  this.expose();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // 列表处理
+  else if ((node.name == 'ul' || node.name == 'ol') && (node.c || editable)) {
+      var types = {
+        a: 'lower-alpha',
+        A: 'upper-alpha',
+        i: 'lower-roman',
+        I: 'upper-roman' };
+
+
+      if (types[attrs.type]) {
+        attrs.style += ';list-style-type:' + types[attrs.type];
+        attrs.type = void 0;
+      }
+
+      for (var _i4 = children.length; _i4--;) {
+        if (children[_i4].name == 'li') children[_i4].c = 1;
+      }
+    } // 表格处理
+    else if (node.name == 'table') {
+        // cellpadding、cellspacing、border 这几个常用表格属性需要通过转换实现
+        var padding = parseFloat(attrs.cellpadding),
+        spacing = parseFloat(attrs.cellspacing),
+        border = parseFloat(attrs.border);
+
+        if (node.c || editable) {
+          // padding 和 spacing 默认 2
+          if (isNaN(padding)) padding = 2;
+          if (isNaN(spacing)) spacing = 2;
+        }
+
+        if (border) attrs.style += ';border:' + border + 'px solid gray';
+
+        if (node.flag && (node.c || editable)) {
+          // 有 colspan 或 rowspan 且含有链接的表格通过 grid 布局实现
+          styleObj.display = 'grid';
+
+          if (spacing) {
+            styleObj['grid-gap'] = spacing + 'px';
+            styleObj.padding = spacing + 'px';
+          } // 无间隔的情况下避免边框重叠
+          else if (border) attrs.style += ';border-left:0;border-top:0';
+
+          var width = [],
+          // 表格的列宽
+          trList = [],
+          // tr 列表
+          cells = [],
+          // 保存新的单元格
+          map = {}; // 被合并单元格占用的格子
+
+          (function traversal(nodes) {
+            for (var _i5 = 0; _i5 < nodes.length; _i5++) {
+              if (nodes[_i5].name == 'tr') trList.push(nodes[_i5]);else traversal(nodes[_i5].children || []);
+            }
+          })(children);
+
+          for (var row = 1; row <= trList.length; row++) {
+            var col = 1;
+
+            for (var j = 0; j < trList[row - 1].children.length; j++, col++) {
+              var td = trList[row - 1].children[j];
+
+              if (td.name == 'td' || td.name == 'th') {
+                // 这个格子被上面的单元格占用，则列号++
+                while (map[row + '.' + col]) {
+                  col++;
+                }
+
+                if (editable) td.r = row;
+
+                var _style2 = td.attrs.style || '',
+                start = _style2.indexOf('width') ? _style2.indexOf(';width') : 0; // 提取出 td 的宽度
+
+
+                if (start != -1) {
+                  var end = _style2.indexOf(';', start + 6);
+
+                  if (end == -1) end = _style2.length;
+                  if (!td.attrs.colspan) width[col] = _style2.substring(start ? start + 7 : 6, end);
+                  _style2 = _style2.substr(0, start) + _style2.substr(end);
+                }
+
+                _style2 += (border ? ";border:".concat(border, "px solid gray") + (spacing ? '' : ';border-right:0;border-bottom:0') : '') + (padding ? ";padding:".concat(padding, "px") : ''); // 处理列合并
+
+                if (td.attrs.colspan) {
+                  _style2 += ";grid-column-start:".concat(col, ";grid-column-end:").concat(col + parseInt(td.attrs.colspan));
+                  if (!td.attrs.rowspan) _style2 += ";grid-row-start:".concat(row, ";grid-row-end:").concat(row + 1);
+                  col += parseInt(td.attrs.colspan) - 1;
+                } // 处理行合并
+
+
+                if (td.attrs.rowspan) {
+                  _style2 += ";grid-row-start:".concat(row, ";grid-row-end:").concat(row + parseInt(td.attrs.rowspan));
+                  if (!td.attrs.colspan) _style2 += ";grid-column-start:".concat(col, ";grid-column-end:").concat(col + 1); // 记录下方单元格被占用
+
+                  for (var k = 1; k < td.attrs.rowspan; k++) {
+                    map[row + k + '.' + col] = 1;
+                  }
+                }
+
+                if (_style2) td.attrs.style = _style2;
+                cells.push(td);
+              }
+            }
+
+            if (row == 1) {
+              var temp = '';
+
+              for (var _i6 = 1; _i6 < col; _i6++) {
+                temp += (width[_i6] ? width[_i6] : 'auto') + ' ';
+              }
+
+              styleObj['grid-template-columns'] = temp;
+            }
+          }
+
+          node.children = cells;
+        } else {
+          // 没有使用合并单元格的表格通过 table 布局实现
+          if (node.c || editable) styleObj.display = 'table';
+          if (!isNaN(spacing)) styleObj['border-spacing'] = spacing + 'px';
+
+          if (border || padding) {
+            // 遍历
+            (function traversal(nodes) {
+              for (var _i7 = 0; _i7 < nodes.length; _i7++) {
+                var _td = nodes[_i7];
+
+                if (_td.name == 'th' || _td.name == 'td') {
+                  if (border) _td.attrs.style = "border:".concat(border, "px solid gray;").concat(_td.attrs.style || '');
+                  if (padding) _td.attrs.style = "padding:".concat(padding, "px;").concat(_td.attrs.style || '');
+                } else if (_td.children) traversal(_td.children);
+              }
+            })(children);
+          }
+        } // 给表格添加一个单独的横向滚动层
+
+
+        if (this.options.scrollTable && !(attrs.style || '').includes('inline')) {
+          var table = Object.assign({}, node);
+          node.name = 'div';
+          node.attrs = {
+            style: 'overflow:auto' };
+
+          node.children = [table];
+          attrs = table.attrs;
+        }
+      } else if ((node.name == 'td' || node.name == 'th') && (attrs.colspan || attrs.rowspan)) {
+        for (var _i8 = this.stack.length; _i8--;) {
+          if (this.stack[_i8].name == 'table') {
+            this.stack[_i8].flag = 1; // 指示含有合并单元格
+
+            break;
+          }
+        }
+      } // 转换 ruby
+      else if (node.name == 'ruby') {
+          node.name = 'span';
+
+          for (var _i9 = 0; _i9 < children.length - 1; _i9++) {
+            if (children[_i9].type == 'text' && children[_i9 + 1].name == 'rt') {
+              children[_i9] = {
+                name: 'div',
+                attrs: {
+                  style: 'display:inline-block' },
+
+                children: [{
+                  name: 'div',
+                  attrs: {
+                    style: 'font-size:50%;text-align:start' },
+
+                  children: children[_i9 + 1].children },
+                children[_i9]] };
+
+              children.splice(_i9 + 1, 1);
+            }
+          }
+        } else if (!editable && node.c) {
+          node.c = 2;
+
+          for (var _i10 = node.children.length; _i10--;) {
+            if (!node.children[_i10].c || node.children[_i10].name == 'table') node.c = 1;
+          }
+        }
+  if ((styleObj.display || '').includes('flex') && !(node.c || editable)) for (var _i11 = children.length; _i11--;) {
+    var _item = children[_i11];
+
+    if (_item.f) {
+      _item.attrs.style = (_item.attrs.style || '') + _item.f;
+      _item.f = void 0;
+    }
+  } // flex 布局时部分样式需要提取到 rich-text 外层
+
+  var flex = parent && (parent.attrs.style || '').includes('flex')
+  // 检查基础库版本 virtualHost 是否可用
+  && !((node.c || editable) && wx.getNFCAdapter);
+
+
+
+  if (flex) node.f = ';max-width:100%';
+
+  for (var key in styleObj) {
+    if (styleObj[key]) {
+      var val = ";".concat(key, ":").concat(styleObj[key].replace(' !important', ''));
+
+      if (flex && (key.includes('flex') && key != 'flex-direction' || key == 'align-self' || styleObj[key][0] == '-' || key == 'width' && val.includes('%'))) {
+        node.f += val;
+        if (key == 'width') attrs.style += ';width:100%';
+      } else
+      attrs.style += val;
+    }
+  }
+
+  attrs.style = attrs.style.substr(1) || void 0;
+};
+/**
+    * @description 解析到文本
+    * @param {String} text 文本内容
+    */
+
+
+parser.prototype.onText = function (text) {
+  if (!this.pre) {
+    // 合并空白符
+    var trim = '',
+    flag;
+
+    for (var i = 0, len = text.length; i < len; i++) {
+      if (!blankChar[text[i]]) trim += text[i];else {
+        if (trim[trim.length - 1] != ' ') trim += ' ';
+        if (text[i] == '\n' && !flag) flag = true;
+      }
+    } // 去除含有换行符的空串
+
+
+    if (trim == ' ' && flag) return;
+    text = trim;
+  }
+
+  var node = Object.create(null);
+  node.type = 'text';
+  node.text = decodeEntity(text);
+
+  if (this.hook(node)) {
+    var siblings = this.stack.length ? this.stack[this.stack.length - 1].children : this.nodes;
+    siblings.push(node);
+  }
+};
+/**
+    * @description html 词法分析器
+    * @param {Object} handler 高层处理器
+    */
+
+
+function lexer(handler) {
+  this.handler = handler;
+}
+/**
+   * @description 执行解析
+   * @param {String} content 要解析的文本
+   */
+
+
+lexer.prototype.parse = function (content) {
+  this.content = content || '';
+  this.i = 0; // 标记解析位置
+
+  this.start = 0; // 标记一个单词的开始位置
+
+  this.state = this.text; // 当前状态
+
+  for (var len = this.content.length; this.i != -1 && this.i < len;) {
+    this.state();
+  }
+};
+/**
+    * @description 检查标签是否闭合
+    * @param {String} method 如果闭合要进行的操作
+    * @returns {Boolean} 是否闭合
+    * @private
+    */
+
+
+lexer.prototype.checkClose = function (method) {
+  var selfClose = this.content[this.i] == '/';
+
+  if (this.content[this.i] == '>' || selfClose && this.content[this.i + 1] == '>') {
+    if (method) this.handler[method](this.content.substring(this.start, this.i));
+    this.i += selfClose ? 2 : 1;
+    this.start = this.i;
+    this.handler.onOpenTag(selfClose);
+
+    if (this.handler.tagName == 'script') {
+      this.i = this.content.indexOf('</', this.i);
+
+      if (this.i != -1) {
+        this.i += 2;
+        this.start = this.i;
+      }
+
+      this.state = this.endTag;
+    } else this.state = this.text;
+
+    return true;
+  }
+
+  return false;
+};
+/**
+    * @description 文本状态
+    * @private
+    */
+
+
+lexer.prototype.text = function () {
+  this.i = this.content.indexOf('<', this.i); // 查找最近的标签
+
+  if (this.i == -1) {
+    // 没有标签了
+    if (this.start < this.content.length) this.handler.onText(this.content.substring(this.start, this.content.length));
+    return;
+  }
+
+  var c = this.content[this.i + 1];
+
+  if (c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z') {
+    // 标签开头
+    if (this.start != this.i) this.handler.onText(this.content.substring(this.start, this.i));
+    this.start = ++this.i;
+    this.state = this.tagName;
+  } else if (c == '/' || c == '!' || c == '?') {
+    if (this.start != this.i) this.handler.onText(this.content.substring(this.start, this.i));
+    var next = this.content[this.i + 2];
+
+    if (c == '/' && (next >= 'a' && next <= 'z' || next >= 'A' && next <= 'Z')) {
+      // 标签结尾
+      this.i += 2;
+      this.start = this.i;
+      return this.state = this.endTag;
+    } // 处理注释
+
+
+    var end = '-->';
+    if (c != '!' || this.content[this.i + 2] != '-' || this.content[this.i + 3] != '-') end = '>';
+    this.i = this.content.indexOf(end, this.i);
+
+    if (this.i != -1) {
+      this.i += end.length;
+      this.start = this.i;
+    }
+  } else this.i++;
+};
+/**
+    * @description 标签名状态
+    * @private
+    */
+
+
+lexer.prototype.tagName = function () {
+  if (blankChar[this.content[this.i]]) {
+    // 解析到标签名
+    this.handler.onTagName(this.content.substring(this.start, this.i));
+
+    while (blankChar[this.content[++this.i]]) {
+      ;
+    }
+
+    if (this.i < this.content.length && !this.checkClose()) {
+      this.start = this.i;
+      this.state = this.attrName;
+    }
+  } else if (!this.checkClose('onTagName')) this.i++;
+};
+/**
+    * @description 属性名状态
+    * @private
+    */
+
+
+lexer.prototype.attrName = function () {
+  var c = this.content[this.i];
+
+  if (blankChar[c] || c == '=') {
+    // 解析到属性名
+    this.handler.onAttrName(this.content.substring(this.start, this.i));
+    var needVal = c == '=',
+    len = this.content.length;
+
+    while (++this.i < len) {
+      c = this.content[this.i];
+
+      if (!blankChar[c]) {
+        if (this.checkClose()) return;
+
+        if (needVal) {
+          // 等号后遇到第一个非空字符
+          this.start = this.i;
+          return this.state = this.attrVal;
+        }
+
+        if (this.content[this.i] == '=') needVal = true;else {
+          this.start = this.i;
+          return this.state = this.attrName;
+        }
+      }
+    }
+  } else if (!this.checkClose('onAttrName')) this.i++;
+};
+/**
+    * @description 属性值状态
+    * @private
+    */
+
+
+lexer.prototype.attrVal = function () {
+  var c = this.content[this.i],
+  len = this.content.length; // 有冒号的属性
+
+  if (c == '"' || c == "'") {
+    this.start = ++this.i;
+    this.i = this.content.indexOf(c, this.i);
+    if (this.i == -1) return;
+    this.handler.onAttrVal(this.content.substring(this.start, this.i));
+  } // 没有冒号的属性
+  else for (; this.i < len; this.i++) {
+      if (blankChar[this.content[this.i]]) {
+        this.handler.onAttrVal(this.content.substring(this.start, this.i));
+        break;
+      } else if (this.checkClose('onAttrVal')) return;
+    }
+
+  while (blankChar[this.content[++this.i]]) {
+    ;
+  }
+
+  if (this.i < len && !this.checkClose()) {
+    this.start = this.i;
+    this.state = this.attrName;
+  }
+};
+/**
+    * @description 结束标签状态
+    * @returns {String} 结束的标签名
+    * @private
+    */
+
+
+lexer.prototype.endTag = function () {
+  var c = this.content[this.i];
+
+  if (blankChar[c] || c == '>' || c == '/') {
+    this.handler.onCloseTag(this.content.substring(this.start, this.i));
+
+    if (c != '>') {
+      this.i = this.content.indexOf('>', this.i);
+      if (this.i == -1) return;
+    }
+
+    this.start = ++this.i;
+    this.state = this.text;
+  } else this.i++;
+};
+
+module.exports = parser;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+
+/***/ 95:
+/*!******************************************************************************************!*\
+  !*** D:/Users/Ryan/Documents/HBuilderProjects/team/components/mp-html/editable/index.js ***!
+  \******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/**
+               * @fileoverview editable 插件
+               */
+var config = __webpack_require__(/*! ./config */ 96);
+
+function editable(vm) {
+  var _this = this;
+
+  this.vm = vm;
+  this.editHistory = []; // 历史记录
+
+  this.editI = -1; // 历史记录指针
+
+  vm._mask = []; // 蒙版被点击时进行的操作
+
+  vm._setData = function (path, val) {
+    var paths = path.split('.'),
+    target = vm;
+
+    for (var i = 0; i < paths.length - 1; i++) {
+      target = target[paths[i]];
+    }
+
+    vm.$set(target, paths.pop(), val);
+  };
+  /**
+      * @description 移动历史记录指针
+      * @param {Number} num 移动距离
+      */
+
+
+  var move = function move(num) {
+    setTimeout(function () {
+      var item = _this.editHistory[_this.editI + num];
+
+      if (item) {
+        _this.editI += num;
+
+        vm._setData(item.key, item.value);
+      }
+    }, 200);
+  };
+
+  vm.undo = function () {
+    return move(-1);
+  }; // 撤销
+
+
+  vm.redo = function () {
+    return move(1);
+  }; // 重做
+
+  /**
+   * @description 更新记录
+   * @param {String} path 更新内容路径
+   * @param {*} oldVal 旧值
+   * @param {*} newVal 新值
+   * @param {Boolean} set 是否更新到视图
+   * @private
+   */
+
+
+  vm._editVal = function (path, oldVal, newVal, set) {
+    // 当前指针后的内容去除
+    while (_this.editI < _this.editHistory.length - 1) {
+      _this.editHistory.pop();
+    } // 最多存储 30 条操作记录
+
+
+    while (_this.editHistory.length > 30) {
+      _this.editHistory.pop();
+
+      _this.editI--;
+    }
+
+    var last = _this.editHistory[_this.editHistory.length - 1];
+
+    if (!last || last.key != path) {
+      if (last) {
+        // 去掉上一次的新值
+        _this.editHistory.pop();
+
+        _this.editI--;
+      } // 存入这一次的旧值
+
+
+      _this.editHistory.push({
+        key: path,
+        value: oldVal });
+
+
+      _this.editI++;
+    } // 存入本次的新值
+
+
+    _this.editHistory.push({
+      key: path,
+      value: newVal });
+
+
+    _this.editI++; // 更新到视图
+
+    if (set) vm._setData(path, newVal);
+  };
+  /**
+      * @description 获取菜单项
+      * @private
+      */
+
+
+  vm._getItem = function (node) {
+    var items;
+
+    if (node.name == 'img') {
+      items = config.img.slice(0);
+
+      if (!vm.getSrc) {
+        var _i = items.indexOf('换图');
+
+        if (_i != -1) items.splice(_i, 1);
+        _i = items.indexOf('超链接');
+        if (_i != -1) items.splice(_i, 1);
+        _i = items.indexOf('预览图');
+        if (_i != -1) items.splice(_i, 1);
+      }
+
+      var i = items.indexOf('禁用预览');
+      if (i != -1 && node.attrs.ignore) items[i] = '启用预览';
+    } else if (node.name == 'a') items = config.link.slice(0);else if (node.name == 'video' || node.name == 'audio') {
+      items = config.media.slice(0);
+
+      var _i2 = items.indexOf('封面');
+
+      if (!vm.getSrc && _i2 != -1) items.splice(_i2, 1);
+      _i2 = items.indexOf('循环');
+      if (node.attrs.loop && _i2 != -1) items[_i2] = '不循环';
+    } else items = config.node.slice(0);
+
+    return items;
+  };
+  /**
+      * @description 显示 tooltip
+      * @param {object} obj
+      * @private
+      */
+
+
+  vm._tooltip = function (obj) {
+    vm.$set(vm, 'tooltip', {
+      top: obj.top,
+      items: obj.items });
+
+    vm._tooltipcb = obj.success;
+  };
+  /**
+      * @description 显示滚动条
+      * @param {object} obj
+      * @private
+      */
+
+
+  vm._slider = function (obj) {
+    vm.$set(vm, 'slider', {
+      min: obj.min,
+      max: obj.max,
+      value: obj.value,
+      top: obj.top });
+
+    vm._slideringcb = obj.changing;
+    vm._slidercb = obj.change;
+  };
+  /**
+      * @description 点击蒙版
+      * @private
+      */
+
+
+  vm._maskTap = function () {
+    // 隐藏所有悬浮窗
+    while (vm._mask.length) {
+      vm._mask.pop()();
+    }
+
+    if (vm.tooltip) vm.$set(vm, 'tooltip', null);
+    if (vm.slider) vm.$set(vm, 'slider', null);
+  };
+  /**
+      * @description 插入节点
+      * @param {Object} node 
+      */
+
+
+  function insert(node) {
+    if (vm._edit) vm._edit.insert(node);else vm.nodes.push(node);
+  }
+  /**
+     * @description 在光标处插入一张图片
+     */
+
+
+  vm.insertImg = function () {
+    vm.getSrc && vm.getSrc('img').then(function (src) {
+      insert({
+        name: 'img',
+        attrs: {
+          src: src } });
+
+
+    })["catch"](function () {});
+  };
+  /**
+      * @description 在光标处插入一个链接
+      */
+
+
+  vm.insertLink = function () {
+    vm.getSrc && vm.getSrc('link').then(function (url) {
+      insert({
+        name: 'a',
+        attrs: {
+          href: url },
+
+        children: [{
+          type: 'text',
+          text: url }] });
+
+
+    })["catch"](function () {});
+  };
+  /**
+      * @description 在光标处插入一个视频
+      */
+
+
+  vm.insertVideo = function () {
+    vm.getSrc && vm.getSrc('video').then(function (src) {
+      if (typeof src == 'string') src = [src];
+      insert({
+        name: 'div',
+        attrs: {
+          style: 'text-align:center' },
+
+        children: [{
+          name: 'video',
+          attrs: {},
+          children: [],
+          src: src }] });
+
+
+    })["catch"](function () {});
+  };
+  /**
+      * @description 在光标处插入一个音频
+      */
+
+
+  vm.insertAudio = function () {
+    vm.getSrc && vm.getSrc('audio').then(function (src) {
+      if (typeof src == 'string') src = [src];
+      insert({
+        name: 'div',
+        attrs: {
+          style: 'text-align:center' },
+
+        children: [{
+          name: 'audio',
+          attrs: {},
+          children: [],
+          src: src }] });
+
+
+    })["catch"](function () {});
+  };
+  /**
+      * @description 在光标处插入一段文本
+      */
+
+
+  vm.insertText = function () {
+    insert({
+      name: 'p',
+      attrs: {},
+      children: [{
+        type: 'text',
+        text: '新段落' }] });
+
+
+  };
+  /**
+      * @description 清空内容
+      */
+
+
+  vm.clear = function () {
+    vm._maskTap();
+
+    vm._edit = void 0;
+    vm.$set(vm, 'nodes', [{
+      name: 'p',
+      attrs: {},
+      children: [{
+        type: 'text',
+        text: '开始' }] }]);
+
+
+  };
+  /**
+      * @description 获取编辑后的 html
+      */
+
+
+  vm.getContent = function () {
+    var html = ''; // 递归遍历获取
+
+    (function traversal(nodes, table) {
+      for (var i = 0; i < nodes.length; i++) {
+        var item = nodes[i];
+        if (item.type == 'text') html += item.text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br>').replace(/\xa0/g, '&nbsp;'); // 编码实体
+        else {
+            if (item.name == 'img') {
+              item.attrs.i = ''; // 还原被转换的 svg
+
+              if ((item.attrs.src || '').includes('data:image/svg+xml;utf8,')) {
+                html += item.attrs.src.substr(24).replace(/%23/g, '#').replace('<svg', '<svg style="' + (item.attrs.style || '') + '"');
+                continue;
+              }
+            } // 还原 video 和 audio 的 source
+            else if (item.name == 'video' || item.name == 'audio') {
+                item = JSON.parse(JSON.stringify(item));
+
+                if (item.src.length > 1) {
+                  item.children = [];
+
+                  for (var j = 0; j < item.src.length; j++) {
+                    item.children.push({
+                      name: 'source',
+                      attrs: {
+                        src: item.src[j] } });
+
+
+                  }
+                } else item.attrs.src = item.src[0];
+              } // 还原滚动层
+              else if (item.name == 'div' && (item.attrs.style || '').includes('overflow:auto') && (item.children[0] || {}).name == 'table') item = item.children[0]; // 还原 table
+
+
+            if (item.name == 'table') {
+              item = JSON.parse(JSON.stringify(item));
+              table = item.attrs;
+
+              if ((item.attrs.style || '').includes('display:grid')) {
+                item.attrs.style = item.attrs.style.split('display:grid')[0];
+                var children = [{
+                  name: 'tr',
+                  attrs: {},
+                  children: [] }];
+
+
+                for (var _j = 0; _j < item.children.length; _j++) {
+                  item.children[_j].attrs.style = item.children[_j].attrs.style.replace(/grid-[^;]+;*/g, '');
+
+                  if (item.children[_j].r != children.length) {
+                    children.push({
+                      name: 'tr',
+                      attrs: {},
+                      children: [item.children[_j]] });
+
+                  } else children[children.length - 1].children.push(item.children[_j]);
+                }
+
+                item.children = children;
+              }
+            }
+
+            html += '<' + item.name;
+
+            for (var attr in item.attrs) {
+              var val = item.attrs[attr];
+              if (!val) continue; // bool 型省略值
+
+              if (val == 'T' || val === true) {
+                html += ' ' + attr;
+                continue;
+              } // 取消为了显示 table 添加的 style
+              else if (item.name[0] == 't' && attr == 'style' && table) {
+                  val = val.replace(/;*display:table[^;]*/, '');
+                  if (table.border) val = val.replace(/border[^;]+;*/g, function ($) {
+                    return $.includes('collapse') ? $ : '';
+                  });
+                  if (table.cellpadding) val = val.replace(/padding[^;]+;*/g, '');
+                  if (!val) continue;
+                }
+
+              html += ' ' + attr + '="' + val.replace(/"/g, '&quot;') + '"';
+            }
+
+            html += '>';
+
+            if (item.children) {
+              traversal(item.children, table);
+              html += '</' + item.name + '>';
+            }
+          }
+      }
+    })(vm.nodes); // 其他插件处理
+
+
+    for (var i = vm.plugins.length; i--;) {
+      if (vm.plugins[i].onGetContent) html = vm.plugins[i].onGetContent(html) || html;
+    }
+
+    return html;
+  };
+}
+
+editable.prototype.onUpdate = function (content, config) {
+  if (this.vm.editable) {
+    this.vm._maskTap();
+
+    this.vm._edit = void 0;
+    config.entities.amp = '&';
+    if (!content) return '<p>开始</p>';
+  }
+};
+
+module.exports = editable;
+
+/***/ }),
+
+/***/ 96:
+/*!*******************************************************************************************!*\
+  !*** D:/Users/Ryan/Documents/HBuilderProjects/team/components/mp-html/editable/config.js ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+// 以下项目可以删减或更换顺序，但不能添加或更改名字
+module.exports = {
+  // 普通标签的菜单项
+  node: ['大小', '斜体', '粗体', '下划线', '居中', '缩进', '删除'],
+  // 图片的菜单项
+  img: ['换图', '宽度', '超链接', '预览图', '禁用预览', '删除'],
+  // 链接的菜单项
+  link: ['更换链接', '删除'],
+  // 音视频的菜单项
+  media: ['封面', '循环', '删除'] };
 
 /***/ })
 

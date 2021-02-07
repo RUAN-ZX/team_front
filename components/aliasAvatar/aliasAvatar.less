@@ -1,0 +1,33 @@
+.alias-avatar{
+	display: flex;
+	flex-direction: row;
+	height: @height_header;
+	.avatar{
+		width:@height_header;
+		height:@height_header;
+		border-radius:@height_header*0.3;
+		.avatar-image{
+			width:@height_header;
+			height:@height_header;
+			border-radius:@height_header*0.3;
+		}
+	} 
+	.alias{
+		flex: 1;
+		margin-left: @padding/2;
+		line-height:@height_header;
+		word-break: break-all;
+		white-space:nowrap; 
+		text-overflow: ellipsis;  /* 超出部分省略号 */
+		
+		overflow: hidden;  /*超出隐藏*/
+		
+		color: @labelColor2;
+	}
+}
+.alias-avatar:active{
+	opacity: 0.1;
+}
+.trans {
+	transition: 0.3s opacity ease-out;
+}

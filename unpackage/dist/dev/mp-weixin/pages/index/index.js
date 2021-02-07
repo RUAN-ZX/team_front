@@ -102,11 +102,14 @@ __webpack_require__.r(__webpack_exports__);
 var components
 try {
   components = {
-    uniIcons: function() {
-      return Promise.all(/*! import() | components/uni-icons/uni-icons */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/uni-icons/uni-icons")]).then(__webpack_require__.bind(null, /*! @/components/uni-icons/uni-icons.vue */ 19))
+    aliasAvatar: function() {
+      return __webpack_require__.e(/*! import() | components/aliasAvatar/aliasAvatar */ "components/aliasAvatar/aliasAvatar").then(__webpack_require__.bind(null, /*! @/components/aliasAvatar/aliasAvatar.vue */ 55))
     },
-    uniDrawer: function() {
-      return __webpack_require__.e(/*! import() | components/uni-drawer/uni-drawer */ "components/uni-drawer/uni-drawer").then(__webpack_require__.bind(null, /*! @/components/uni-drawer/uni-drawer.vue */ 27))
+    org: function() {
+      return __webpack_require__.e(/*! import() | components/org/org */ "components/org/org").then(__webpack_require__.bind(null, /*! @/components/org/org.vue */ 62))
+    },
+    uniTag: function() {
+      return __webpack_require__.e(/*! import() | components/uni-tag/uni-tag */ "components/uni-tag/uni-tag").then(__webpack_require__.bind(null, /*! @/components/uni-tag/uni-tag.vue */ 69))
     }
   }
 } catch (e) {
@@ -161,139 +164,311 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var uniTag = function uniTag() {__webpack_require__.e(/*! require.ensure | components/uni-tag/uni-tag */ "components/uni-tag/uni-tag").then((function () {return resolve(__webpack_require__(/*! @/components/uni-tag/uni-tag.vue */ 69));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var lyTextScroll = function lyTextScroll() {__webpack_require__.e(/*! require.ensure | components/ly-screenTextScroll/lyTextScroll */ "components/ly-screenTextScroll/lyTextScroll").then((function () {return resolve(__webpack_require__(/*! @/components/ly-screenTextScroll/lyTextScroll.vue */ 76));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var org = function org() {__webpack_require__.e(/*! require.ensure | components/org/org */ "components/org/org").then((function () {return resolve(__webpack_require__(/*! @/components/org/org.vue */ 62));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {
+
+  components: {
+    uniTag: uniTag,
+    lyTextScroll: lyTextScroll,
+    org: org },
+
   data: function data() {
     return {
-      showLeft: false,
-      alias: 'Ryaninnerpeace11',
-      avatar: 'http://sayhitotheworld.ryanalexander.cn/images/404-img.png',
-      top: 0,
-      width: 0,
-      left: 250 };
+
+      m_alias: 'RyanAlexanderInnerpeaceAllIsWell',
+      m_avatar: 'http://sayhitotheworld.ryanalexander.cn/team/talent/ryan.jpg',
+      m_top: 0,
+      m_width: 0,
+      m_left: 0,
+      m_height_header: 30,
+      m_header_shadow: '0000',
+      m_header_opacity: '0000',
+      m_header_search: '#ffffff',
+      m_header_right_msg: 9,
+
+      m_uid: 0,
+      m_access: '',
+      index_project: [
+      {
+        title: "HDU智慧食堂",
+        org: "杭州字节云网络科技有限公司",
+        type: "比赛项目",
+        type_detail: ["大创", "省新苗", "电商"],
+        foundation: ["软著1篇", "专利3篇", "多项省奖"],
+        //真正详情页 可以给他们一个模板参考 在富文本编辑器里面 他们自定义也行
+        // 这里 可以标签+不超过n个字的简介（不超过两行） 可以两者皆有！
+        talent: [
+        {
+          name: "前端",
+          num: "3",
+          demand: ["有h5基础", "会写文档", "会使用Vue"]
+          // 可以在工作内容 能力要求 上提取关键词写上去 也可以是某种技术形式
+        },
+        {
+          name: "后端",
+          num: "1",
+          demand: ["java web", "服务器部署", "nginx"]
+          // 可以在工作内容 能力要求 上提取关键词写上去 也可以是某种技术形式
+        }] },
+
+
+      {
+        title: "HDU智慧食堂",
+        type: "比赛项目",
+        type_detail: ["大创", "省新苗", "电商"],
+        foundation: ["软著1篇", "专利3篇", "多项省奖"],
+        //真正详情页 可以给他们一个模板参考 在富文本编辑器里面 他们自定义也行
+        // 这里 可以标签+不超过n个字的简介（不超过两行） 可以两者皆有！
+        talent: [
+        {
+          name: "前端",
+          num: "3",
+          demand: ["有h5基础", "会写文档", "会使用Vue"]
+          // 可以在工作内容 能力要求 上提取关键词写上去 也可以是某种技术形式
+        },
+        {
+          name: "后端",
+          num: "1",
+          demand: ["java web", "服务器部署", "nginx"]
+          // 可以在工作内容 能力要求 上提取关键词写上去 也可以是某种技术形式
+        }] },
+
+
+      {
+        title: "HDU智慧食堂",
+        type: "比赛项目",
+        type_detail: ["大创", "省新苗", "电商"],
+        foundation: ["软著1篇", "专利3篇", "多项省奖"],
+        //真正详情页 可以给他们一个模板参考 在富文本编辑器里面 他们自定义也行
+        // 这里 可以标签+不超过n个字的简介（不超过两行） 可以两者皆有！
+        talent: [
+        {
+          name: "前端",
+          num: "3",
+          demand: ["有h5基础", "会写文档", "会使用Vue"]
+          // 可以在工作内容 能力要求 上提取关键词写上去 也可以是某种技术形式
+        },
+        {
+          name: "后端",
+          num: "1",
+          demand: ["java web", "服务器部署", "nginx"]
+          // 可以在工作内容 能力要求 上提取关键词写上去 也可以是某种技术形式
+        }] }],
+
+
+
+      index_talent: [
+      {
+        t_alias: '姚懿',
+        t_avatar: 'http://sayhitotheworld.ryanalexander.cn/team/talent/yy.jpg',
+        t_uid: '000000',
+        t_label: ["java后端", "java", "大数据", "运维", "容器"],
+        t_org: '杭州字节云网络科技有限公司',
+        t_content: "燕子一般指燕。燕（Swallow）是雀形目燕科74种鸟类的统称。形小，翅尖窄，凹尾短喙，足弱小，羽毛不算太多。羽衣单色，或有带金属光泽的蓝或绿色；大多数种类两性都很相似。燕子消耗大量时间在空中捕捉害虫，是最灵活的雀形类之一，主要以蚊、蝇等昆虫为主食" },
+
+      {
+        t_alias: '闪闪兔',
+        t_avatar: 'http://sayhitotheworld.ryanalexander.cn/team/talent/sst.jpg',
+        t_uid: '000000',
+        t_label: ["安卓", "spring", "卖萌"],
+        t_org: '杭电324',
+        t_content: "想找个兄弟一起摸鱼哇" },
+
+      {
+        t_alias: '阮智祥',
+        t_avatar: 'http://sayhitotheworld.ryanalexander.cn/team/talent/ryan.jpg',
+        t_uid: '000000',
+        t_label: ["烫烫烫烫烫烫", "烫烫烫烫", "烫烫烫烫", "烫烫烫烫", "烫烫烫烫"],
+        t_org: '杭州字节云网络科技有限公司',
+        t_content: "每个菜鸡都有雄鹰的梦想，而梦想，在这里起航 Confront your weakness To be who you are And raise up in the world." }] };
+
+
+
+
 
   },
   onLoad: function onLoad() {
+    this.m_left = uni.getStorageSync("left") - 26 + 'px';
+    // console.log(this.m_left);
+    this.m_width = uni.getStorageSync("width");
 
-    this.top = uni.getStorageSync("top");
-    this.width = uni.getStorageSync("width");
-    this.left = uni.getStorageSync("left");
-    console.log(uni.getStorageSync("left") - 10);
-  },
-  methods: {
-    // 打开窗口
-    showDrawer: function showDrawer(e) {
-      this.$refs[e].open();
-    },
-    // 关闭窗口
-    closeDrawer: function closeDrawer(e) {
-      this.$refs[e].close();
-    },
-    // 抽屉状态发生变化触发
-    change: function change(e, type) {
-      console.log((type === 'showLeft' ? '左窗口' : '右窗口') + (e ? '打开' : '关闭'));
-      this[type] = e;
-    } },
+    this.m_top = uni.getStorageSync("top") - this.m_width / 2 + 'px';
 
-  onNavigationBarButtonTap: function onNavigationBarButtonTap(e) {
-    if (this.showLeft) {
-      this.$refs.showLeft.close();
-    } else {
-      this.$refs.showLeft.open();
-    }
+    this.m_uid = uni.getStorageSync("uid");
+    this.m_access = uni.getStorageSync("a");
+
+
   },
-  // app端拦截返回事件 ，仅app端生效
-  onBackPress: function onBackPress() {
-    if (this.showRight || this.showLeft) {
-      this.$refs.showLeft.close();
-      this.$refs.showRight.close();
-      return true;
+  methods: {},
+
+  onPageScroll: function onPageScroll(e) {
+    if (e.scrollTop == 0) {
+      this.m_header_opacity = '0000';
+      this.m_header_shadow = '0000';
+      this.m_header_search = '#ffffff';
+    } else
+    {
+      this.m_header_opacity = 'ffff';
+      this.m_header_shadow = '0020';
+      this.m_header_search = '#f5f5f5';
     }
   } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))

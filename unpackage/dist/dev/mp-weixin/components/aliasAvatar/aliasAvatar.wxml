@@ -1,0 +1,1 @@
+<view data-event-opts="{{[['tap',[['navigate']]]]}}" class="alias-avatar trans" style="{{'width:'+(m_width)+';'}}" bindtap="__e"><view class="avatar"><image class="avatar-image" src="{{m_avatar}}" mode="scaleToFill"></image></view><view class="alias" style="{{'font-size:'+(m_font_size)+';'}}">{{''+m_alias+''}}</view></view>

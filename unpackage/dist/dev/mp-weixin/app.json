@@ -4,7 +4,9 @@
     "pages/team/team",
     "pages/msg/msg",
     "pages/qa/qa",
-    "pages/login/login"
+    "pages/login/login",
+    "components/resume/resume",
+    "pages/resume/resume"
   ],
   "subPackages": [],
   "window": {
