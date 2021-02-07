@@ -10,8 +10,7 @@
 		]"
 		@click="onClick()"
 		class="uni-tag" 
-		v-if="text"
-		:style="{borderRadius: redius}">
+		v-if="text">
 		<text :class="[type === 'default' ? 'uni-tag--default':'uni-tag-text',inverted === true || inverted === 'true' ? 'uni-tag-text--'+type : '',size === 'small' ? 'uni-tag-text--small':'' ]">{{ text }}</text>
 	</view>
 </template>
@@ -39,7 +38,7 @@
 	 */
 
 	export default {
-		name: "UniTag",
+		name: "uniTag",
 		props: {
 			type: {
 				// 标签类型default、primary、success、warning、error、royal
@@ -114,7 +113,7 @@
 	}
 
 	.uni-tag--circle {
-		border-radius: 15px;
+		border-radius: 15rpx;
 	}
 
 	.uni-tag--mark {

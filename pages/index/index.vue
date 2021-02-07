@@ -55,7 +55,7 @@
 			</view>
 			<view class="project-content"
 				v-for="(projectItem,projectIndex) in index_project"
-				v-key="projectIndex">
+				:key="projectIndex">
 				<view class="project-title-org">
 					<view class="project-title">
 						{{projectItem.title}}
@@ -67,31 +67,28 @@
 				<view class="type-detail">
 					{{projectItem.type+projectItem.type_detail}}
 				</view>
-				<view class="foundation-label"
-					v-for="pflItem,pflIndex in projectItem.foundation"
-					v-key="pflIndex">
-					<uni-tag
-						class="foundation-label-tag"
-						:text="pflItem"></uni-tag>
-					
-				</view>
+				<uni-tag-set
+					class="foundation-label"
+					:set="projectItem.foundation">
+				</uni-tag-set>
+				
 				<view class="project-talent"
-					v-for="(pfItem,pfIndex) in projectItem.talent"
-					v-key="pfIndex">
-						<view class="project-talent-name-num">
-							<span class="project-talent-name">
-								{{pfItem.name}}
+					v-for="(ptItem,ptIndex) in projectItem.talent"
+					:key="ptIndex">
+						<view class="project-talent-name">
+							<span class="project-talent-name-num">
+								{{ptItem.name}}
 								<span class="project-talent-num">
-									{{pfItem.num}}
+									{{ptItem.num}}
 								</span>
 								人
 							</span>
 							
 						</view>
-						<uni-tag
+						<uni-tag-set
 							class="project-talent-demand"
-							:text="pfItem.demand">
-						</uni-tag>
+							:set="ptItem.demand">
+						</uni-tag-set>
 				</view>
 			</view>
 		</view>
@@ -104,7 +101,7 @@
 			<view 
 				class="talent-content"
 				v-for="(talentItem,talentIndex) in index_talent"
-				v-key="talentIndex"
+				:key="talentIndex"
 			>
 				<view class="talent-alias-org">
 					<aliasAvatar
@@ -122,18 +119,10 @@
 				</view>
 				
 				<view class="wrapper trans">
-					<view class="talent-label">
-						<uni-tag 
-							class="talent-label-unitag"
-							v-for="(labelItem,labelIndex) in talentItem.t_label"
-							v-key="labelIndex"
-							:text="labelItem"
-							circle="true"
-							inverted="true"
-							size="small"
-							type="primary"
-						></uni-tag>
-					</view>
+					<uni-tag-set
+						:set="talentItem.t_label"
+						class="talent-label">
+					</uni-tag-set>
 								
 					<view class="talent-content">
 						{{talentItem.t_content}}
@@ -154,14 +143,14 @@
 	</view>
 </template>
 <script>
-	import uniTag from "@/components/uni-tag/uni-tag.vue"
-	import lyTextScroll from '@/components/ly-screenTextScroll/lyTextScroll.vue'
+	import uniTagSet from "@/components/uni-tag-set/uni-tag-set.vue"
+	import aliasAvatar from "@/components/aliasAvatar/aliasAvatar.vue"
 	import org from '@/components/org/org.vue';
 	export default {
 		
 		components: {
-			uniTag,
-			lyTextScroll,
+			uniTagSet,
+			aliasAvatar,
 			org
 		},
 		data() {

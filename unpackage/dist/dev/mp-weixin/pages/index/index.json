@@ -3,7 +3,6 @@
   "usingComponents": {
     "alias-avatar": "/components/aliasAvatar/aliasAvatar",
     "org": "/components/org/org",
-    "uni-tag": "/components/uni-tag/uni-tag",
-    "ly-text-scroll": "/components/ly-screenTextScroll/lyTextScroll"
+    "uni-tag-set": "/components/uni-tag-set/uni-tag-set"
   }
 }

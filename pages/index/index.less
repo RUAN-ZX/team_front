@@ -138,9 +138,10 @@ page{
 		height: @height_header;
 		line-height:@height_header;
 		font-size: @height_header*0.5;
-		
+		color: @labelColor2;
 		.project-title-org{
 			display: flex;
+			flex: 1;
 			flex-direction: row;
 			.project-title{
 				color: @labelColor2;
@@ -155,23 +156,27 @@ page{
 		}
 		
 		.type-detail{
+			flex: 1;
 			
 		}
 		.foundation-label{
-			white-space: nowrap;
-			overflow-y: hidden;
-			overflow-x: scroll;
-			// display: flex;
-			&::-webkit-scrollbar {
-				display: none;
-			}
-			.foundation-label-tag{
-				
-			}
+			
 		}
 		
 		.project-talent{
-			
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			.project-talent-name{
+				font-size: @height_header*0.4;
+				
+				.project-talent-name-num{
+					font-weight: bolder;
+				}
+			}
+			.project-talent-demand{
+				
+			}
 		}
 	}
 }
@@ -198,22 +203,7 @@ page{
 		}
 		.wrapper{
 			.talent-label{
-				flex: 1;
-				display: flex;
-				flex-direction: row;
-				// justify-content: space-between;
-				white-space: nowrap;
-				overflow-y: hidden;
-				overflow-x: scroll;
-				// display: flex;
-				&::-webkit-scrollbar {
-					display: none;
-				}
-				.talent-label-unitag{
-					width: auto;
-					margin-right: @padding/2;
-					margin-top: @padding/3;
-				}
+				
 			}
 			
 			.talent-content{

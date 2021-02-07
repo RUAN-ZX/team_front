@@ -132,11 +132,15 @@ page {
   height: 60rpx;
   line-height: 60rpx;
   font-size: 30rpx;
+  color: #646464;
 }
 .project .project-content .project-title-org {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -webkit-flex-direction: row;
@@ -154,13 +158,28 @@ page {
   -webkit-flex: 3;
           flex: 3;
 }
-.project .project-content .foundation-label {
-  white-space: nowrap;
-  overflow-y: hidden;
-  overflow-x: scroll;
+.project .project-content .type-detail {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
 }
-.project .project-content .foundation-label::-webkit-scrollbar {
-  display: none;
+.project .project-content .project-talent {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+}
+.project .project-content .project-talent .project-talent-name {
+  font-size: 24rpx;
+}
+.project .project-content .project-talent .project-talent-name .project-talent-name-num {
+  font-weight: bolder;
 }
 .talent {
   height: auto;
@@ -195,29 +214,6 @@ page {
   -webkit-box-flex: 3;
   -webkit-flex: 3;
           flex: 3;
-}
-.talent .talent-content .wrapper .talent-label {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-          flex: 1;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-          flex-direction: row;
-  white-space: nowrap;
-  overflow-y: hidden;
-  overflow-x: scroll;
-}
-.talent .talent-content .wrapper .talent-label::-webkit-scrollbar {
-  display: none;
-}
-.talent .talent-content .wrapper .talent-label .talent-label-unitag {
-  width: auto;
-  margin-right: 15rpx;
-  margin-top: 10rpx;
 }
 .talent .talent-content .wrapper .talent-content {
   color: #646464;

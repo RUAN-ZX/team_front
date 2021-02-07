@@ -108,8 +108,8 @@ try {
     org: function() {
       return __webpack_require__.e(/*! import() | components/org/org */ "components/org/org").then(__webpack_require__.bind(null, /*! @/components/org/org.vue */ 62))
     },
-    uniTag: function() {
-      return __webpack_require__.e(/*! import() | components/uni-tag/uni-tag */ "components/uni-tag/uni-tag").then(__webpack_require__.bind(null, /*! @/components/uni-tag/uni-tag.vue */ 69))
+    uniTagSet: function() {
+      return __webpack_require__.e(/*! import() | components/uni-tag-set/uni-tag-set */ "components/uni-tag-set/uni-tag-set").then(__webpack_require__.bind(null, /*! @/components/uni-tag-set/uni-tag-set.vue */ 69))
     }
   }
 } catch (e) {
@@ -164,18 +164,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var uniTag = function uniTag() {__webpack_require__.e(/*! require.ensure | components/uni-tag/uni-tag */ "components/uni-tag/uni-tag").then((function () {return resolve(__webpack_require__(/*! @/components/uni-tag/uni-tag.vue */ 69));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var lyTextScroll = function lyTextScroll() {__webpack_require__.e(/*! require.ensure | components/ly-screenTextScroll/lyTextScroll */ "components/ly-screenTextScroll/lyTextScroll").then((function () {return resolve(__webpack_require__(/*! @/components/ly-screenTextScroll/lyTextScroll.vue */ 76));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var org = function org() {__webpack_require__.e(/*! require.ensure | components/org/org */ "components/org/org").then((function () {return resolve(__webpack_require__(/*! @/components/org/org.vue */ 62));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
-
-
-
-
-
-
-
-
-
-
-
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var uniTagSet = function uniTagSet() {__webpack_require__.e(/*! require.ensure | components/uni-tag-set/uni-tag-set */ "components/uni-tag-set/uni-tag-set").then((function () {return resolve(__webpack_require__(/*! @/components/uni-tag-set/uni-tag-set.vue */ 69));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var aliasAvatar = function aliasAvatar() {__webpack_require__.e(/*! require.ensure | components/aliasAvatar/aliasAvatar */ "components/aliasAvatar/aliasAvatar").then((function () {return resolve(__webpack_require__(/*! @/components/aliasAvatar/aliasAvatar.vue */ 55));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var org = function org() {__webpack_require__.e(/*! require.ensure | components/org/org */ "components/org/org").then((function () {return resolve(__webpack_require__(/*! @/components/org/org.vue */ 62));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 
 
@@ -326,8 +315,8 @@ __webpack_require__.r(__webpack_exports__);
 {
 
   components: {
-    uniTag: uniTag,
-    lyTextScroll: lyTextScroll,
+    uniTagSet: uniTagSet,
+    aliasAvatar: aliasAvatar,
     org: org },
 
   data: function data() {

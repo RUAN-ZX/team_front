@@ -42,7 +42,7 @@
   border-color: #f8f8f8;
 }
 .uni-tag--circle.data-v-3f606880 {
-  border-radius: 15px;
+  border-radius: 15rpx;
 }
 .uni-tag--mark.data-v-3f606880 {
   border-top-left-radius: 0;
@@ -144,5 +144,26 @@
   border-width: 1rpx;
   border-style: solid;
   border-color: #f8f8f8;
+}
+
+.uni-tag-set {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+          flex-direction: row;
+  white-space: nowrap;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+.uni-tag-set::-webkit-scrollbar {
+  display: none;
+}
+.uni-tag-set .tag {
+  width: auto;
+  margin-right: 15rpx;
+  margin-top: 10rpx;
 }
 
