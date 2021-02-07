@@ -128,15 +128,14 @@ page{
 }
 
 .project{
-	height: 400px;// 根据内容自适应高度
+	height: auto;// 根据内容自适应高度
 	.project-content{
 		margin: @padding/2 0;
 		position: relative;
 		display: flex;
 		flex-direction: column;
-		border-bottom: 1px solid @lineColor;
-		height: @height_header;
-		line-height:@height_header;
+		border-bottom: 1px solid @labelColor;
+		
 		font-size: @height_header*0.5;
 		color: @labelColor2;
 		.project-title-org{
@@ -144,31 +143,39 @@ page{
 			flex: 1;
 			flex-direction: row;
 			.project-title{
+				height: @height_header;
+				line-height: @height_header;
 				color: @labelColor2;
 				font-weight: bolder;
 				flex: 2;
 			}
 			.project-org{
 				flex: 3;
-				// display: inline-block;
+				height: @height_header;
+				line-height: @height_header;
 			}
 			
 		}
 		
 		.type-detail{
-			flex: 1;
-			
+			height: @height_header*0.4;
+			line-height: @height_header*0.4;
+			font-size: @height_header*0.4;
+			color: @labelColor1;
 		}
 		.foundation-label{
-			
+			margin-bottom: @padding/2;
 		}
 		
 		.project-talent{
-			flex: 1;
+			padding: @padding/2;
+			border: 1px solid @lineColor;
+			border-radius: 10rpx;
+			margin-bottom: @padding/1.5;
 			display: flex;
 			flex-direction: column;
 			.project-talent-name{
-				font-size: @height_header*0.4;
+				font-size: @height_header*0.45;
 				
 				.project-talent-name-num{
 					font-weight: bolder;
@@ -177,6 +184,9 @@ page{
 			.project-talent-demand{
 				
 			}
+		}
+		.project-talent:active{
+			opacity: 0.1;
 		}
 	}
 }
@@ -206,7 +216,8 @@ page{
 				
 			}
 			
-			.talent-content{
+			.talent-item-content{
+				margin: @padding/2 0;
 				color: @labelColor2;
 				border: none;
 				font-size: @height_header*0.4;

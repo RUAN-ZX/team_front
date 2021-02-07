@@ -17,7 +17,9 @@
 	import uniTag from "@/components/uni-tag/uni-tag.vue";
 	
 	export default {
-		
+		components: {
+			uniTag
+		},
 		name: "uniTagSet",
 		props: {
 			set:{

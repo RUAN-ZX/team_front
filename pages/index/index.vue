@@ -49,6 +49,7 @@
 			</view>
 			
 		</view>
+		
 		<view class="card project">
 			<view class="title">
 				项目圈
@@ -71,8 +72,7 @@
 					class="foundation-label"
 					:set="projectItem.foundation">
 				</uni-tag-set>
-				
-				<view class="project-talent"
+				<view class="project-talent trans"
 					v-for="(ptItem,ptIndex) in projectItem.talent"
 					:key="ptIndex">
 						<view class="project-talent-name">
@@ -97,7 +97,6 @@
 			<view class="title">
 				人才圈
 			</view>
-			<!-- 人才圈这里想办法让用户觉得这个可以点击！ -->
 			<view 
 				class="talent-content"
 				v-for="(talentItem,talentIndex) in index_talent"
@@ -105,14 +104,14 @@
 			>
 				<view class="talent-alias-org">
 					<aliasAvatar
-						class="talent-aliasAvatar trans"
+						class="talent-aliasAvatar"
 						:alias="talentItem.t_alias"
 						:avatar="talentItem.t_avatar"
 						:uid="talentItem.t_uid"
 						:access="m_access"
 						font_size="28rpx"
 					></aliasAvatar>
-					<org class="talent-org trans"
+					<org class="talent-org"
 					:org="talentItem.t_org">
 						
 					</org>
@@ -124,7 +123,7 @@
 						class="talent-label">
 					</uni-tag-set>
 								
-					<view class="talent-content">
+					<view class="talent-item-content">
 						{{talentItem.t_content}}
 					</view>
 				</view>

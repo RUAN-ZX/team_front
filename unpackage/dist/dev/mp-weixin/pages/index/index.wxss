@@ -116,7 +116,7 @@ page {
   height: 300rpx;
 }
 .project {
-  height: 400px;
+  height: auto;
 }
 .project .project-content {
   margin: 15rpx 0;
@@ -128,9 +128,7 @@ page {
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
           flex-direction: column;
-  border-bottom: 1px solid #efefef;
-  height: 60rpx;
-  line-height: 60rpx;
+  border-bottom: 1px solid #afafaf;
   font-size: 30rpx;
   color: #646464;
 }
@@ -147,6 +145,8 @@ page {
           flex-direction: row;
 }
 .project .project-content .project-title-org .project-title {
+  height: 60rpx;
+  line-height: 60rpx;
   color: #646464;
   font-weight: bolder;
   -webkit-box-flex: 2;
@@ -157,16 +157,23 @@ page {
   -webkit-box-flex: 3;
   -webkit-flex: 3;
           flex: 3;
+  height: 60rpx;
+  line-height: 60rpx;
 }
 .project .project-content .type-detail {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-          flex: 1;
+  height: 24rpx;
+  line-height: 24rpx;
+  font-size: 24rpx;
+  color: #a5a5a5;
+}
+.project .project-content .foundation-label {
+  margin-bottom: 15rpx;
 }
 .project .project-content .project-talent {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-          flex: 1;
+  padding: 15rpx;
+  border: 1px solid #efefef;
+  border-radius: 10rpx;
+  margin-bottom: 20rpx;
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -176,10 +183,13 @@ page {
           flex-direction: column;
 }
 .project .project-content .project-talent .project-talent-name {
-  font-size: 24rpx;
+  font-size: 27rpx;
 }
 .project .project-content .project-talent .project-talent-name .project-talent-name-num {
   font-weight: bolder;
+}
+.project .project-content .project-talent:active {
+  opacity: 0.1;
 }
 .talent {
   height: auto;
@@ -215,7 +225,8 @@ page {
   -webkit-flex: 3;
           flex: 3;
 }
-.talent .talent-content .wrapper .talent-content {
+.talent .talent-content .wrapper .talent-item-content {
+  margin: 15rpx 0;
   color: #646464;
   border: none;
   font-size: 24rpx;
