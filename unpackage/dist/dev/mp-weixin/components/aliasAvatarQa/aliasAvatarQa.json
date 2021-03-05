@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "org": "/components/org/org"
+  }
+}

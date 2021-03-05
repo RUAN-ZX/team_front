@@ -1,3 +1,8 @@
+<style lang="scss">
+	/* 注意要写在第一行，同时给style标签加入lang="scss"属性 */
+	@import "uview-ui/index.scss";
+</style>
+
 <script>
 	export default {
 		onLaunch: function() {
@@ -13,11 +18,13 @@
 			uni.setStorageSync("top",data.top);
 			uni.setStorageSync("width",data.height);
 			uni.setStorageSync("left",data.left);
+			
 			// this.top = data.top;
 			var height = uni.getSystemInfoSync().statusBarHeight;
 			uni.setStorageSync("statusHeight",height);
-			// this.width = data.height;
-			// this.left = data.left;
+			
+			var top = uni.getSystemInfoSync().screenHeight*(1/2);
+			uni.setStorageSync("hoverTop",top);
 		},
 		onShow: function() {
 			console.log('App Show')
@@ -35,10 +42,23 @@
 	
 	/*每个页面公共css */
 	scroll-view ::-webkit-scrollbar {  
-		    display: none !important;  
-		    width: 0 !important;  
-		    height: 0 !important;  
-		    -webkit-appearance: none;  
-		    background: transparent;  
-		}
+		display: none !important;  
+		width: 0 !important;  
+		height: 0 !important;  
+		-webkit-appearance: none;  
+		background: transparent;  
+	}
+	/deep/::-webkit-scrollbar {
+		display: none;
+		width: 0 !important;
+		height: 0 !important;
+		-webkit-appearance: none;
+		background: transparent;
+	}
+	.overflow{
+		overflow: hidden;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+	}
 </style>

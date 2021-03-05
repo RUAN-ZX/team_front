@@ -1,9 +1,15 @@
 {
-  "navigationBarTitleText": "uni-app",
   "usingComponents": {
     "alias-avatar": "/components/aliasAvatar/aliasAvatar",
+    "u-search": "/uview-ui/components/u-search/u-search",
+    "u-icon": "/uview-ui/components/u-icon/u-icon",
+    "u-tabs-swiper": "/uview-ui/components/u-tabs-swiper/u-tabs-swiper",
     "org": "/components/org/org",
     "uni-tag-set": "/components/uni-tag-set/uni-tag-set",
-    "lu-button-ripple": "/components/lu-button-ripple/lu-button-ripple"
+    "lu-button-ripple": "/components/lu-button-ripple/lu-button-ripple",
+    "u-loadmore": "/uview-ui/components/u-loadmore/u-loadmore",
+    "list-btn": "/components/listBtn/listBtn",
+    "list-qa": "/components/listQa/listQa",
+    "hover-menu": "/components/hoverMenu/hoverMenu"
   }
 }

@@ -1,15 +1,18 @@
 <template>
 	<view class="uni-tag-set">
-		<uni-tag
+		<u-tag
 			class="tag"
 			v-for="(tagItem,tagIndex) in set"
 			:key="tagIndex"
 			:text="tagItem"
-			circle="true"
-			inverted="true"
-			size="small"
+			shape="square"
+			
+			mode="light"
+			:closeable="false"
+			size="mini"
 			type="primary"
-		></uni-tag>
+			
+		></u-tag>
 	</view>
 </template>
 

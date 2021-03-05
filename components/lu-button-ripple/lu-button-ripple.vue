@@ -1,7 +1,7 @@
 <template>
 	<view :id="'buttonRipple'+buttonRippleId" class="lu-button-ripple"
 		@tap="_tap">
-		<view class="button-content"><slot></slot></view> 
+		<!-- <view class="button-content"><slot></slot></view> -->
 		<view class="ripple-cell"
 			v-for="item in rippleList"
 			:key="item.rippleId"
@@ -21,7 +21,7 @@ export default {
 		},
 		rippleBackgroundColor:{
 			type:String,
-			default:"#999"
+			default:"#afafaf"
 		},
 		rippleOpacity:{
 			type:Number,
@@ -122,6 +122,7 @@ lu-button-ripple {
 	.ripple-cell {
 		border-radius: 100%;
 		background-color: rgba(#999,0.5);
+		// background-color: #efefef;
 		left: 0px;
 		top: 0px;
 		opacity: 1;

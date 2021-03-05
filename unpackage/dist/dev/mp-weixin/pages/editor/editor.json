@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "u-back-top": "/uview-ui/components/u-back-top/u-back-top",
+    "t-color-picker": "/components/t-color-picker",
+    "hover-menu": "/components/hoverMenu/hoverMenu"
+  }
+}

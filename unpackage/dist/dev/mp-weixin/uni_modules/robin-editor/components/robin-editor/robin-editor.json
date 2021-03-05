@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "robin-editor-header": "/uni_modules/robin-editor/components/robin-editor-header/robin-editor-header",
+    "uni-popup": "/uni_modules/uni-popup/components/uni-popup/uni-popup",
+    "robin-color-picker": "/uni_modules/robin-editor/components/robin-color-picker/robin-color-picker"
+  },
+  "component": true
+}

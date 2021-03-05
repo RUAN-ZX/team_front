@@ -1,1 +1,1 @@
-<view class="org trans" style="{{'display:'+(m_display)+';'}}"><label class="{{['org-tag _span',this.m_icon[type]]}}">企</label><label class="org-name _span">{{''+m_org+''}}</label></view>
+<view class="org trans" style="{{'display:'+(m_display)+';'+('height:'+(m_height)+';')+('line-height:'+(m_height)+';')}}"><label class="{{['org-tag _span',this.m_icon[type]]}}">企</label><label class="org-name _span">{{''+m_org+''}}</label></view>

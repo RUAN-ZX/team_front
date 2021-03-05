@@ -6,17 +6,17 @@
   -webkit-box-direction: normal;
   -webkit-flex-direction: row;
           flex-direction: row;
-  height: 60rpx;
+  height: 100%;
 }
 .alias-avatar .avatar {
   width: 60rpx;
-  height: 60rpx;
-  border-radius: 18rpx;
+  height: 100%;
+  border-radius: 30%;
 }
 .alias-avatar .avatar .avatar-image {
   width: 60rpx;
-  height: 60rpx;
-  border-radius: 18rpx;
+  height: 100%;
+  border-radius: 30%;
 }
 .alias-avatar .alias {
   -webkit-box-flex: 1;
@@ -24,6 +24,10 @@
           flex: 1;
   margin-left: 15rpx;
   line-height: 60rpx;
+  height: 60rpx;
+  font-size: 100%;
+  display: inline-block;
+  vertical-align: middle;
   word-break: break-all;
   white-space: nowrap;
   text-overflow: ellipsis;

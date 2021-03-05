@@ -8,32 +8,21 @@
           flex-direction: row;
   height: 60rpx;
   line-height: 60rpx;
-  vertical-align: middle;
 }
 .org .org-tag {
   color: #646464;
-  vertical-align: middle;
-  height: 27rpx;
-  font-size: 27rpx;
+  font-size: 30rpx;
 }
 .org .org-name {
   margin-left: 10rpx;
   text-align: left;
   color: #afafaf;
-  font-size: 27rpx;
-  vertical-align: middle;
+  font-size: 24rpx;
   word-break: break-all;
   white-space: nowrap;
   text-overflow: ellipsis;
   /* 超出部分省略号 */
   overflow: hidden;
   /*超出隐藏*/
-}
-.org:active {
-  opacity: 0.1;
-}
-.trans {
-  -webkit-transition: 0.3s opacity ease-out;
-  transition: 0.3s opacity ease-out;
 }
 

@@ -1,6 +1,6 @@
 <template>
 	<view class="org trans"
-		:style="{display:m_display}">
+		:style="[{display:m_display},{height:m_height},{lineHeight:m_height}]">
 		<span class="org-tag"
 			:class="[this.m_icon[type]]">
 			企
@@ -19,12 +19,21 @@
 			org:{
 				type: [String],
 				default: ""
+			},
+			height:{
+				type: String,
+				default: "60rpx"
+			},
+			type:{
+				type: String,
+				default: "1"
 			}
 		},
 		data() {
 			return {
 				m_org: '',
 				m_display: 'none',
+				m_height: '60rpx'
 				/* 有多种图标选择再说
 					m_icon:[
 						
@@ -38,6 +47,7 @@
 			else{
 				this.m_display="inline-block";
 				this.m_org=this.org;
+				this.m_height=this.height;
 			}
 		}
 		
@@ -49,23 +59,18 @@
 	.org{
 		display: flex;
 		flex-direction: row;
-		height: @height_header;
-		line-height:@height_header;
-		vertical-align: middle;
+		
+		height: @height_header; // 根据父组件大小来搞定自己大小 妙啊 否则你需要传参 恶心
+		line-height: @height_header; 
 		.org-tag{
-			
 			color: @labelColor2;
-			// overflow: hidden;
-			vertical-align: middle;
-			height: @height_header*0.45;
-			font-size: @height_header*0.45;
+			font-size: @height_header*0.5;
 		}
 		.org-name{
 			margin-left: @padding/3;
 			text-align: left;
 			color: @labelColor;
-			font-size: @height_header*0.45;
-			vertical-align: middle;
+			font-size: @height_header*0.4;
 			
 			word-break: break-all;
 			white-space:nowrap; 
@@ -74,11 +79,4 @@
 		}
 	}
 	
-	.org:active{
-		opacity: 0.1;
-	}
-	
-	.trans {
-		transition: 0.3s opacity ease-out;
-	}
 </style>

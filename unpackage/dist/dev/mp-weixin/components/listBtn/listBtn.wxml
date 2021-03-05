@@ -1,0 +1,1 @@
+<view data-event-opts="{{[['tap',[['navigate_']]]]}}" class="list-btn" bindtap="__e"><lu-button-ripple vue-id="f4f6b8f8-1" bind:__l="__l"></lu-button-ripple><view class="left">{{''+title+''}}</view><view class="right">></view></view>

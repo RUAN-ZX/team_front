@@ -1,6 +1,7 @@
 {
   "component": true,
   "usingComponents": {
+    "u-tag": "/uview-ui/components/u-tag/u-tag",
     "uni-tag": "/components/uni-tag/uni-tag"
   }
 }

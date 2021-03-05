@@ -10,8 +10,7 @@
 			</image>
 		</view>
 		
-		<view class="alias"
-			:style="{fontSize:m_font_size}">
+		<view class="alias">
 			{{m_alias}}
 		</view>
 		
@@ -22,10 +21,6 @@
 	export default {
 		name: 'aliasAvatar',
 		props: {
-			font_size: {
-				type: String,
-				default: '36rpx'
-			},
 			width: {
 				type: String,
 				default: ''
@@ -42,21 +37,21 @@
 				type: String,
 				default: ''
 			},
-			access: {
-				type: String,
-				default: ''
-			}
+			// access: {
+			// 	type: String,
+			// 	default: ''
+			// }
+			// 等到进入resume页面 onload再利用access进行request 而不是这里传 传的话意义不大
 		},
+		// 获取access以及refresh的逻辑可以封装一下 因为每个页面应该都用得到
 		data() {
 			return {
 				m_alias: '',
 				m_avatar: '',
-				m_width: '',
-				m_font_size: ''
+				m_width: ''
 			};
 		},
 		created() {
-			this.m_font_size = this.font_size;
 			this.m_avatar = this.avatar;
 			this.m_alias = this.alias;
 			setTimeout(() => {
