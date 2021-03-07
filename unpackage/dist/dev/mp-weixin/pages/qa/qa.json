@@ -1,7 +1,5 @@
 {
   "navigationBarTitleText": "",
   "enablePullDownRefresh": false,
-  "usingComponents": {
-    "robin-editor": "/uni_modules/robin-editor/components/robin-editor/robin-editor"
-  }
+  "usingComponents": {}
 }

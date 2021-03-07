@@ -49,8 +49,6 @@
       }
     ]
   },
-  "usingComponents": {
-    "mescroll-body": "/components/mescroll-uni/mescroll-body",
-    "mescroll-uni": "/components/mescroll-uni/mescroll-uni"
-  }
+  "usingComponents": {},
+  "sitemapLocation": "sitemap5.json"
 }

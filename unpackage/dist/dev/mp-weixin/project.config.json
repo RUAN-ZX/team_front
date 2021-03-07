@@ -62,7 +62,7 @@
 			"list": [
 				{
 					"id": -1,
-					"name": "pages/editor/editor",
+					"name": "editor",
 					"pathName": "pages/editor/editor",
 					"scene": null
 				}
