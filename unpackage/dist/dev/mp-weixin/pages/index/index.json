@@ -2,15 +2,14 @@
   "usingComponents": {
     "alias-avatar": "/components/aliasAvatar/aliasAvatar",
     "u-search": "/uview-ui/components/u-search/u-search",
-    "u-icon": "/uview-ui/components/u-icon/u-icon",
     "u-tabs-swiper": "/uview-ui/components/u-tabs-swiper/u-tabs-swiper",
-    "org": "/components/org/org",
-    "uni-tag-set": "/components/uni-tag-set/uni-tag-set",
+    "team-project": "/components/team-project/team-project",
     "u-loadmore": "/uview-ui/components/u-loadmore/u-loadmore",
-    "lu-button-ripple": "/components/lu-button-ripple/lu-button-ripple",
+    "team-talent": "/components/team-talent/team-talent",
+    "team-qa": "/components/team-qa/team-qa",
+    "uni-tag-set": "/components/uni-tag-set/uni-tag-set",
     "list-btn": "/components/listBtn/listBtn",
     "list-qa": "/components/listQa/listQa",
-    "hover-menu": "/components/hoverMenu/hoverMenu",
-    "ripple": "/components/ripple"
+    "hover-menu": "/components/hoverMenu/hoverMenu"
   }
 }

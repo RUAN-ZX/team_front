@@ -13,103 +13,23 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-	height: 160px;
+	height: 125px;
 	.alias-avatar{
 		height: @height_header;
 	}
 	
-	.search-bscard{
-		margin-top: 10px;
-	}
-	.search-bscard:active{
-		opacity: 0.1;
-	}
-	
-	.header_point{
-		margin-top: 10px;
+	.wrapper_search{
+		margin-top: @padding;
 		height: @height_header;
 		line-height: @height_header;
-		
-		text-align: center;
-		color: @labelColor1;
-		
-		display: flex;
-		flex-direction: row;
-		
-		.header_point_left{
-			flex: 4;
-			border-right: @lineColor 1px solid;
-			align-items: center;
-			.div-left-icon{
-				vertical-align:middle; // inline-block 实现垂直居中
-				font-size: @height_header*0.6;
-				margin-right: @height_header/3;
-			}
-			.div-left-text{
-				font-size: @height_header*0.45;
-				vertical-align:middle; // inline-block 实现垂直居中
-			}
-		}
-		.header_point_middle{
-			flex: 5;
-			border-left: @lineColor 1px solid;
-			border-right: @lineColor 1px solid;
-			// align-items: center;
-			.div-middle-icon{
-				vertical-align:middle; // inline-block 实现垂直居中
-				margin-right: @height_header/3;
-				font-size: @height_header*0.6;
-			}
-			.div-middle-text{
-				font-size: @height_header*0.45;
-				vertical-align:middle; // inline-block 实现垂直居中
-			}
-			.div-middle-red-dot{
-				margin-left: @height_header/4;
-				vertical-align:middle; // inline-block 实现垂直居中
-				height: @height_header*0.6;
-				min-width: @height_header*0.75;
-				line-height: @height_header*0.6;
-				font-size: @height_header*0.45;
-				color: @cardColor;
-				background-color: @redDot;
-				border-radius: @height_header;
-				
-			}
-		}
-		.header_point_right{
-			flex: 1;
-			border-left: @lineColor 1px solid;
-			vertical-align:middle; // inline-block 实现垂直居中
-			// margin-right: @height_header/3;
-			margin: auto;
-			font-size: @height_header*0.7;
-			
-			
-		}
+		width: 100%;
+	}
+	.wrapper_search:active{
+		opacity: 0.1;
 	}
 
 }
-.card::after {
-	border: none;
-}		
-.card {
-	border: 0;
-	//border-radius: 10rpx;
-	overflow: hidden;
-	// box-sizing: border-box;
-	// transition: all 0.15s;
-	
-	padding: @padding/2;
-	z-index: 1;
-	margin: @padding;
-	background-color: @cardColor;
-	position: relative;
-	height: auto;// 根据内容自适应高度
-	min-height: 200rpx;
-	box-shadow: 6rpx 6rpx 15rpx 3rpx rgba(0,0,0,0.21);
-	// border-radius: 15rpx;
-}
+
 .title{
 	color: @labelColor2;
 	font-weight: bolder;
@@ -119,138 +39,37 @@
 	margin-bottom: @padding/2;
 }
 
-.u-wave-ripple {
-	z-index: 0;
-	position: absolute;
-	border-radius: 100%;
-	// background-clip: padding-box;
-	background-clip: border-box;
-	pointer-events: none;
-	user-select: none;
-	transform: scale(0);
-	opacity: 1;
-	transform-origin: center;
-}
 
-.u-wave-ripple.u-wave-active {
-	opacity: 0;
-	transform: scale(2);
-	transition: opacity 0.1s ease-out, transform 0.2s ease-out;
-}
 
 .panel{
 	position: relative;
 	width: 100vw;
-	height: 160px;
+	height: 125px;
+	
 	background-color: yellow;
 }
 
-.project{
-	
-	display: flex;
-	flex-direction: column;
-	// border-bottom: 1px solid @labelColor;
-	
-	font-size: @height_header*0.5;
-	color: @labelColor2;
-	.project-title-org{
-		display: flex;
-		flex: 1;
-		flex-direction: row;
-		.project-title{
-			-webkit-line-clamp: 1;
-			height: @height_header;
-			line-height: @height_header;
-			color: @labelColor2;
-			font-weight: bolder;
-			flex: 2;
-		}
-		.project-org{
-			flex: 3;
-			height: @height_header;
-			line-height: @height_header;
-		}
-		
-	}
-	
-	.type-detail{
-		height: @height_header*0.4;
-		line-height: @height_header*0.4;
-		font-size: @height_header*0.4;
-		color: @labelColor1;
-	}
-	.foundation-label{
-		margin-bottom: @padding/2;
-	}
-	
-	.project-talent{
-		z-index: 0;
-		position: relative;
-		height: auto;
-		width: auto;
-		padding: @padding/2;
-		border: 1px solid @lineColor;
-		border-radius: 10rpx;
-		margin-bottom: @padding/1.5;
-		display: flex;
-		flex-direction: column;
-		.project-talent-ripple{
-			display: flex;
-			flex-direction: column;
-			
-			.project-talent-name{
-				font-size: @height_header*0.45;
-				
-				.project-talent-name-num{
-					font-weight: bolder;
-				}
-			}
-			.project-talent-demand{
-				
-			}
-		}
-	}
-}
-
-.talent{
-	display: flex;
-	flex-direction: column;
-	border-bottom: 1px solid @lineColor;
-	
-	.talent-alias-org{
-		height: @height_header;
-		display: flex;
-		flex-direction: row;
-		z-index:2;
-		.talent-aliasAvatar{
-			flex: 2;
-			
-			
-		}
-		.talent-org{
-			flex: 3;
-			display: inline-block;
-			text-align: middle;
-		}
-	}
-	.wrapper{
-		// position: relative;
-		.talent-label{
-			
-		}
-		
-		.talent-item-content{
-			margin: @padding/2 0;
-			color: @labelColor2;
-			border: none;
-			font-size: @height_header*0.4;
-			-webkit-line-clamp: 2;
-		}
-	}
-}
 
 
-.qa{
-	margin-bottom: @padding*2;
-}
 
+
+
+
+// .u-wave-ripple {
+// 	z-index: 0;
+// 	position: absolute;
+// 	border-radius: 100%;
+// 	// background-clip: padding-box;
+// 	background-clip: border-box;
+// 	pointer-events: none;
+// 	user-select: none;
+// 	transform: scale(0);
+// 	opacity: 1;
+// 	transform-origin: center;
+// }
+
+// .u-wave-ripple.u-wave-active {
+// 	opacity: 0;
+// 	transform: scale(2);
+// 	transition: opacity 0.1s ease-out, transform 0.1s ease-out;
+// }

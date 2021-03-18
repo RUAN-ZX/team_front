@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "alias-avatar": "/components/aliasAvatar/aliasAvatar",
+    "org": "/components/org/org",
+    "uni-tag-set": "/components/uni-tag-set/uni-tag-set"
+  },
+  "component": true
+}

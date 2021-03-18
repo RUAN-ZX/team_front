@@ -5,34 +5,10 @@
 			<view class="alias-avatar" :style="[{marginTop:m_top}]">
 				<aliasAvatar :width="m_left" :alias="m_alias" :avatar="m_avatar" :uid="m_uid"></aliasAvatar>
 			</view>
-		
-			<view class="search-bscard trans" @click="search_navigate">
+			
+			<view class="wrapper_search trans" @click="search_navigate">
 				<u-search :show-action="false" clearabled="false" disabled="false" placeholder="搜索" v-model="m_search" shape="square"
-				 :bg-color="m_header_color">
-				</u-search>
-			</view>
-		
-			<view class="header_point">
-				<view class="header_point_left">
-					<span class="iconfont div-left-icon">
-						<u-icon name="tags"></u-icon>
-					</span>
-					<span class="div-left-text">竞赛一揽</span>
-				</view>
-				<view class="header_point_middle">
-					<span class="div-middle-icon">
-						<u-icon name="bell"></u-icon>
-					</span>
-					<span class="div-middle-text">未读消息</span>
-					<span class="div-middle-red-dot" :style="{display:(m_header_middle_msg==0?'none':'inline-block')}">
-						{{m_header_middle_msg}}
-					</span>
-				</view>
-				<view class="header_point_right">
-					<span class="div-right-icon">
-						<u-icon name="scan"></u-icon>
-					</span>
-				</view>
+				 :bg-color="m_header_color"></u-search>
 			</view>
 		</view>
 		<view class="wrap">
@@ -45,98 +21,33 @@
 			<swiper class="swiper-box" :current="swiperCurrent" @transition="transition" @animationfinish="animationfinish">
 				<swiper-item class="swiper-item">
 					<scroll-view scroll-y style="height: 100%;width: 100%;" @scrolltoupper="reachTop" @scrolltolower="reachBottom">
-						<view>
-							<view 
-								class="card project" 
-								v-for="(projectItem,projectIndex) in index_project"
-								:key="projectIndex"
-								@click="click($event)"
-								:id="'project-'+projectIndex" 
-								 >
-							
-							
-									<view
-										class="u-wave-ripple"
-										:class="[waveActive ? 'u-wave-active' : '']"
-										:style="{
-											top: rippleTop + 'px',
-											left: rippleLeft + 'px',
-											width: fields.targetWidth + 'px',
-											height: fields.targetWidth + 'px',
-											backgroundColor: 'rgba(0, 0, 0, 0.10)'
-										}"
-									></view>
-									<view class="project-title-org">
-										<view class="project-title overflow">
-											{{projectItem.title}}
-										</view>
-										<view class="project-org">
-											<org :org="projectItem.org">
-											</org>
-										</view>
-
-									</view>
-									<view class="type-detail">
-										{{projectItem.type+projectItem.type_detail}}
-									</view>
-									<uni-tag-set class="foundation-label" :set="projectItem.foundation">
-									</uni-tag-set>
-									<view class="project-talent" v-for="(ptItem,ptIndex) in projectItem.talent" :key="ptIndex">
-										<view class="project-talent-name">
-											<span class="project-talent-name-num">
-												{{ptItem.name}}
-												<span class="project-talent-num">
-													{{ptItem.num}}
-												</span>
-												人
-											</span>
-
-										</view>
-										<uni-tag-set class="project-talent-demand" :set="ptItem.demand">
-										</uni-tag-set>
-									</view>
-							</view>
-							<u-loadmore :status="loadStatus[0]" bgColor="#f2f2f2"></u-loadmore>
+						<view
+							v-for="(projectItem,projectIndex) in index_project"
+							:key="projectIndex">
+							<team-project :projectItem="projectItem">
+							</team-project>
 						</view>
+						<u-loadmore :status="loadStatus[0]" bgColor="#ECF5FE"></u-loadmore>
 					</scroll-view>
 				</swiper-item>
 				<swiper-item class="swiper-item">
 					<scroll-view scroll-y style="height: 100%;width: 100%;" @scrolltolower="reachBottom">
-						<view class="page-box">
-							<view :id="'talent-'+talentIndex" class="card talent" v-for="(talentItem,talentIndex) in index_talent" :key="talentIndex">
-								<view class="talent-alias-org">
-									<aliasAvatar class="talent-aliasAvatar" :alias="talentItem.alias" :avatar="talentItem.avatar" :uid="talentItem.uid"
-									 :access="m_access" font_size="28rpx"></aliasAvatar>
-									<org class="talent-org" :org="talentItem.org">
 
-									</org>
-								</view>
-
-								<view class="wrapper">
+							<view v-for="(talentItem,talentIndex) in index_talent" :key="talentIndex">
+								<team-talent :talentItem="talentItem">
 									
-									<uni-tag-set :set="talentItem.label" class="talent-label">
-									</uni-tag-set>
-
-									<view class="talent-item-content overflow">
-										{{talentItem.content}}
-									</view>
-								</view>
+								</team-talent>
 							</view>
-							<u-loadmore :status="loadStatus[1]" bgColor="#f2f2f2"></u-loadmore>
-						</view>
+							<u-loadmore :status="loadStatus[1]" bgColor="#ECF5FE"></u-loadmore>
+						
 					</scroll-view>
 				</swiper-item>
 				<swiper-item class="swiper-item">
 					<scroll-view scroll-y style="height: 100%;width: 100%;">
-						<view class="page-box">
-							<view :id="'qa-'+qaIndex" class="card qa" v-for="(qaItem, qaIndex) in index_qa" :key="qaIndex">
-								<list-qa class="qa-item" :title="qaItem.title" :content="qaItem.content" :questioner="qaItem.questioner"
-								 :evaluation="qaItem.evaluation">
-								</list-qa>
-							</view>
-							<u-loadmore :status="loadStatus[1]" bgColor="#f2f2f2"></u-loadmore>
-
+						<view v-for="(qaItem, qaIndex) in index_qa" :key="qaIndex">
+							<team-qa :qaItem="qaItem"></team-qa>
 						</view>
+						<u-loadmore :status="loadStatus[2]" bgColor="#ECF5FE"></u-loadmore>
 					</scroll-view>
 				</swiper-item>
 			</swiper>
@@ -146,34 +57,34 @@
 </template>
 
 <script>
+	
 	import hoverMenu from '../../components/hoverMenu/hoverMenu.vue'
 	import listQa from '../../components/listQa/listQa.vue'
 	import listBtn from '@/components/listBtn/listBtn.vue'
-	import luButtonRipple from '@/components/lu-button-ripple/lu-button-ripple.vue';
 	import uniTagSet from "@/components/uni-tag-set/uni-tag-set.vue"
 	import aliasAvatar from "@/components/aliasAvatar/aliasAvatar.vue"
-	import org from '@/components/org/org.vue';
-	import ripple from "@/components/ripple.vue";
+	
 	import {
 		index_data_refresh
-	} from "@/api1/mock.js"
+	} from "@/api1/mock.js";
+	
+	import teamProject from "@/components/team-project/team-project.vue";
+	import teamTalent from "@/components/team-talent/team-talent.vue";
+	import teamQa from "@/components/team-qa/team-qa.vue";
 	export default {
 		components: {
 			uniTagSet,
 			aliasAvatar,
-			org,
-			luButtonRipple,
 			listBtn,
 			listQa,
 			hoverMenu,
-			ripple
+			teamProject,
+			teamTalent,
+			teamQa
 		},
 		data() {
 			return {
-				rippleTop: 0, // 水波纹的起点Y坐标到按钮上边界的距离
-				rippleLeft: 0, // 水波纹起点X坐标到按钮左边界的距离
-				fields: {}, // 波纹按钮节点信息
-				waveActive: false, // 激活水波纹
+				
 				tabsHeight: 0,
 				dx: 0,
 				loadStatus: ['loadmore', 'loadmore', 'loadmore', 'loadmore'],
@@ -313,12 +224,13 @@
 			if (e.scrollTop == 0) {
 				this.m_header_shadow = '0000'
 				this.m_header_opacity = '0000'
+				this.m_header_color = '#ffffff'
 				this.m_tab_shadow = '0000'
 				this.m_tab_opacity =  '0000'
 				this.m_tab_bgcolor =  "transparent"
-				this.m_header_color = '#ffffff'
+				
 			} 
-			else if(e.scrollTop == 180){
+			else if(e.scrollTop >= 124){
 				this.m_header_shadow = '0000'
 				this.m_header_opacity = 'ffff';
 				this.m_tab_shadow = '0020'
@@ -328,80 +240,14 @@
 			else {
 				this.m_header_opacity = 'ffff';
 				this.m_header_shadow = '0020';
-				this.m_header_color = '#f5f5f5';
+				this.m_header_color = '#F8FAFC';
+				this.m_tab_shadow = '0020'
+				this.m_tab_opacity = 'ffff'
+				this.m_tab_bgcolor = "#ffffff"
 			}
 		},
 
 		methods: {
-			// 查询按钮的节点信息
-			getWaveQuery(e) {
-				this.getElQuery(e).then(res => {
-					// console.log(res)
-					// 查询返回的是一个数组节点
-					let data = res[0];
-					// 查询不到节点信息，不操作
-					if (!data.width || !data.width) return;
-					// 水波纹的最终形态是一个正方形(通过border-radius让其变为一个圆形)，这里要保证正方形的边长等于按钮的最长边
-					// 最终的方形（变换后的圆形）才能覆盖整个按钮
-					data.targetWidth = data.height > data.width ? data.height : data.width;
-					if (!data.targetWidth) return;
-					this.fields = data;
-					let touchesX = '',
-						touchesY = '';
-					// #ifdef MP-BAIDU
-					touchesX = e.changedTouches[0].clientX;
-					touchesY = e.changedTouches[0].clientY;
-					// #endif
-					// #ifdef MP-ALIPAY
-					touchesX = e.detail.clientX;
-					touchesY = e.detail.clientY;
-					// #endif
-					// #ifndef MP-BAIDU || MP-ALIPAY
-					touchesX = e.touches[0].clientX;
-					touchesY = e.touches[0].clientY;
-					// #endif
-					// 获取触摸点相对于按钮上边和左边的x和y坐标，原理是通过屏幕的触摸点（touchesY），减去按钮的上边界data.top
-					// 但是由于`transform-origin`默认是center，所以这里再减去半径才是水波纹view应该的位置
-					// 总的来说，就是把水波纹的矩形（变换后的圆形）的中心点，移动到我们的触摸点位置
-					this.rippleTop = touchesY - data.top - data.targetWidth / 2;
-					this.rippleLeft = touchesX - data.left - data.targetWidth / 2;
-					this.$nextTick(() => {
-						this.waveActive = true;
-					});
-				});
-			},
-			// 获取节点信息
-			getElQuery(e) {
-				return new Promise(resolve => {
-					let queryInfo = '';
-					// 获取元素节点信息，请查看uniapp相关文档
-					// https://uniapp.dcloud.io/api/ui/nodes-info?id=nodesrefboundingclientrect
-					queryInfo = uni.createSelectorQuery().in(this);
-					
-					queryInfo.select("#"+e.currentTarget.id).boundingClientRect();
-					queryInfo.exec(data => {
-						resolve(data);
-					});
-				});
-			},
-			click(e) {
-				// 进行节流控制，每this.throttle毫秒内，只在开始处执行
-				this.$u.throttle(() => {
-					this.waveActive = false;
-					this.$nextTick(function() {
-						this.getWaveQuery(e);
-					});
-					this.$emit('click', e);
-					setTimeout(function() {
-						uni.navigateTo({
-							url: '/pages/search/search',
-							animationType: 'fade-in',
-							animationDuration: 300
-						});
-					}, 300);
-					
-				}, this.throttleTime);
-			},
 			reachTop() {
 				// this.m_tab_bgcolor = 'transparent';
 				// console.log(this.m_tab_bgcolor)
@@ -475,7 +321,8 @@
 <style>
 	page {
 		height: 100vh;
-		background: linear-gradient(to bottom,  #ECF5FE 0%,#ffffff 20%);
+		/* background-color: #ECF5FE; */
+		background: linear-gradient(to bottom,  #ECF5FE 0%,#ffffff 30%);
 	}
 </style>
 
@@ -484,265 +331,12 @@
 	@import "./index.less";
 </style>
 
-<style scoped lang="scss">
-@import '@/uview-ui/libs/css/style.components.scss';
-.u-btn::after {
-	border: none;
-}
-
-.u-btn {
-	position: relative;
-	border: 0;
-	//border-radius: 10rpx;
-	/* #ifndef APP-NVUE */
-	display: inline-flex;		
-	/* #endif */
-	// 避免边框某些场景可能被“裁剪”，不能设置为hidden
-	overflow: visible;
-	line-height: 1;
-	@include vue-flex;
-	align-items: center;
-	justify-content: center;
-	cursor: pointer;
-	padding: 0 40rpx;
-	z-index: 1;
-	box-sizing: border-box;
-	transition: all 0.15s;
-	
-	&--bold-border {
-		border: 1px solid #ffffff;
-	}
-	
-	&--default {
-		color: $u-content-color;
-		border-color: #c0c4cc;
-		background-color: #ffffff;
-	}
-	
-	&--primary {
-		color: #ffffff;
-		border-color: $u-type-primary;
-		background-color: $u-type-primary;
-	}
-	
-	&--success {
-		color: #ffffff;
-		border-color: $u-type-success;
-		background-color: $u-type-success;
-	}
-	
-	&--error {
-		color: #ffffff;
-		border-color: $u-type-error;
-		background-color: $u-type-error;
-	}
-	
-	&--warning {
-		color: #ffffff;
-		border-color: $u-type-warning;
-		background-color: $u-type-warning;
-	}
-	
-	&--default--disabled {
-		color: #ffffff;
-		border-color: #e4e7ed;
-		background-color: #ffffff;
-	}
-	
-	&--primary--disabled {
-		color: #ffffff!important;
-		border-color: $u-type-primary-disabled!important;
-		background-color: $u-type-primary-disabled!important;
-	}
-	
-	&--success--disabled {
-		color: #ffffff!important;
-		border-color: $u-type-success-disabled!important;
-		background-color: $u-type-success-disabled!important;
-	}
-	
-	&--error--disabled {
-		color: #ffffff!important;
-		border-color: $u-type-error-disabled!important;
-		background-color: $u-type-error-disabled!important;
-	}
-	
-	&--warning--disabled {
-		color: #ffffff!important;
-		border-color: $u-type-warning-disabled!important;
-		background-color: $u-type-warning-disabled!important;
-	}
-	
-	&--primary--plain {
-		color: $u-type-primary!important;
-		border-color: $u-type-primary-disabled!important;
-		background-color: $u-type-primary-light!important;
-	}
-	
-	&--success--plain {
-		color: $u-type-success!important;
-		border-color: $u-type-success-disabled!important;
-		background-color: $u-type-success-light!important;
-	}
-	
-	&--error--plain {
-		color: $u-type-error!important;
-		border-color: $u-type-error-disabled!important;
-		background-color: $u-type-error-light!important;
-	}
-	
-	&--warning--plain {
-		color: $u-type-warning!important;
-		border-color: $u-type-warning-disabled!important;
-		background-color: $u-type-warning-light!important;
-	}
-}
-
-.u-hairline-border:after {
-	content: ' ';
-	position: absolute;
-	pointer-events: none;
-	// 设置为border-box，意味着下面的scale缩小为0.5，实际上缩小的是伪元素的内容（border-box意味着内容不含border）
-	box-sizing: border-box;
-	// 中心点作为变形(scale())的原点
-	-webkit-transform-origin: 0 0;
-	transform-origin: 0 0;
-	left: 0;
-	top: 0;
-	width: 199.8%;
-	height: 199.7%;
-	-webkit-transform: scale(0.5, 0.5);
-	transform: scale(0.5, 0.5);
-	border: 1px solid currentColor;
-	z-index: 1;
-}
-
-.u-wave-ripple {
-	overflow:hidden;
-	z-index: 0;
-	position: absolute;
-	border-radius: 100%;
-	background-clip: padding-box;
-	pointer-events: none;
-	user-select: none;
-	transform: scale(0);
-	opacity: 1;
-	transform-origin: center;
-}
-
-.u-wave-ripple.u-wave-active {
-	opacity: 0;
-	transform: scale(2);
-	transition: opacity 1s linear, transform 0.4s linear;
-}
-
-.u-round-circle {
-	border-radius: 100rpx;
-}
-
-.u-round-circle::after {
-	border-radius: 100rpx;
-}
-
-.u-loading::after {
-	background-color: hsla(0, 0%, 100%, 0.35);
-}
-
-.u-size-default {
-	font-size: 30rpx;
-	height: 80rpx;
-	line-height: 80rpx;
-}
-
-.u-size-medium {
-	/* #ifndef APP-NVUE */
-	display: inline-flex;		
-	/* #endif */
-	width: auto;
-	font-size: 26rpx;
-	height: 70rpx;
-	line-height: 70rpx;
-	padding: 0 80rpx;
-}
-
-.u-size-mini {
-	/* #ifndef APP-NVUE */
-	display: inline-flex;		
-	/* #endif */
-	width: auto;
-	font-size: 22rpx;
-	padding-top: 1px;
-	height: 50rpx;
-	line-height: 50rpx;
-	padding: 0 20rpx;
-}
-
-.u-primary-plain-hover {
-	color: #ffffff !important;
-	background: $u-type-primary-dark !important;
-}
-
-.u-default-plain-hover {
-	color: $u-type-primary-dark !important;
-	background: $u-type-primary-light !important;
-}
-
-.u-success-plain-hover {
-	color: #ffffff !important;
-	background: $u-type-success-dark !important;
-}
-
-.u-warning-plain-hover {
-	color: #ffffff !important;
-	background: $u-type-warning-dark !important;
-}
-
-.u-error-plain-hover {
-	color: #ffffff !important;
-	background: $u-type-error-dark !important;
-}
-
-.u-info-plain-hover {
-	color: #ffffff !important;
-	background: $u-type-info-dark !important;
-}
-
-.u-default-hover {
-	color: $u-type-primary-dark !important;
-	border-color: $u-type-primary-dark !important;
-	background-color: $u-type-primary-light !important;
-}
-
-.u-primary-hover {
-	background: $u-type-primary-dark !important;
-	color: #fff;
-}
-
-.u-success-hover {
-	background: $u-type-success-dark !important;
-	color: #fff;
-}
-
-.u-info-hover {
-	background: $u-type-info-dark !important;
-	color: #fff;
-}
-
-.u-warning-hover {
-	background: $u-type-warning-dark !important;
-	color: #fff;
-}
-
-.u-error-hover {
-	background: $u-type-error-dark !important;
-	color: #fff;
-}
-</style>
 
 <style lang="scss" scoped>
+	$heightHeader: 120px;
 	.u-tabs-box {
 		z-index:99;
-		top: 160px;
+		top: $heightHeader;
 		width: 100vw;
 		/* #ifndef APP-PLUS-NVUE */
 		position: -webkit-sticky;
@@ -862,37 +456,8 @@
 		}
 	}
 
-	.centre {
-		text-align: center;
-		margin: 200rpx auto;
-		font-size: 32rpx;
-
-		image {
-			width: 164rpx;
-			height: 164rpx;
-			border-radius: 50%;
-			margin-bottom: 20rpx;
-		}
-
-		.tips {
-			font-size: 24rpx;
-			color: #999999;
-			margin-top: 20rpx;
-		}
-
-		.btn {
-			margin: 80rpx auto;
-			width: 200rpx;
-			border-radius: 32rpx;
-			line-height: 64rpx;
-			color: #ffffff;
-			font-size: 26rpx;
-			background: linear-gradient(270deg, rgba(249, 116, 90, 1) 0%, rgba(255, 158, 1, 1) 100%);
-		}
-	}
-
 	.wrap {
-		margin-top: 180px;
+		margin-top: $heightHeader;
 		display: flex;
 		flex-direction: column;
 		height: calc(100vh - var(--window-top));

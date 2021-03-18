@@ -62,5 +62,7 @@
 		text-overflow: ellipsis;
 		display: -webkit-box;
 		-webkit-box-orient: vertical;
+		word-break: break-all;
+		white-space:nowrap; 
 	}
 </style>

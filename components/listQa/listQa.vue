@@ -1,36 +1,7 @@
 <template>
 	<view class="list-qa"
 		@click="navigate_()">
-		<lu-button-ripple></lu-button-ripple>
-		<view class="title">
-			{{title}}
-		</view>
-		<view class="alias-avatar-org">
-			<aliasAvatarQa
-			:avatar="questioner.avatar"
-			:uid="questioner.uid"
-			:alias="questioner.alias"
-			:org="questioner.org"
-			></aliasAvatarQa>
-		</view>
-		<view class="content">
-			{{content}}
-		</view>
-		<view class="evaluation">
-			<span class="viewed margin">
-				{{m_evaluation.viewed}}浏览
-			</span>
-			<span class="answer margin">
-				{{m_evaluation.answer}}回答
-			</span>
-			<span class="like margin">
-				{{m_evaluation.like}}赞同
-			</span>
-			<span class="comment margin">
-				{{m_evaluation.comment}}评论
-			</span>
-			<!-- 1.3w浏览 100回答 100赞同 100评论-->
-		</view>
+		
 	</view>
 </template>
 
@@ -111,43 +82,5 @@
 
 <style lang="less">
 	@import "@/uni.less";
-	.list-qa{
-		margin-bottom: @padding/2;
-		display: flex;
-		flex-direction: column;
-		color: @labelColor;
-		border-bottom: 1px solid @lineColor;
-		z-index: 0;
-		position: relative; // 限定ripple在空间范围内起效果的最佳方法
-		height: auto;
-		width: auto;
-		
-		.title{
-			font-size: @height_header*0.5;
-			font-weight: bolder;
-		}
-		.alias-avatar-org{
-			height: @height_header*0.7;
-			line-height: @height_header*0.7;
-		}
-		.content{
-			margin-top: @padding/2;
-			color: @labelColor2;
-			border: none;
-			font-size: @height_header*0.4;
-			overflow: hidden;
-			text-overflow: ellipsis;
-			display: -webkit-box;
-			-webkit-line-clamp: 2;
-			-webkit-box-orient: vertical;
-		}
-		.evaluation{
-			white-space: pre;
-			color: @labelColor;
-			font-size: @height_header*0.4;
-			.margin{
-				margin-right: @padding/2;
-			}
-		}
-	}
+	
 </style>
