@@ -14,12 +14,12 @@
   ],
   "subPackages": [],
   "window": {
-    "backgroundColor": "#f5f5f5",
+    "backgroundColor": "#ffffff",
     "navigationStyle": "custom"
   },
   "tabBar": {
-    "color": "#afafaf",
-    "selectedColor": "#298FFE",
+    "color": "#ffffff",
+    "selectedColor": "#6394E3",
     "borderStyle": "black",
     "backgroundColor": "#ffffff",
     "list": [
@@ -31,24 +31,23 @@
       },
       {
         "pagePath": "pages/team/team",
-        "text": "组队",
+        "text": "发布",
         "iconPath": "static/team_.png",
         "selectedIconPath": "static/team.png"
       },
       {
         "pagePath": "pages/msg/msg",
-        "text": "信息",
+        "text": "沟通",
         "iconPath": "static/msg_.png",
         "selectedIconPath": "static/msg.png"
       },
       {
         "pagePath": "pages/qa/qa",
-        "text": "问答",
+        "text": "我的",
         "iconPath": "static/qa_.png",
         "selectedIconPath": "static/qa.png"
       }
     ]
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap5.json"
+  "usingComponents": {}
 }

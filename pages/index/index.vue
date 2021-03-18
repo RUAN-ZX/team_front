@@ -1,6 +1,7 @@
 <template>
 	<view>
-		<view class="header" :style="[{backgroundColor:'#ffff'+m_header_opacity},{boxShadow: '6rpx 6rpx 15rpx 3rpx #0000'+m_header_shadow}]">
+		<view class="header"
+		:style="[{backgroundColor:'#ffff'+m_header_opacity},{boxShadow: '6rpx 6rpx 15rpx 3rpx #0000'+m_header_shadow}]">
 			<view class="alias-avatar" :style="[{marginTop:m_top}]">
 				<aliasAvatar :width="m_left" :alias="m_alias" :avatar="m_avatar" :uid="m_uid"></aliasAvatar>
 			</view>
@@ -38,46 +39,62 @@
 			<view class="panel"></view>
 			<view class="u-tabs-box"
 			:style="[{backgroundColor:'#ffff'+m_tab_opacity},{boxShadow: '6rpx 6rpx 15rpx 3rpx #0000'+m_tab_shadow}]">
-				<u-tabs-swiper :bgColor="m_tab_bgcolor" activeColor="#f29100" ref="tabs" :list="tab_list" :current="current"
+				<u-tabs-swiper :bgColor="m_tab_bgcolor" activeColor="#298FFE" ref="tabs" :list="tab_list" :current="current"
 				 @change="change" :is-scroll="false" swiperWidth="750"></u-tabs-swiper>
 			</view>
 			<swiper class="swiper-box" :current="swiperCurrent" @transition="transition" @animationfinish="animationfinish">
 				<swiper-item class="swiper-item">
 					<scroll-view scroll-y style="height: 100%;width: 100%;" @scrolltoupper="reachTop" @scrolltolower="reachBottom">
-						<view class="page-box">
-							<view :id="'project-'+projectIndex" class="card project" v-for="(projectItem,projectIndex) in index_project"
-							 :key="projectIndex">
-								<view class="project-title-org">
-									<view class="project-title overflow">
-										{{projectItem.title}}
-									</view>
-									<view class="project-org">
-										<org :org="projectItem.org">
-										</org>
-									</view>
+						<view>
+							<view 
+								class="card project" 
+								v-for="(projectItem,projectIndex) in index_project"
+								:key="projectIndex"
+								@click="click($event)"
+								:id="'project-'+projectIndex" 
+								 >
+							
+							
+									<view
+										class="u-wave-ripple"
+										:class="[waveActive ? 'u-wave-active' : '']"
+										:style="{
+											top: rippleTop + 'px',
+											left: rippleLeft + 'px',
+											width: fields.targetWidth + 'px',
+											height: fields.targetWidth + 'px',
+											backgroundColor: 'rgba(0, 0, 0, 0.10)'
+										}"
+									></view>
+									<view class="project-title-org">
+										<view class="project-title overflow">
+											{{projectItem.title}}
+										</view>
+										<view class="project-org">
+											<org :org="projectItem.org">
+											</org>
+										</view>
 
-								</view>
-								<view class="type-detail">
-									{{projectItem.type+projectItem.type_detail}}
-								</view>
-								<uni-tag-set class="foundation-label" :set="projectItem.foundation">
-								</uni-tag-set>
-								<view class="project-talent" v-for="(ptItem,ptIndex) in projectItem.talent" :key="ptIndex">
-									<lu-button-ripple></lu-button-ripple>
-
-									<view class="project-talent-name">
-										<span class="project-talent-name-num">
-											{{ptItem.name}}
-											<span class="project-talent-num">
-												{{ptItem.num}}
-											</span>
-											人
-										</span>
-
 									</view>
-									<uni-tag-set class="project-talent-demand" :set="ptItem.demand">
+									<view class="type-detail">
+										{{projectItem.type+projectItem.type_detail}}
+									</view>
+									<uni-tag-set class="foundation-label" :set="projectItem.foundation">
 									</uni-tag-set>
-								</view>
+									<view class="project-talent" v-for="(ptItem,ptIndex) in projectItem.talent" :key="ptIndex">
+										<view class="project-talent-name">
+											<span class="project-talent-name-num">
+												{{ptItem.name}}
+												<span class="project-talent-num">
+													{{ptItem.num}}
+												</span>
+												人
+											</span>
+
+										</view>
+										<uni-tag-set class="project-talent-demand" :set="ptItem.demand">
+										</uni-tag-set>
+									</view>
 							</view>
 							<u-loadmore :status="loadStatus[0]" bgColor="#f2f2f2"></u-loadmore>
 						</view>
@@ -96,7 +113,7 @@
 								</view>
 
 								<view class="wrapper">
-									<lu-button-ripple></lu-button-ripple>
+									
 									<uni-tag-set :set="talentItem.label" class="talent-label">
 									</uni-tag-set>
 
@@ -122,55 +139,6 @@
 						</view>
 					</scroll-view>
 				</swiper-item>
-				<swiper-item class="swiper-item">
-					<scroll-view scroll-y style="height: 100%;width: 100%;" @scrolltolower="reachBottom">
-						<view class="page-box">
-							<!-- <view class="order" v-for="(res, index) in  orderList[3]" :key="res.id">
-								<view class="top">
-									<view class="left">
-										<u-icon name="home" :size="30" color="rgb(94,94,94)"></u-icon>
-										<view class="store">{{ res.store }}</view>
-										<u-icon name="arrow-right" color="rgb(203,203,203)" :size="26"></u-icon>
-									</view>
-									<view class="right">{{ res.deal }}</view>
-								</view>
-								<view class="item" v-for="(item, index) in res.goodsList" :key="index">
-									<view class="left">
-										<image :src="item.goodsUrl" mode="aspectFill"></image>
-									</view>
-									<view class="content">
-										<view class="title u-line-2">{{ item.title }}</view>
-										<view class="type">{{ item.type }}</view>
-										<view class="delivery-time">发货时间 {{ item.deliveryTime }}</view>
-									</view>
-									<view class="right">
-										<view class="price">
-											￥{{ priceInt(item.price) }}
-											<text class="decimal">.{{ priceDecimal(item.price) }}</text>
-										</view>
-										<view class="number">x{{ item.number }}</view>
-									</view>
-								</view>
-								<view class="total">
-									共{{ totalNum(res.goodsList) }}件商品 合计:
-									<text class="total-price">
-										￥{{ priceInt(totalPrice(res.goodsList)) }}.
-										<text class="decimal">{{ priceDecimal(totalPrice(res.goodsList)) }}</text>
-									</text>
-								</view>
-								<view class="bottom">
-									<view class="more">
-										<u-icon name="more-dot-fill" color="rgb(203,203,203)"></u-icon>
-									</view>
-									<view class="logistics btn">查看物流</view>
-									<view class="exchange btn">卖了换钱</view>
-									<view class="evaluate btn">评价</view>
-								</view>
-							</view> -->
-							<u-loadmore :status="loadStatus[3]" bgColor="#f2f2f2"></u-loadmore>
-						</view>
-					</scroll-view>
-				</swiper-item>
 			</swiper>
 		</view>
 		<!-- </scroll-view> -->
@@ -185,7 +153,7 @@
 	import uniTagSet from "@/components/uni-tag-set/uni-tag-set.vue"
 	import aliasAvatar from "@/components/aliasAvatar/aliasAvatar.vue"
 	import org from '@/components/org/org.vue';
-
+	import ripple from "@/components/ripple.vue";
 	import {
 		index_data_refresh
 	} from "@/api1/mock.js"
@@ -197,11 +165,15 @@
 			luButtonRipple,
 			listBtn,
 			listQa,
-			hoverMenu
+			hoverMenu,
+			ripple
 		},
 		data() {
 			return {
-				
+				rippleTop: 0, // 水波纹的起点Y坐标到按钮上边界的距离
+				rippleLeft: 0, // 水波纹起点X坐标到按钮左边界的距离
+				fields: {}, // 波纹按钮节点信息
+				waveActive: false, // 激活水波纹
 				tabsHeight: 0,
 				dx: 0,
 				loadStatus: ['loadmore', 'loadmore', 'loadmore', 'loadmore'],
@@ -302,100 +274,7 @@
 					[],
 					[]
 				],
-				dataList: [{
-						id: 1,
-						store: '夏日流星限定贩卖',
-						deal: '交易成功',
-						goodsList: [{
-								goodsUrl: '//img13.360buyimg.com/n7/jfs/t1/103005/7/17719/314825/5e8c19faEb7eed50d/5b81ae4b2f7f3bb7.jpg',
-								title: '【冬日限定】现货 原创jk制服女2020冬装新款小清新宽松软糯毛衣外套女开衫短款百搭日系甜美风',
-								type: '灰色;M',
-								deliveryTime: '付款后30天内发货',
-								price: '348.58',
-								number: 2
-							},
-							{
-								goodsUrl: '//img12.360buyimg.com/n7/jfs/t1/102191/19/9072/330688/5e0af7cfE17698872/c91c00d713bf729a.jpg',
-								title: '【葡萄藤】现货 小清新学院风制服格裙百褶裙女短款百搭日系甜美风原创jk制服女2020新款',
-								type: '45cm;S',
-								deliveryTime: '付款后30天内发货',
-								price: '135.00',
-								number: 1
-							}
-						]
-					},
-					{
-						id: 2,
-						store: '江南皮革厂',
-						deal: '交易失败',
-						goodsList: [{
-							goodsUrl: '//img14.360buyimg.com/n7/jfs/t1/60319/15/6105/406802/5d43f68aE9f00db8c/0affb7ac46c345e2.jpg',
-							title: '【冬日限定】现货 原创jk制服女2020冬装新款小清新宽松软糯毛衣外套女开衫短款百搭日系甜美风',
-							type: '粉色;M',
-							deliveryTime: '付款后7天内发货',
-							price: '128.05',
-							number: 1
-						}]
-					},
-					{
-						id: 3,
-						store: '三星旗舰店',
-						deal: '交易失败',
-						goodsList: [{
-								goodsUrl: '//img11.360buyimg.com/n7/jfs/t1/94448/29/2734/524808/5dd4cc16E990dfb6b/59c256f85a8c3757.jpg',
-								title: '三星（SAMSUNG）京品家电 UA65RUF70AJXXZ 65英寸4K超高清 HDR 京东微联 智能语音 教育资源液晶电视机',
-								type: '4K，广色域',
-								deliveryTime: '保质5年',
-								price: '1998',
-								number: 3
-							},
-							{
-								goodsUrl: '//img14.360buyimg.com/n7/jfs/t6007/205/4099529191/294869/ae4e6d4f/595dcf19Ndce3227d.jpg!q90.jpg',
-								title: '美的(Midea)639升 对开门冰箱 19分钟急速净味 一级能效冷藏双开门杀菌智能家用双变频节能 BCD-639WKPZM(E)',
-								type: '容量大，速冻',
-								deliveryTime: '保质5年',
-								price: '2354',
-								number: 1
-							}
-						]
-					},
-					{
-						id: 4,
-						store: '三星旗舰店',
-						deal: '交易失败',
-						goodsList: [{
-								goodsUrl: '//img10.360buyimg.com/n7/jfs/t22300/31/1505958241/171936/9e201a89/5b2b12ffNe6dbb594.jpg!q90.jpg',
-								title: '法国进口红酒 拉菲（LAFITE）传奇波尔多干红葡萄酒750ml*6整箱装',
-								type: '4K，广色域',
-								deliveryTime: '珍藏10年好酒',
-								price: '1543',
-								number: 3
-							},
-							{
-								goodsUrl: '//img10.360buyimg.com/n7/jfs/t1/107598/17/3766/525060/5e143aacE9a94d43c/03573ae60b8bf0ee.jpg',
-								title: '蓝妹（BLUE GIRL）酷爽啤酒 清啤 原装进口啤酒 罐装 500ml*9听 整箱装',
-								type: '一打',
-								deliveryTime: '口感好',
-								price: '120',
-								number: 1
-							}
-						]
-					},
-					{
-						id: 5,
-						store: '三星旗舰店',
-						deal: '交易成功',
-						goodsList: [{
-							goodsUrl: '//img12.360buyimg.com/n7/jfs/t1/52408/35/3554/78293/5d12e9cfEfd118ba1/ba5995e62cbd747f.jpg!q90.jpg',
-							title: '企业微信 中控人脸指纹识别考勤机刷脸机 无线签到异地多店打卡机WX108',
-							type: '识别效率高',
-							deliveryTime: '使用方便',
-							price: '451',
-							number: 9
-						}]
-					}
-				],
-
+				
 				tabsHeight: 0,
 				dx: 0,
 				loadStatus: ['loadmore', 'loadmore', 'loadmore', 'loadmore'],
@@ -454,6 +333,75 @@
 		},
 
 		methods: {
+			// 查询按钮的节点信息
+			getWaveQuery(e) {
+				this.getElQuery(e).then(res => {
+					// console.log(res)
+					// 查询返回的是一个数组节点
+					let data = res[0];
+					// 查询不到节点信息，不操作
+					if (!data.width || !data.width) return;
+					// 水波纹的最终形态是一个正方形(通过border-radius让其变为一个圆形)，这里要保证正方形的边长等于按钮的最长边
+					// 最终的方形（变换后的圆形）才能覆盖整个按钮
+					data.targetWidth = data.height > data.width ? data.height : data.width;
+					if (!data.targetWidth) return;
+					this.fields = data;
+					let touchesX = '',
+						touchesY = '';
+					// #ifdef MP-BAIDU
+					touchesX = e.changedTouches[0].clientX;
+					touchesY = e.changedTouches[0].clientY;
+					// #endif
+					// #ifdef MP-ALIPAY
+					touchesX = e.detail.clientX;
+					touchesY = e.detail.clientY;
+					// #endif
+					// #ifndef MP-BAIDU || MP-ALIPAY
+					touchesX = e.touches[0].clientX;
+					touchesY = e.touches[0].clientY;
+					// #endif
+					// 获取触摸点相对于按钮上边和左边的x和y坐标，原理是通过屏幕的触摸点（touchesY），减去按钮的上边界data.top
+					// 但是由于`transform-origin`默认是center，所以这里再减去半径才是水波纹view应该的位置
+					// 总的来说，就是把水波纹的矩形（变换后的圆形）的中心点，移动到我们的触摸点位置
+					this.rippleTop = touchesY - data.top - data.targetWidth / 2;
+					this.rippleLeft = touchesX - data.left - data.targetWidth / 2;
+					this.$nextTick(() => {
+						this.waveActive = true;
+					});
+				});
+			},
+			// 获取节点信息
+			getElQuery(e) {
+				return new Promise(resolve => {
+					let queryInfo = '';
+					// 获取元素节点信息，请查看uniapp相关文档
+					// https://uniapp.dcloud.io/api/ui/nodes-info?id=nodesrefboundingclientrect
+					queryInfo = uni.createSelectorQuery().in(this);
+					
+					queryInfo.select("#"+e.currentTarget.id).boundingClientRect();
+					queryInfo.exec(data => {
+						resolve(data);
+					});
+				});
+			},
+			click(e) {
+				// 进行节流控制，每this.throttle毫秒内，只在开始处执行
+				this.$u.throttle(() => {
+					this.waveActive = false;
+					this.$nextTick(function() {
+						this.getWaveQuery(e);
+					});
+					this.$emit('click', e);
+					setTimeout(function() {
+						uni.navigateTo({
+							url: '/pages/search/search',
+							animationType: 'fade-in',
+							animationDuration: 300
+						});
+					}, 300);
+					
+				}, this.throttleTime);
+			},
 			reachTop() {
 				// this.m_tab_bgcolor = 'transparent';
 				// console.log(this.m_tab_bgcolor)
@@ -525,13 +473,10 @@
 </script>
 
 <style>
-	/* #ifndef H5 */
 	page {
-		height: 100%;
-		background-color: #f2f2f2;
+		height: 100vh;
+		background: linear-gradient(to bottom,  #ECF5FE 0%,#ffffff 20%);
 	}
-
-	/* #endif */
 </style>
 
 <style lang="less">
@@ -539,9 +484,264 @@
 	@import "./index.less";
 </style>
 
+<style scoped lang="scss">
+@import '@/uview-ui/libs/css/style.components.scss';
+.u-btn::after {
+	border: none;
+}
+
+.u-btn {
+	position: relative;
+	border: 0;
+	//border-radius: 10rpx;
+	/* #ifndef APP-NVUE */
+	display: inline-flex;		
+	/* #endif */
+	// 避免边框某些场景可能被“裁剪”，不能设置为hidden
+	overflow: visible;
+	line-height: 1;
+	@include vue-flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	padding: 0 40rpx;
+	z-index: 1;
+	box-sizing: border-box;
+	transition: all 0.15s;
+	
+	&--bold-border {
+		border: 1px solid #ffffff;
+	}
+	
+	&--default {
+		color: $u-content-color;
+		border-color: #c0c4cc;
+		background-color: #ffffff;
+	}
+	
+	&--primary {
+		color: #ffffff;
+		border-color: $u-type-primary;
+		background-color: $u-type-primary;
+	}
+	
+	&--success {
+		color: #ffffff;
+		border-color: $u-type-success;
+		background-color: $u-type-success;
+	}
+	
+	&--error {
+		color: #ffffff;
+		border-color: $u-type-error;
+		background-color: $u-type-error;
+	}
+	
+	&--warning {
+		color: #ffffff;
+		border-color: $u-type-warning;
+		background-color: $u-type-warning;
+	}
+	
+	&--default--disabled {
+		color: #ffffff;
+		border-color: #e4e7ed;
+		background-color: #ffffff;
+	}
+	
+	&--primary--disabled {
+		color: #ffffff!important;
+		border-color: $u-type-primary-disabled!important;
+		background-color: $u-type-primary-disabled!important;
+	}
+	
+	&--success--disabled {
+		color: #ffffff!important;
+		border-color: $u-type-success-disabled!important;
+		background-color: $u-type-success-disabled!important;
+	}
+	
+	&--error--disabled {
+		color: #ffffff!important;
+		border-color: $u-type-error-disabled!important;
+		background-color: $u-type-error-disabled!important;
+	}
+	
+	&--warning--disabled {
+		color: #ffffff!important;
+		border-color: $u-type-warning-disabled!important;
+		background-color: $u-type-warning-disabled!important;
+	}
+	
+	&--primary--plain {
+		color: $u-type-primary!important;
+		border-color: $u-type-primary-disabled!important;
+		background-color: $u-type-primary-light!important;
+	}
+	
+	&--success--plain {
+		color: $u-type-success!important;
+		border-color: $u-type-success-disabled!important;
+		background-color: $u-type-success-light!important;
+	}
+	
+	&--error--plain {
+		color: $u-type-error!important;
+		border-color: $u-type-error-disabled!important;
+		background-color: $u-type-error-light!important;
+	}
+	
+	&--warning--plain {
+		color: $u-type-warning!important;
+		border-color: $u-type-warning-disabled!important;
+		background-color: $u-type-warning-light!important;
+	}
+}
+
+.u-hairline-border:after {
+	content: ' ';
+	position: absolute;
+	pointer-events: none;
+	// 设置为border-box，意味着下面的scale缩小为0.5，实际上缩小的是伪元素的内容（border-box意味着内容不含border）
+	box-sizing: border-box;
+	// 中心点作为变形(scale())的原点
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
+	left: 0;
+	top: 0;
+	width: 199.8%;
+	height: 199.7%;
+	-webkit-transform: scale(0.5, 0.5);
+	transform: scale(0.5, 0.5);
+	border: 1px solid currentColor;
+	z-index: 1;
+}
+
+.u-wave-ripple {
+	overflow:hidden;
+	z-index: 0;
+	position: absolute;
+	border-radius: 100%;
+	background-clip: padding-box;
+	pointer-events: none;
+	user-select: none;
+	transform: scale(0);
+	opacity: 1;
+	transform-origin: center;
+}
+
+.u-wave-ripple.u-wave-active {
+	opacity: 0;
+	transform: scale(2);
+	transition: opacity 1s linear, transform 0.4s linear;
+}
+
+.u-round-circle {
+	border-radius: 100rpx;
+}
+
+.u-round-circle::after {
+	border-radius: 100rpx;
+}
+
+.u-loading::after {
+	background-color: hsla(0, 0%, 100%, 0.35);
+}
+
+.u-size-default {
+	font-size: 30rpx;
+	height: 80rpx;
+	line-height: 80rpx;
+}
+
+.u-size-medium {
+	/* #ifndef APP-NVUE */
+	display: inline-flex;		
+	/* #endif */
+	width: auto;
+	font-size: 26rpx;
+	height: 70rpx;
+	line-height: 70rpx;
+	padding: 0 80rpx;
+}
+
+.u-size-mini {
+	/* #ifndef APP-NVUE */
+	display: inline-flex;		
+	/* #endif */
+	width: auto;
+	font-size: 22rpx;
+	padding-top: 1px;
+	height: 50rpx;
+	line-height: 50rpx;
+	padding: 0 20rpx;
+}
+
+.u-primary-plain-hover {
+	color: #ffffff !important;
+	background: $u-type-primary-dark !important;
+}
+
+.u-default-plain-hover {
+	color: $u-type-primary-dark !important;
+	background: $u-type-primary-light !important;
+}
+
+.u-success-plain-hover {
+	color: #ffffff !important;
+	background: $u-type-success-dark !important;
+}
+
+.u-warning-plain-hover {
+	color: #ffffff !important;
+	background: $u-type-warning-dark !important;
+}
+
+.u-error-plain-hover {
+	color: #ffffff !important;
+	background: $u-type-error-dark !important;
+}
+
+.u-info-plain-hover {
+	color: #ffffff !important;
+	background: $u-type-info-dark !important;
+}
+
+.u-default-hover {
+	color: $u-type-primary-dark !important;
+	border-color: $u-type-primary-dark !important;
+	background-color: $u-type-primary-light !important;
+}
+
+.u-primary-hover {
+	background: $u-type-primary-dark !important;
+	color: #fff;
+}
+
+.u-success-hover {
+	background: $u-type-success-dark !important;
+	color: #fff;
+}
+
+.u-info-hover {
+	background: $u-type-info-dark !important;
+	color: #fff;
+}
+
+.u-warning-hover {
+	background: $u-type-warning-dark !important;
+	color: #fff;
+}
+
+.u-error-hover {
+	background: $u-type-error-dark !important;
+	color: #fff;
+}
+</style>
 
 <style lang="scss" scoped>
 	.u-tabs-box {
+		z-index:99;
 		top: 160px;
 		width: 100vw;
 		/* #ifndef APP-PLUS-NVUE */

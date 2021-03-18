@@ -58,7 +58,7 @@ lu-button-ripple {
   right: 0;
   bottom: 0;
   overflow: hidden;
-  z-index: 0;
+  z-index: 10;
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;

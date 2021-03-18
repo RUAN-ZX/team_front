@@ -3,100 +3,54 @@
 		"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue"
 	},
 	"pages": [{
-		"path": "pages/index/index",
-		"style": {
-			"app-plus": {
-				"scrollIndicator": "none",
-				"titleNView": false
-			}
-		}
+		"path": "pages/index/index"
+		
 	}, {
-		"path": "pages/team/team",
-		"style": {
-			"navigationBarTitleText": "",
-			"enablePullDownRefresh": false
-		}
+		"path": "pages/team/team"
 
 	}, {
-		"path": "pages/msg/msg",
-		"style": {
-			"navigationBarTitleText": "",
-			"enablePullDownRefresh": false
-		}
+		"path": "pages/msg/msg"
 
 	}, {
-		"path": "pages/qa/qa",
-		"style": {
-			"navigationBarTitleText": "",
-			"enablePullDownRefresh": false
-		}
+		"path": "pages/qa/qa"
 
 	}, {
-		"path": "pages/login/login",
-		"style": {
-			"navigationBarTitleText": "",
-			"enablePullDownRefresh": false
-		}
+		"path": "pages/login/login"
 
 	}, {
-		"path": "components/resume/resume",
-		"style": {
-			"navigationBarTitleText": "",
-			"enablePullDownRefresh": false
-		}
+		"path": "components/resume/resume"
 
 	}, {
-		"path": "pages/resume/resume",
-		"style": {
-			"navigationBarTitleText": "",
-			"enablePullDownRefresh": false
-		}
+		"path": "pages/resume/resume"
 
 	}, {
-		"path": "pages/news/news",
-		"style": {
-			"navigationBarTitleText": "",
-			"enablePullDownRefresh": false
-		}
+		"path": "pages/news/news"
 
-	}    ,{
-            "path" : "pages/search/search",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
+	}, {
+		"path" : "pages/search/search"
             
 	},{
-            "path" : "pages/editor/editor",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
+		"path" : "pages/editor/editor"
             
 	},{
-			"path" : "pages/preview/preview",
-			"style" :                                                                                    
-			{
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false
-			}
+		"path" : "pages/preview/preview"
 			
-		}
+	}
     ],
 	"globalStyle": {
-		"backgroundColor": "#f5f5f5",
+		"backgroundColor": "#ffffff",
 		"navigationStyle": "custom",
 		"app-plus": {
 			"scrollIndicator": "none",
-			"titleNView": false
+			"titleNView": false,
+			"animationType": "fade-in",
+			"animationDuration": 1000
 		}
 	},
 
 	"tabBar": {
-		"color": "#afafaf",
-		"selectedColor": "#298FFE",
+		"color": "#ffffff",
+		"selectedColor": "#6394E3",
 		"borderStyle": "black",
 		"backgroundColor": "#ffffff",
 		"list": [{
@@ -107,19 +61,19 @@
 			},
 			{
 				"pagePath": "pages/team/team",
-				"text": "组队",
+				"text": "发布",
 				"iconPath": "static/team_.png",
 				"selectedIconPath": "static/team.png"
 			},
 			{
 				"pagePath": "pages/msg/msg",
-				"text": "信息",
+				"text": "沟通",
 				"iconPath": "static/msg_.png",
 				"selectedIconPath": "static/msg.png"
 			},
 			{
 				"pagePath": "pages/qa/qa",
-				"text": "问答",
+				"text": "我的",
 				"iconPath": "static/qa_.png",
 				"selectedIconPath": "static/qa.png"
 			}

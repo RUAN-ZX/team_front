@@ -6,10 +6,11 @@
     "u-tabs-swiper": "/uview-ui/components/u-tabs-swiper/u-tabs-swiper",
     "org": "/components/org/org",
     "uni-tag-set": "/components/uni-tag-set/uni-tag-set",
-    "lu-button-ripple": "/components/lu-button-ripple/lu-button-ripple",
     "u-loadmore": "/uview-ui/components/u-loadmore/u-loadmore",
+    "lu-button-ripple": "/components/lu-button-ripple/lu-button-ripple",
     "list-btn": "/components/listBtn/listBtn",
     "list-qa": "/components/listQa/listQa",
-    "hover-menu": "/components/hoverMenu/hoverMenu"
+    "hover-menu": "/components/hoverMenu/hoverMenu",
+    "ripple": "/components/ripple"
   }
 }

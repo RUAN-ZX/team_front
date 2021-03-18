@@ -1,0 +1,131 @@
+.background {
+    width: 750rpx;
+    position: relative;
+    z-index: 0;
+  }
+
+
+
+.login{
+  position: relative;
+  margin: 20px;
+  z-index: 0;
+  // color: @themeColor;
+  // width: 100%;
+  // height: 750rpx;
+  .user{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+	padding-bottom: 5px;
+    border-bottom: 1px solid @lineColor;
+    .login_iconfont{
+		height: 35px;
+		line-height: 35px;
+		text-align: center;
+		font-size: 24px;
+		flex: 1;
+		color: @themeColor;
+		padding-bottom: 5px;
+    }
+    .user_input{
+      flex: 9;
+      font-size: 16px;
+    }
+    .text{
+      color: @labelColor;
+      font-size: 16px;
+    }
+    
+  }
+
+  .psw{
+    margin-top: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 5px;
+    border-bottom: 1px solid @lineColor;
+	.login_iconfont{
+		height: 35px;
+		line-height: 35px;
+		text-align: center;
+		font-size: 24px;
+		flex: 1;
+		margin-bottom: 5px;
+		color: @themeColor;
+	}
+    .psw_input{
+		flex: 5;
+		font-size: 16px;
+    }
+    .password{
+      color: @labelColor;
+      font-size: 16px;
+    }
+	
+    .captcha{
+	  flex: 4;	
+      // margin: 0 0 0 @padding;
+      // text-align: center;
+      // height: 35px;
+      // line-height: 35px;
+      // font-size: 12px;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  margin-bottom: 5px;
+    }
+  }
+
+  .hint{
+    margin: 5px 0 5px 0;
+    // margin-left: 5px;
+    font-size: 14px;
+    padding-left: 5px;
+    line-height: 20px;
+    border: 1px solid @themeColor;
+    color: @themeColor;
+    border-radius: 5px;
+    word-wrap:break-word;
+
+  }
+  .loginBtn{
+    // width: 100%;
+    line-height: 40px;
+    height: 40px;
+    font-size: 20px;
+    text-align: center;
+    color: @bgColor;
+    border-radius: 10px;
+    // background-image: url(;
+    background-color: @themeColor;
+
+  }
+  .others{
+    display: flex;
+    flex-direction: row;
+    height: 20px;
+    font-size: 15px;
+    margin-top: 10px;
+    color: @labelColor;
+    .others_email{
+      
+      text-align: left;
+      
+      flex: 1;
+      line-height: 20px;
+    }
+    .others_psw{
+      text-align: right;
+      flex: 1;
+      line-height: 20px;
+
+      // border: 1px solid @lineColor;
+      // border-radius: 5px;
+    }
+
+
+  }
+
+}

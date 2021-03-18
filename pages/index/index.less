@@ -90,22 +90,26 @@
 	}
 
 }
-		
+.card::after {
+	border: none;
+}		
 .card {
-	height: auto;// 根据内容自适应高度
-	// margin: @padding/2 0;
-	position: relative;
+	border: 0;
+	//border-radius: 10rpx;
+	overflow: hidden;
+	// box-sizing: border-box;
+	// transition: all 0.15s;
+	
 	padding: @padding/2;
 	z-index: 1;
 	margin: @padding;
 	background-color: @cardColor;
 	position: relative;
-	
+	height: auto;// 根据内容自适应高度
 	min-height: 200rpx;
 	box-shadow: 6rpx 6rpx 15rpx 3rpx rgba(0,0,0,0.21);
 	// border-radius: 15rpx;
 }
-
 .title{
 	color: @labelColor2;
 	font-weight: bolder;
@@ -115,22 +119,25 @@
 	margin-bottom: @padding/2;
 }
 
-// page {
-// 	width: 100%;
-// 	min-height: 100%;
-// 	display: flex;
-// 	flex-direction: column;
-// }
-// .wrapper {
-// 	margin-top: 180px;
-// 	flex: 1;
-// 	width: 100vw;
-// 	display: flex;
-// 	flex-direction: column;
-// 	.swiper {
-// 		flex: 1;
-// 	}
-// }
+.u-wave-ripple {
+	z-index: 0;
+	position: absolute;
+	border-radius: 100%;
+	// background-clip: padding-box;
+	background-clip: border-box;
+	pointer-events: none;
+	user-select: none;
+	transform: scale(0);
+	opacity: 1;
+	transform-origin: center;
+}
+
+.u-wave-ripple.u-wave-active {
+	opacity: 0;
+	transform: scale(2);
+	transition: opacity 0.1s ease-out, transform 0.2s ease-out;
+}
+
 .panel{
 	position: relative;
 	width: 100vw;

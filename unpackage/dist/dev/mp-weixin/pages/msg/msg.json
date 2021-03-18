@@ -1,6 +1,4 @@
 {
-  "navigationBarTitleText": "",
-  "enablePullDownRefresh": false,
   "usingComponents": {
     "me-tabs": "/components/me-tabs/me-tabs",
     "me-video": "/components/me-video/me-video",

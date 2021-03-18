@@ -107,7 +107,7 @@ lu-button-ripple {
 	right: 0;
 	bottom: 0;
 	overflow: hidden;
-	z-index: 0;
+	z-index: 10;
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
@@ -122,6 +122,7 @@ lu-button-ripple {
 	.ripple-cell {
 		border-radius: 100%;
 		background-color: rgba(#999,0.5);
+		
 		// background-color: #efefef;
 		left: 0px;
 		top: 0px;

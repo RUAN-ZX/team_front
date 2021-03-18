@@ -1,0 +1,48 @@
+@cardColor: #ffffff;
+@bgColor:#f5f5f5;
+@themeColor:#298FFE;
+
+@labelColor: #afafaf; 
+@labelColor1: #a5a5a5; 
+@labelColor2: #646464; 
+
+@lineColor:#efefef;
+
+
+@padding: 30rpx;
+@height_header: 60rpx;
+@fixGap: 10px;
+
+.background{
+	
+	z-index: 99;
+    display:flex;
+	justify-content: center;
+	align-items:center;
+	
+    height: 100vh;                        //设置布局满屏
+    
+    position: fixed;
+	width: 100vw;
+    .preface{
+        
+        width:100%;
+    }
+}
+
+.ellipsis{
+	word-break: break-all;
+	white-space:nowrap; 
+	text-overflow: ellipsis;  /* 超出部分省略号 */
+	
+	overflow: hidden;  /*超出隐藏*/
+}
+
+.card{
+	padding: 20rpx;
+	background-color: @cardColor;
+	box-shadow: 6rpx 6rpx 15rpx 3rpx rgba(0,0,0,0.21);
+	border-radius: 15rpx;
+	z-index: 1;
+	position: relative;
+}
