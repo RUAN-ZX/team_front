@@ -34,7 +34,7 @@
 <script>
 	import uniTagSet from "@/components/uni-tag-set/uni-tag-set.vue"
 	import org from '@/components/org/org.vue';
-	
+	var m_this;
 	import aliasAvatar from "@/components/aliasAvatar/aliasAvatar.vue"
 	export default {
 		components:{
@@ -57,6 +57,9 @@
 				fields: {}, // 波纹按钮节点信息
 				waveActive: false, // 激活水波纹
 			};
+		},
+		created() {
+			m_this = this;
 		},
 		methods:{
 			getWaveQuery(e) {
@@ -105,13 +108,13 @@
 					this.$emit('click', e);
 					setTimeout(function() {
 						uni.navigateTo({
-							url: '/pages/search/search',
+							url: '/pages/entity/talent/talent?pid='+m_this.talentItem.talentId,
 							animationType: 'fade-in',
 							animationDuration: 300
 						});
 					}, 300);
 					
-				}, this.throttleTime);
+				}, 1000);
 			},
 			// 获取节点信息
 			getElQuery(e) {
@@ -132,9 +135,10 @@
 	}
 </script>
 
-<style lang="less">
-	@import "@/uni.less";
 
+<style scoped lang="scss">
+@import '@/uview-ui/libs/css/style.components.scss';
+@import "@/common/uni.scss";
 .talent{
 	border: 0;
 	//border-radius: 10rpx;
@@ -142,10 +146,10 @@
 	// box-sizing: border-box;
 	// transition: all 0.15s;
 	
-	padding: @padding/2;
+	padding: $padding/2;
 	z-index: 1;
-	margin: @padding;
-	background-color: @cardColor;
+	margin: $padding;
+	background-color: $cardColor;
 	position: relative;
 	height: auto;// 根据内容自适应高度
 	min-height: 200rpx;
@@ -153,10 +157,10 @@
 	
 	display: flex;
 	flex-direction: column;
-	border-bottom: 1px solid @lineColor;
+	border-bottom: 1px solid $lineColor;
 	
 	.talent-alias-org{
-		height: @height_header;
+		height: $height_header;
 		display: flex;
 		flex-direction: row;
 		z-index:2;
@@ -178,19 +182,15 @@
 		}
 		
 		.talent-item-content{
-			margin: @padding/2 0;
-			color: @labelColor2;
+			margin: $padding/2 0;
+			color: $labelColor2;
 			border: none;
-			font-size: @height_header*0.4;
+			font-size: $height_header*0.4;
 			-webkit-line-clamp: 2;
 		}
 	}
 }
 
-</style>
-
-<style scoped lang="scss">
-@import '@/uview-ui/libs/css/style.components.scss';
 .u-btn::after {
 	border: none;
 }
@@ -231,7 +231,7 @@
 .u-wave-ripple.u-wave-active {
 	opacity: 0;
 	transform: scale(2);
-	transition: opacity 1s linear, transform 0.4s linear;
+	transition: opacity 0.7s linear, transform 0.4s linear;
 }
 
 

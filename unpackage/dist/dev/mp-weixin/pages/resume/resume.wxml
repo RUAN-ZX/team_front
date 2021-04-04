@@ -1,1 +1,1 @@
-<view class="btn-page"><view data-event-opts="{{[['tap',[['_tap',['$event']]]]]}}" class="btn-box" bindtap="__e"><lu-button-ripple vue-id="cec7f6c0-1" bind:__l="__l" vue-slots="{{['default']}}"><view class="col">qqq</view><view class="col">qqq</view><view class="col">qqq</view></lu-button-ripple></view></view>
+<view><gmy-float-touch vue-id="cec7f6c0-1" bind:__l="__l"></gmy-float-touch></view>

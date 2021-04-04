@@ -138,7 +138,6 @@
 
 <style lang="less">
 	@import "@/uni.less";
-	@import "./index.less";
 </style>
 
 <style scoped lang="scss">

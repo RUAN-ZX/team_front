@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "u-navbar": "/uview-ui/components/u-navbar/u-navbar",
+    "u-tabs-swiper": "/uview-ui/components/u-tabs-swiper/u-tabs-swiper",
+    "u-dropdown": "/uview-ui/components/u-dropdown/u-dropdown",
+    "u-dropdown-item": "/uview-ui/components/u-dropdown-item/u-dropdown-item",
+    "team-project": "/components/team-project/team-project",
+    "u-loadmore": "/uview-ui/components/u-loadmore/u-loadmore",
+    "team-talent": "/components/team-talent/team-talent",
+    "team-qa": "/components/team-qa/team-qa"
+  }
+}

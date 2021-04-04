@@ -5,8 +5,42 @@
 * */
 
 // 模拟数据
-import goods from "./goods.js";
+import {index_project,index_talent,index_qa} from "./goods.js";
+
+
+// old
 import goodsEdit from "./goods-edit.js";
+
+// 左闭右开 
+function getRndInteger(min, max) {
+  return Math.floor(Math.random() * (max - min) ) + min;
+}
+
+
+export function index_data_refresh(current,num) {
+	return new Promise((resolute, reject)=>{
+		
+		setTimeout(()=> {
+			try{
+				let list_ = [index_project,index_talent,index_qa];
+			
+				let curList = list_[current];
+				let result = []
+				for(let i=0;i<num;i++){
+					result.push(curList[getRndInteger(0,curList.length)]);
+					// console.log()
+				}
+				//模拟接口请求成功
+				// console.log(result);
+				resolute(result);
+			} catch (e) {
+				//模拟接口请求失败
+				reject(e);
+			}
+		},1000)
+	})
+}
+
 
 // 获取新闻列表
 export function apiNewList(pageNum, pageSize) {
@@ -71,39 +105,6 @@ export function apiGoods(pageNum, pageSize, isGoodsEdit) {
 	})
 }
 
-// 搜索商品
-export function apiSearch(pageNum, pageSize, keyword) {
-	return new Promise((resolute, reject)=>{
-		//延时一秒,模拟联网
-		setTimeout(()=> {
-			try{
-				// 模拟搜索
-				let list = []
-				if (!keyword || keyword == "全部") {
-					// 模拟搜索全部商品
-					for (let i = (pageNum - 1) * pageSize; i < pageNum * pageSize; i++) {
-						if (i === goods.length) break
-						list.push(goods[i])
-					}
-				} else{
-					// 模拟关键词搜索
-					if(keyword=="母婴") keyword="婴"; // 为这个关键词展示多几条数据
-					for (let i = 0; i < goods.length; i++) {
-						if (goods[i].goodName.indexOf(keyword) !== -1) {
-							list.push(goods[i])
-						}
-					}
-				}
-				//模拟接口请求成功
-				console.log("page.num=" + pageNum + ", page.size=" + pageSize + ", curPageData.length=" + list.length+", keyword="+keyword);
-				resolute(list);
-			} catch (e) {
-				//模拟接口请求失败
-				reject(e);
-			}
-		},1000)
-	})
-}
 
 // 获取微博列表
 export function apiWeiboList(pageNum, pageSize) {

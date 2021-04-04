@@ -107,8 +107,9 @@
   color: #909399;
 }
 .u-action.data-v-4c556b40 {
+  backgroundColor: #007aff;
+  color: #f5f5f5;
   font-size: 28rpx;
-  color: #303133;
   width: 0;
   overflow: hidden;
   -webkit-transition: all 0.3s;

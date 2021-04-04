@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "lu-button-ripple": "/components/lu-button-ripple/lu-button-ripple"
-  },
-  "component": true
-}

@@ -39,10 +39,15 @@
 				<u-icon class="u-clear-icon" name="close-circle-fill" size="34" color="#c0c4cc"></u-icon>
 			</view>
 		</view>
-		<view :style="[actionStyle]" class="u-action" 
-			:class="[showActionBtn || show ? 'u-action-active' : '']" 
+		
+		<view :style="[{
+					borderRadius: shape == 'round' ? '100rpx' : '10rpx',
+					height: height + 'rpx'}]"
+			:class="[showActionBtn || show ? 'u-action-active' : 'u-action']" 
 			@tap.stop.prevent="custom"
-		>{{ actionText }}</view>
+		>
+		{{ actionText }}
+		</view>
 	</view>
 </template>
 
@@ -116,7 +121,8 @@ export default {
 		actionStyle: {
 			type: Object,
 			default() {
-				return {};
+				return {
+				}
 			}
 		},
 		// 取消按钮文字
@@ -326,8 +332,9 @@ export default {
 }
 
 .u-action {
+	backgroundColor: #007aff;
+	color: #f5f5f5;
 	font-size: 28rpx;
-	color: $u-main-color;
 	width: 0;
 	overflow: hidden;
 	transition: all 0.3s;

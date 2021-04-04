@@ -1,7 +1,0 @@
-{
-  "component": true,
-  "usingComponents": {
-    "lu-button-ripple": "/components/lu-button-ripple/lu-button-ripple",
-    "alias-avatar-qa": "/components/aliasAvatarQa/aliasAvatarQa"
-  }
-}

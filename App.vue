@@ -2,31 +2,34 @@
 	/* 注意要写在第一行，同时给style标签加入lang="scss"属性 */
 	@import "./uview-ui/index.scss";
 	@import "./uview-ui/theme.scss";
-	
 </style>
 
 <script>
 	export default {
+		globalData: {
+			// url :"http://localhost:8080",
+			url :"https://www.hzbytecloud.cn",
+			// picUrl: "https://stea.ryanalexander.cn/psl/",
+			info: {},
+		}, 
 		onLaunch: function() {
-			var data = uni.getMenuButtonBoundingClientRect()
-			console.log('菜单按键宽度：',data.width)
-			console.log('菜单按键高度：',data.height)
-			console.log('菜单按键上边界坐标：',data.top)
-			console.log('菜单按键右边界坐标：',data.right)
-			console.log('菜单按键下边界坐标：',data.bottom)
-			console.log('菜单按键左边界坐标：',data.left)
-			console.log(uni.getSystemInfoSync());
+			let other = this.$u.sys();
 			
-			uni.setStorageSync("top",data.top);
-			uni.setStorageSync("width",data.height);
-			uni.setStorageSync("left",data.left);
+			let menuButton = uni.getMenuButtonBoundingClientRect();
 			
-			// this.top = data.top;
-			var height = uni.getSystemInfoSync().statusBarHeight;
-			uni.setStorageSync("statusHeight",height);
-			
-			var top = uni.getSystemInfoSync().screenHeight*(1/2);
-			uni.setStorageSync("hoverTop",top);
+			this.globalData.info = {
+				height : menuButton.height,
+				width : menuButton.width,
+				right : menuButton.right,
+				left : menuButton.left,
+				top : menuButton.top,
+				bottom : menuButton.bottom,
+				ratio: other.pixelRatio,
+				statusHeight: other.statusBarHeight,
+				windowHeight: other.windowHeight,
+				windowWidth: other.windowWidth
+			};
+			console.log(this.globalData.info);
 		},
 		onShow: function() {
 			console.log('App Show')
@@ -38,6 +41,8 @@
 </script>
 
 <style>
+	@import "@/common/psl_font.css";
+	@import "@/common/animate.css";
 	.trans {
 		transition: 0.3s opacity ease-out;
 	}
@@ -60,9 +65,9 @@
 	.overflow{
 		overflow: hidden;
 		text-overflow: ellipsis;
-		display: -webkit-box;
+		/* display: -webkit-box;
 		-webkit-box-orient: vertical;
-		word-break: break-all;
+		word-break: normal; */
 		white-space:nowrap; 
 	}
 </style>

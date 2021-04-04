@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "search": "/components/search/search",
+    "u-tabs-swiper": "/uview-ui/components/u-tabs-swiper/u-tabs-swiper",
+    "team-project": "/components/team-project/team-project",
+    "u-loadmore": "/uview-ui/components/u-loadmore/u-loadmore",
+    "team-talent": "/components/team-talent/team-talent",
+    "team-qa": "/components/team-qa/team-qa"
+  }
+}

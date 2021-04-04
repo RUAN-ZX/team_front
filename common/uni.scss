@@ -1,0 +1,71 @@
+$cardColor: #ffffff;
+$bgColor:#f5f5f5;
+
+$themeColor:#007aff;
+$themeColor2:#55aaff;
+$themeColor3:#ECF5FE;
+
+$labelColor: #afafaf; 
+$labelColor1: #a5a5a5; 
+$labelColor2: #646464; 
+
+$lineColor:#efefef;
+$lineColor:#efefef;
+$lineColor2:#B9CEE3;
+
+$padding: 10px;
+// 胶囊在无论什么手机格式下都是10px的右边距 因此所有右边距统一为10px！
+$height_header: 60rpx;
+$variableGap: 30rpx;
+
+$redDot: #fd3a3b;
+$height_header: 60rpx;
+
+
+
+$zindex_toast: 6;
+$zindex_popout: 5;
+$zindex_mask: 4;
+$zindex_navbar: 3;
+$zindex_tab: 2;
+$zindex_ripple:1;
+$zindex_content: 0;
+$zindex_bg: -1;
+
+.boxShadow{
+	background-color: #ffff0000;
+	box-shadow: 6rpx 6rpx 15rpx 3rpx rgba(0,0,0,0.125);
+}
+
+.background{
+	z-index: $zindex_bg;
+    display:flex;
+	justify-content: center;
+	align-items:center;
+	
+    height: 100vh;                        //设置布局满屏
+    
+    position: fixed;
+	width: 100vw;
+    .preface{
+        
+        width:100%;
+    }
+}
+
+.ellipsis{
+	word-break: break-all;
+	white-space:nowrap; 
+	text-overflow: ellipsis;  /* 超出部分省略号 */
+	
+	overflow: hidden;  /*超出隐藏*/
+}
+
+.card{
+	background-color: $cardColor;
+	box-shadow: 6rpx 6rpx 15rpx 3rpx rgba(0,0,0,0.21);
+	border-radius: $padding;
+	z-index: $zindex_content;
+	position: relative;
+}
+

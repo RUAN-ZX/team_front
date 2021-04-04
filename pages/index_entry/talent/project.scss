@@ -1,0 +1,35 @@
+// $height_header: 120px;
+.header_ {
+	position: relative;
+	background-color:$cardColor;
+	box-shadow: 6rpx 6rpx 15rpx 3rpx rgba(0,0,0,0.14);
+	width: 100vw;
+	margin-bottom: 15rpx;
+
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+	
+	.wrapper_search{
+		margin-top: $padding;
+		width: 100%;
+	}
+	.wrapper_search:active{
+		opacity: 0.1;
+	}
+}
+.item{
+	z-index:10;
+	position: relative;
+	margin-top: 16px;
+	height: 78vh;
+	display: flex;
+	flex-direction: column;
+	.swiper-box {
+		flex: 1;
+		.swiper-item {
+			height: 100%;
+		}
+	}
+	// height: calc(100vh - var(--window-top));
+}

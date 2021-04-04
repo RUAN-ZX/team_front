@@ -3,39 +3,82 @@
 		"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue"
 	},
 	"pages": [{
-		"path": "pages/index/index"
-		
+		"path": "pages/root/index/index"
 	}, {
-		"path": "pages/team/team"
-
+		"path": "pages/root/team/team"
 	}, {
-		"path": "pages/msg/msg"
-
+		"path": "pages/root/msg/msg"
 	}, {
-		"path": "pages/qa/qa"
-
+		"path": "pages/root/me/me"
 	}, {
 		"path": "pages/login/login"
-
-	}, {
-		"path": "components/resume/resume"
-
 	}, {
 		"path": "pages/resume/resume"
-
 	}, {
-		"path": "pages/news/news"
-
+		"path": "pages/release/editor/editor"
 	}, {
-		"path" : "pages/search/search"
+		"path": "pages/release/preview/preview"
+	}, {
+		"path": "pages/release/talent/talent"
+	}, {
+		"path": "pages/release/project/project"
+	}, {
+		"path": "pages/release/qa/qa"
+	}, {
+		"path": "pages/search/index_search/index_search"
+	}, {
+		"path": "pages/search/search_result/search_result"
+	}, {
+		"path": "pages/index_entry/project/project"
+	}, {
+		"path": "pages/index_entry/talent/talent"
+	}, {
+		"path": "pages/index_entry/qa/qa"
+	}, {
+            "path" : "pages/entity/project/project",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
             
-	},{
-		"path" : "pages/editor/editor"
+        }
+        ,{
+            "path" : "pages/entity/qa/qa",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
             
-	},{
-		"path" : "pages/preview/preview"
-			
-	}
+        }
+        ,{
+            "path" : "pages/entity/talent/talent",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/index_entry/experience/experience",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/release/experience/experience",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"backgroundColor": "#ffffff",
@@ -49,30 +92,30 @@
 	},
 
 	"tabBar": {
-		"color": "#ffffff",
+		"color": "#646464",
 		"selectedColor": "#6394E3",
 		"borderStyle": "black",
 		"backgroundColor": "#ffffff",
 		"list": [{
-				"pagePath": "pages/index/index",
+				"pagePath": "pages/root/index/index",
 				"text": "首页",
 				"iconPath": "static/home_.png",
 				"selectedIconPath": "static/home.png"
 			},
 			{
-				"pagePath": "pages/team/team",
-				"text": "发布",
+				"pagePath": "pages/root/team/team",
+				"text": "竞赛",
 				"iconPath": "static/team_.png",
 				"selectedIconPath": "static/team.png"
 			},
 			{
-				"pagePath": "pages/msg/msg",
+				"pagePath": "pages/root/msg/msg",
 				"text": "沟通",
 				"iconPath": "static/msg_.png",
 				"selectedIconPath": "static/msg.png"
 			},
 			{
-				"pagePath": "pages/qa/qa",
+				"pagePath": "pages/root/me/me",
 				"text": "我的",
 				"iconPath": "static/qa_.png",
 				"selectedIconPath": "static/qa.png"

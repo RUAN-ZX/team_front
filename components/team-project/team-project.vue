@@ -1,6 +1,5 @@
 <template>
-	<view @click="click($event)"
-	id="project" class="project" >
+	<view @click="click($event)" id="project" class="project" >
 		<view
 			class="u-wave-ripple"
 			:class="[waveActive ? 'u-wave-active' : '']"
@@ -45,7 +44,16 @@
 </template>
 
 <script>
+	var m_this;
+	import uniTagSet from "@/components/uni-tag-set/uni-tag-set.vue";
+	
+	import org from '@/components/org/org.vue';
+	
 	export default {
+		components:{
+			org,
+			uniTagSet
+		},
 		props:{
 			projectItem:{
 				type: Object,
@@ -63,10 +71,13 @@
 				
 			};
 		},
+		created() {
+			m_this = this;
+		},
 		methods:{
 			getWaveQuery(e) {
 				this.getElQuery(e).then(res => {
-					// console.log(res)
+					console.log(res)
 					// 查询返回的是一个数组节点
 					let data = res[0];
 					// 查询不到节点信息，不操作
@@ -103,18 +114,18 @@
 			click(e) {
 				// 进行节流控制，每this.throttle毫秒内，只在开始处执行
 				this.$u.throttle(() => {
-					this.waveActive = false;
-					this.$nextTick(function() {
-						this.getWaveQuery(e);
+					m_this.waveActive = false;
+					m_this.$nextTick(function() {
+						m_this.getWaveQuery(e);
 					});
 					this.$emit('click', e);
 					setTimeout(function() {
 						uni.navigateTo({
-							url: '/pages/search/search',
+							url: '/pages/entity/project/project?pid='+m_this.projectItem.projectId,
 							animationType: 'fade-in',
 							animationDuration: 300
 						});
-					}, 300);
+					}, 1000);
 					
 				}, 1000);
 			},
@@ -122,12 +133,11 @@
 			getElQuery(e) {
 				return new Promise(resolve => {
 					let queryInfo = '';
-					// 获取元素节点信息，请查看uniapp相关文档
-					// https://uniapp.dcloud.io/api/ui/nodes-info?id=nodesrefboundingclientrect
 					queryInfo = uni.createSelectorQuery().in(this);
 					
 					queryInfo.select("#project").boundingClientRect();
 					queryInfo.exec(data => {
+						console.log(data)
 						resolve(data);
 					});
 				});
@@ -136,17 +146,18 @@
 	}
 </script>
 
-<style lang="less">
-	@import "@/uni.less";
-	
+
+<style scoped lang="scss">
+	@import '@/uview-ui/libs/css/style.components.scss';
+	@import "@/common/uni.scss";
 	.project{
 		border: 0;
 		overflow: hidden;
 		
-		padding: @padding/2;
-		z-index: 1;
-		margin: @padding;
-		background-color: @cardColor;
+		padding: $padding/2;
+		z-index: 0;
+		margin: $padding;
+		background-color: $cardColor;
 		position: relative;
 		height: auto;
 		box-shadow: 6rpx 6rpx 15rpx 3rpx rgba(0,0,0,0.21);
@@ -154,35 +165,35 @@
 		display: flex;
 		flex-direction: column;
 		
-		font-size: @height_header*0.5;
-		color: @labelColor2;
+		font-size: $height_header*0.5;
+		color: $labelColor2;
 		.project-title-org{
 			display: flex;
 			flex: 1;
 			flex-direction: row;
 			.project-title{
-				height: @height_header;
-				line-height: @height_header;
-				color: @labelColor2;
+				height: $height_header;
+				line-height: $height_header;
+				color: $labelColor2;
 				font-weight: bolder;
 				flex: 3;
 			}
 			.project-org{
 				flex: 1;
-				height: @height_header;
-				line-height: @height_header;
+				height: $height_header;
+				line-height: $height_header;
 			}
 			
 		}
 		
 		.type-detail{
-			height: @height_header*0.4;
-			line-height: @height_header*0.4;
-			font-size: @height_header*0.4;
-			color: @labelColor1;
+			height: $height_header*0.4;
+			line-height: $height_header*0.4;
+			font-size: $height_header*0.4;
+			color: $labelColor1;
 		}
 		.foundation-label{
-			margin-bottom: @padding/2;
+			margin-bottom: $padding/2;
 		}
 		
 		.project-talent{
@@ -190,10 +201,10 @@
 			position: relative;
 			height: auto;
 			width: auto;
-			padding: @padding/2;
-			border: 1px solid @lineColor;
+			padding: $padding/2;
+			border: 1px solid $lineColor;
 			border-radius: 10rpx;
-			margin-bottom: @padding/1.5;
+			margin-bottom: $padding/1.5;
 			display: flex;
 			flex-direction: column;
 			.project-talent-ripple{
@@ -201,7 +212,7 @@
 				flex-direction: column;
 				
 				.project-talent-name{
-					font-size: @height_header*0.45;
+					font-size: $height_header*0.45;
 					
 					.project-talent-name-num{
 						font-weight: bolder;
@@ -213,40 +224,10 @@
 			}
 		}
 	}
-	
-
-	
-</style>
-
-<style scoped lang="scss">
-@import '@/uview-ui/libs/css/style.components.scss';
-.u-btn::after {
-	border: none;
-}
-
-.u-btn {
-	position: relative;
-	border: 0;
-	//border-radius: 10rpx;
-	/* #ifndef APP-NVUE */
-	display: inline-flex;		
-	/* #endif */
-	// 避免边框某些场景可能被“裁剪”，不能设置为hidden
-	overflow: visible;
-	line-height: 1;
-	@include vue-flex;
-	align-items: center;
-	justify-content: center;
-	cursor: pointer;
-	padding: 0 40rpx;
-	z-index: 1;
-	box-sizing: border-box;
-	transition: all 0.15s;
-}
 
 .u-wave-ripple {
 	overflow:hidden;
-	z-index: 0;
+	z-index: 5;
 	position: absolute;
 	border-radius: 100%;
 	background-clip: padding-box;
@@ -260,7 +241,7 @@
 .u-wave-ripple.u-wave-active {
 	opacity: 0;
 	transform: scale(2);
-	transition: opacity 1s linear, transform 0.4s linear;
+	transition: opacity 0.7s ease-in, transform 0.4s ease-in;
 }
 
 

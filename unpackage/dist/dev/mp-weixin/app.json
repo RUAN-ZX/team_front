@@ -1,16 +1,26 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/team/team",
-    "pages/msg/msg",
-    "pages/qa/qa",
+    "pages/root/index/index",
+    "pages/root/team/team",
+    "pages/root/msg/msg",
+    "pages/root/me/me",
     "pages/login/login",
-    "components/resume/resume",
     "pages/resume/resume",
-    "pages/news/news",
-    "pages/search/search",
-    "pages/editor/editor",
-    "pages/preview/preview"
+    "pages/release/editor/editor",
+    "pages/release/preview/preview",
+    "pages/release/talent/talent",
+    "pages/release/project/project",
+    "pages/release/qa/qa",
+    "pages/search/index_search/index_search",
+    "pages/search/search_result/search_result",
+    "pages/index_entry/project/project",
+    "pages/index_entry/talent/talent",
+    "pages/index_entry/qa/qa",
+    "pages/entity/project/project",
+    "pages/entity/qa/qa",
+    "pages/entity/talent/talent",
+    "pages/index_entry/experience/experience",
+    "pages/release/experience/experience"
   ],
   "subPackages": [],
   "window": {
@@ -18,31 +28,31 @@
     "navigationStyle": "custom"
   },
   "tabBar": {
-    "color": "#ffffff",
+    "color": "#646464",
     "selectedColor": "#6394E3",
     "borderStyle": "black",
     "backgroundColor": "#ffffff",
     "list": [
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/root/index/index",
         "text": "首页",
         "iconPath": "static/home_.png",
         "selectedIconPath": "static/home.png"
       },
       {
-        "pagePath": "pages/team/team",
-        "text": "发布",
+        "pagePath": "pages/root/team/team",
+        "text": "竞赛",
         "iconPath": "static/team_.png",
         "selectedIconPath": "static/team.png"
       },
       {
-        "pagePath": "pages/msg/msg",
+        "pagePath": "pages/root/msg/msg",
         "text": "沟通",
         "iconPath": "static/msg_.png",
         "selectedIconPath": "static/msg.png"
       },
       {
-        "pagePath": "pages/qa/qa",
+        "pagePath": "pages/root/me/me",
         "text": "我的",
         "iconPath": "static/qa_.png",
         "selectedIconPath": "static/qa.png"

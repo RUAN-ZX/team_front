@@ -1,1 +1,0 @@
-<view class="{{['u-wave-ripple data-v-1bf11f2b',waveActive?'u-wave-active':'']}}" style="{{'top:'+(rippleTop+'px')+';'+('left:'+(rippleLeft+'px')+';')+('width:'+(fields.targetWidth+'px')+';')+('height:'+(fields.targetWidth+'px')+';')+('background-color:'+(rippleBgColor||'rgba(0, 0, 0, 0.15)')+';')}}"></view>

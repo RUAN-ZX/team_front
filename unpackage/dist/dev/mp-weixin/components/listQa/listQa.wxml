@@ -1,1 +1,0 @@
-<view data-event-opts="{{[['tap',[['navigate_']]]]}}" class="list-qa" bindtap="__e"></view>

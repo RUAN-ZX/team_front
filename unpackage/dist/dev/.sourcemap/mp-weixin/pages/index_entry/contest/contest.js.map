@@ -1,0 +1,1 @@
+{"version":3,"sources":["uni-app:///main.js"],"names":["createPage","Page"],"mappings":";;;;wEAAA,qBACA,sBACA,0D,mDACAA,EAAWC,a","file":"pages/index_entry/contest/contest.js","sourcesContent":["import 'uni-pages';\nimport Vue from 'vue'\nimport Page from './pages/index_entry/contest/contest.vue'\ncreatePage(Page)"],"sourceRoot":""}

@@ -1,0 +1,1 @@
+<view><u-button bind:click="__e" vue-id="435beb76-1" data-event-opts="{{[['^click',[['navigateBack']]]]}}" bind:__l="__l" vue-slots="{{['default']}}">返回</u-button><rich-text nodes="{{richText}}"></rich-text></view>

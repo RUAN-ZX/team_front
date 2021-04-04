@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "u-toast": "/uview-ui/components/u-toast/u-toast",
+    "u-navbar": "/uview-ui/components/u-navbar/u-navbar",
+    "search": "/components/search/search",
+    "u-tag": "/uview-ui/components/u-tag/u-tag"
+  }
+}

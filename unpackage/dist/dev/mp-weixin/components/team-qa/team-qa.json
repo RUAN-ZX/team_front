@@ -1,7 +1,8 @@
 {
+  "component": true,
   "usingComponents": {
     "alias-avatar-qa": "/components/aliasAvatarQa/aliasAvatarQa",
+    "org": "/components/org/org",
     "uni-tag-set": "/components/uni-tag-set/uni-tag-set"
-  },
-  "component": true
+  }
 }

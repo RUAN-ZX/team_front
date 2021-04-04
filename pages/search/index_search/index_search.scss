@@ -1,0 +1,45 @@
+
+.search{
+	padding: $padding;
+}
+.history{
+	padding: $padding;
+	position: relative;
+	
+	.first{
+		
+		height: 30px;
+		line-height: 30px;
+		color: $labelColor2;
+		font-weight: bolder;
+		display: flex;
+		justify-content: space-between;
+		.title{
+			font-size: 25px;
+		}
+		.history_del{
+			font-size: 20px;
+			
+			opacity: 0.9;
+		}
+		.history_del:active{
+			opacity: 0.1;
+		}
+		
+	}
+	.tag{
+		display: flex;
+		justify-content: flex-start;
+		flex-wrap: wrap;
+		
+		.tag_item{
+			margin-top: $padding;
+			margin-right: 10px;
+			opacity: 0.9;
+		}
+		.tag_item:active{
+			opacity: 0.1;
+		}
+	}
+}
+
