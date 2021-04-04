@@ -17,7 +17,6 @@
 		</view>
 		<view :style="{marginTop: info.top+info.height+20+'px'}">
 			<u-swiper
-				
 				:list="swiperList" mode="round"
 				:effect3d="true"
 				:title="true"
