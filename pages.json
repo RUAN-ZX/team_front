@@ -29,57 +29,11 @@
 	}, {
 		"path": "pages/search/search_result/search_result"
 	}, {
-		"path": "pages/index_entry/project/project"
+		"path": "pages/entity/qa/qa"
+
 	}, {
-		"path": "pages/index_entry/talent/talent"
-	}, {
-		"path": "pages/index_entry/qa/qa"
-	}, {
-            "path" : "pages/entity/project/project",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/entity/qa/qa",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/entity/talent/talent",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/index_entry/experience/experience",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/release/experience/experience",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-    ],
+		"path": "pages/entity/talent/talent"
+	}],
 	"globalStyle": {
 		"backgroundColor": "#ffffff",
 		"navigationStyle": "custom",

@@ -13,14 +13,8 @@
     "pages/release/qa/qa",
     "pages/search/index_search/index_search",
     "pages/search/search_result/search_result",
-    "pages/index_entry/project/project",
-    "pages/index_entry/talent/talent",
-    "pages/index_entry/qa/qa",
-    "pages/entity/project/project",
     "pages/entity/qa/qa",
-    "pages/entity/talent/talent",
-    "pages/index_entry/experience/experience",
-    "pages/release/experience/experience"
+    "pages/entity/talent/talent"
   ],
   "subPackages": [],
   "window": {
@@ -59,5 +53,6 @@
       }
     ]
   },
-  "usingComponents": {}
+  "usingComponents": {},
+  "sitemapLocation": "sitemap71.json"
 }

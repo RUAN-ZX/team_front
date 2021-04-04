@@ -1,7 +1,5 @@
 <template>
 	<view>
-		<!-- <u-tabbar v-model="current" :list="list" :mid-button="true"></u-tabbar> -->
-		<!-- <gmy-float-touch :imgLists="imgLists"></gmy-float-touch> -->
 		<view class="header"
 		:style="[{backgroundColor:'#ffff'+m_header_opacity},{boxShadow: '6rpx 6rpx 15rpx 3rpx #0000'+m_header_shadow}]">
 			
@@ -17,15 +15,15 @@
 				</search>
 			</view>
 		</view>
-		<view class="panel card" :style="{marginTop: info.top+info.height+20+'px'}">
-			<view class="entry trans" 
-				v-for="(item,index) in entry"
-				:key="index"
-				@click="navigate(item.navigation)"
-			>
-				<view :class="'entry_icon psl_font '+item.icon"></view>
-				<view class="entry">{{item.entry}}</view>
-			</view>
+		<view :style="{marginTop: info.top+info.height+20+'px'}">
+			<u-swiper
+				
+				:list="swiperList" mode="round"
+				:effect3d="true"
+				:title="true"
+				duration="1000" :circular="true" :autoplay="true"
+			>	
+			</u-swiper>
 		</view>
 		
 		<view class="wrap" id="target"
@@ -101,6 +99,19 @@
 		},
 		data() {
 			return {
+				swiperList: [{
+						image: 'https://stea.ryanalexander.cn/psl/hdu1.jpg',
+						title: '以清养廉，以廉育人'
+					},
+					{
+						image: 'https://stea.ryanalexander.cn/psl/hdu2.jpg',
+						title: '与祖国同行，与科学共进'
+					},
+					{
+						image: 'https://stea.ryanalexander.cn/psl/hdu3.jpg',
+						title: '不忘初心，牢记使命'
+					}
+				],
 				title_text_class: ["title_text_selected","title_text_unselected"],
 				scrollTop: "0px",
 				entry:[
