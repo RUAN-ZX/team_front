@@ -27,7 +27,8 @@
 /* uni.scss */
 .boxShadow.data-v-7f83a7ab {
   background-color: #ffff0000;
-  box-shadow: 6rpx 6rpx 15rpx 3rpx rgba(0, 0, 0, 0.125);
+  -webkit-box-shadow: 6rpx 6rpx 15rpx 3rpx rgba(0, 0, 0, 0.125);
+          box-shadow: 6rpx 6rpx 15rpx 3rpx rgba(0, 0, 0, 0.125);
 }
 .background.data-v-7f83a7ab {
   z-index: -1;
@@ -57,8 +58,10 @@
 }
 .card.data-v-7f83a7ab {
   background-color: #ffffff;
-  box-shadow: 6rpx 6rpx 15rpx 3rpx rgba(0, 0, 0, 0.21);
-  border-radius: 10px;
+  -webkit-box-shadow: 6rpx 6rpx 15rpx 3rpx rgba(0, 0, 0, 0.21);
+          box-shadow: 6rpx 6rpx 15rpx 3rpx rgba(0, 0, 0, 0.21);
+  -webkit-border-radius: 10px;
+          border-radius: 10px;
   z-index: 0;
   position: relative;
 }

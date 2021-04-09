@@ -47,7 +47,8 @@
   border: 1px solid #2979ff;
   color: #2979ff;
   padding: 8rpx 40rpx;
-  border-radius: 100rpx;
+  -webkit-border-radius: 100rpx;
+          border-radius: 100rpx;
   margin-top: 30rpx;
 }
 .slot-content .item-box .active.data-v-0ee9959b {

@@ -1,5 +1,5 @@
 <template>
-	<view @click="click($event)" id="project" class="project" >
+	<view id="project" class="project" @click="click($event)">
 		<view
 			class="u-wave-ripple"
 			:class="[waveActive ? 'u-wave-active' : '']"
@@ -11,48 +11,47 @@
 				backgroundColor: 'rgba(0, 0, 0, 0.10)'
 			}"
 		></view>
+		
 		<view class="project-title-org">
 			<view class="project-title overflow">
 				{{projectItem.title}}
 			</view>
-			<view class="project-org overflow">
-				<org :org="projectItem.org">
-				</org>
+			<view class="project-like">
+				<r-iconBtn
+					text="收藏"
+					icon="heart"
+					iconFill="heart-fill"
+					color="#007aff"
+					requestObject=""
+				></r-iconBtn>
 			</view>
+		</view>
 		
+		<view class="foundation-label">
+			<uni-tag-set :set="projectItem.foundation">
+			</uni-tag-set>
 		</view>
-		<view class="type-detail">
-			{{projectItem.type+projectItem.type_detail}}
-		</view>
-		<uni-tag-set class="foundation-label" :set="projectItem.foundation">
-		</uni-tag-set>
+		
 		<view class="project-talent" v-for="(ptItem,ptIndex) in projectItem.talent" :key="ptIndex">
 			<view class="project-talent-name">
-				<span class="project-talent-name-num">
-					{{ptItem.name}}
-					<span class="project-talent-num">
-						{{ptItem.num}}
-					</span>
-					人
-				</span>
+				{{ptItem.name}}
 		
 			</view>
-			<uni-tag-set class="project-talent-demand" :set="ptItem.demand">
-			</uni-tag-set>
+			<view class="project-talent-demand">
+				<uni-tag-set :set="ptItem.demand">
+				</uni-tag-set>
+			</view>
 		</view>
 	</view>
 </template>
 
 <script>
-	var m_this;
-	import uniTagSet from "@/components/uni-tag-set/uni-tag-set.vue";
-	
-	import org from '@/components/org/org.vue';
-	
+	import uniTagSet from "@/components/uni-tag-set/uni-tag-set.vue"
+	import rIconBtn from "@/components/r-iconBtn/r-iconBtn.vue";
 	export default {
 		components:{
-			org,
-			uniTagSet
+			uniTagSet,
+			rIconBtn
 		},
 		props:{
 			projectItem:{
@@ -68,16 +67,14 @@
 				rippleLeft: 0, // 水波纹起点X坐标到按钮左边界的距离
 				fields: {}, // 波纹按钮节点信息
 				waveActive: false, // 激活水波纹
-				
 			};
 		},
 		created() {
-			m_this = this;
+			
 		},
 		methods:{
 			getWaveQuery(e) {
 				this.getElQuery(e).then(res => {
-					console.log(res)
 					// 查询返回的是一个数组节点
 					let data = res[0];
 					// 查询不到节点信息，不操作
@@ -111,51 +108,72 @@
 					});
 				});
 			},
+			
 			click(e) {
 				// 进行节流控制，每this.throttle毫秒内，只在开始处执行
 				this.$u.throttle(() => {
-					m_this.waveActive = false;
-					m_this.$nextTick(function() {
-						m_this.getWaveQuery(e);
+					this.waveActive = false;
+					this.$nextTick(() => {
+						this.getWaveQuery(e);
 					});
-					this.$emit('click', e);
-					setTimeout(function() {
+					
+					setTimeout(()=>{
 						uni.navigateTo({
-							url: '/pages/entity/project/project?pid='+m_this.projectItem.projectId,
+							url: '/pages/entity/project/project?pid='+this.projectItem.projectId,
 							animationType: 'fade-in',
 							animationDuration: 300
 						});
-					}, 1000);
-					
+					}, 300);
 				}, 1000);
 			},
 			// 获取节点信息
 			getElQuery(e) {
 				return new Promise(resolve => {
 					let queryInfo = '';
+					
 					queryInfo = uni.createSelectorQuery().in(this);
 					
 					queryInfo.select("#project").boundingClientRect();
 					queryInfo.exec(data => {
-						console.log(data)
 						resolve(data);
 					});
 				});
-			},
+			}
 		}
 	}
 </script>
 
 
 <style scoped lang="scss">
+	@import '@/common/uni.scss';
 	@import '@/uview-ui/libs/css/style.components.scss';
-	@import "@/common/uni.scss";
+	.u-wave-ripple {
+		overflow:hidden;
+		z-index: $zindex_ripple;
+		position: absolute;
+		border-radius: 100%;
+		background-clip: padding-box;
+		pointer-events: none;
+		user-select: none;
+		transform: scale(0);
+		opacity: 1;
+		transform-origin: center;
+	}
+
+	.u-wave-ripple.u-wave-active {
+		opacity: 0;
+		transform: scale(2);
+		transition: opacity 0.7s ease-in, transform 0.4s linear;
+	}
+
 	.project{
 		border: 0;
 		overflow: hidden;
 		
-		padding: $padding/2;
-		z-index: 0;
+		border-radius: $padding/2;
+		padding: $padding/2 $padding $padding/2 $padding ;
+		
+		z-index: $zindex_content;
 		margin: $padding;
 		background-color: $cardColor;
 		position: relative;
@@ -165,23 +183,22 @@
 		display: flex;
 		flex-direction: column;
 		
-		font-size: $height_header*0.5;
+		
 		color: $labelColor2;
 		.project-title-org{
 			display: flex;
 			flex: 1;
 			flex-direction: row;
+			// justify-content: left;
+			align-items: center;
 			.project-title{
-				height: $height_header;
-				line-height: $height_header;
+				font-size: $height_header*0.5;
 				color: $labelColor2;
 				font-weight: bolder;
-				flex: 3;
-			}
-			.project-org{
 				flex: 1;
-				height: $height_header;
-				line-height: $height_header;
+			}
+			.project-like{
+				margin-left: $padding;
 			}
 			
 		}
@@ -206,43 +223,16 @@
 			border-radius: 10rpx;
 			margin-bottom: $padding/1.5;
 			display: flex;
-			flex-direction: column;
-			.project-talent-ripple{
-				display: flex;
-				flex-direction: column;
-				
-				.project-talent-name{
-					font-size: $height_header*0.45;
-					
-					.project-talent-name-num{
-						font-weight: bolder;
-					}
-				}
-				.project-talent-demand{
-					
-				}
+			flex-direction: row;
+			align-items: center;
+			.project-talent-name{
+				margin-right: $padding;
+				font-size: $height_header*0.45;
+				font-weight: bolder;
+			}
+			.project-talent-demand{
+				flex: 1;
 			}
 		}
 	}
-
-.u-wave-ripple {
-	overflow:hidden;
-	z-index: 5;
-	position: absolute;
-	border-radius: 100%;
-	background-clip: padding-box;
-	pointer-events: none;
-	user-select: none;
-	transform: scale(0);
-	opacity: 1;
-	transform-origin: center;
-}
-
-.u-wave-ripple.u-wave-active {
-	opacity: 0;
-	transform: scale(2);
-	transition: opacity 0.7s ease-in, transform 0.4s ease-in;
-}
-
-
 </style>

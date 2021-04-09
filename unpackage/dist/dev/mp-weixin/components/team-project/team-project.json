@@ -1,7 +1,7 @@
 {
   "component": true,
   "usingComponents": {
-    "org": "/components/org/org",
+    "r-icon-btn": "/components/r-iconBtn/r-iconBtn",
     "uni-tag-set": "/components/uni-tag-set/uni-tag-set"
   }
 }

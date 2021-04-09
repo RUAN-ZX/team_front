@@ -55,28 +55,28 @@
 </script>
 
 <style lang="less">
-	@import "@/uni.less";
-	.org{
-		display: flex;
-		flex-direction: row;
+	// @import "@/uni.less";
+	// .org{
+	// 	display: flex;
+	// 	flex-direction: row;
 		
-		height: @height_header; // 根据父组件大小来搞定自己大小 妙啊 否则你需要传参 恶心
-		line-height: @height_header; 
-		.org-tag{
-			color: @labelColor2;
-			font-size: @height_header*0.5;
-		}
-		.org-name{
-			margin-left: @padding/3;
-			text-align: left;
-			color: @labelColor;
-			font-size: @height_header*0.4;
+	// 	height: @height_header; // 根据父组件大小来搞定自己大小 妙啊 否则你需要传参 恶心
+	// 	line-height: @height_header; 
+	// 	.org-tag{
+	// 		color: @labelColor2;
+	// 		font-size: @height_header*0.5;
+	// 	}
+	// 	.org-name{
+	// 		margin-left: @padding/3;
+	// 		text-align: left;
+	// 		color: @labelColor;
+	// 		font-size: @height_header*0.4;
 			
-			word-break: break-all;
-			white-space:nowrap; 
-			text-overflow: ellipsis;  /* 超出部分省略号 */
-			overflow: hidden;  /*超出隐藏*/
-		}
-	}
+	// 		word-break: break-all;
+	// 		white-space:nowrap; 
+	// 		text-overflow: ellipsis;  /* 超出部分省略号 */
+	// 		overflow: hidden;  /*超出隐藏*/
+	// 	}
+	// }
 	
 </style>

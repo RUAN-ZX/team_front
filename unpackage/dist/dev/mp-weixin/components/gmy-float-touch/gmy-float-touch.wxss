@@ -34,16 +34,20 @@ image {
   right: 20rpx;
   width: 80rpx;
   height: 80rpx;
-  border-radius: 50%;
-  box-shadow: 6rpx 6rpx 15rpx 3rpx rgba(0, 0, 0, 0.14);
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  -webkit-box-shadow: 6rpx 6rpx 15rpx 3rpx rgba(0, 0, 0, 0.14);
+          box-shadow: 6rpx 6rpx 15rpx 3rpx rgba(0, 0, 0, 0.14);
 }
 .menu {
   color: white;
   position: fixed;
   width: 80rpx;
   height: 80rpx;
-  border-radius: 50%;
-  box-shadow: 6rpx 6rpx 15rpx 3rpx rgba(0, 0, 0, 0.14);
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  -webkit-box-shadow: 6rpx 6rpx 15rpx 3rpx rgba(0, 0, 0, 0.14);
+          box-shadow: 6rpx 6rpx 15rpx 3rpx rgba(0, 0, 0, 0.14);
 }
 .menu0 {
   left: 5rpx;

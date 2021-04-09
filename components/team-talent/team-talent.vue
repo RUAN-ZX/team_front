@@ -10,37 +10,46 @@
 				height: fields.targetWidth + 'px',
 				backgroundColor: 'rgba(0, 0, 0, 0.10)'
 			}"
-		></view>
-		<view class="talent-alias-org">
-			<aliasAvatar class="talent-aliasAvatar" :alias="talentItem.alias" :avatar="talentItem.avatar" :uid="talentItem.uid"
-			 :access="m_access" font_size="28rpx"></aliasAvatar>
-			<org class="talent-org" :org="talentItem.org">
-		
-			</org>
+		></view>	
+		<view class="talent-alias-like">
+			<view class="talent-alias">
+				<r-alias
+					:alias="talentItem.talent.alias"
+					:avatar="talentItem.talent.avatar"
+					:uid="talentItem.talent.uid"
+					:certification="talentItem.talent.certification"
+					:discription="talentItem.talent.discription">
+				</r-alias>
+			</view>
+			<view class="talent-like">
+				<r-iconBtn
+					text="收藏"
+					icon="heart"
+					iconFill="heart-fill"
+					color="#007aff"
+					requestObject=""
+				></r-iconBtn>
+			</view>
 		</view>
 		
-		<view class="wrapper">
-			
-			<uni-tag-set :set="talentItem.label" class="talent-label">
-			</uni-tag-set>
-		
-			<view class="talent-item-content overflow">
-				{{talentItem.content}}
-			</view>
+		<uni-tag-set :set="talentItem.label" class="talent-label">
+		</uni-tag-set>
+				
+		<view class="talent-item-content">
+			{{talentItem.content}}
 		</view>
 	</view>
 </template>
 
 <script>
 	import uniTagSet from "@/components/uni-tag-set/uni-tag-set.vue"
-	import org from '@/components/org/org.vue';
-	var m_this;
-	import aliasAvatar from "@/components/aliasAvatar/aliasAvatar.vue"
+	import rIconBtn from "@/components/r-iconBtn/r-iconBtn.vue";
+	import rAlias from "@/components/r-alias/r-alias.vue";
 	export default {
 		components:{
-			aliasAvatar,
-			org,
-			uniTagSet
+			uniTagSet,
+			rIconBtn,
+			rAlias
 		},
 		props:{
 			talentItem:{
@@ -58,13 +67,9 @@
 				waveActive: false, // 激活水波纹
 			};
 		},
-		created() {
-			m_this = this;
-		},
 		methods:{
 			getWaveQuery(e) {
 				this.getElQuery(e).then(res => {
-					console.log(res)
 					// 查询返回的是一个数组节点
 					let data = res[0];
 					// 查询不到节点信息，不操作
@@ -102,13 +107,13 @@
 				// 进行节流控制，每this.throttle毫秒内，只在开始处执行
 				this.$u.throttle(() => {
 					this.waveActive = false;
-					this.$nextTick(function() {
+					this.$nextTick(() => {
 						this.getWaveQuery(e);
 					});
-					this.$emit('click', e);
-					setTimeout(function() {
+					// this.$emit('click', e);
+					setTimeout(() => {
 						uni.navigateTo({
-							url: '/pages/entity/talent/talent?pid='+m_this.talentItem.talentId,
+							url: '/pages/entity/talent/talent?pid='+this.talentItem.talentId,
 							animationType: 'fade-in',
 							animationDuration: 300
 						});
@@ -120,8 +125,7 @@
 			getElQuery(e) {
 				return new Promise(resolve => {
 					let queryInfo = '';
-					// 获取元素节点信息，请查看uniapp相关文档
-					// https://uniapp.dcloud.io/api/ui/nodes-info?id=nodesrefboundingclientrect
+					
 					queryInfo = uni.createSelectorQuery().in(this);
 					
 					queryInfo.select("#talent").boundingClientRect();
@@ -130,109 +134,79 @@
 						resolve(data);
 					});
 				});
-			},
+			}
 		}
 	}
 </script>
 
 
 <style scoped lang="scss">
-@import '@/uview-ui/libs/css/style.components.scss';
-@import "@/common/uni.scss";
-.talent{
-	border: 0;
-	//border-radius: 10rpx;
-	overflow: hidden;
-	// box-sizing: border-box;
-	// transition: all 0.15s;
-	
-	padding: $padding/2;
-	z-index: 1;
-	margin: $padding;
-	background-color: $cardColor;
-	position: relative;
-	height: auto;// 根据内容自适应高度
-	min-height: 200rpx;
-	box-shadow: 6rpx 6rpx 15rpx 3rpx rgba(0,0,0,0.21);
-	
-	display: flex;
-	flex-direction: column;
-	border-bottom: 1px solid $lineColor;
-	
-	.talent-alias-org{
-		height: $height_header;
-		display: flex;
-		flex-direction: row;
-		z-index:2;
-		.talent-aliasAvatar{
-			flex: 2;
-			
-			
-		}
-		.talent-org{
-			flex: 3;
-			display: inline-block;
-			text-align: middle;
-		}
+	@import '@/common/uni.scss';
+	@import '@/uview-ui/libs/css/style.components.scss';
+	.u-wave-ripple {
+		overflow:hidden;
+		z-index: $zindex_ripple;
+		position: absolute;
+		border-radius: 100%;
+		background-clip: padding-box;
+		pointer-events: none;
+		user-select: none;
+		transform: scale(0);
+		opacity: 1;
+		transform-origin: center;
 	}
-	.wrapper{
-		// position: relative;
-		.talent-label{
-			
+
+	.u-wave-ripple.u-wave-active {
+		opacity: 0;
+		transform: scale(2);
+		transition: opacity 0.7s ease-in, transform 0.4s linear;
+	}
+
+	.talent{
+		border: 0;
+		overflow: hidden;
+		border-radius: $padding/2;
+		
+		padding: $padding;
+		z-index: $zindex_content;
+		margin: $padding;
+		background-color: $cardColor;
+		position: relative;
+		height: auto;// 根据内容自适应高度
+		min-height: 200rpx;
+		box-shadow: 6rpx 6rpx 15rpx 3rpx rgba(0,0,0,0.21);
+		
+		display: flex;
+		flex-direction: column;
+		border-bottom: 1px solid $lineColor;
+		
+		// align-items: center;
+		// justify-content: flex-start;
+		.talent-alias-like{
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: left;
+			.talent-alias{
+				flex: 1;
+			}
+			.talent-like{
+				width: auto;
+			}
 		}
 		
 		.talent-item-content{
-			margin: $padding/2 0;
+			word-break: break-all;
+			text-overflow: ellipsis;  /* 超出部分省略号 */
+			overflow: hidden;  /*超出隐藏*/
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: 2;
+			
+			// margin: $padding/2 0;
 			color: $labelColor2;
 			border: none;
 			font-size: $height_header*0.4;
-			-webkit-line-clamp: 2;
 		}
 	}
-}
-
-.u-btn::after {
-	border: none;
-}
-
-.u-btn {
-	position: relative;
-	border: 0;
-	//border-radius: 10rpx;
-	/* #ifndef APP-NVUE */
-	display: inline-flex;		
-	/* #endif */
-	// 避免边框某些场景可能被“裁剪”，不能设置为hidden
-	overflow: visible;
-	line-height: 1;
-	@include vue-flex;
-	align-items: center;
-	justify-content: center;
-	cursor: pointer;
-	padding: 0 40rpx;
-	z-index: 1;
-	box-sizing: border-box;
-	transition: all 0.15s;
-}
-
-.u-wave-ripple {
-	overflow:hidden;
-	z-index: 0;
-	position: absolute;
-	border-radius: 100%;
-	background-clip: padding-box;
-	pointer-events: none;
-	user-select: none;
-	transform: scale(0);
-	opacity: 1;
-	transform-origin: center;
-}
-
-.u-wave-ripple.u-wave-active {
-	opacity: 0;
-	transform: scale(2);
-	transition: opacity 0.7s linear, transform 0.4s linear;
-}
-
-
 </style>

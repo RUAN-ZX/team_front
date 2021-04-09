@@ -2,38 +2,54 @@
 	"easycom": {
 		"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue"
 	},
-	"pages": [{
-		"path": "pages/root/index/index"
-	}, {
-		"path": "pages/root/team/team"
-	}, {
-		"path": "pages/root/msg/msg"
-	}, {
-		"path": "pages/root/me/me"
-	}, {
-		"path": "pages/login/login"
-	}, {
-		"path": "pages/resume/resume"
-	}, {
-		"path": "pages/release/editor/editor"
-	}, {
-		"path": "pages/release/preview/preview"
-	}, {
-		"path": "pages/release/talent/talent"
-	}, {
-		"path": "pages/release/project/project"
-	}, {
-		"path": "pages/release/qa/qa"
-	}, {
-		"path": "pages/search/index_search/index_search"
-	}, {
-		"path": "pages/search/search_result/search_result"
-	}, {
-		"path": "pages/entity/qa/qa"
-
-	}, {
-		"path": "pages/entity/talent/talent"
-	}],
+	"pages": [
+		{
+			"path": "pages/root/index/index"
+		}, {
+			"path": "pages/root/team/team"
+		}, {
+			"path": "pages/root/msg/msg"
+		}, {
+			"path": "pages/root/me/me"
+		}, {
+			"path": "pages/login/login"
+		}, {
+			"path": "pages/resume/resume"
+		}, {
+			"path": "pages/release/editor/editor"
+		}, {
+			"path": "pages/release/preview/preview"
+		}, {
+			"path": "pages/release/talent/talent"
+		}, {
+			"path": "pages/release/project/project"
+		}, {
+			"path": "pages/release/qa/qa"
+		}, {
+			"path": "pages/release/experience/experience"
+		}, {
+			"path": "pages/search/index_search/index_search"
+		}, {
+			"path": "pages/search/search_result/search_result"
+		}, {
+			"path": "pages/entity/qa/qa"
+		}, {
+			"path": "pages/entity/talent/talent"
+		}, {
+			"path": "pages/entity/project/project"
+		}, {
+			"path": "pages/freeTag/freeTag",
+			"style": {
+				"navigationStyle": "custom",  // 取消本页面的导航栏
+				"app-plus": {
+					"animationType": "fade-in", // 设置fade-in淡入动画，为最合理的动画类型
+					"background": "transparent", // 背景透明
+					"backgroundColor": "rgba(0,0,0,0)", // 背景透明
+					"popGesture": "none" // 关闭IOS屏幕左边滑动关闭当前页面的功能
+				}
+			}
+		}   
+    ],
 	"globalStyle": {
 		"backgroundColor": "#ffffff",
 		"navigationStyle": "custom",
@@ -46,33 +62,33 @@
 	},
 
 	"tabBar": {
-		"color": "#646464",
-		"selectedColor": "#6394E3",
+		"color": "#909399",
+		"selectedColor": "#007aff",
 		"borderStyle": "black",
 		"backgroundColor": "#ffffff",
 		"list": [{
 				"pagePath": "pages/root/index/index",
 				"text": "首页",
-				"iconPath": "static/home_.png",
-				"selectedIconPath": "static/home.png"
+				"iconPath": "/static/root/home_.png",
+				"selectedIconPath": "static/root/home.png"
 			},
 			{
 				"pagePath": "pages/root/team/team",
 				"text": "竞赛",
-				"iconPath": "static/team_.png",
-				"selectedIconPath": "static/team.png"
+				"iconPath": "/static/root/contest_.png",
+				"selectedIconPath": "/static/root/contest.png"
 			},
 			{
 				"pagePath": "pages/root/msg/msg",
-				"text": "沟通",
-				"iconPath": "static/msg_.png",
-				"selectedIconPath": "static/msg.png"
+				"text": "消息",
+				"iconPath": "/static/root/msg_.png",
+				"selectedIconPath": "/static/root/msg.png"
 			},
 			{
 				"pagePath": "pages/root/me/me",
 				"text": "我的",
-				"iconPath": "static/qa_.png",
-				"selectedIconPath": "static/qa.png"
+				"iconPath": "/static/root/me_.png",
+				"selectedIconPath": "static/root/me.png"
 			}
 		]
 	}

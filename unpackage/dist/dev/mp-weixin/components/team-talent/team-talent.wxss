@@ -27,7 +27,8 @@
 /* uni.scss */
 .boxShadow.data-v-bfcd4d84 {
   background-color: #ffff0000;
-  box-shadow: 6rpx 6rpx 15rpx 3rpx rgba(0, 0, 0, 0.125);
+  -webkit-box-shadow: 6rpx 6rpx 15rpx 3rpx rgba(0, 0, 0, 0.125);
+          box-shadow: 6rpx 6rpx 15rpx 3rpx rgba(0, 0, 0, 0.125);
 }
 .background.data-v-bfcd4d84 {
   z-index: -1;
@@ -57,99 +58,19 @@
 }
 .card.data-v-bfcd4d84 {
   background-color: #ffffff;
-  box-shadow: 6rpx 6rpx 15rpx 3rpx rgba(0, 0, 0, 0.21);
-  border-radius: 10px;
+  -webkit-box-shadow: 6rpx 6rpx 15rpx 3rpx rgba(0, 0, 0, 0.21);
+          box-shadow: 6rpx 6rpx 15rpx 3rpx rgba(0, 0, 0, 0.21);
+  -webkit-border-radius: 10px;
+          border-radius: 10px;
   z-index: 0;
   position: relative;
-}
-.talent.data-v-bfcd4d84 {
-  border: 0;
-  overflow: hidden;
-  padding: 5px;
-  z-index: 1;
-  margin: 10px;
-  background-color: #ffffff;
-  position: relative;
-  height: auto;
-  min-height: 200rpx;
-  box-shadow: 6rpx 6rpx 15rpx 3rpx rgba(0, 0, 0, 0.21);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-          flex-direction: column;
-  border-bottom: 1px solid #efefef;
-}
-.talent .talent-alias-org.data-v-bfcd4d84 {
-  height: 60rpx;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-          flex-direction: row;
-  z-index: 2;
-}
-.talent .talent-alias-org .talent-aliasAvatar.data-v-bfcd4d84 {
-  -webkit-box-flex: 2;
-  -webkit-flex: 2;
-          flex: 2;
-}
-.talent .talent-alias-org .talent-org.data-v-bfcd4d84 {
-  -webkit-box-flex: 3;
-  -webkit-flex: 3;
-          flex: 3;
-  display: inline-block;
-  text-align: middle;
-}
-.talent .wrapper .talent-item-content.data-v-bfcd4d84 {
-  margin: 5px 0;
-  color: #646464;
-  border: none;
-  font-size: 24rpx;
-  -webkit-line-clamp: 2;
-}
-.u-btn.data-v-bfcd4d84::after {
-  border: none;
-}
-.u-btn.data-v-bfcd4d84 {
-  position: relative;
-  border: 0;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: inline-flex;
-  overflow: visible;
-  line-height: 1;
-
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-          flex-direction: row;
-
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-          align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-          justify-content: center;
-  cursor: pointer;
-  padding: 0 40rpx;
-  z-index: 1;
-  box-sizing: border-box;
-  -webkit-transition: all 0.15s;
-  transition: all 0.15s;
 }
 .u-wave-ripple.data-v-bfcd4d84 {
   overflow: hidden;
-  z-index: 0;
+  z-index: 1;
   position: absolute;
-  border-radius: 100%;
+  -webkit-border-radius: 100%;
+          border-radius: 100%;
   background-clip: padding-box;
   pointer-events: none;
   -webkit-user-select: none;
@@ -164,9 +85,68 @@
   opacity: 0;
   -webkit-transform: scale(2);
           transform: scale(2);
-  -webkit-transition: opacity 0.7s linear, -webkit-transform 0.4s linear;
-  transition: opacity 0.7s linear, -webkit-transform 0.4s linear;
-  transition: opacity 0.7s linear, transform 0.4s linear;
-  transition: opacity 0.7s linear, transform 0.4s linear, -webkit-transform 0.4s linear;
+  -webkit-transition: opacity 0.7s ease-in, -webkit-transform 0.4s linear;
+  transition: opacity 0.7s ease-in, -webkit-transform 0.4s linear;
+  transition: opacity 0.7s ease-in, transform 0.4s linear;
+  transition: opacity 0.7s ease-in, transform 0.4s linear, -webkit-transform 0.4s linear;
+}
+.talent.data-v-bfcd4d84 {
+  border: 0;
+  overflow: hidden;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
+  padding: 10px;
+  z-index: 0;
+  margin: 10px;
+  background-color: #ffffff;
+  position: relative;
+  height: auto;
+  min-height: 200rpx;
+  -webkit-box-shadow: 6rpx 6rpx 15rpx 3rpx rgba(0, 0, 0, 0.21);
+          box-shadow: 6rpx 6rpx 15rpx 3rpx rgba(0, 0, 0, 0.21);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  border-bottom: 1px solid #efefef;
+}
+.talent .talent-alias-like.data-v-bfcd4d84 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: left;
+  -webkit-justify-content: left;
+          justify-content: left;
+}
+.talent .talent-alias-like .talent-alias.data-v-bfcd4d84 {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+}
+.talent .talent-alias-like .talent-like.data-v-bfcd4d84 {
+  width: auto;
+}
+.talent .talent-item-content.data-v-bfcd4d84 {
+  word-break: break-all;
+  text-overflow: ellipsis;
+  /* 超出部分省略号 */
+  overflow: hidden;
+  /*超出隐藏*/
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  color: #646464;
+  border: none;
+  font-size: 24rpx;
 }
 

@@ -24,7 +24,6 @@
 					class="user_input"
 		            placeholder-class="text" 
 		            type="number" 
-					maxlength="5"
 		            :placeholder="m_login.user"
 		            v-model ="Tid"/>
 		    </view>
@@ -33,7 +32,6 @@
 		        <span class="login_iconfont psl_font icon-captcha"></span>
 		        <u-input 
 					:clearable="false"
-					maxlength="6"
 					class="psw_input"
 		            placeholder-class="password" 
 		            type="password" 
@@ -153,14 +151,12 @@
 				  header: {
 					  'content-type': 'application/x-www-form-urlencoded'
 				  },
-				  success: function(res) {
+				  success: (res) => {
 					if(res.data.code==0){
 						uni.setStorageSync('i', this_.Tid);
 						this_.Tpwd = " ";
 						this_.toIndex(res);
 						this_.setHint("欢迎老师 如果页面长时间没跳转 麻烦老师通知技术人员处理");
-						
-						
 					}
 					else this_.setHint(res.data.info);
 				  }
@@ -168,7 +164,7 @@
 			  }
 			},
 			getCaptcha: function(){
-			  var this_ = this;
+			  let this_ = this;
 			  if(this.Tid){
 					uni.showLoading({
 						title: '正在获取验证码'
@@ -176,35 +172,36 @@
 					
 				  
 				uni.request({
-				  method:'post',
-				  url: this_.app.url+"/getCaptcha", //仅为示例，并非真实的接口地址
+				  method:'get',
+				  url: this_.app.url+"/verification/mail/register", //仅为示例，并非真实的接口地址
 				  data: {
-					"Tid": this_.Tid
+					"receiverAddress": this_.Tid
 				  },
 				  header: {
 					  'content-type': 'application/x-www-form-urlencoded'
 				  },
-				  success: function(res) {
+				  success: (res) => {
 					if(res.data.code==0){
 						setTimeout(() => {
+							console.log(res.data);
 							uni.hideLoading();
 							// 这里此提示会被this.start()方法中的提示覆盖
-							this_.$u.toast('验证码已发送');
-							this_.setHint(res.data.info);  
+							this.$refs.uToast.show({title: '验证码已发送'});
+							this.setHint(res.data.info);  
 							// 通知验证码组件内部开始倒计时
-							this_.$refs.uCode.start();
+							this.$refs.uCode.start();
 						}, 1000);
 						
 					}else{
 						uni.hideLoading();
-						this_.$u.toast(res.data.info);
-						this_.setHint(res.data.info); 
+						this.$refs.uToast.show({title: res.data.info});
+						this.setHint(res.data.info); 
 					}
 				  },
-				  fail:function(){
+				  fail:() => {
 						uni.hideLoading();
 						this.$u.toast('验证码发送失败');
-						this_.setHint("验证码发送失败");
+						this.setHint("验证码发送失败");
 				  }
 				})
 			  }
@@ -219,7 +216,7 @@
 					this.app.Tname=res.data.info.Tname;
 					
 					uni.switchTab({
-					  url: '/pages/index/index'
+					  url: '/pages/root/index/index'
 					  
 					});
 				}

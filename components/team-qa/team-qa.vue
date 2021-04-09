@@ -13,15 +13,24 @@
 		></view>
 		
 		<view class="title">
-			{{qaItem.title}}
+			<view class="title_text overflow">{{qaItem.title}}</view>
+			<view class="iconBtn">
+				<r-iconBtn
+					text="收藏"
+					icon="heart"
+					iconFill="heart-fill"
+					color="#007aff"
+					requestObject=""
+				></r-iconBtn>
+			</view>
 		</view>
 		<view class="alias-avatar-org">
-			<aliasAvatarQa
+			<r-alias-mini
+				:alias="qaItem.questioner.alias"
 				:avatar="qaItem.questioner.avatar"
 				:uid="qaItem.questioner.uid"
-				:alias="qaItem.questioner.alias"
-				:org="qaItem.questioner.org"
-			></aliasAvatarQa>
+				:certification="qaItem.questioner.certification">
+			></r-alias-mini>
 		</view>
 		<view class="content">
 			{{qaItem.content}}
@@ -40,20 +49,16 @@
 				{{qaItem.evaluation.comment}}评论
 			</span>
 			<!-- 1.3w浏览 100回答 100赞同 100评论-->
+			
 		</view>
 	</view>
 </template>
 
 <script>
-	var m_this;
 	import uniTagSet from "@/components/uni-tag-set/uni-tag-set.vue"
-	import org from '@/components/org/org.vue';
-	import aliasAvatarQa from '../aliasAvatarQa/aliasAvatarQa.vue'
 	
 	export default {
 		components:{
-			aliasAvatarQa,
-			org,
 			uniTagSet
 		},
 		props:{
@@ -73,8 +78,6 @@
 			};
 		},
 		created() {
-			m_this = this;
-			// console.log(this.qaItem);
 			for (var i in this.qaItem.evaluation) { //for in 会遍历对象的属性，包括实例中和原型中的属性。（需要可访问，可枚举属性）
 			    this.qaItem.evaluation[i] = this.transNum(this.qaItem.evaluation[i]);
 			}
@@ -82,7 +85,6 @@
 		methods:{
 			getWaveQuery(e) {
 				this.getElQuery(e).then(res => {
-					console.log(res)
 					// 查询返回的是一个数组节点
 					let data = res[0];
 					// 查询不到节点信息，不操作
@@ -120,13 +122,13 @@
 				// 进行节流控制，每this.throttle毫秒内，只在开始处执行
 				this.$u.throttle(() => {
 					this.waveActive = false;
-					this.$nextTick(function() {
+					this.$nextTick(() => {
 						this.getWaveQuery(e);
 					});
 					// this.$emit('click', e);
-					setTimeout(function() {
+					setTimeout(() => {
 						uni.navigateTo({
-							url: '/pages/entity/qa/qa?pid='+m_this.qaItem.qaId,
+							url: '/pages/entity/qa/qa?pid='+this.qaItem.qaId,
 							animationType: 'fade-in',
 							animationDuration: 300
 						});
@@ -138,13 +140,11 @@
 			getElQuery(e) {
 				return new Promise(resolve => {
 					let queryInfo = '';
-					// 获取元素节点信息，请查看uniapp相关文档
-					// https://uniapp.dcloud.io/api/ui/nodes-info?id=nodesrefboundingclientrect
+					
 					queryInfo = uni.createSelectorQuery().in(this);
 					
 					queryInfo.select("#qa").boundingClientRect();
 					queryInfo.exec(data => {
-						console.log(data)
 						resolve(data);
 					});
 				});
@@ -161,74 +161,58 @@
 <style scoped lang="scss">
 	@import '@/common/uni.scss';
 	@import '@/uview-ui/libs/css/style.components.scss';
+	.u-wave-ripple {
+		overflow:hidden;
+		z-index: $zindex_ripple;
+		position: absolute;
+		border-radius: 100%;
+		background-clip: padding-box;
+		pointer-events: none;
+		user-select: none;
+		transform: scale(0);
+		opacity: 1;
+		transform-origin: center;
+	}
 
-.u-btn::after {
-	border: none;
-}
-
-.u-btn {
-	position: relative;
-	border: 0;
-	//border-radius: 10rpx;
-	/* #ifndef APP-NVUE */
-	display: inline-flex;		
-	/* #endif */
-	// 避免边框某些场景可能被“裁剪”，不能设置为hidden
-	overflow: visible;
-	line-height: 1;
-	@include vue-flex;
-	align-items: center;
-	justify-content: center;
-	cursor: pointer;
-	padding: 0 40rpx;
-	z-index: 1;
-	box-sizing: border-box;
-	transition: all 0.15s;
-}
-
-.u-wave-ripple {
-	overflow:hidden;
-	z-index: 0;
-	position: absolute;
-	border-radius: 100%;
-	background-clip: padding-box;
-	pointer-events: none;
-	user-select: none;
-	transform: scale(0);
-	opacity: 1;
-	transform-origin: center;
-}
-
-.u-wave-ripple.u-wave-active {
-	opacity: 0;
-	transform: scale(2);
-	transition: opacity 0.7s linear, transform 0.4s linear;
-}
+	.u-wave-ripple.u-wave-active {
+		opacity: 0;
+		transform: scale(2);
+		transition: opacity 0.7s ease-in, transform 0.4s linear;
+	}
 
 	.qa{
 		border: 0;
 		overflow: hidden;
 		position: relative; //必须要有
-		padding: $padding/2;
-		z-index: 1;
+		padding: $padding;
+		z-index: $zindex_content;
+		height: auto;
 		margin: $padding;
 		background-color: $cardColor;
 		box-shadow: 6rpx 6rpx 15rpx 3rpx rgba(0,0,0,0.21);
-		min-height: 200rpx;
 
+		border-radius: $padding/2;
 		display: flex;
 		flex-direction: column;
 		color: $labelColor2;
-		border-bottom: 1px solid $lineColor;
-		border-top: 1px solid $lineColor;
 		
 		.title{
-			font-size: $height_header*0.5;
-			font-weight: bolder;
+			display: flex;
+			flex-direction: row;
+			justify-content: left;
+			align-items: center;
+			.title_text{
+				flex: 1;
+				font-size: $height_header*0.5;
+				font-weight: bolder;
+			}
+			.iconBtn{
+				margin-left: $padding;
+				width: auto;
+			}
 		}
 		.alias-avatar-org{
-			height: $height_header*0.7;
-			line-height: $height_header*0.7;
+			
 		}
 		.content{
 			margin-top: $padding/2;
@@ -242,6 +226,7 @@
 			-webkit-box-orient: vertical;
 		}
 		.evaluation{
+			margin-top: $padding/2;
 			white-space: pre;
 			color: $labelColor;
 			font-size: $height_header*0.4;

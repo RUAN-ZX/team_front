@@ -105,6 +105,6 @@
 </script>
 
 <style lang="less">
-	@import "./aliasAvatarQa.less";
-	@import "@/uni.less";
+	// @import "./aliasAvatarQa.less";
+	// @import "@/uni.less";
 </style>

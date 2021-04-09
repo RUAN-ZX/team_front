@@ -158,43 +158,22 @@
 				
 			// },
 			menuClick:function(index){
-				// this.$emit("menuClick",index);
-				// 这里固定了干脆 反正都是发布功能罢了 导向三个同样的页面
+				let url_ = "";
 				switch(index){
 					case 1:{
-						uni.navigateTo({
-							url: '/pages/release/project/project',
-							success: res => {},
-							fail: () => {},
-							complete: () => {}
-						});
+						url_ = "/pages/release/project/project"
 						break;
 					}
 					case 2:{
-						uni.navigateTo({
-							url: '/pages/release/talent/talent',
-							success: res => {},
-							fail: () => {},
-							complete: () => {}
-						});
+						url_ = '/pages/release/talent/talent';
 						break;
 					}
 					case 3:{
-						uni.navigateTo({
-							url: '/pages/release/qa/qa',
-							success: res => {},
-							fail: () => {},
-							complete: () => {}
-						});
+						url_ = '/pages/release/qa/qa';
 						break;
 					}
 					case 4:{
-						uni.navigateTo({
-							url: '/pages/release/qa/qa',
-							success: res => {},
-							fail: () => {},
-							complete: () => {}
-						});
+						url_ = '/pages/release/experience/experience';
 						break;
 					}
 					case 5:{
@@ -205,6 +184,17 @@
 						break;
 					}
 				}
+				if(url_!=""){
+					uni.navigateTo({
+						url: url_,
+						success: res => {
+							this.show();
+						},
+						fail: () => {},
+						complete: () => {}
+					});
+				}
+				
 			},
 			getSystemInfo:function(type){
 				var result;

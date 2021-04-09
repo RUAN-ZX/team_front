@@ -11,10 +11,13 @@
     "pages/release/talent/talent",
     "pages/release/project/project",
     "pages/release/qa/qa",
+    "pages/release/experience/experience",
     "pages/search/index_search/index_search",
     "pages/search/search_result/search_result",
     "pages/entity/qa/qa",
-    "pages/entity/talent/talent"
+    "pages/entity/talent/talent",
+    "pages/entity/project/project",
+    "pages/freeTag/freeTag"
   ],
   "subPackages": [],
   "window": {
@@ -22,37 +25,36 @@
     "navigationStyle": "custom"
   },
   "tabBar": {
-    "color": "#646464",
-    "selectedColor": "#6394E3",
+    "color": "#909399",
+    "selectedColor": "#007aff",
     "borderStyle": "black",
     "backgroundColor": "#ffffff",
     "list": [
       {
         "pagePath": "pages/root/index/index",
         "text": "首页",
-        "iconPath": "static/home_.png",
-        "selectedIconPath": "static/home.png"
+        "iconPath": "/static/root/home_.png",
+        "selectedIconPath": "static/root/home.png"
       },
       {
         "pagePath": "pages/root/team/team",
         "text": "竞赛",
-        "iconPath": "static/team_.png",
-        "selectedIconPath": "static/team.png"
+        "iconPath": "/static/root/contest_.png",
+        "selectedIconPath": "/static/root/contest.png"
       },
       {
         "pagePath": "pages/root/msg/msg",
-        "text": "沟通",
-        "iconPath": "static/msg_.png",
-        "selectedIconPath": "static/msg.png"
+        "text": "消息",
+        "iconPath": "/static/root/msg_.png",
+        "selectedIconPath": "/static/root/msg.png"
       },
       {
         "pagePath": "pages/root/me/me",
         "text": "我的",
-        "iconPath": "static/qa_.png",
-        "selectedIconPath": "static/qa.png"
+        "iconPath": "/static/root/me_.png",
+        "selectedIconPath": "static/root/me.png"
       }
     ]
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap71.json"
+  "usingComponents": {}
 }

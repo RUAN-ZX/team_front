@@ -30,7 +30,8 @@
   font-size: 24rpx;
   background-color: #fff;
   border-bottom: 1rpx solid #eee;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   overflow-y: hidden;
   background-color: #fff;
 }
@@ -45,12 +46,14 @@
   position: relative;
   white-space: nowrap;
   padding-bottom: 30rpx;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 .me-tabs .tabs-item .tab-item {
   position: relative;
   text-align: center;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 .me-tabs .tabs-item .tab-item.active {
   font-weight: bold;
@@ -77,7 +80,8 @@
   height: 6rpx;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  border-radius: 4rpx;
+  -webkit-border-radius: 4rpx;
+          border-radius: 4rpx;
   -webkit-transition: left .3s;
   transition: left .3s;
   background: red;

@@ -1,0 +1,1 @@
+{"version":3,"sources":["uni-app:///main.js"],"names":["createPage","Page"],"mappings":";;;;wEAAA,qBACA,sBACA,yI,mDACAA,EAAWC,a","file":"pages/u-full-screen/u-full-screen.js","sourcesContent":["import 'uni-pages';\nimport Vue from 'vue'\nimport Page from './pages/u-full-screen/u-full-screen.vue'\ncreatePage(Page)"],"sourceRoot":""}

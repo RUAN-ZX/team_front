@@ -330,12 +330,131 @@
 	};
 </script>
 <style>
-	@import "./editor.css";
+	@import "./assets/iconfont.css";
+	
+	
+	.iconfont {
+		display: inline-block;
+		width: 32px;
+		height: 30px;
+		cursor: pointer;
+		font-size: 20px;
+	}
+	
+	
 	
 </style>
-<style lang="less">
-	@import "@/uni.less";
-	@import "./editor.less";
+<style lang="scss">
+	@import "@/common/uni.scss";
+	page{
+		display: flex;
+		flex-direction: column;
+	}
+	.container {
+		top: 200px;
+		flex: 1;
+		position: relative;
+		width: 100%;
+		height: auto;
+		
+		.ql-container {
+			box-sizing: border-box;
+			width: 100%;
+			height: 100%;
+			font-size: 16px;
+			line-height: 1.5;
+			overflow: auto;
+			padding: 20px 10px 20px 10px;
+		}
+	}
+	
+	
+	
+	.ql-active {
+		color: $themeColor;
+	}
+	
+	
+	.side-toolbar-btn{
+		z-index: 99;
+		position: absolute;
+		width: 20px;
+		height: 60px;
+		top: 400px;
+		right: 0;
+		background-color: $themeColor;
+		color: $bgColor;
+		
+	}
+	
+	
+	.toolbar {
+		z-index: 99;
+		padding: $padding;
+		
+		
+		text-align: left;
+		position: fixed;
+		// top: 32; // 动态
+		left: 0;
+		right: 0;
+		bottom: 0;
+		height: 160px;
+		
+		width: 100%;
+		
+		flex-wrap: wrap;
+		text-align: center;
+		.swiper-item{
+			/* #ifndef APP-NVUE */
+			display: flex;
+			/* #endif */
+			flex-direction: column;
+			.toolbar-row{
+				flex: 1;
+				width: 100%;
+				display: flex;
+				flex-direction: row;
+				.iconfont{
+					flex: 1;
+				}
+			}
+		}
+		
+	
+	}
+	.toolbar-solid{
+		margin-top: 10px;
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		.iconfont{
+			flex: 1;
+		}
+	}
+	
+	
+	.foot{
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		left: 0;
+		background-color: #333333;
+		color: #F3F4F6;
+		display: flex;
+		flex-direction: row;
+		height: 30px;
+		line-height: 30px;
+		.foot-item{
+			display: inline-block;
+			vertical-align: middle;
+			flex: 1;
+			font-size: 16px;
+			justify-content: center;
+			text-align: center;
+		}
+	}
+	
 </style>
 
 <style lang="scss" scoped>

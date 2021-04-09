@@ -1,6 +1,7 @@
 
 page {
 	height: calc(200vh);
+	background: -webkit-gradient(linear,  left top, left bottom,  from(#ECF5FE),color-stop(70%, #ffffff));
 	background: -webkit-linear-gradient(top,  #ECF5FE 0%,#ffffff 70%);
 	background: linear-gradient(to bottom,  #ECF5FE 0%,#ffffff 70%);
 }
@@ -34,7 +35,8 @@ page {
 /* uni.scss */
 .boxShadow.data-v-53e03421 {
   background-color: #ffff0000;
-  box-shadow: 6rpx 6rpx 15rpx 3rpx rgba(0, 0, 0, 0.125);
+  -webkit-box-shadow: 6rpx 6rpx 15rpx 3rpx rgba(0, 0, 0, 0.125);
+          box-shadow: 6rpx 6rpx 15rpx 3rpx rgba(0, 0, 0, 0.125);
 }
 .background.data-v-53e03421 {
   z-index: -1;
@@ -64,8 +66,10 @@ page {
 }
 .card.data-v-53e03421 {
   background-color: #ffffff;
-  box-shadow: 6rpx 6rpx 15rpx 3rpx rgba(0, 0, 0, 0.21);
-  border-radius: 10px;
+  -webkit-box-shadow: 6rpx 6rpx 15rpx 3rpx rgba(0, 0, 0, 0.21);
+          box-shadow: 6rpx 6rpx 15rpx 3rpx rgba(0, 0, 0, 0.21);
+  -webkit-border-radius: 10px;
+          border-radius: 10px;
   z-index: 0;
   position: relative;
 }

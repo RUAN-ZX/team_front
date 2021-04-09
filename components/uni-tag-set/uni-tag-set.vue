@@ -1,18 +1,20 @@
 <template>
 	<view class="uni-tag-set">
-		<u-tag
-			class="tag"
-			v-for="(tagItem,tagIndex) in set"
-			:key="tagIndex"
-			:text="tagItem"
-			shape="square"
-			
-			mode="light"
-			:closeable="false"
-			size="mini"
-			type="primary"
-			
-		></u-tag>
+		<view class="tag" 
+		v-for="(tagItem,tagIndex) in set"
+		:key="tagIndex">
+			<u-tag
+				:text="tagItem"
+				shape="square"
+				border-color="transparent"
+				mode="light"
+				:closeable="false"
+				size="mini"
+				:type="tagIndex<2?'primary':'info'"
+				
+			></u-tag>
+		</view>
+		
 	</view>
 </template>
 
@@ -33,11 +35,14 @@
 	}
 </script>
 
-<style lang="less">
-	@import "@/uni.less";
+<style lang="scss">
+	@import "@/common/uni.scss";
 	.uni-tag-set{
 		display: flex;
 		flex-direction: row;
+		align-items: center;
+		
+		
 		white-space: nowrap;
 		overflow-y: hidden;
 		overflow-x: scroll;
@@ -46,8 +51,8 @@
 		}
 		.tag{
 			width: auto;
-			margin-right: @padding/2;
-			margin-top: @padding/3;
+			margin-right: $padding/2;
+			margin-bottom: 3px;
 		}
 	}
 </style>

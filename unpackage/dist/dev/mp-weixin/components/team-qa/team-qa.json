@@ -1,8 +1,8 @@
 {
   "component": true,
   "usingComponents": {
-    "alias-avatar-qa": "/components/aliasAvatarQa/aliasAvatarQa",
-    "org": "/components/org/org",
+    "r-icon-btn": "/components/r-iconBtn/r-iconBtn",
+    "r-alias-mini": "/components/r-alias-mini/r-alias-mini",
     "uni-tag-set": "/components/uni-tag-set/uni-tag-set"
   }
 }

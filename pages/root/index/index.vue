@@ -1,5 +1,6 @@
 <template>
 	<view>
+		<gmy-float-touch :imgLists="imgLists"></gmy-float-touch>
 		<view class="header"
 		:style="[{backgroundColor:'#ffff'+m_header_opacity},{boxShadow: '6rpx 6rpx 15rpx 3rpx #0000'+m_header_shadow}]">
 			
@@ -8,8 +9,8 @@
 				:style="[{marginTop:info.top+'px'},{width:info.left-26+'px'}]">
 				<search :show-action="false" 
 					clearabled="false" disabled="false" 
-					placeholder="搜索" 
-					v-model="m_search" shape="round"
+					placeholder="搜索"
+					shape="round"
 					:bg-color="m_header_color"
 					:height="info.height+'px'">
 				</search>
@@ -46,11 +47,10 @@
 			</view>
 			<swiper class="swiper-box" :current="swiperCurrent" @transition="transition" @animationfinish="animationfinish">
 				<swiper-item class="swiper-item">
-					<scroll-view scroll-y style="height: 100%;width: 100%;" @scrolltoupper="reachTop" @scrolltolower="reachBottom">
-						<view
-							v-for="(projectItem,projectIndex) in index_project"
+					<scroll-view scroll-y style="height: 100%;width: 100%;" @scrolltolower="reachBottom">
+						<view v-for="(projectItem,projectIndex) in index_project"
 							:key="projectIndex">
-							<team-project :projectItem="projectItem">
+							<team-project :projectItem="projectItem" :key="projectIndex">
 							</team-project>
 						</view>
 						<u-loadmore :status="loadStatus[0]" bgColor="transparent"></u-loadmore>
@@ -66,7 +66,7 @@
 					</scroll-view>
 				</swiper-item>
 				<swiper-item class="swiper-item">
-					<scroll-view scroll-y style="height: 100%;width: 100%;">
+					<scroll-view scroll-y style="height: 100%;width: 100%;" @scrolltolower="reachBottom">
 						<view v-for="(qaItem, qaIndex) in index_qa" :key="qaIndex">
 							<team-qa :qaItem="qaItem"></team-qa>
 						</view>
@@ -84,7 +84,7 @@
 	import {
 		index_data_refresh
 	} from "@/api/mock.js";
-	
+	import gmyFloatTouch from "@/components/gmy-float-touch/gmy-float-touch.vue";
 	import search from "@/components/search/search.vue";
 	import teamProject from "@/components/team-project/team-project.vue";
 	import teamTalent from "@/components/team-talent/team-talent.vue";
@@ -94,10 +94,19 @@
 			teamProject,
 			teamTalent,
 			teamQa,
+			gmyFloatTouch,
 			search
 		},
 		data() {
 			return {
+				imgLists:[
+					"https://stea.ryanalexander.cn/float/0.png",
+					"https://stea.ryanalexander.cn/float/1.png",
+					"https://stea.ryanalexander.cn/float/2.png",
+					"https://stea.ryanalexander.cn/float/3.png",
+					"https://stea.ryanalexander.cn/float/4.png",
+					"https://stea.ryanalexander.cn/float/5.png",
+				],
 				swiperList: [{
 						image: 'https://stea.ryanalexander.cn/psl/hdu1.jpg',
 						title: '以清养廉，以廉育人'
@@ -121,14 +130,6 @@
 					
 					
 				],
-				imgLists:[
-					"https://stea.ryanalexander.cn/release/0.png",
-					"https://stea.ryanalexander.cn/release/1.png",
-					"https://stea.ryanalexander.cn/release/2.png",
-					"https://stea.ryanalexander.cn/release/3.png",
-					"https://stea.ryanalexander.cn/release/4.png",
-					"https://stea.ryanalexander.cn/release/5.png",
-				],
 				dx: 0,
 				loadStatus: ['loadmore', 'loadmore', 'loadmore', 'loadmore'],
 
@@ -144,7 +145,6 @@
 					name: '问答圈',
 					num: 1
 				}],
-				m_search: "",
 				
 				m_header_shadow: '0000',
 				m_header_opacity: '0000',

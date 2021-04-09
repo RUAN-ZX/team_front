@@ -5,13 +5,10 @@
 		@click="navigate()">
 		
 		<view class="avatar">
-			<image 
-				:src="m_avatar" class="avatar-image" mode="scaleToFill">
+			<image class="avatar-image" 
+				:src="talentItem.talent.avatar"
+				mode="widthFix">
 			</image>
-		</view>
-		
-		<view class="alias">
-			{{m_alias}}
 		</view>
 		
 	</view>
@@ -108,6 +105,6 @@
 </script>
 
 <style lang="less">
-	@import "./aliasAvatar.less";
-	@import "@/uni.less";
+	// @import "./aliasAvatar.less";
+	// @import "@/uni.less";
 </style>
