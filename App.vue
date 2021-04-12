@@ -10,7 +10,7 @@
 			// url :"http://localhost:8080",
 			// url :"https://www.hzbytecloud.cn",
 			url :"http://192.168.114.7:8085",
-			// picUrl: "https://stea.ryanalexander.cn/psl/",
+			imgUrl: "https://lets-team--public.oss-cn-hangzhou.aliyuncs.com",
 			info: {},
 		}, 
 		onLaunch: function() {

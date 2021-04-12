@@ -17,7 +17,8 @@
 				</u-form-item>
 				
 				<u-form-item :label-position="labelPosition" label="项目标签">
-					<u-input type="textarea" :border="false" :placeholder="labelInfo[purposeNum]" disabled="true"> 
+					<u-input type="textarea" :border="border" :placeholder="labelInfo[purposeNum]" disabled="true"> 
+						
 					</u-input>
 					<r-free-tag v-model="tag" tagMaxLength="5" @pop-tag-result="getTag"></r-free-tag>
 				</u-form-item>
@@ -40,47 +41,43 @@
 				 }
 				 -->
 				<view class="varible_form" :style="{'display':(purposeNum==0)?'':'none'}">
-					<u-form-item prop="contest" label="目标比赛" :label-position="labelPosition">
-						<u-input :border="false" :disabled="true" placeholder="参加的竞技比赛" v-model="model.name" type="text"></u-input>
+					<u-form-item prop="contest" label="目标比赛">
+						<u-input :border="border" :disabled="true" placeholder="参加的竞技比赛" v-model="model.name" type="text"></u-input>
 						<r-free-tag v-model="tag_contest" tagMaxLength="5" @pop-tag-result="(data)=>{tag_contest=data}"></r-free-tag>
 					</u-form-item>
 				</view>
 
 				<view class="varible_form" :style="{'display':(purposeNum==1)?'':'none'}">
-					<u-form-item prop="contest" label="目标比赛" :label-position="labelPosition">
+					<u-form-item prop="contest" label="目标比赛">
 						<u-input :border="border" :disabled="true" placeholder="拟参加的项目比赛" v-model="model.name" type="text"></u-input>
 						<r-free-tag v-model="tag_contest" tagMaxLength="5" @pop-tag-result="(data)=>{tag_contest=data}"></r-free-tag>
 					</u-form-item>
 				</view>
 				<view class="varible_form" :style="{'display':(purposeNum==2)?'':'none'}">
-					<u-form-item prop="contest" label="社会价值" :label-position="labelPosition">
+					<u-form-item prop="contest" label="社会价值">
 						<u-input :border="border" placeholder="项目预期 社会价值" v-model="model.name" type="text"></u-input>
 					</u-form-item>
 				</view>
 
 				<view class="varible_form" :style="{'display':(purposeNum==3)?'':'none'}">
-					<u-form-item prop="contest" label="福利说明" :label-position="labelPosition">
+					<u-form-item prop="contest" label="福利说明">
 						<u-input :border="border" placeholder="福利说明 可以不填" v-model="model.name" type="text"></u-input>
 					</u-form-item>
 				</view>
 
 				<view class="varible_form" :style="{'display':(purposeNum==4)?'':'none'}">
-					<u-form-item prop="contest" label="预期成果" :label-position="labelPosition">
+					<u-form-item prop="contest" label="预期成果">
 						<u-input :border="border" placeholder="预期科研目标 科研成果" v-model="model.name" type="text"></u-input>
 					</u-form-item>
 				</view>
 
 				<view class="varible_form" :style="{'display':(purposeNum==4)?'':'none'}">
-					<u-form-item prop="contest" label="前景福利" :label-position="labelPosition">
+					<u-form-item prop="contest" label="前景福利">
 						<u-input :border="border" placeholder="项目前景？队员福利？" v-model="model.name" type="text"></u-input>
 					</u-form-item>
 				</view>
 				
-				<u-form-item prop="contest" label="队友需求" :label-position="labelPosition">
-					<view class="talentDemand">
-						+添加招聘人才需求
-					</view>
-				</u-form-item>
+
 				
 
 				<u-form-item :label-position="labelPosition" label="密码" prop="password">
@@ -120,7 +117,7 @@
 					<u-input :border="border" placeholder="请输入验证码" v-model="model.code" type="text"></u-input>
 					<u-button slot="right" type="success" size="mini" @click="getCode">{{codeTips}}</u-button>
 				</u-form-item>
-				<!-- 此处switch的slot为right，如果不填写slot名，也即<u-switch v-model="model.remember"></u-switch>，将会左对齐 -->
+				此处switch的slot为right，如果不填写slot名，也即<u-switch v-model="model.remember"></u-switch>，将会左对齐
 				<u-form-item :label-position="labelPosition" label="记住密码" prop="remember" label-width="150">
 					<u-switch v-model="model.remember" slot="right"></u-switch>
 				</u-form-item>
@@ -128,17 +125,30 @@
 					<u-upload width="160" height="160"></u-upload>
 				</u-form-item>
 			</u-form>
-			
+			<view class="agreement">
+				<u-checkbox v-model="check" @change="checkboxChange"></u-checkbox>
+				<view class="agreement-text">
+					勾选代表同意uView的版权协议
+				</view>
+			</view>
 			<u-button @click="submit">提交</u-button>
 			<u-action-sheet :list="actionSheetList" v-model="actionSheetShow" @click="actionSheetCallback">
 			</u-action-sheet>
-			
 			<u-select mode="single-column" :list="selectList" v-model="selectShow" @confirm="selectConfirm"></u-select>
 			<u-picker mode="region" v-model="pickerShow" @confirm="regionConfirm"></u-picker>
 			<u-verification-code seconds="60" ref="uCode" @change="codeChange"></u-verification-code>
-			
 			<view class="u-config-wrap">
-				
+				<view class="u-config-title u-border-bottom">
+					参数配置
+				</view>
+				<view class="u-config-item">
+					<view class="u-item-title">label对齐方式</view>
+					<u-subsection :list="['左边', '上方']" @change="labelPositionChange"></u-subsection>
+				</view>
+				<view class="u-config-item">
+					<view class="u-item-title">边框</view>
+					<u-subsection :current="borderCurrent" :list="['显示', '隐藏']" @change="borderChange"></u-subsection>
+				</view>
 				<view class="u-config-item">
 					<view class="u-item-title">radio、checkbox样式</view>
 					<u-subsection :list="['自适应', '换行', '50%宽度']" @change="radioCheckboxChange"></u-subsection>
@@ -417,8 +427,6 @@
 		},
 		onLoad() {
 			this.purposeChange(this.purposeNum);
-			this.border = true;
-			this.labelPosition = 'top';
 		},
 		computed: {
 			borderCurrent() {
@@ -476,6 +484,9 @@
 					this.model.goodsType += this.model.goodsType == '' ? val.label : '-' + val.label;
 				})
 			},
+			borderChange(index) {
+				this.border = !index;
+			},
 			radioCheckboxChange(index) {
 				if (index == 0) {
 					this.radioCheckWrap = false;
@@ -487,6 +498,9 @@
 					this.radioCheckWrap = false;
 					this.radioCheckWidth = '50%';
 				}
+			},
+			labelPositionChange(index) {
+				this.labelPosition = index == 0 ? 'left' : 'top';
 			},
 			codeChange(text) {
 				this.codeTips = text;
@@ -537,18 +551,6 @@
 		flex-direction: column;
 
 		.variable_form {}
-		
-		.talentDemand{
-			border: 2px dashed $lineColor;
-			height: 140rpx;
-			line-height: 140rpx;
-			
-			border-radius: 10rpx;
-			text-align: center;
-			font-size: 50rpx;
-			font-weight: bolder;
-			color: $labelColor;
-		}
 	}
 
 	// .agreement {

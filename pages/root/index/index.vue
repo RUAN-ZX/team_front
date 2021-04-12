@@ -122,14 +122,6 @@
 				],
 				title_text_class: ["title_text_selected","title_text_unselected"],
 				scrollTop: "0px",
-				entry:[
-					{entry:"项目圈",icon:"icon-emailChange",navigation:"/pages/index_entry/project/project"},
-					{entry:"人才圈",icon:"icon-emailChange",navigation:"/pages/index_entry/talent/talent"},
-					{entry:"问答圈",icon:"icon-emailChange",navigation:"/pages/index_entry/qa/qa"},
-					{entry:"经验圈",icon:"icon-emailChange",navigation:"/pages/index_entry/experience/experience"},
-					
-					
-				],
 				dx: 0,
 				loadStatus: ['loadmore', 'loadmore', 'loadmore', 'loadmore'],
 
@@ -152,9 +144,6 @@
 				m_tab_opacity: '0000',
 				m_tab_bgcolor: "transparent",
 				m_header_color: '#ffffff',
-				m_header_middle_msg: 9,
-
-				m_news_navigate: '/pages/news/news?',
 
 				index_project: [],
 
@@ -296,39 +285,6 @@
 			opacity: 0.1;
 		}
 	
-	}
-	
-	
-	.panel{
-		margin: 0 $padding $padding $padding;
-		
-		position: relative;
-		padding: $variableGap 0 $variableGap 0;
-		
-		flex-direction: row;
-		display: flex;
-		justify-content: space-around;
-		align-items: center; // 交叉轴居中对齐！
-		.entry{
-			display: flex;
-			flex-direction: column;
-			align-content: center;
-			.entry_icon{
-				font-size: 100rpx;
-				color: $themeColor;
-			}
-			.entry{
-				color: $labelColor2;
-				text-align: center;
-				line-height: 40rpx;
-				font-size: 26rpx;
-				height: 40rpx;
-			}
-		}
-		.entry:active{
-			opacity: 0.1;
-		}
-		
 	}
 	
 	
