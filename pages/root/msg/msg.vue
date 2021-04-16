@@ -121,9 +121,6 @@
 			index_data_refresh(2,6).then((value)=>{
 				this.index_qa=value;
 			});
-			
-			this.getHeight();
-			
 		},
 		
 		methods: {
@@ -137,10 +134,10 @@
 				
 				let index = [this.index_project,this.index_talent,this.index_qa];
 				this.loadStatus.splice(this.current,1,"loading")
-				index_data_refresh(this.current,2).then(function(value){
-					index[m_this.current].push.apply(index[m_this.current],value);
+				index_data_refresh(this.current,2).then((value)=>{
+					index[this.current].push.apply(index[this.current],value);
 
-					m_this.loadStatus.splice(m_this.current,1,"loadmore")
+					this.loadStatus.splice(this.current,1,"loadmore")
 				});
 				
 			},

@@ -2,7 +2,7 @@
 	<view>
 		<gmy-float-touch :imgLists="imgLists"></gmy-float-touch>
 		<view class="header"
-		:style="[{backgroundColor:'#ffff'+m_header_opacity},{boxShadow: '6rpx 6rpx 15rpx 3rpx #0000'+m_header_shadow}]">
+			:style="[{backgroundColor:'#ffff'+m_header_opacity},{boxShadow: '6rpx 6rpx 15rpx 3rpx #0000'+m_header_shadow}]">
 			
 			<view class="wrapper_search trans" 
 				@click="navigate('/pages/search/index_search/index_search?e=10')"
@@ -27,7 +27,7 @@
 		</view>
 		
 		<view class="wrap" id="target"
-		:style="{height: scrollTop}">
+			:style="{height: scrollTop}">
 			<view class="wrap_title">
 				<view :class="title_text_class[0]" @click="changeTitle(0)">
 					精选
@@ -38,9 +38,9 @@
 			</view>
 			
 			<view class="u-tabs-box" 
-			:style="[{backgroundColor:'#ffff'+m_tab_opacity},
-			{boxShadow: '6rpx 6rpx 15rpx 3rpx #0000'+m_tab_shadow},
-			{top: info.top+info.height+10+'px'}]">
+				:style="[{backgroundColor:'#ffff'+m_tab_opacity},
+				{boxShadow: '6rpx 6rpx 15rpx 3rpx #0000'+m_tab_shadow},
+				{top: info.top+info.height+10+'px'}]">
 				
 				<u-tabs-swiper :bgColor="m_tab_bgcolor" activeColor="#007aff" ref="tabs" :list="tab_list" :current="current"
 				 @change="change" :is-scroll="false" swiperWidth="750"></u-tabs-swiper>

@@ -302,7 +302,6 @@
 			},
 			change() {
 				this.bgColor="#ffffff";
-				console.log("233")
 				this.setScrollViewToCenter();
 			},
 			getQuery(cb) {

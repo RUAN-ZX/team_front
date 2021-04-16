@@ -70,6 +70,7 @@
 					</u-form-item>
 				</view>
 
+
 				<view class="varible_form" :style="{'display':(purposeNum==4)?'':'none'}">
 					<u-form-item prop="contest" label="前景福利" :label-position="labelPosition">
 						<u-input :border="border" placeholder="项目前景？队员福利？" v-model="model.name" type="text"></u-input>

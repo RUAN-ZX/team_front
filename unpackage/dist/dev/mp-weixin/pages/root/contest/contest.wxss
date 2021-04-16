@@ -25,43 +25,34 @@
 /* 透明度 */
 /* 文章场景相关 */
 /* uni.scss */
-.good-list {
-  background-color: #fff;
+.u-config-wrap.data-v-4ed9d9e5 {
+  padding: 40rpx;
 }
-.good-list .good-li {
+.slot-content.data-v-4ed9d9e5 {
+  background-color: #FFFFFF;
+  padding: 24rpx;
+}
+.slot-content .item-box.data-v-4ed9d9e5 {
+  margin-bottom: 50rpx;
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-          align-items: center;
-  padding: 20rpx;
-  border-bottom: 1rpx solid #eee;
+  -webkit-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
 }
-.good-list .good-li .good-img {
-  width: 160rpx;
-  height: 160rpx;
-  margin-right: 20rpx;
+.slot-content .item-box .item.data-v-4ed9d9e5 {
+  border: 1px solid #2979ff;
+  color: #2979ff;
+  padding: 8rpx 40rpx;
+  -webkit-border-radius: 100rpx;
+          border-radius: 100rpx;
+  margin-top: 30rpx;
 }
-.good-list .good-li .flex-item {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-          flex: 1;
-}
-.good-list .good-li .flex-item .good-name {
-  font-size: 26rpx;
-  line-height: 40rpx;
-  height: 80rpx;
-  margin-bottom: 20rpx;
-  overflow: hidden;
-}
-.good-list .good-li .flex-item .good-price {
-  font-size: 26rpx;
-  color: red;
-}
-.good-list .good-li .flex-item .good-sold {
-  font-size: 24rpx;
-  margin-left: 16rpx;
-  color: gray;
+.slot-content .item-box .active.data-v-4ed9d9e5 {
+  color: #FFFFFF;
+  background-color: #2979ff;
 }
 

@@ -7,14 +7,25 @@
 <script>
 	export default {
 		globalData: {
+			
 			// url :"http://localhost:8080",
 			// url :"https://www.hzbytecloud.cn",
-			url :"http://192.168.114.7:8085",
+			url :"https://www.hzbytecloud.cn/team",
 			imgUrl: "https://lets-team--public.oss-cn-hangzhou.aliyuncs.com",
 			info: {},
+			genHeader: (access,refresh)=>{
+				return {
+					'x-auth-token': refresh,
+					'x-access-token': access,
+					'Content-Type': 'application/json',
+					'x-platform-id': 1,
+					
+				}
+			},
 		}, 
 		onLaunch: function() {
 			let other = this.$u.sys();
+			
 			
 			let menuButton = uni.getMenuButtonBoundingClientRect();
 			

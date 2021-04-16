@@ -1,10 +1,10 @@
 {
   "pages": [
+    "pages/login/login",
     "pages/root/index/index",
-    "pages/root/team/team",
+    "pages/root/contest/contest",
     "pages/root/msg/msg",
     "pages/root/me/me",
-    "pages/login/login",
     "pages/resume/resume",
     "pages/release/editor/editor",
     "pages/release/preview/preview",
@@ -37,7 +37,7 @@
         "selectedIconPath": "static/root/home.png"
       },
       {
-        "pagePath": "pages/root/team/team",
+        "pagePath": "pages/root/contest/contest",
         "text": "竞赛",
         "iconPath": "/static/root/contest_.png",
         "selectedIconPath": "/static/root/contest.png"
@@ -57,5 +57,5 @@
     ]
   },
   "usingComponents": {},
-  "sitemapLocation": "sitemap32.json"
+  "sitemapLocation": "sitemap21.json"
 }
