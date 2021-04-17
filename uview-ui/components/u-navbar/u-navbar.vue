@@ -222,7 +222,8 @@
 				// #endif
 			}
 		},
-		created() {},
+		created() {
+		},
 		methods: {
 			goBack() {
 				// 如果自定义了点击返回按钮的函数，则执行，否则执行返回逻辑

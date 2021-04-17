@@ -17,7 +17,9 @@
     "pages/entity/qa/qa",
     "pages/entity/talent/talent",
     "pages/entity/project/project",
-    "pages/freeTag/freeTag"
+    "pages/freeTag/freeTag",
+    "pages/im/dialog/dialog",
+    "pages/root/me/me_external/me_external"
   ],
   "subPackages": [],
   "window": {
@@ -56,6 +58,5 @@
       }
     ]
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap21.json"
+  "usingComponents": {}
 }
