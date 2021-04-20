@@ -6445,8 +6445,8 @@ to {
 }
 }
 .trans {
-	-webkit-transition: 0.3s opacity ease-out;
-	transition: 0.3s opacity ease-out;
+	-webkit-transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out;
 }
 /*每个页面公共css */
 scroll-view ::-webkit-scrollbar {  

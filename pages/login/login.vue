@@ -31,7 +31,7 @@
 					<scroll-view scroll-y style="height: 100%;width: 100%;" @scrolltolower="reachBottom">
 						<view class="nonCaptcha">
 							<span class="nonCaptcha_iconfont psl_font icon-user"></span>
-							<u-input class="nonCaptcha_input" placeholder-class="nonCaptcha_text" type="number"
+							<u-input class="nonCaptcha_input" placeholder-class="nonCaptcha_text" type="text"
 								:placeholder="m_login[0].user" v-model="Tid" />
 						</view>
 			
@@ -79,7 +79,7 @@
 					<scroll-view scroll-y style="height: 100%;width: 100%;" @scrolltolower="reachBottom">
 						<view class="nonCaptcha">
 							<span class="nonCaptcha_iconfont psl_font icon-user"></span>
-							<u-input class="nonCaptcha_input" placeholder-class="nonCaptcha_text" type="number"
+							<u-input class="nonCaptcha_input" placeholder-class="nonCaptcha_text" type="text"
 								:placeholder="m_login[1].user" v-model="Tid" />
 						</view>
 			
@@ -127,7 +127,7 @@
 					<scroll-view scroll-y style="height: 100%;width: 100%;" @scrolltolower="reachBottom">
 						<view class="nonCaptcha">
 							<span class="nonCaptcha_iconfont psl_font icon-user"></span>
-							<u-input class="nonCaptcha_input" placeholder-class="nonCaptcha_text" type="number"
+							<u-input class="nonCaptcha_input" placeholder-class="nonCaptcha_text" type="text"
 								:placeholder="m_login[2].user" v-model="Tid" />。
 						</view>
 			
@@ -262,7 +262,7 @@
 					},
 					header: this.app.genHeader(a,r),
 					success: (res) => {
-						if (res.data.code == 200) this.toIndex_(res);
+						if (res.data.code == 200) this.toIndex(res);
 						else console.log("refresh token failed");
 					},
 					complete: (res) => {
@@ -403,12 +403,13 @@
 					})
 				} else this.setHint('您的邮箱似乎没输入:)');
 			},
-
 			toIndex(res) {
 				try {
-					uni.setStorageSync("i",res.data.data);
-					uni.setStorageSync("r",res.header['x-auth-token']);
-					uni.setStorageSync("a",res.header['x-access-token']);
+					let r = res.header['x-auth-token'];
+					let a = res.header['x-access-token'];
+					
+					uni.setStorageSync("r",r);
+					uni.setStorageSync("a",a);
 					uni.switchTab({
 						url: '/pages/root/index/index'
 					});
@@ -416,17 +417,6 @@
 					console.log(e);
 				}
 			},
-			toIndex_(res) {
-				try {
-					uni.setStorageSync("r",res.header['x-auth-token']);
-					uni.setStorageSync("a",res.header['x-access-token']);
-					uni.switchTab({
-						url: '/pages/root/index/index'
-					});
-				} catch (e) {
-					console.log(e);
-				}
-			}
 		},
 	}
 </script>

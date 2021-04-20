@@ -192,7 +192,7 @@
 
 	.u-collapse-body {
 		overflow: hidden;
-		transition: all 0.3s;
+		transition: all 1s;
 	}
 
 	.u-collapse-content {

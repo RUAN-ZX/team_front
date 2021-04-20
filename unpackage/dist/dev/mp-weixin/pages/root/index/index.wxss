@@ -1,11 +1,3 @@
-
-page {
-	height: calc(200vh);
-	background: -webkit-gradient(linear,  left top, left bottom,  from(#ECF5FE),color-stop(70%, #ffffff));
-	background: -webkit-linear-gradient(top,  #ECF5FE 0%,#ffffff 70%);
-	background: linear-gradient(to bottom,  #ECF5FE 0%,#ffffff 70%);
-}
-
 @charset "UTF-8";
 /**
  * 这里是uni-app内置的常用样式变量
@@ -73,7 +65,24 @@ page {
   z-index: 0;
   position: relative;
 }
-.header.data-v-53e03421 {
+.page.data-v-53e03421 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ECF5FE), color-stop(70%, #ffffff));
+  background: -webkit-linear-gradient(top, #ECF5FE 0%, #ffffff 70%);
+  background: linear-gradient(to bottom, #ECF5FE 0%, #ffffff 70%);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+}
+.page .header.data-v-53e03421 {
   z-index: 4;
   padding-left: 10px;
   padding-bottom: 10px;
@@ -85,30 +94,24 @@ page {
   -webkit-flex-direction: column;
           flex-direction: column;
   text-align: left;
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   width: 100vw;
 }
-.header .wrapper_search.data-v-53e03421 {
+.page .header .wrapper_search.data-v-53e03421 {
   opacity: 1;
   width: 100%;
 }
-.header .wrapper_search.data-v-53e03421:active {
+.page .header .wrapper_search.data-v-53e03421:active {
   opacity: 0.1;
 }
-.wrap.data-v-53e03421 {
+.page .wrap.data-v-53e03421 {
   background-color: #ffffff;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-          flex-direction: column;
   width: 100%;
+  z-index: 2;
 }
-.wrap .wrap_title.data-v-53e03421 {
+.page .wrap .wrap_title.data-v-53e03421 {
   margin-left: 10px;
   margin-top: 10px;
   font-weight: bolder;
@@ -127,28 +130,33 @@ page {
           align-items: center;
   width: 20vw;
 }
-.wrap .wrap_title .title_text_unselected.data-v-53e03421 {
+.page .wrap .wrap_title .title_text_unselected.data-v-53e03421 {
   font-weight: normal;
   color: #afafaf;
   font-size: 30rpx;
 }
-.wrap .wrap_title .title_text_selected.data-v-53e03421 {
+.page .wrap .wrap_title .title_text_selected.data-v-53e03421 {
   font-weight: bolder;
   color: #646464;
   font-size: 35rpx;
 }
-.wrap .u-tabs-box.data-v-53e03421 {
-  z-index: 2;
+.page .wrap .tabs-box.data-v-53e03421 {
   width: 100vw;
-  position: -webkit-sticky;
-  position: sticky;
 }
-.wrap .swiper-box.data-v-53e03421 {
+.page .wrapper.data-v-53e03421 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
   -webkit-box-flex: 1;
   -webkit-flex: 1;
           flex: 1;
 }
-.wrap .swiper-box .swiper-item.data-v-53e03421 {
+.page .wrapper .swiper.data-v-53e03421 {
+  width: 100%;
   height: 100%;
+}
+.page .wrapper .swiper .swiper-item scroll-view.data-v-53e03421 {
+  height: 100%;
+  width: 100%;
 }
 

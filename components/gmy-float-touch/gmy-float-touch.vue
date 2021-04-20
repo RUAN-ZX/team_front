@@ -43,7 +43,6 @@
 </template>
 
 <script>
-	var m_this;
 	export default{
 		name:"gmy-float-touch",
 		data(){
@@ -86,7 +85,6 @@
 			}
 		},
 		created() {
-			m_this = this;
 			this.windowHeight = this.$u.sys().windowHeight;
 			console.log(this.$u.sys());
 		},
@@ -118,9 +116,9 @@
 				
 			},
 			
-			spread:function(e){
+			spread(e){
 				var animation = uni.createAnimation({
-				  duration: m_this.duration,
+				  duration: this.duration,
 					timingFunction: 'ease',
 				});
 				this.animationData = animation.export();
@@ -306,11 +304,11 @@
 			
 	
 			&__mask {
-				position: absolute;
+				position: fixed;
 				z-index: 9;
 				background: rgba(0, 0, 0, .3);
 				width: 100%;
-				height: 200vh;
+				bottom: 0;
 				left: 0;
 				top: 0;
 			}

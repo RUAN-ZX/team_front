@@ -126,11 +126,11 @@ image {
   overflow: hidden;
 }
 .u-dropdown__content__mask {
-  position: absolute;
+  position: fixed;
   z-index: 9;
   background: rgba(0, 0, 0, 0.3);
   width: 100%;
-  height: 200vh;
+  bottom: 0;
   left: 0;
   top: 0;
 }

@@ -63,8 +63,6 @@
 </template>
 
 <script>
-	var m_this;
-	var globalData;
 	import {
 		index_data_refresh
 	} from "@/api/mock.js";
@@ -97,17 +95,7 @@
 					}
 				],
 				title: "",
-				background: {
-					backgroundColor: '#007aff',
-					
-					// 导航栏背景图
-					// background: 'url(https://cdn.uviewui.com/uview/swiper/1.jpg) no-repeat',
-					// 还可以设置背景图size属性
-					// backgroundSize: 'cover',
-					
-					// 渐变色
-					// backgroundImage: 'linear-gradient(45deg, rgb(28, 187, 180), rgb(141, 198, 63))'
-				},
+				background: {backgroundColor: '#007aff',},
 				color: {color:'#f5f5f5' },
 				entry:[
 					{entry:"项目圈",icon:"icon-emailChange",navigation:"/pages/index_entry/project/project"},
@@ -150,7 +138,6 @@
 				m_header_color: '#ffffff',
 				m_header_middle_msg: 9,
 
-				m_uid: 0,
 				m_access: '',
 				m_news_navigate: '/pages/news/news?',
 
@@ -164,18 +151,14 @@
 			};
 		},
 		onLoad(res) {
-			m_this = this;
-			console.log(res)
 			this.title = res.key;
 			
-			globalData = getApp().globalData;
-			let info = globalData.cap_info;
+			let info =  getApp().globalData.info;
 
 			this.m_left = (info.left - 26) + 'px';
 			
 			this.m_top = (info.top - info.height / 2) + 'px';
 
-			this.m_uid = uni.getStorageSync("uid");
 			this.m_access = uni.getStorageSync("a");
 			
 			
@@ -183,14 +166,14 @@
 			this.m_header_shadow = '0020';
 			this.m_header_color = '#F8FAFC';
 			
-			index_data_refresh(0,3).then(function(value){
-				m_this.index_project=value;
+			index_data_refresh(0,3).then((value)=>{
+				this.index_project=value;
 			});
 			
-			index_data_refresh(1,4).then(function(value){
+			index_data_refresh(1,4).then((value)=>{
 				m_this.index_talent=value;
 			});
-			index_data_refresh(2,4).then(function(value){
+			index_data_refresh(2,4).then((value)=>{
 				m_this.index_qa=value;
 			});
 			
@@ -203,7 +186,7 @@
 				
 				let index = [this.index_project,this.index_talent,this.index_qa];
 				this.loadStatus.splice(this.current,1,"loading")
-				index_data_refresh(this.current,2).then(function(value){
+				index_data_refresh(this.current,2).then((value)=>{
 					index[m_this.current].push.apply(index[m_this.current],value);
 
 					m_this.loadStatus.splice(m_this.current,1,"loadmore")

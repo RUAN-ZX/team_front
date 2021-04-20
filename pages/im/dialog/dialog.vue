@@ -13,14 +13,14 @@
 		</u-navbar>
 		<view class="content" @touchstart="hideDrawer">
 			<scroll-view 
-			:style="[{top:info.statusHeight+48+'px'}]"
-			class="msg-list" scroll-y="true" 
-			:scroll-with-animation="scrollAnimation" 
-			:show-scrollbar="false"
-			:scroll-top="scrollTop" 
-			:scroll-into-view="scrollToView" 
-			@scrolltoupper="loadHistory" 
-			upper-threshold="50">
+				:style="[{top:info.statusHeight+48+'px'}]"
+				class="msg-list" scroll-y="true" 
+				:scroll-with-animation="scrollAnimation" 
+				:show-scrollbar="false"
+				:scroll-top="scrollTop" 
+				:scroll-into-view="scrollToView" 
+				@scrolltoupper="loadHistory" 
+				upper-threshold="50">
 				<!-- 加载历史数据waitingUI -->
 				<view class="loading">
 					<view class="spinner">
@@ -37,11 +37,6 @@
 						<view class="system">
 							<!-- 文字消息 -->
 							<view v-if="row.msg.type=='text'" class="text">
-								{{row.msg.content.text}}
-							</view>
-							<!-- 领取红包消息 -->
-							<view v-if="row.msg.type=='redEnvelope'" class="red-envelope">
-								<image src="/static/img/red-envelope-chat.png"></image>
 								{{row.msg.content.text}}
 							</view>
 						</view>
@@ -65,17 +60,6 @@
 								<view v-if="row.msg.type=='img'" class="bubble img" @tap="showPic(row.msg)">
 									<image :src="row.msg.content.url" :style="{'width': row.msg.content.w+'px','height': row.msg.content.h+'px'}"></image>
 								</view>
-								<!-- 红包 -->
-								<view v-if="row.msg.type=='redEnvelope'" class="bubble red-envelope" @tap="openRedEnvelope(row.msg,index)">
-									<image src="/static/img/red-envelope.png"></image>
-									<view class="tis">
-										<!-- 点击开红包 -->
-									</view>
-									<view class="blessing">
-										{{row.msg.content.blessing}}
-									</view>
-								</view>
-								
 							</view>
 							<!-- 右-头像 -->
 							<view class="right">
@@ -106,29 +90,20 @@
 								<view v-if="row.msg.type=='img'" class="bubble img" @tap="showPic(row.msg)">
 									<image :src="row.msg.content.url" :style="{'width': row.msg.content.w+'px','height': row.msg.content.h+'px'}"></image>
 								</view>
-								<!-- 红包 -->
-								<view v-if="row.msg.type=='redEnvelope'" class="bubble red-envelope" @tap="openRedEnvelope(row.msg,index)">
-									<image src="/static/img/red-envelope.png"></image>
-									<view class="tis">
-										<!-- 点击开红包 -->
-									</view>
-									<view class="blessing">
-										{{row.msg.content.blessing}}
-									</view>
-								</view>
 							</view>
 						</view>
 					</block>
 				</view>
 			</scroll-view>
 		</view>
+		
 		<!-- 抽屉栏 -->
 		<view class="popup-layer" :class="popupLayerClass" @touchmove.stop.prevent="discard">
 			<!-- 表情 --> 
 			<swiper class="emoji-swiper" :class="{hidden:hideEmoji}" indicator-dots="true" duration="150">
 				<swiper-item v-for="(page,pid) in emojiList" :key="pid">
 					<view v-for="(em,eid) in page" :key="eid" @tap="addEmoji(em)">
-						<image mode="widthFix" :src="'/static/img/emoji/'+em.url"></image>
+						<image mode="widthFix" :src="'https://stea.ryanalexander.cn/im/'+em.url"></image>
 					</view>
 				</swiper-item>
 			</swiper>
@@ -137,7 +112,6 @@
 				<view class="list">
 					<view class="box" @tap="chooseImage"><view class="icon tupian2"></view></view>
 					<view class="box" @tap="camera"><view class="icon paizhao"></view></view>
-					<view class="box" @tap="handRedEnvelopes"><view class="icon hongbao"></view></view>
 				</view>
 			</view>
 		</view>
@@ -180,35 +154,14 @@
 			<view class="cancel" :class="willStop?'':'hidden'"><view class="icon chehui" ></view></view>
 			<view class="tis" :class="willStop?'change':''">{{recordTis}}</view>
 		</view>
-		<!-- 红包弹窗 -->
-		<view class="windows" :class="windowsState">
-			<!-- 遮罩层 -->
-			<view class="mask" @touchmove.stop.prevent="discard" @tap="closeRedEnvelope"></view>
-			<view class="layer" @touchmove.stop.prevent="discard">
-				<view class="open-redenvelope">
-					<view class="top">
-						<view class="close-btn">
-							<view class="icon close" @tap="closeRedEnvelope"></view>
-						</view>
-						<image src="/static/img/im/face/face_1.jpg"></image>
-					</view>
-					<view class="from">来自{{redenvelopeData.from}}</view>
-					<view class="blessing">{{redenvelopeData.blessing}}</view>
-					<view class="money">{{redenvelopeData.money}}</view>
-					<view class="showDetails" @tap="toDetails(redenvelopeData.rid)">
-						查看领取详情 <view class="icon to"></view>
-					</view>
-				</view>
-			</view>
-			
-		</view>
+		
 	</view>
 </template>
 <script>
 	export default {
 		data() {
 			return {
-				durationPullDownRefresh: 500,
+				durationPullDownRefresh: 400,
 				refresh_status: false,
 				info: {},
 				friendName: "阮阮",
@@ -259,17 +212,7 @@
 					[{"url":"172.gif",alt:"[足球]"},{"url":"173.gif",alt:"[瓢虫]"},{"url":"174.gif",alt:"[翔]"},{"url":"175.gif",alt:"[月亮]"},{"url":"176.gif",alt:"[太阳]"},{"url":"177.gif",alt:"[礼物]"},{"url":"178.gif",alt:"[抱抱]"},{"url":"179.gif",alt:"[拇指]"},{"url":"180.gif",alt:"[贬低]"},{"url":"181.gif",alt:"[握手]"},{"url":"182.gif",alt:"[剪刀手]"},{"url":"183.gif",alt:"[抱拳]"},{"url":"184.gif",alt:"[勾引]"},{"url":"185.gif",alt:"[拳头]"},{"url":"186.gif",alt:"[小拇指]"},{"url":"187.gif",alt:"[拇指八]"},{"url":"188.gif",alt:"[食指]"},{"url":"189.gif",alt:"[ok]"},{"url":"190.gif",alt:"[情侣]"},{"url":"191.gif",alt:"[爱心]"},{"url":"192.gif",alt:"[蹦哒]"},{"url":"193.gif",alt:"[颤抖]"},{"url":"194.gif",alt:"[怄气]"},{"url":"195.gif",alt:"[跳舞]"}],
 					[{"url":"196.gif",alt:"[发呆]"},{"url":"197.gif",alt:"[背着]"},{"url":"198.gif",alt:"[伸手]"},{"url":"199.gif",alt:"[耍帅]"},{"url":"200.png",alt:"[微笑]"},{"url":"201.png",alt:"[生病]"},{"url":"202.png",alt:"[哭泣]"},{"url":"203.png",alt:"[吐舌]"},{"url":"204.png",alt:"[迷糊]"},{"url":"205.png",alt:"[瞪眼]"},{"url":"206.png",alt:"[恐怖]"},{"url":"207.png",alt:"[忧愁]"},{"url":"208.png",alt:"[眨眉]"},{"url":"209.png",alt:"[闭眼]"},{"url":"210.png",alt:"[鄙视]"},{"url":"211.png",alt:"[阴暗]"},{"url":"212.png",alt:"[小鬼]"},{"url":"213.png",alt:"[礼物]"},{"url":"214.png",alt:"[拜佛]"},{"url":"215.png",alt:"[力量]"},{"url":"216.png",alt:"[金钱]"},{"url":"217.png",alt:"[蛋糕]"},{"url":"218.png",alt:"[彩带]"},{"url":"219.png",alt:"[礼物]"},]				
 				],
-				//表情图片图床名称 ，由于我上传的第三方图床名称会有改变，所以有此数据来做对应，您实际应用中应该不需要
-				onlineEmoji:{"100.gif":"AbNQgA.gif","101.gif":"AbN3ut.gif","102.gif":"AbNM3d.gif","103.gif":"AbN8DP.gif","104.gif":"AbNljI.gif","105.gif":"AbNtUS.gif","106.gif":"AbNGHf.gif","107.gif":"AbNYE8.gif","108.gif":"AbNaCQ.gif","109.gif":"AbNN4g.gif","110.gif":"AbN0vn.gif","111.gif":"AbNd3j.gif","112.gif":"AbNsbV.gif","113.gif":"AbNwgs.gif","114.gif":"AbNrD0.gif","115.gif":"AbNDuq.gif","116.gif":"AbNg5F.gif","117.gif":"AbN6ET.gif","118.gif":"AbNcUU.gif","119.gif":"AbNRC4.gif","120.gif":"AbNhvR.gif","121.gif":"AbNf29.gif","122.gif":"AbNW8J.gif","123.gif":"AbNob6.gif","124.gif":"AbN5K1.gif","125.gif":"AbNHUO.gif","126.gif":"AbNIDx.gif","127.gif":"AbN7VK.gif","128.gif":"AbNb5D.gif","129.gif":"AbNX2d.gif","130.gif":"AbNLPe.gif","131.gif":"AbNjxA.gif","132.gif":"AbNO8H.gif","133.gif":"AbNxKI.gif","134.gif":"AbNzrt.gif","135.gif":"AbU9Vf.gif","136.gif":"AbUSqP.gif","137.gif":"AbUCa8.gif","138.gif":"AbUkGQ.gif","139.gif":"AbUFPg.gif","140.gif":"AbUPIS.gif","141.gif":"AbUZMn.gif","142.gif":"AbUExs.gif","143.gif":"AbUA2j.gif","144.gif":"AbUMIU.gif","145.gif":"AbUerq.gif","146.gif":"AbUKaT.gif","147.gif":"AbUmq0.gif","148.gif":"AbUuZV.gif","149.gif":"AbUliF.gif","150.gif":"AbU1G4.gif","151.gif":"AbU8z9.gif","152.gif":"AbU3RJ.gif","153.gif":"AbUYs1.gif","154.gif":"AbUJMR.gif","155.gif":"AbUadK.gif","156.gif":"AbUtqx.gif","157.gif":"AbUUZ6.gif","158.gif":"AbUBJe.gif","159.gif":"AbUdIO.gif","160.gif":"AbU0iD.gif","161.gif":"AbUrzd.gif","162.gif":"AbUDRH.gif","163.gif":"AbUyQA.gif","164.gif":"AbUWo8.gif","165.gif":"AbU6sI.gif","166.gif":"AbU2eP.gif","167.gif":"AbUcLt.gif","168.gif":"AbU4Jg.gif","169.gif":"AbURdf.gif","170.gif":"AbUhFS.gif","171.gif":"AbU5WQ.gif","172.gif":"AbULwV.gif","173.gif":"AbUIzj.gif","174.gif":"AbUTQs.gif","175.gif":"AbU7yn.gif","176.gif":"AbUqe0.gif","177.gif":"AbUHLq.gif","178.gif":"AbUOoT.gif","179.gif":"AbUvYF.gif","180.gif":"AbUjFU.gif","181.gif":"AbaSSJ.gif","182.gif":"AbUxW4.gif","183.gif":"AbaCO1.gif","184.gif":"Abapl9.gif","185.gif":"Aba9yR.gif","186.gif":"AbaFw6.gif","187.gif":"Abaiex.gif","188.gif":"AbakTK.gif","189.gif":"AbaZfe.png","190.gif":"AbaEFO.gif","191.gif":"AbaVYD.gif","192.gif":"AbamSH.gif","193.gif":"AbaKOI.gif","194.gif":"Abanld.gif","195.gif":"Abau6A.gif","196.gif":"AbaQmt.gif","197.gif":"Abal0P.gif","198.gif":"AbatpQ.gif","199.gif":"Aba1Tf.gif","200.png":"Aba8k8.png","201.png":"AbaGtS.png","202.png":"AbaJfg.png","203.png":"AbaNlj.png","204.png":"Abawmq.png","205.png":"AbaU6s.png","206.png":"AbaaXn.png","207.png":"Aba000.png","208.png":"AbarkT.png","209.png":"AbastU.png","210.png":"AbaB7V.png","211.png":"Abafn1.png","212.png":"Abacp4.png","213.png":"AbayhF.png","214.png":"Abag1J.png","215.png":"Aba2c9.png","216.png":"AbaRXR.png","217.png":"Aba476.png","218.png":"Abah0x.png","219.png":"Abdg58.png"},
-				//红包相关参数
-				windowsState:'',
-				redenvelopeData:{
-					rid:null,	//红包ID
-					from:null,
-					face:null,
-					blessing:null,
-					money:null
-				}
+				
 			};
 		},
 		onLoad(option) {
@@ -293,20 +236,7 @@
 		onShow(){
 			this.scrollTop = 9999999;
 			
-			//模板借由本地缓存实现发红包效果，实际应用中请不要使用此方法。
-			//
-			uni.getStorage({
-				key: 'redEnvelopeData',
-				success:  (res)=>{
-					console.log(res.data);
-					let nowDate = new Date();
-					let lastid = this.msgList[this.msgList.length-1].msg.id;
-					lastid++;
-					let row = {type:"user",msg:{id:lastid,type:"redEnvelope",time:nowDate.getHours()+":"+nowDate.getMinutes(),userinfo:{uid:0,username:"大黑哥",face:"/static/img/face.jpg"},content:{blessing:res.data.blessing,rid:Math.floor(Math.random()*1000+1),isReceived:false}}};
-					this.screenMsg(row);
-					uni.removeStorage({key: 'redEnvelopeData'});
-				}
-			});
+			
 		},
 		methods:{
 			setHint(hint) {
@@ -359,20 +289,20 @@
 						uni.vibrateLong();
 					}
 				}
-				this.$nextTick(function() {
+				this.$nextTick(() => {
 					// 滚动到底
 					this.scrollToView = 'msg'+msg.msg.id
 				});
 			},
 			getHistory() {
-				return new Promise(function(resolve, reject) {
+				return new Promise((resolve, reject) => {
 					setTimeout(()=>{
 						// 消息列表
 						let list = [
-							{type:"user",msg:{id:1,type:"text",time:"12:56",userinfo:{uid:0,username:"大黑哥",face:"/static/img/face.jpg"},content:{text:"为什么温度会相差那么大？"}}},
-							{type:"user",msg:{id:2,type:"text",time:"12:57",userinfo:{uid:1,username:"售后客服008",face:"/static/img/im/face/face_2.jpg"},content:{text:"这个是有偏差的，两个温度相差十几二十度是很正常的，如果相差五十度，那即是质量问题了。"}}},
-							{type:"user",msg:{id:3,type:"voice",time:"12:59",userinfo:{uid:1,username:"售后客服008",face:"/static/img/im/face/face_2.jpg"},content:{url:"/static/voice/1.mp3",length:"00:06"}}},
-							{type:"user",msg:{id:4,type:"voice",time:"13:05",userinfo:{uid:0,username:"大黑哥",face:"/static/img/face.jpg"},content:{url:"/static/voice/2.mp3",length:"00:06"}}},
+							{type:"user",msg:{id:1,type:"text",time:"12:56",userinfo:{uid:0,username:"大黑哥",face:"https://lets-team--public.oss-cn-hangzhou.aliyuncs.com/user/alias/alias (2).jpg"},content:{text:"为什么温度会相差那么大？"}}},
+							{type:"user",msg:{id:2,type:"text",time:"12:57",userinfo:{uid:1,username:"售后客服008",face:"https://lets-team--public.oss-cn-hangzhou.aliyuncs.com/user/alias/alias (1).jpg"},content:{text:"这个是有偏差的，两个温度相差十几二十度是很正常的，如果相差五十度，那即是质量问题了。"}}},
+							{type:"user",msg:{id:3,type:"voice",time:"12:59",userinfo:{uid:1,username:"售后客服008",face:"https://lets-team--public.oss-cn-hangzhou.aliyuncs.com/user/alias/alias (1).jpg"},content:{url:"/static/voice/1.mp3",length:"00:06"}}},
+							{type:"user",msg:{id:4,type:"voice",time:"13:05",userinfo:{uid:0,username:"大黑哥",face:"https://lets-team--public.oss-cn-hangzhou.aliyuncs.com/user/alias/alias (2).jpg"},content:{url:"/static/voice/1.mp3",length:"00:06"}}},
 						];
 						reject(list);
 					},1000);
@@ -424,17 +354,13 @@
 				// 消息列表
 				let list = [
 					{type:"system",msg:{id:0,type:"text",content:{text:"欢迎进入HM-chat聊天室"}}},
-					{type:"user",msg:{id:1,type:"text",time:"12:56",userinfo:{uid:0,username:"大黑哥",face:"/static/img/face.jpg"},content:{text:"为什么温度会相差那么大？"}}},
-					{type:"user",msg:{id:2,type:"text",time:"12:57",userinfo:{uid:1,username:"售后客服008",face:"/static/img/im/face/face_2.jpg"},content:{text:"这个是有偏差的，两个温度相差十几二十度是很正常的，如果相差五十度，那即是质量问题了。"}}},
-					{type:"user",msg:{id:3,type:"voice",time:"12:59",userinfo:{uid:1,username:"售后客服008",face:"/static/img/im/face/face_2.jpg"},content:{url:"/static/voice/1.mp3",length:"00:06"}}},
-					{type:"user",msg:{id:4,type:"voice",time:"13:05",userinfo:{uid:0,username:"大黑哥",face:"/static/img/face.jpg"},content:{url:"/static/voice/2.mp3",length:"00:06"}}},
-					{type:"user",msg:{id:5,type:"img",time:"13:05",userinfo:{uid:0,username:"大黑哥",face:"/static/img/face.jpg"},content:{url:"/static/img/p10.jpg",w:200,h:200}}},
-					{type:"user",msg:{id:6,type:"img",time:"12:59",userinfo:{uid:1,username:"售后客服008",face:"/static/img/im/face/face_2.jpg"},content:{url:"/static/img/q.jpg",w:1920,h:1080}}},
+					{type:"user",msg:{id:1,type:"text",time:"12:56",userinfo:{uid:0,username:"大黑哥",face:"https://lets-team--public.oss-cn-hangzhou.aliyuncs.com/user/alias/alias (1).jpg"},content:{text:"为什么温度会相差那么大？"}}},
+					{type:"user",msg:{id:2,type:"text",time:"12:57",userinfo:{uid:1,username:"售后客服008",face:"https://lets-team--public.oss-cn-hangzhou.aliyuncs.com/user/alias/alias (2).jpg"},content:{text:"这个是有偏差的，两个温度相差十几二十度是很正常的，如果相差五十度，那即是质量问题了。"}}},
+					{type:"user",msg:{id:3,type:"voice",time:"12:59",userinfo:{uid:1,username:"售后客服008",face:"https://lets-team--public.oss-cn-hangzhou.aliyuncs.com/user/alias/alias (2).jpg"},content:{url:"/static/voice/1.mp3",length:"00:06"}}},
+					{type:"user",msg:{id:4,type:"voice",time:"13:05",userinfo:{uid:0,username:"大黑哥",face:"https://lets-team--public.oss-cn-hangzhou.aliyuncs.com/user/alias/alias (1).jpg"},content:{url:"/static/voice/1.mp3",length:"00:06"}}},
+					{type:"user",msg:{id:5,type:"img",time:"13:05",userinfo:{uid:0,username:"大黑哥",face:"https://lets-team--public.oss-cn-hangzhou.aliyuncs.com/user/alias/alias (1).jpg"},content:{url:"https://stea.ryanalexander.cn/navbar/11.jpg",w:200,h:200}}},
+					{type:"user",msg:{id:6,type:"img",time:"12:59",userinfo:{uid:1,username:"售后客服008",face:"https://lets-team--public.oss-cn-hangzhou.aliyuncs.com/user/alias/alias (2).jpg"},content:{url:"https://stea.ryanalexander.cn/navbar/22.jpg",w:1920,h:1080}}},
 					{type:"system",msg:{id:7,type:"text",content:{text:"欢迎进入HM-chat聊天室"}}},
-					
-					{type:"system",msg:{id:9,type:"redEnvelope",content:{text:"售后客服008领取了你的红包"}}},
-					{type:"user",msg:{id:10,type:"redEnvelope",time:"12:56",userinfo:{uid:0,username:"大黑哥",face:"/static/img/face.jpg"},content:{blessing:"恭喜发财，大吉大利，万事如意",rid:0,isReceived:false}}},
-					{type:"user",msg:{id:11,type:"redEnvelope",time:"12:56",userinfo:{uid:1,username:"售后客服008",face:"/static/img/im/face/face_2.jpg"},content:{blessing:"恭喜发财",rid:1,isReceived:false}}},
 				]
 				// 获取消息中的图片,并处理显示尺寸
 				for(let i=0;i<list.length;i++){
@@ -445,10 +371,10 @@
 				}
 				this.msgList = list;
 				// 滚动到底部
-				this.$nextTick(function() {
+				this.$nextTick(() => {
 					//进入页面滚动到底部
 					this.scrollTop = 9999;
-					this.$nextTick(function() {
+					this.$nextTick(() => {
 						this.scrollAnimation = true;
 					});
 					
@@ -498,13 +424,7 @@
 			camera(){
 				this.getImage('camera');
 			},
-			//发红包
-			handRedEnvelopes(){
-				uni.navigateTo({
-					url:'HM-hand/HM-hand'
-				});
-				this.hideDrawer();
-			},
+	
 			//选照片 or 拍照
 			getImage(type){
 				this.hideDrawer();
@@ -557,6 +477,8 @@
 				let msg = {text:content}
 				this.sendMsg(msg,'text');
 				this.textMsg = '';//清空输入框
+				
+				
 			},
 			//替换表情符号为图片
 			replaceEmoji(str){
@@ -569,8 +491,8 @@
 							if(EM.alt==item){
 								//在线表情路径，图文混排必须使用网络路径，请上传一份表情到你的服务器后再替换此路径 
 								//比如你上传服务器后，你的100.gif路径为https://www.xxx.com/emoji/100.gif 则替换onlinePath填写为https://www.xxx.com/emoji/
-								let onlinePath = 'https://s2.ax1x.com/2019/04/12/'
-								let imgstr = '<img src="'+onlinePath+this.onlineEmoji[EM.url]+'">';
+								let onlinePath = 'https://stea.ryanalexander.cn/im/'
+								let imgstr = '<img src="'+onlinePath+EM.url+'">';
 								console.log("imgstr: " + imgstr);
 								return imgstr;
 							}
@@ -589,6 +511,26 @@
 				let msg = {type:'user',msg:{id:lastid,time:nowDate.getHours()+":"+nowDate.getMinutes(),type:type,userinfo:{uid:0,username:"大黑哥",face:"/static/img/face.jpg"},content:content}}
 				// 发送消息
 				this.screenMsg(msg);
+				
+				uni.request({
+					method: 'get',
+					url: this.app.url + "/message/session/history",
+					data: {
+						"pageNum": 0,
+						"pageSize": 100
+					},
+					header: this.app.genHeader(a,""),
+					success: (res) => {
+						console.log(res);
+					},
+					
+					fail: (res)=>{
+						console.log(res)
+					},
+						
+					//ryan_alexander@hzbytecloud.cn
+				})
+				
 				// 定时器模拟对方回复,三秒
 				setTimeout(()=>{
 					lastid = this.msgList[this.msgList.length-1].msg.id;
@@ -620,56 +562,7 @@
 			addSystemTextMsg(msg){
 				this.msgList.push(msg);
 			},
-			// 添加系统红包消息到列表
-			addSystemRedEnvelopeMsg(msg){
-				this.msgList.push(msg);
-			},
-			// 打开红包
-			openRedEnvelope(msg,index){
-				let rid = msg.content.rid;
-				uni.showLoading({
-					title:'加载中...'
-				});
-				console.log("index: " + index);
-				//模拟请求服务器效果
-				setTimeout(()=>{
-					//加载数据
-					if(rid==0){
-						this.redenvelopeData={
-							rid:0,	//红包ID
-							from:"大黑哥",
-							face:"/static/img/im/face/face.jpg",
-							blessing:"恭喜发财，大吉大利",
-							money:"已领完"
-						}
-					}else{
-						this.redenvelopeData={
-							rid:1,	//红包ID
-							from:"售后客服008",
-							face:"/static/img/im/face/face_2.jpg",
-							blessing:"恭喜发财",
-							money:"0.01"
-						}
-						if(!msg.content.isReceived){
-							// {type:"system",msg:{id:8,type:"redEnvelope",content:{text:"你领取了售后客服008的红包"}}},
-							this.sendSystemMsg({text:"你领取了"+(msg.userinfo.uid==this.myuid?"自己":msg.userinfo.username)+"的红包"},'redEnvelope');
-							console.log("this.msgList[index]: " + JSON.stringify(this.msgList[index]));
-							this.msgList[index].msg.content.isReceived = true;
-						}
-					}
-					uni.hideLoading();
-					this.windowsState = 'show';
-					
-				},200)
-				
-			},
-			// 关闭红包弹窗
-			closeRedEnvelope(){
-				this.windowsState = 'hide';
-				setTimeout(()=>{
-					this.windowsState = '';
-				},200)
-			},
+			
 			sendSystemMsg(content,type){
 				let lastid = this.msgList[this.msgList.length-1].msg.id;
 				lastid++;
@@ -694,7 +587,7 @@
 			playVoice(msg){
 				this.playMsgid=msg.id;
 				this.AUDIO.src = msg.content.url;
-				this.$nextTick(function() {
+				this.$nextTick(()=> {
 					this.AUDIO.play();
 				});
 			},

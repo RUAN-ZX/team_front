@@ -25,34 +25,11 @@
 /* 透明度 */
 /* 文章场景相关 */
 /* uni.scss */
-.u-config-wrap.data-v-4ed9d9e5 {
-  padding: 40rpx;
-}
-.slot-content.data-v-4ed9d9e5 {
-  background-color: #FFFFFF;
-  padding: 24rpx;
-}
-.slot-content .item-box.data-v-4ed9d9e5 {
-  margin-bottom: 50rpx;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-          flex-wrap: wrap;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-          justify-content: space-between;
-}
-.slot-content .item-box .item.data-v-4ed9d9e5 {
-  border: 1px solid #2979ff;
-  color: #2979ff;
-  padding: 8rpx 40rpx;
-  -webkit-border-radius: 100rpx;
-          border-radius: 100rpx;
-  margin-top: 30rpx;
-}
-.slot-content .item-box .active.data-v-4ed9d9e5 {
-  color: #FFFFFF;
-  background-color: #2979ff;
+.item.data-v-4ed9d9e5 {
+  background-color: blue;
+  height: 300px;
+  width: 50px;
+  -webkit-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
 }
 

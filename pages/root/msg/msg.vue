@@ -25,28 +25,21 @@
 			<swiper class="swiper-box" :current="swiperCurrent" @transition="transition" @animationfinish="animationfinish">
 				<swiper-item class="swiper-item">
 					<scroll-view scroll-y style="height: 100%;width: 100%;" @scrolltolower="reachBottom">
-						<view v-for="(projectItem,projectIndex) in index_project"
-							:key="projectIndex">
-							<team-project :projectItem="projectItem" :key="projectIndex">
-							</team-project>
-						</view>
+						<view :style="[{marginTop: '20px'}]"></view>
+						<u-button type="primary" @click="navigate('/pages/im/dialog/dialog')">Dialog</u-button>
+						
 						<u-loadmore :status="loadStatus[0]" bgColor="transparent"></u-loadmore>
 					</scroll-view>
 				</swiper-item>
 				<swiper-item class="swiper-item">
 					<scroll-view scroll-y style="height: 100%;width: 100%;" @scrolltolower="reachBottom">
-						<view v-for="(talentItem,talentIndex) in index_talent" :key="talentIndex">
-							<team-talent :talentItem="talentItem">
-							</team-talent>
-						</view>
+						
 						<u-loadmore :status="loadStatus[1]" bgColor="transparent"></u-loadmore>
 					</scroll-view>
 				</swiper-item>
 				<swiper-item class="swiper-item">
 					<scroll-view scroll-y style="height: 100%;width: 100%;" @scrolltolower="reachBottom">
-						<view v-for="(qaItem, qaIndex) in index_qa" :key="qaIndex">
-							<team-qa :qaItem="qaItem"></team-qa>
-						</view>
+						
 						<u-loadmore :status="loadStatus[2]" bgColor="transparent"></u-loadmore>
 					</scroll-view>
 				</swiper-item>
@@ -111,16 +104,9 @@
 		onLoad() {
 			this.info = getApp().globalData.info;
 			
-			index_data_refresh(0,4).then((value)=>{
-				this.index_project=value;
-			});
-			
-			index_data_refresh(1,6).then((value)=>{
-				this.index_talent=value;
-			});
-			index_data_refresh(2,6).then((value)=>{
-				this.index_qa=value;
-			});
+			// index_data_refresh(0,4).then((value)=>{
+			// 	this.index_project=value;
+			// });
 		},
 		
 		methods: {

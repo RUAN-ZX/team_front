@@ -7,9 +7,10 @@
 <script>
 	export default {
 		globalData: {
-			
+			userInfo: {},
 			// url :"http://localhost:8080",
 			// url :"https://www.hzbytecloud.cn",
+			
 			url :"https://www.hzbytecloud.cn/team",
 			imgUrl: "https://lets-team--public.oss-cn-hangzhou.aliyuncs.com",
 			info: {},
@@ -25,8 +26,6 @@
 		}, 
 		onLaunch: function() {
 			let other = this.$u.sys();
-			
-			
 			let menuButton = uni.getMenuButtonBoundingClientRect();
 			
 			this.globalData.info = {
@@ -56,7 +55,7 @@
 	@import "@/common/psl_font.css";
 	@import "@/common/animate.css";
 	.trans {
-		transition: 0.3s opacity ease-out;
+		transition: all 0.3s ease-out;
 	}
 	
 	/*每个页面公共css */

@@ -1,13 +1,14 @@
 <template>
-	<view>
+	<view class="page">
 		<gmy-float-touch :imgLists="imgLists"></gmy-float-touch>
-		<view class="header"
-			:style="[{backgroundColor:'#ffff'+m_header_opacity},{boxShadow: '6rpx 6rpx 15rpx 3rpx #0000'+m_header_shadow}]">
+		<view class="header trans"
+			:style="[{backgroundColor:'#ffff'+m_header_opacity}]">
 			
-			<view class="wrapper_search trans" 
+			<view class="wrapper_search" 
 				@click="navigate('/pages/search/index_search/index_search?e=10')"
 				:style="[{marginTop:info.top+'px'},{width:info.left-26+'px'}]">
-				<search :show-action="false" 
+				<search 
+					:show-action="false" 
 					clearabled="false" disabled="false" 
 					placeholder="搜索"
 					shape="round"
@@ -16,8 +17,11 @@
 				</search>
 			</view>
 		</view>
-		<view :style="{marginTop: info.top+info.height+20+'px'}">
+		
+		<view class="uswiper trans" 
+		:style="[{height: height_swiper + 'rpx'}]">
 			<u-swiper
+				:height="height_swiper"
 				:list="swiperList" mode="round"
 				:effect3d="true"
 				:title="true"
@@ -26,8 +30,11 @@
 			</u-swiper>
 		</view>
 		
-		<view class="wrap" id="target"
-			:style="{height: scrollTop}">
+		
+		<view class="wrap" 
+		:style="[{top: info.top+info.height+10+'px'},
+			{backgroundColor:'#ffff'+m_tab_opacity},
+			{boxShadow: '6rpx 6rpx 15rpx 3rpx #0000'+m_tab_shadow}]">
 			<view class="wrap_title">
 				<view :class="title_text_class[0]" @click="changeTitle(0)">
 					精选
@@ -37,19 +44,27 @@
 				</view>
 			</view>
 			
-			<view class="u-tabs-box" 
-				:style="[{backgroundColor:'#ffff'+m_tab_opacity},
-				{boxShadow: '6rpx 6rpx 15rpx 3rpx #0000'+m_tab_shadow},
-				{top: info.top+info.height+10+'px'}]">
-				
-				<u-tabs-swiper :bgColor="m_tab_bgcolor" activeColor="#007aff" ref="tabs" :list="tab_list" :current="current"
-				 @change="change" :is-scroll="false" swiperWidth="750"></u-tabs-swiper>
-			</view>
-			<swiper class="swiper-box" :current="swiperCurrent" @transition="transition" @animationfinish="animationfinish">
+			<u-tabs-swiper :bgColor="m_tab_bgcolor" activeColor="#007aff" ref="tabs" :list="tab_list" :current="current"
+			 @change="change" :is-scroll="false" swiperWidth="750"></u-tabs-swiper>
+			
+		</view>
+
+		<view class="wrapper">
+			<swiper class="swiper"
+				:current="swiperCurrent" 
+				@transition="transition"
+				@animationfinish="animationfinish"
+				>
 				<swiper-item class="swiper-item">
-					<scroll-view scroll-y style="height: 100%;width: 100%;" @scrolltolower="reachBottom">
-						<view v-for="(projectItem,projectIndex) in index_project"
-							:key="projectIndex">
+					<scroll-view scroll-y="true"
+					@scroll="scroll"
+					scroll-with-animation="true"
+					
+					@scrolltolower="reachBottom">
+						<view v-for="(projectItem,projectIndex) in index[0]"
+							:key="projectIndex" class="trans"
+							:style="[aniStyle]">
+							
 							<team-project :projectItem="projectItem" :key="projectIndex">
 							</team-project>
 						</view>
@@ -57,8 +72,9 @@
 					</scroll-view>
 				</swiper-item>
 				<swiper-item class="swiper-item">
-					<scroll-view scroll-y style="height: 100%;width: 100%;" @scrolltolower="reachBottom">
-						<view v-for="(talentItem,talentIndex) in index_talent" :key="talentIndex">
+					<scroll-view scroll-y="true" @scrolltolower="reachBottom">
+						<view v-for="(talentItem,talentIndex) in index[1]" 
+							:key="talentIndex">
 							<team-talent :talentItem="talentItem">
 							</team-talent>
 						</view>
@@ -66,8 +82,9 @@
 					</scroll-view>
 				</swiper-item>
 				<swiper-item class="swiper-item">
-					<scroll-view scroll-y style="height: 100%;width: 100%;" @scrolltolower="reachBottom">
-						<view v-for="(qaItem, qaIndex) in index_qa" :key="qaIndex">
+					<scroll-view scroll-y="true" @scrolltolower="reachBottom">
+						<view v-for="(qaItem, qaIndex) in index[2]" 
+						:key="qaIndex">
 							<team-qa :qaItem="qaItem"></team-qa>
 						</view>
 						<u-loadmore :status="loadStatus[2]" bgColor="transparent"></u-loadmore>
@@ -79,8 +96,6 @@
 </template>
 
 <script>
-	var m_this;
-	
 	import {
 		index_data_refresh
 	} from "@/api/mock.js";
@@ -99,6 +114,8 @@
 		},
 		data() {
 			return {
+				height_swiper: 200,
+				app: {},
 				imgLists:[
 					"https://stea.ryanalexander.cn/float/0.png",
 					"https://stea.ryanalexander.cn/float/1.png",
@@ -120,13 +137,16 @@
 						title: '不忘初心，牢记使命'
 					}
 				],
+				
 				title_text_class: ["title_text_selected","title_text_unselected"],
+				
 				scrollTop: "0px",
 				dx: 0,
 				loadStatus: ['loadmore', 'loadmore', 'loadmore', 'loadmore'],
 
 				current: 0, // tabs组件的current值，表示当前活动的tab选项
 				swiperCurrent: 0, // swiper组件的current值，表示当前那个swiper-item是活动的
+				
 				tab_list: [{
 					name: '项目圈',
 					num: 1
@@ -138,96 +158,141 @@
 					num: 1
 				}],
 				
-				m_header_shadow: '0000',
 				m_header_opacity: '0000',
 				m_tab_shadow: '0000',
 				m_tab_opacity: '0000',
 				m_tab_bgcolor: "transparent",
 				m_header_color: '#ffffff',
 
-				index_project: [],
-
-				index_talent: [],
-				// 首先  可以选择是否展示自己头像和组织等等 有些名人需要用自己的名人效应来增加问题被回答的可能性
-				// 另外  高分回答也是为了抛砖引玉 至于显示不显示回答者的头像那些 也由他们选择 默认是有的 
-				// 注意  两者最好区分一下 否则会造成意义不明 到底是提问者还是回答者
-				index_qa: [],
-				info: {}
+				index: [
+					[],
+					[],
+					[]
+				],
+				info: {},
+				height_swiper: 0,
+				
+				aniStyleIsShow: false,
+				aniStyleDuration: 0
+				
 			};
 		},
 		onLoad() {
-			m_this = this;
+			this.app = getApp().globalData;
 			this.info = getApp().globalData.info;
 			
-			index_data_refresh(0,3).then(function(value){
-				m_this.index_project=value;
+			index_data_refresh(0,4).then((value)=>{
+				this.aniStyleIsShow = false;
+				this.aniStyleDuration = 1;
+				
+				this.index[0].push.apply(this.index[0],value);
+				
+				setTimeout(()=>{
+					this.aniStyleIsShow = true;
+					this.aniStyleDuration = 300;
+				},100);
+			});
+			index_data_refresh(1,6).then((value)=>{
+				this.index[1].push.apply(this.index[1],value);
+			});
+			index_data_refresh(2,5).then((value)=>{
+				this.index[2].push.apply(this.index[2],value);
 			});
 			
-			index_data_refresh(1,4).then(function(value){
-				m_this.index_talent=value;
-			});
-			index_data_refresh(2,4).then(function(value){
-				m_this.index_qa=value;
-			});
 			
-			this.getHeight();
+			// this.initMessage();
+			// this.initUserInfo();
+			this.spread();
+			
 			
 		},
-		
-		onPageScroll: function(e) {
-			this.getHeight();
-			if (e.scrollTop == 0) {
-				this.m_header_shadow = '0000'
+		computed: {
+			aniStyle() {
+				let style = {};
+				
+				style.transform = `translateY(${this.aniStyleIsShow ? 0 : '-10%'})`
+				style['opacity'] = this.aniStyleIsShow ? 1 : 0;
+				style['transition-duration'] = this.aniStyleDuration / 1000 + 's';
+				return style;
+			}
+		},
+		methods: {
+			scroll(e){
+				let temp = e.detail.scrollTop;
+				if(temp>100){
+					this.fold();
+				}else {
+					this.spread();
+				}
+			},
+			spread(){
+				this.height_swiper=250;
 				this.m_header_opacity = '0000'
 				this.m_header_color = '#ffffff'
 				this.m_tab_shadow = '0000'
 				this.m_tab_opacity =  '0000'
-				this.m_tab_bgcolor =  "transparent"
+				setTimeout(()=>{
+					this.m_tab_bgcolor =  "transparent"
+				},300);
 				
-			} 
-			else if(e.scrollTop >= 124){
-				this.m_header_shadow = '0000'
+			},
+			fold(){
+				this.height_swiper=0;
+				this.m_header_color = '#ECF5FE'
 				this.m_header_opacity = 'ffff';
 				this.m_tab_shadow = '0020'
 				this.m_tab_opacity = 'ffff'
 				this.m_tab_bgcolor = "#ffffff"
-			}
-			else {
-				this.m_header_opacity = 'ffff';
-				this.m_header_shadow = '0020';
-				this.m_header_color = '#F8FAFC';
-				this.m_tab_shadow = '0020'
-				this.m_tab_opacity = 'ffff'
-				this.m_tab_bgcolor = "#ffffff"
-			}
-		},
-
-		methods: {
+				this.m_header_bgcolor = "#ffffff"
+			},
+			initMessage(){
+				uni.request({
+					method: 'post',
+					url: this.app.url + "/message",
+					data: {
+						"receiverUserId": uni.getStorageSync("i"),
+						"contentType": 100,
+						"content": "Hello"
+					},
+					header: this.app.genHeader(a,""),
+					success: (res) => {
+						console.log(res);
+					},
+					
+					fail: (res)=>{
+						console.log(res)
+					},
+						
+					//ryan_alexander@hzbytecloud.cn
+				})
+			},
+			initUserInfo(){
+				uni.request({
+					method: 'get',
+					url: this.app.url + "/userInfo/me",
+					header: this.app.genHeader(a,r),
+					success: (res) => {
+						this.app.userInfo = res.data;
+						console.log(this.app.userInfo)
+					},
+					fail: (res)=>{console.log(res)},
+				})
+			},
 			changeTitle(code){
 				this.title_text_class = ["title_text_unselected","title_text_unselected"];
 				this.title_text_class[code] = "title_text_selected";
 			},
-			getHeight(){
-				const query = uni.createSelectorQuery().in(this);
-				query.select('#target').boundingClientRect(data => {
-					// console.log(data.top)
-					// console.log(m_this.info.windowHeight);
-					m_this.scrollTop = m_this.info.windowHeight-data.top+'px';
-				}).exec();
-				// m_this.scrollTop = "600px"
-				
-				
-			},
 			reachTop() {
+				
 			},
 			reachBottom() {
-				
-				let index = [this.index_project,this.index_talent,this.index_qa];
+				// let index = [this.index_project,this.index_talent,this.index_qa];
 				this.loadStatus.splice(this.current,1,"loading")
-				index_data_refresh(this.current,2).then(function(value){
-					index[m_this.current].push.apply(index[m_this.current],value);
-
-					m_this.loadStatus.splice(m_this.current,1,"loadmore")
+				index_data_refresh(this.current,2).then((value)=>{
+					// console.log(index[this.current])
+					this.index[this.current].push.apply(this.index[this.current],value);
+					
+					this.loadStatus.splice(this.current,1,"loadmore")
 				});
 				
 			},
@@ -253,81 +318,88 @@
 		}
 	};
 </script>
-<style>
-	page {
-		height: calc(200vh);
-		background: linear-gradient(to bottom,  #ECF5FE 0%,#ffffff 70%);
-	}
-</style>
+
 <style lang="scss" scoped>
 	@import "@/common/uni.scss";
-
-	// $heightHeader: 200rpx;
-	.header {
-		z-index: 4;
-		padding-left: $padding;
-		padding-bottom: $padding;
-		/* #ifndef APP-NVUE */
+	.page{
 		display: flex;
-		/* #endif */
 		flex-direction: column;
-		text-align: left;
-		position: fixed;
+		background: linear-gradient(to bottom,  #ECF5FE 0%,#ffffff 70%);
 		top: 0;
 		left: 0;
-		width: 100vw;
-		
-		.wrapper_search{
-			opacity: 1;
-			width: 100%;
-		}
-		.wrapper_search:active{
-			opacity: 0.1;
-		}
-	
-	}
-	
-	
-	.wrap {
-		background-color: $cardColor;
-		display: flex;
-		flex-direction: column;
-		width: 100%;
-		
-		.wrap_title{
-			
-			margin-left: $padding;
-			margin-top: $padding;
-			font-weight: bolder;
+		right: 0;
+		bottom: 0;
+		position: fixed;
+		.header {
+			z-index: 4;
+			padding-left: $padding;
+			padding-bottom: $padding;
 			
 			display: flex;
-			flex-direction: row;
-			justify-content: space-between;
-			align-items: center;
-			width: 20vw;
-			.title_text_unselected{
-				// flex: 1;
-				font-weight: normal;
-				color: $labelColor;
-				font-size: 30rpx;
-			}
-			.title_text_selected{
-				// flex: 1;
-				font-weight: bolder;
-				color: $labelColor2;
-				font-size: 35rpx;
-			}
-		}
-		.u-tabs-box {
-			z-index:2;
+			flex-direction: column;
+			text-align: left;
+			position: relative;
+			top: 0;
+			left: 0;
 			width: 100vw;
-			position: sticky;
 			
+			.wrapper_search{
+				opacity: 1;
+				width: 100%;
+			}
+			.wrapper_search:active{
+				opacity: 0.1;
+			}
+		
 		}
-		.swiper-box {
+		
+		.wrap {
+			
+			background-color: $cardColor;
+			width: 100%;
+			// position: sticky;
+			z-index: $zindex_tab;
+			.wrap_title{
+				
+				margin-left: $padding;
+				margin-top: $padding;
+				font-weight: bolder;
+				
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				align-items: center;
+				width: 20vw;
+				.title_text_unselected{
+					// flex: 1;
+					font-weight: normal;
+					color: $labelColor;
+					font-size: 30rpx;
+				}
+				.title_text_selected{
+					// flex: 1;
+					font-weight: bolder;
+					color: $labelColor2;
+					font-size: 35rpx;
+				}
+			}
+			.tabs-box {
+				width: 100vw;
+			}
+		}
+		.wrapper{
+			display: flex;
 			flex: 1;
-			.swiper-item {
+			.swiper{
+				width: 100%;
 				height: 100%;
+				.swiper-item{
+					scroll-view{
+						height: 100%;  
+						width: 100%;
+						
+					}
+				}		
 			}
 		}
 	}
