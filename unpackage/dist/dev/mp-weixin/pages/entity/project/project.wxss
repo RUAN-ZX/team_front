@@ -65,4 +65,9 @@
   z-index: 0;
   position: relative;
 }
+.title {
+  color: #ffffff;
+  font-weight: bolder;
+  text-align: center;
+}
 

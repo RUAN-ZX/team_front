@@ -47,18 +47,15 @@
 		</view>
 		
 		<view class="card function">
-			<u-cell-group title="设置喜好">
-				<u-cell-item icon="setting-fill" title="个人设置"></u-cell-item>
-				<u-cell-item icon="integral-fill" title="会员等级" value="新版本"></u-cell-item>
-			</u-cell-group>
+			<u-cell-item icon="setting-fill" title="个人设置"></u-cell-item>
+			<u-cell-item icon="integral-fill" title="会员等级" value="新版本"></u-cell-item>
 		</view>
 	</view>
 </template>
 
 <script>
-	import {getGradeInfo} from '@/api/grade.js';
-	import {getCertification} from '@/api/certification.js';
-    export default {
+	import {getUserInfo} from '@/api/api.js';
+	export default {
         data() {
             return {
 				info: {},
@@ -91,19 +88,7 @@
 			
 			let userInfo_ = getApp().globalData.userInfo;
 			
-			let defaultUser = {
-				avatar: getApp().globalData.imgUrl+"/user/alias/alias (1).jpg",
-				cert: 0
-			}
-			
-			this.userInfo = {
-				certification: getCertification(userInfo_.cert?userInfo_.cert:defaultUser.cert),
-				grade: getGradeInfo(userInfo_.experience),
-				userId: userInfo_.userId,
-				alias: userInfo_.nickname,
-				avatar: userInfo_.avatarUrl?userInfo_.avatarUrl:defaultUser.avatar,
-				slogan: userInfo_.signature,
-			}
+			this.userInfo = getUserInfo(userInfo_);
 			this.info = getApp().globalData.info;
 		}
     }

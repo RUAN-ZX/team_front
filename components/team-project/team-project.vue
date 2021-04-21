@@ -119,7 +119,7 @@
 					
 					setTimeout(()=>{
 						uni.navigateTo({
-							url: '/pages/entity/project/project?pid='+this.projectItem.projectId,
+							url: '/pages/entity/project/project?projectId='+this.projectItem.projectId,
 							animationType: 'fade-in',
 							animationDuration: 300
 						});

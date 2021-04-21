@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "u-toast": "/uview-ui/components/u-toast/u-toast",
+    "u-navbar": "/uview-ui/components/u-navbar/u-navbar"
+  }
 }

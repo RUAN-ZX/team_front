@@ -1,9 +1,9 @@
 {
+  "component": true,
   "usingComponents": {
     "u-toast": "/uview-ui/components/u-toast/u-toast",
     "u-tag": "/uview-ui/components/u-tag/u-tag",
     "u-popup": "/uview-ui/components/u-popup/u-popup",
     "search": "/components/search/search"
-  },
-  "component": true
+  }
 }

@@ -26,7 +26,7 @@
 				<swiper-item class="swiper-item">
 					<scroll-view scroll-y style="height: 100%;width: 100%;" @scrolltolower="reachBottom">
 						<view :style="[{marginTop: '20px'}]"></view>
-						<u-button type="primary" @click="navigate('/pages/im/dialog/dialog')">Dialog</u-button>
+						<u-button type="primary" @click="navigate('/pages/im/dialog/dialog?userId=11')">Dialog</u-button>
 						
 						<u-loadmore :status="loadStatus[0]" bgColor="transparent"></u-loadmore>
 					</scroll-view>
@@ -52,7 +52,7 @@
 <script>
 	import {
 		index_data_refresh
-	} from "@/api/mock.js";
+	} from "@/api/api.js";
 	import gmyFloatTouch from "@/components/gmy-float-touch/gmy-float-touch.vue";
 	import search from "@/components/search/search.vue";
 	import teamProject from "@/components/team-project/team-project.vue";

@@ -32,7 +32,7 @@
 </template>
 
 <script>
-	import {getCertification} from '@/api/certification.js';
+	import {getCertification} from '@/api/api.js';
 	export default {
 		name: 'aliasAvatar',
 		props: {

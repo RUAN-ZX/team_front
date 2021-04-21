@@ -98,7 +98,7 @@
 <script>
 	import {
 		index_data_refresh
-	} from "@/api/mock.js";
+	} from "@/api/api.js";
 	import gmyFloatTouch from "@/components/gmy-float-touch/gmy-float-touch.vue";
 	import search from "@/components/search/search.vue";
 	import teamProject from "@/components/team-project/team-project.vue";

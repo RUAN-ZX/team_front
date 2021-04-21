@@ -65,7 +65,7 @@
 <script>
 	import {
 		index_data_refresh
-	} from "@/api/mock.js";
+	} from "@/api/api.js";
 	
 	import teamProject from "@/components/team-project/team-project.vue";
 	import teamTalent from "@/components/team-talent/team-talent.vue";

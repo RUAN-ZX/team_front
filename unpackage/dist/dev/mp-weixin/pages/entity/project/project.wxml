@@ -1,1 +1,1 @@
-<view></view>
+<view><u-toast class="vue-ref" vue-id="87f83254-1" data-ref="uToast" bind:__l="__l"></u-toast><u-navbar vue-id="87f83254-2" back-text="返回" is-fixed="{{true}}" background="{{background}}" back-text-style="{{color}}" title-color="#f5f5f5" back-icon-color="#f5f5f5" bind:__l="__l" vue-slots="{{['default']}}"><view data-event-opts="{{[['tap',[['navigate',['/pages/root/me/me_external/me_external']]]]]}}" class="title" bindtap="__e">{{''+projectInfo.title+''}}</view></u-navbar></view>

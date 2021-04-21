@@ -7,8 +7,10 @@
 			:back-text-style="color"
 			title-color="#f5f5f5"
 			back-icon-color="#f5f5f5">
-				<view class="friend" @click="navigate('/pages/root/me/me_external/me_external')">
-					{{friendName}}
+				<view class="friend" 
+					@click="navigate"
+					title="">
+					{{userId}}
 				</view>
 		</u-navbar>
 		<view class="content" @touchstart="hideDrawer">
@@ -161,10 +163,11 @@
 	export default {
 		data() {
 			return {
+				userId: -1,
+				app: {},
 				durationPullDownRefresh: 400,
 				refresh_status: false,
 				info: {},
-				friendName: "阮阮",
 				background: {
 					background: 'url(https://stea.ryanalexander.cn/navbar/22.jpg) no-repeat',
 					backgroundSize: '100% 100%'
@@ -215,7 +218,10 @@
 				
 			};
 		},
-		onLoad(option) {
+		onLoad(res) {
+			this.userId = res.userId;
+			
+			
 			this.info = getApp().globalData.info;
 			this.getMsgList();
 			//语音自然播放结束
@@ -239,18 +245,18 @@
 			
 		},
 		methods:{
+			navigate(){
+				uni.navigateTo({
+					url: '/pages/root/me/me_external/me_external?userId='+this.userId,
+					success: res => {},
+					fail: () => {},
+					complete: () => {}
+				});
+			},
 			setHint(hint) {
 				this.$refs.uToast.show({
 					title: hint,
 					duration: this.durationPullDownRefresh
-				});
-			},
-			navigate(navigation) {
-				uni.navigateTo({
-					url: navigation,
-					success: res => {},
-					fail: () => {},
-					complete: () => {}
 				});
 			},
 			// 接受消息(筛选处理)
