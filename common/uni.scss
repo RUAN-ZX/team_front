@@ -32,6 +32,7 @@ $zindex_ripple:1;
 $zindex_content: 0;
 $zindex_bg: -1;
 
+
 .boxShadow{
 	background-color: #ffff0000;
 	box-shadow: 6rpx 6rpx 15rpx 3rpx rgba(0,0,0,0.125);
@@ -65,6 +66,7 @@ $zindex_bg: -1;
 	background-color: $cardColor;
 	box-shadow: 6rpx 6rpx 15rpx 3rpx rgba(0,0,0,0.21);
 	border-radius: $padding;
+	
 	z-index: $zindex_content;
 	position: relative;
 }

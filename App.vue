@@ -13,6 +13,10 @@
 			
 			url :"https://www.hzbytecloud.cn/team",
 			imgUrl: "https://lets-team--public.oss-cn-hangzhou.aliyuncs.com",
+			token: {
+				r: "",
+				a: ""
+			},
 			info: {},
 			genHeader: (access,refresh)=>{
 				return {

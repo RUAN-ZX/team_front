@@ -8,9 +8,6 @@
 import {index_project,index_talent,index_qa} from "./goods.js";
 
 
-// old
-import goodsEdit from "./goods-edit.js";
-
 // 左闭右开 
 function getRndInteger(min, max) {
   return Math.floor(Math.random() * (max - min) ) + min;

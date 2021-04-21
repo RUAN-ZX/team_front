@@ -511,15 +511,15 @@
 				let msg = {type:'user',msg:{id:lastid,time:nowDate.getHours()+":"+nowDate.getMinutes(),type:type,userinfo:{uid:0,username:"大黑哥",face:"/static/img/face.jpg"},content:content}}
 				// 发送消息
 				this.screenMsg(msg);
-				
 				uni.request({
-					method: 'get',
-					url: this.app.url + "/message/session/history",
+					method: 'post',
+					url: this.app.url + "/message",
 					data: {
-						"pageNum": 0,
-						"pageSize": 100
+						"receiverUserId": uni.getStorageSync("i"),
+						"contentType": 100,
+						"content": "Hello"
 					},
-					header: this.app.genHeader(a,""),
+					header: this.app.genHeader(this.app.token.a,""),
 					success: (res) => {
 						console.log(res);
 					},
@@ -530,6 +530,7 @@
 						
 					//ryan_alexander@hzbytecloud.cn
 				})
+				
 				
 				// 定时器模拟对方回复,三秒
 				setTimeout(()=>{

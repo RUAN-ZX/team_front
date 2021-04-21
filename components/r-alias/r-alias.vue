@@ -32,6 +32,7 @@
 </template>
 
 <script>
+	import {getCertification} from '@/api/certification.js';
 	export default {
 		name: 'aliasAvatar',
 		props: {
@@ -64,29 +65,9 @@
 			};
 		},
 		created() {
-			switch(this.certification){
-				// 未认证
-				case "":{
-					this.m_type="";
-					this.m_text="";
-					break;
-				}
-				case "1":{
-					this.m_type="info";
-					this.m_text="在校学生";
-					break;
-				}
-				case "2":{
-					this.m_type="warning";
-					this.m_text="在职教师";
-					break;
-				}
-				case "3":{
-					this.m_type="warning";
-					this.m_text="企业任职";
-					break;
-				}
-			}
+			let temp = getCertification(this.certification);
+			this.m_text = temp.text;
+			this.m_type = temp.color;
 		},
 		methods:{
 			navigate() {

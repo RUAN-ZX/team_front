@@ -25,9 +25,9 @@
 			popupStyle() {
 				let style = {};
 				// 进行Y轴位移，展开状态时，恢复原位。收齐状态时，往上位移100%，进行隐藏
-				style.transform = `translateY(${this.active ? 0 : '-10%'})`
-				// style['transition-duration'] = 0.4 + 's';
-				style['opacity'] = this.active ? 1 : 0;
+				style.transform = `translateY(${show ? 0 : '-10%'})`
+				style['opacity'] = show ? 1 : 0;
+				style['transition-duration'] = duration / 1000 + 's';
 				return style;
 			}
 		},
@@ -45,7 +45,8 @@
 
 	.item {
 		background-color: blue;
-		height: 300px;
+		height: 150px;
+		
 		width: 50px;
 		transition: all 0.4s ease-out;
 	}

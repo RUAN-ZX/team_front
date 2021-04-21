@@ -200,8 +200,9 @@
 			});
 			
 			
-			// this.initMessage();
-			// this.initUserInfo();
+			
+			this.initUserInfo();
+			this.initMessage();
 			this.spread();
 			
 			
@@ -247,14 +248,13 @@
 			},
 			initMessage(){
 				uni.request({
-					method: 'post',
-					url: this.app.url + "/message",
+					method: 'get',
+					url: this.app.url + "/message/session/history",
 					data: {
-						"receiverUserId": uni.getStorageSync("i"),
-						"contentType": 100,
-						"content": "Hello"
+						"pageNum": 0,
+						"pageSize": 100
 					},
-					header: this.app.genHeader(a,""),
+					header: this.app.genHeader(this.app.token.a,""),
 					success: (res) => {
 						console.log(res);
 					},
@@ -270,10 +270,9 @@
 				uni.request({
 					method: 'get',
 					url: this.app.url + "/userInfo/me",
-					header: this.app.genHeader(a,r),
+					header: this.app.genHeader(this.app.token.a,this.app.token.r),
 					success: (res) => {
-						this.app.userInfo = res.data;
-						console.log(this.app.userInfo)
+						this.app.userInfo = res.data.data;
 					},
 					fail: (res)=>{console.log(res)},
 				})

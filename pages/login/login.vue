@@ -410,6 +410,9 @@
 					
 					uni.setStorageSync("r",r);
 					uni.setStorageSync("a",a);
+					
+					this.app.token.r = r;
+					this.app.token.a = a;
 					uni.switchTab({
 						url: '/pages/root/index/index'
 					});
