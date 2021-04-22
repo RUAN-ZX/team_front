@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<gmy-float-touch :imgLists="imgLists"></gmy-float-touch>
+		<r-float :imgLists="imgLists"></r-float>
 		<view class="header">
 			
 			<view class="wrapper_search trans" 
@@ -53,7 +53,7 @@
 	import {
 		index_data_refresh
 	} from "@/api/api.js";
-	import gmyFloatTouch from "@/components/gmy-float-touch/gmy-float-touch.vue";
+	import float from "@/components/r-float/r-float.vue";
 	import search from "@/components/search/search.vue";
 	import teamProject from "@/components/team-project/team-project.vue";
 	import teamTalent from "@/components/team-talent/team-talent.vue";
@@ -63,7 +63,7 @@
 			teamProject,
 			teamTalent,
 			teamQa,
-			gmyFloatTouch,
+			float,
 			search
 		},
 		data() {

@@ -1,6 +1,6 @@
 <template>
 	<view class="page">
-		<gmy-float-touch :imgLists="imgLists"></gmy-float-touch>
+		<r-float :imgLists="imgLists"></r-float>
 		<view class="header trans"
 			:style="[{backgroundColor:'#ffff'+m_header_opacity}]">
 			
@@ -17,7 +17,7 @@
 				</search>
 			</view>
 		</view>
-		
+		  
 		<view class="uswiper trans" 
 		:style="[{height: height_swiper + 'rpx'}]">
 			<u-swiper
@@ -74,7 +74,9 @@
 				<swiper-item class="swiper-item">
 					<scroll-view scroll-y="true" @scrolltolower="reachBottom">
 						<view v-for="(talentItem,talentIndex) in index[1]" 
-							:key="talentIndex">
+							:key="talentIndex"
+							class="trans"
+							:style="[aniStyle]">
 							<team-talent :talentItem="talentItem">
 							</team-talent>
 						</view>
@@ -84,7 +86,9 @@
 				<swiper-item class="swiper-item">
 					<scroll-view scroll-y="true" @scrolltolower="reachBottom">
 						<view v-for="(qaItem, qaIndex) in index[2]" 
-						:key="qaIndex">
+						:key="qaIndex"
+						class="trans"
+						:style="[aniStyle]">
 							<team-qa :qaItem="qaItem"></team-qa>
 						</view>
 						<u-loadmore :status="loadStatus[2]" bgColor="transparent"></u-loadmore>
@@ -99,7 +103,7 @@
 	import {
 		index_data_refresh
 	} from "@/api/api.js";
-	import gmyFloatTouch from "@/components/gmy-float-touch/gmy-float-touch.vue";
+	import float from "@/components/r-float/r-float.vue";
 	import search from "@/components/search/search.vue";
 	import teamProject from "@/components/team-project/team-project.vue";
 	import teamTalent from "@/components/team-talent/team-talent.vue";
@@ -109,7 +113,7 @@
 			teamProject,
 			teamTalent,
 			teamQa,
-			gmyFloatTouch,
+			float,
 			search
 		},
 		data() {
@@ -149,7 +153,7 @@
 				
 				tab_list: [{
 					name: '项目圈',
-					num: 1
+					num: 1 // 这个num有啥用？？？？
 				}, {
 					name: '人才圈',
 					num: 1

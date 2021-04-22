@@ -158,12 +158,10 @@
 
 <script>
 	import tColorPicke from '@/components/t-color-picker.vue';
-	import hoverMenu from '@/components/hoverMenu/hoverMenu.vue';
-	var this_;
+
 	export default {
 		components: {
-			't-color-picker': tColorPicke,
-			hoverMenu
+			't-color-picker': tColorPicke
 		},
 		data() {
 			return {
@@ -191,7 +189,6 @@
 			};
 		},
 		onLoad() {
-			this_ = this;
 			this.statusHeight = uni.getStorageSync("statusHeight");
 		},
 		onPageScroll: function(e) {
@@ -238,8 +235,8 @@
 				this.readOnly = !this.readOnly
 			},
 			onEditorReady() {
-				uni.createSelectorQuery().select('#editor').context(function(res) {
-					this_.editorCtx = res.context;
+				uni.createSelectorQuery().select('#editor').context((res) => {
+					this.editorCtx = res.context;
 				}).exec();
 			},
 			undo() {
@@ -311,8 +308,8 @@
 				// const that = this;
 				uni.chooseImage({
 					count: 1,
-					success: function(res) {
-						this_.editorCtx.insertImage({
+					success: (res) => {
+						this.editorCtx.insertImage({
 							src: res.tempFilePaths[0],
 							data: {
 								id: 'abcd',

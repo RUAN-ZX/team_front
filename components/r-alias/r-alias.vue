@@ -34,7 +34,7 @@
 <script>
 	import {getCertification} from '@/api/api.js';
 	export default {
-		name: 'aliasAvatar',
+		name: 'r-alias',
 		props: {
 			discription: {
 				type: String,

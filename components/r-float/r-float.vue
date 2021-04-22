@@ -1,4 +1,4 @@
-<template name="gmy-float-touch">
+<template name="r-float">
 	<view>
 		<view class="u-dropdown__content" :style="[contentStyle, {
 				transition: `opacity ${duration / 1000}s linear`,
@@ -44,7 +44,7 @@
 
 <script>
 	export default{
-		name:"gmy-float-touch",
+		name:"r-float",
 		data(){
 			return {
 				windowHeight:0,

@@ -34,8 +34,6 @@
 	"libVersion": "",
 	"appid": "wx7677e3f7444aad46",
 	"projectname": "team",
-	"simulatorType": "wechat",
-	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,

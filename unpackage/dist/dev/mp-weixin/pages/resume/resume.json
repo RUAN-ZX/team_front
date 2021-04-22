@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "gmy-float-touch": "/components/gmy-float-touch/gmy-float-touch"
+    "u-navbar": "/uview-ui/components/u-navbar/u-navbar",
+    "u-tabs-swiper": "/uview-ui/components/u-tabs-swiper/u-tabs-swiper"
   }
 }

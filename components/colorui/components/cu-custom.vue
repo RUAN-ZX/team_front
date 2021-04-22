@@ -23,6 +23,7 @@
 				CustomBar: this.CustomBar
 			};
 		},
+		
 		name: 'cu-custom',
 		computed: {
 			style() {

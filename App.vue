@@ -3,7 +3,7 @@
 	@import "./uview-ui/index.scss";
 	@import "./uview-ui/theme.scss";
 </style>
-
+  
 <script>
 	export default {
 		globalData: {

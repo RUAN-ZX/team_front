@@ -25,7 +25,7 @@
 
 <script>
 	export default {
-		name: 'aliasAvatar',
+		name: 'r-alias-mini',
 		props: {
 			discription: {
 				type: String,

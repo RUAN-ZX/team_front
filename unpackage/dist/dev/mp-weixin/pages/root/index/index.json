@@ -1,12 +1,13 @@
 {
   "usingComponents": {
-    "gmy-float-touch": "/components/gmy-float-touch/gmy-float-touch",
+    "r-float": "/components/r-float/r-float",
     "search": "/components/search/search",
     "u-swiper": "/uview-ui/components/u-swiper/u-swiper",
     "u-tabs-swiper": "/uview-ui/components/u-tabs-swiper/u-tabs-swiper",
     "team-project": "/components/team-project/team-project",
     "u-loadmore": "/uview-ui/components/u-loadmore/u-loadmore",
     "team-talent": "/components/team-talent/team-talent",
-    "team-qa": "/components/team-qa/team-qa"
+    "team-qa": "/components/team-qa/team-qa",
+    "float": "/components/r-float/r-float"
   }
 }

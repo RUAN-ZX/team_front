@@ -127,7 +127,7 @@ export default {
 				return {
 				}
 			}
-		},
+		}, 
 		// 取消按钮文字
 		actionText: {
 			type: String,
