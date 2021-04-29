@@ -19,7 +19,8 @@
     "pages/entity/project/project",
     "pages/freeTag/freeTag",
     "pages/im/dialog/dialog",
-    "pages/root/me/me_external/me_external"
+    "pages/root/me/me_external/me_external",
+    "pages/release/project/project_preview"
   ],
   "subPackages": [],
   "window": {
@@ -58,5 +59,6 @@
       }
     ]
   },
-  "usingComponents": {}
+  "usingComponents": {},
+  "sitemapLocation": "sitemap60.json"
 }

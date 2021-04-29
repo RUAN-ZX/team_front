@@ -65,6 +65,10 @@
 			};
 		},
 		props:{
+			NoDuplicate: {
+				type: Boolean,
+				default: true
+			},
 			tag: {
 				type: Array,
 				default: []
@@ -83,6 +87,13 @@
 				this.m_pop_tag = [];
 				this.$emit("pop-tag-result",this.m_tag);
 			},
+			isDuplicate(key){
+				for (let tag of this.m_pop_tag) 
+					if(key==tag)
+						return true;
+				
+				return false;
+			},
 			addLabel(key) {
 				if(key==""){
 					this.$refs.uToast.show({
@@ -98,9 +109,19 @@
 						position: "bottom"
 					})
 				}
+				else if(this.NoDuplicate&&this.isDuplicate(key)){
+					this.$refs.uToast.show({
+						title: '标签重复了哟~',
+						type: 'warning',
+						position: "bottom"
+					})
+					
+				}
 				else{
 					this.m_pop_tag.push(key);
 				}
+				
+				this.label_content = "";
 			},
 			tag_close(tagIndex) {
 				this.m_tag.splice(tagIndex, 1);

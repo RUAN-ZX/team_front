@@ -277,7 +277,7 @@
 				this.editorCtx.getContents({
 					success: function(res) {
 						e.currentTarget.id == 1 ? console.log('保存内容:', res.html) : uni.navigateTo({
-							url: `/pages/preview/preview?rich=${encodeURIComponent(res.html)}`
+							url: `/pages/release/project/project_preview?customContent=${encodeURIComponent(res.html)}`
 						});
 					}
 				});

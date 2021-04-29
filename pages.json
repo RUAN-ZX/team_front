@@ -71,6 +71,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/release/project/project_preview",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"backgroundColor": "#ffffff",
