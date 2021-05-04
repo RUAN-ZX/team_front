@@ -1,5 +1,10 @@
 <template>
 	<view @touchend.stop="format">
+		<view>
+			<u-navbar back-text="返回" title="发布组队" :is-fixed="true" :background="background" :back-text-style="color"
+				title-color="#f5f5f5" back-icon-color="#f5f5f5"></u-navbar>
+		</view>
+		
 		<view class="back-top">
 				<u-back-top :scroll-top="scrollTop"></u-back-top>
 		</view>
@@ -24,7 +29,7 @@
 
 		<view class="toolbar"
 			:style="[{bottom: (isIOS ? keyboardHeight : 0) + 'px'},
-			{top:statusHeight+'px'},
+			{top: info.top+info.height+10+'px'},
 			{backgroundColor:'#ffff'+m_header_opacity},
 			{boxShadow: '6rpx 6rpx 15rpx 3rpx #0000'+m_header_shadow}]">
 			
@@ -165,6 +170,14 @@
 		},
 		data() {
 			return {
+				background: {
+					background: 'url(https://stea.ryanalexander.cn/navbar/11.jpg) no-repeat',
+					backgroundSize: '100% 100%'
+				},
+				color: {
+					color: '#f5f5f5'
+				},
+				// 这里应当与之前的相同 这样更符合主题 比如project就是红色的
 				swiper_list: ["字体大小 样式 颜色","字体大小 样式 颜色","字体大小 样式 颜色",],
 				swiperCurrent:0,
 				scrollTop: 0,
@@ -178,18 +191,20 @@
 				fontColor: '#000',
 				formats: {},
 				readOnly: false,
-				placeholder: '开始输入...',
-				statusHeight: 32,
+				placeholder: '开始输入... 这里 以及标题可以自定义一下 不同的发布内容不一样的自定义页面 ！然后关键是要说明 这玩意会替代之前那种简单的形式的正文 其他地方不会替代！还有就是提交的时候 应当将数据集中在哪里比较好？？？ 之前的页面把数据集中在这里呢 还是公共开一个变量存（好像听起来不错），另外 对于问题 经验 直接在这里编辑即可 无需区分是正式还是简略了！',
 				keyboardHeight: 0,
 				isIOS: false,
 				m_header_shadow: '0000',
 				m_header_opacity: '0000',
 				m_header_color: 'transparent',
-				m_side_toolbar_show: false
+				m_side_toolbar_show: false,
+				
+				info: {}
 			};
 		},
 		onLoad() {
-			this.statusHeight = uni.getStorageSync("statusHeight");
+			this.info = getApp().globalData.info;
+			// this.statusHeight = uni.getStorageSync("statusHeight");
 		},
 		onPageScroll: function(e) {
 			this.scrollTop = e.scrollTop;
@@ -432,10 +447,12 @@
 	
 	
 	.foot{
-		position: absolute;
-		bottom: 0;
+		position: fixed;
 		width: 100%;
+		bottom: 0;
+		right: 0;
 		left: 0;
+		
 		background-color: #333333;
 		color: #F3F4F6;
 		display: flex;

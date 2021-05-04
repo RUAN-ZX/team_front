@@ -9,7 +9,7 @@
 				border-color="transparent"
 				mode="light"
 				:closeable="false"
-				size="mini"
+				:size="size"
 				:type="tagIndex<2?'primary':'info'"
 				
 			></u-tag>
@@ -27,6 +27,10 @@
 		},
 		name: "uniTagSet",
 		props: {
+			size:{
+				type: String,
+				default: "mini"
+			},
 			set:{
 				type: [Array],
 				default: []

@@ -250,6 +250,13 @@
   overflow: hidden;
   /*超出隐藏*/
 }
+.ellipsis-2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
 .card {
   background-color: #ffffff;
   -webkit-box-shadow: 6rpx 6rpx 15rpx 3rpx rgba(0, 0, 0, 0.21);
@@ -358,9 +365,10 @@ page {
           flex: 1;
 }
 .foot {
-  position: absolute;
-  bottom: 0;
+  position: fixed;
   width: 100%;
+  bottom: 0;
+  right: 0;
   left: 0;
   background-color: #333333;
   color: #F3F4F6;

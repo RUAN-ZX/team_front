@@ -28,7 +28,7 @@
 		</view>
 		
 		<view class="foundation-label">
-			<uni-tag-set :set="projectItem.foundation">
+			<uni-tag-set :set="projectItem.projectTag">
 			</uni-tag-set>
 		</view>
 		

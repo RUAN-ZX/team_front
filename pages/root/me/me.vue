@@ -84,11 +84,8 @@
             
         },
 		onLoad() {
-			let exp =1;
 			
-			let userInfo_ = getApp().globalData.userInfo;
-			
-			this.userInfo = getUserInfo(userInfo_);
+			this.userInfo = getApp().globalData.userInfo_;
 			this.info = getApp().globalData.info;
 		}
     }
@@ -160,7 +157,7 @@
 				margin-left: $padding;
 				display: flex;
 				flex-direction: column;
-				justify-content: space-around;
+				justify-content: center;
 				height: 100%;
 				
 				.header_alias{
@@ -170,6 +167,7 @@
 					color: $themeColor3;
 				}
 				.header_grade{
+					margin-top: $padding/2;
 					display: flex;
 					flex-direction: row;
 					align-items: center;

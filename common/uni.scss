@@ -14,7 +14,10 @@ $lineColor:#efefef;
 $lineColor:#efefef;
 $lineColor2:#B9CEE3;
 
+$padding-half: 4px;
 $padding: 10px;
+$padding-double: 20px;
+
 // 胶囊在无论什么手机格式下都是10px的右边距 因此所有右边距统一为10px！
 $height_header: 60rpx;
 $variableGap: 30rpx;
@@ -60,6 +63,13 @@ $zindex_bg: -1;
 	text-overflow: ellipsis;  /* 超出部分省略号 */
 	
 	overflow: hidden;  /*超出隐藏*/
+}
+.ellipsis-2{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
 }
 
 .card{

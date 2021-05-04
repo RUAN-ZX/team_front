@@ -9,15 +9,15 @@
 		<view class="content">
 			<u-form :model="model" :rules="rules" ref="uForm" :errorType="errorType">
 				<u-form-item prop="title">
-					<u-input :border="border" placeholder="项目标题" v-model="model.title" type="text"></u-input>
+					<u-input :border="border" placeholder="项目标题 标题朗朗上口 项目事事顺利" v-model="model.title" type="text"></u-input>
 				</u-form-item>
-				<u-form-item prop="purpose">
-					<u-input :border="border" type="select" :select-open="actionSheetShow" v-model="model.purpose"
+				<u-form-item prop="type">
+					<u-input :border="border" type="select" :select-open="actionSheetShow" v-model="model.type"
 						placeholder="组队目的" @click="actionSheetShow = true"></u-input>
 				</u-form-item>
 				
 				<u-form-item prop="projectTag" :label-position="labelPosition" label="项目标签">
-					<u-input type="textarea" :border="false" :placeholder="labelInfo[purposeNum]" disabled="true"> 
+					<u-input type="textarea" :border="false" :placeholder="labelInfo[typeNum]" disabled="true"> 
 					</u-input>
 					<r-free-tag v-model="model.projectTag" tagMaxLength="5" @pop-tag-result="(data)=>{model.projectTag=data}"></r-free-tag>
 				</u-form-item>
@@ -27,41 +27,37 @@
 				</u-form-item>
 				
 				<view class="varible_form_wrapper">
-					<view class="varible_form" :style="{'display':(purposeNum==0)?'':'none'}">
-						<u-form-item prop="otherTag" label="目标比赛" :label-position="labelPosition">
+					<view class="varible_form" :style="{'display':(typeNum==0)?'':'none'}">
+						<u-form-item prop="purposeTag" label="目标比赛" :label-position="labelPosition">
 							<u-input :border="false" :disabled="true" placeholder="参加的竞技比赛" type="text"></u-input>
-							<r-free-tag v-model="model.otherTag" tagMaxLength="5" @pop-tag-result="(data)=>{model.otherTag=data}"></r-free-tag>
+							<r-free-tag v-model="model.purposeTag" tagMaxLength="5" @pop-tag-result="(data)=>{model.purposeTag=data}"></r-free-tag>
 						</u-form-item>
 					</view>
 					
-					<view class="varible_form" :style="{'display':(purposeNum==1)?'':'none'}">
-						<u-form-item prop="otherTag" label="目标比赛" :label-position="labelPosition">
+					<view class="varible_form" :style="{'display':(typeNum==1)?'':'none'}">
+						<u-form-item prop="purposeTag" label="目标比赛" :label-position="labelPosition">
 							<u-input :border="border" :disabled="true" placeholder="拟参加的项目比赛" type="text"></u-input>
-							<r-free-tag v-model="model.otherTag" tagMaxLength="5" @pop-tag-result="(data)=>{model.otherTag=data}"></r-free-tag>
+							<r-free-tag v-model="model.purposeTag" tagMaxLength="5" @pop-tag-result="(data)=>{model.purposeTag=data}"></r-free-tag>
 						</u-form-item>
 					</view>
-					<view class="varible_form" :style="{'display':(purposeNum==2)?'':'none'}">
-						<u-form-item prop="otherInfo" label="社会价值" :label-position="labelPosition">
-							<u-input :border="border" placeholder="项目预期 社会价值" v-model="model.otherInfo" type="text"></u-input>
-						</u-form-item>
-					</view>
-					
-					<view class="varible_form" :style="{'display':(purposeNum==3)?'':'none'}">
-						<u-form-item prop="contest" label="福利说明" :label-position="labelPosition">
-							<u-input :border="border" placeholder="福利说明 可以不填" v-model="model.otherInfo" type="text"></u-input>
+					<view class="varible_form" :style="{'display':(typeNum==2)?'':'none'}">
+						<u-form-item prop="purposeTag" label="社会价值" :label-position="labelPosition">
+							<u-input :border="border" :disabled="true" placeholder="项目预期 社会价值" type="text"></u-input>
+							<r-free-tag v-model="model.purposeTag" tagMaxLength="5" @pop-tag-result="(data)=>{model.purposeTag=data}"></r-free-tag>
 						</u-form-item>
 					</view>
 					
-					<view class="varible_form" :style="{'display':(purposeNum==4)?'':'none'}">
-						<u-form-item prop="contest" label="预期成果" :label-position="labelPosition">
-							<u-input :border="border" placeholder="预期科研目标 科研成果" v-model="model.otherInfo" type="text"></u-input>
+					<view class="varible_form" :style="{'display':(typeNum==3)?'':'none'}">
+						<u-form-item prop="purposeTag" label="福利说明" :label-position="labelPosition">
+							<u-input :border="border" :disabled="true" placeholder="福利说明 可以不填" type="text"></u-input>
+							<r-free-tag v-model="model.purposeTag" tagMaxLength="5" @pop-tag-result="(data)=>{model.purposeTag=data}"></r-free-tag>
 						</u-form-item>
 					</view>
 					
-					
-					<view class="varible_form" :style="{'display':(purposeNum==4)?'':'none'}">
-						<u-form-item prop="contest" label="前景福利" :label-position="labelPosition">
-							<u-input :border="border" placeholder="项目前景？队员福利？" v-model="model.otherInfo" type="text"></u-input>
+					<view class="varible_form" :style="{'display':(typeNum==4)?'':'none'}">
+						<u-form-item prop="purposeTag" label="预期成果" :label-position="labelPosition">
+							<u-input :border="border" :disabled="true" placeholder="预期科研目标 科研成果" type="text"></u-input>
+							<r-free-tag v-model="model.purposeTag" tagMaxLength="5" @pop-tag-result="(data)=>{model.purposeTag=data}"></r-free-tag>
 						</u-form-item>
 					</view>
 				</view>
@@ -102,7 +98,7 @@
 		},
 		data() {
 			return {
-				purposeNum: 0,
+				typeNum: 0,
 				background: {
 					background: 'url(https://stea.ryanalexander.cn/navbar/11.jpg) no-repeat',
 					backgroundSize: '100% 100%'
@@ -112,11 +108,11 @@
 				},
 				model: {
 					title: '',
-					purpose: '',
+					type: '',
 					intro: '',
 					projectTag: [],
 					otherInfo: '',
-					otherTag: []
+					purposeTag: []
 				},
 				rules: {
 					title: [{
@@ -160,12 +156,7 @@
 						}
 						
 					],
-					otherInfo:[{
-							required: false,
-							message: '你这里似乎没填哟'
-						},
-					],
-					otherTag:[
+					purposeTag:[
 						{
 							required: false,
 							message: '请填写相关标签'
@@ -174,7 +165,7 @@
 							trigger: ['change'],
 							validator: (rule, value, callback) => {
 								// 调用uView自带的js验证规则，详见：https://www.uviewui.com/js/test.html
-								return this.model.otherTag.length>0;
+								return this.model.purposeTag.length>0;
 							},
 							message: '至少有一个标签',
 						},
@@ -219,7 +210,7 @@
 			};
 		},
 		onLoad() {
-			this.purposeChange(this.purposeNum);
+			this.typeChange(this.typeNum);
 			this.border = true;
 			this.labelPosition = 'top';
 		},
@@ -242,14 +233,14 @@
 				});
 				
 			},
-			purposeChange(index){
-				this.purposeNum = index;
-				this.model.purpose = this.actionSheetList[index].text;
+			typeChange(index){
+				this.typeNum = index;
+				this.model.type = this.actionSheetList[index].text;
 			},
 			// 点击actionSheet回调
 			actionSheetCallback(index) {
 				uni.hideKeyboard();
-				this.purposeChange(index);
+				this.typeChange(index);
 			},
 			submit() {
 				this.$refs.uForm.validate(valid => {

@@ -101,7 +101,8 @@
 
 <script>
 	import {
-		index_data_refresh
+		index_data_refresh,
+		getUserInfo
 	} from "@/api/api.js";
 	import float from "@/components/r-float/r-float.vue";
 	import search from "@/components/search/search.vue";
@@ -277,6 +278,7 @@
 					header: this.app.genHeader(this.app.token.a,this.app.token.r),
 					success: (res) => {
 						this.app.userInfo = res.data.data;
+						this.app.userInfo_ = getUserInfo(res.data.data);
 					},
 					fail: (res)=>{console.log(res)},
 				})

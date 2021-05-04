@@ -3,6 +3,8 @@
     "u-navbar": "/uview-ui/components/u-navbar/u-navbar",
     "u-form": "/uview-ui/components/u-form/u-form",
     "u-form-item": "/uview-ui/components/u-form-item/u-form-item",
-    "u-input": "/uview-ui/components/u-input/u-input"
+    "u-input": "/uview-ui/components/u-input/u-input",
+    "r-free-tag": "/components/r-free-tag/r-free-tag",
+    "u-button": "/uview-ui/components/u-button/u-button"
   }
 }

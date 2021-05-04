@@ -1,5 +1,6 @@
 {
   "usingComponents": {
+    "u-navbar": "/uview-ui/components/u-navbar/u-navbar",
     "u-back-top": "/uview-ui/components/u-back-top/u-back-top",
     "t-color-picker": "/components/t-color-picker"
   }

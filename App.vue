@@ -8,6 +8,7 @@
 	export default {
 		globalData: {
 			userInfo: {},
+			userInfo_: {},
 			// url :"http://localhost:8080",
 			// url :"https://www.hzbytecloud.cn",
 			
@@ -31,6 +32,8 @@
 		onLaunch: function() {
 			let other = this.$u.sys();
 			let menuButton = uni.getMenuButtonBoundingClientRect();
+			
+			
 			
 			this.globalData.info = {
 				height : menuButton.height,
