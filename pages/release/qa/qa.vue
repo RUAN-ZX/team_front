@@ -1,5 +1,5 @@
 <template>
-	<view>
+	<view> 
 		<u-navbar back-text="返回" 
 			title="提问题"
 			:is-fixed="true"

@@ -1,11 +1,3 @@
-
-page {
-	height: calc(200vh);
-	background: -webkit-gradient(linear,  left top, left bottom,  from(#ECF5FE),color-stop(70%, #ffffff));
-	background: -webkit-linear-gradient(top,  #ECF5FE 0%,#ffffff 70%);
-	background: linear-gradient(to bottom,  #ECF5FE 0%,#ffffff 70%);
-}
-
 @charset "UTF-8";
 /**
  * 这里是uni-app内置的常用样式变量
@@ -124,13 +116,32 @@ page {
   -webkit-flex-direction: column;
           flex-direction: column;
   width: 100%;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
 }
-.wrap .swiper-box.data-v-2a0d81bf {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-          flex: 1;
+.wrap-none.data-v-2a0d81bf {
+  display: none;
 }
-.wrap .swiper-box .swiper-item.data-v-2a0d81bf {
-  height: 100%;
+.item.data-v-2a0d81bf {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  padding: 20rpx;
+}
+.item .image.data-v-2a0d81bf {
+  width: 120rpx;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 120rpx;
+          flex: 0 0 120rpx;
+  height: 120rpx;
+  margin-right: 20rpx;
+  -webkit-border-radius: 12rpx;
+          border-radius: 12rpx;
+}
+.item .title.data-v-2a0d81bf {
+  text-align: left;
+  font-size: 28rpx;
+  color: #606266;
+  margin-top: 20rpx;
 }
 

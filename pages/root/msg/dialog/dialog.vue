@@ -262,30 +262,24 @@
 			// 接受消息(筛选处理)
 			screenMsg(msg){
 				//从长连接处转发给这个方法，进行筛选处理
-				if(msg.type=='system'){
+				if(msg.type==1){
 					// 系统消息
 					switch (msg.msg.type){
-						case 'text':
+						case 0:
 							this.addSystemTextMsg(msg);
 							break;
-						case 'redEnvelope':
-							this.addSystemRedEnvelopeMsg(msg);
-							break;
 					}
-				}else if(msg.type=='user'){
+				}else if(msg.type==0){
 					// 用户消息
 					switch (msg.msg.type){
-						case 'text':
+						case 0:
 							this.addTextMsg(msg);
 							break;
-						case 'voice':
-							this.addVoiceMsg(msg);
-							break;
-						case 'img':
+						case 1:
 							this.addImgMsg(msg);
 							break;
-						case 'redEnvelope':
-							this.addRedEnvelopeMsg(msg);
+						case 2:
+							this.addVoiceMsg(msg);
 							break;
 					}
 					console.log('用户消息');
@@ -305,10 +299,10 @@
 					setTimeout(()=>{
 						// 消息列表
 						let list = [
-							{type:"user",msg:{id:1,type:"text",time:"12:56",userinfo:{uid:0,username:"大黑哥",face:"https://lets-team--public.oss-cn-hangzhou.aliyuncs.com/user/alias/alias (2).jpg"},content:{text:"为什么温度会相差那么大？"}}},
-							{type:"user",msg:{id:2,type:"text",time:"12:57",userinfo:{uid:1,username:"售后客服008",face:"https://lets-team--public.oss-cn-hangzhou.aliyuncs.com/user/alias/alias (1).jpg"},content:{text:"这个是有偏差的，两个温度相差十几二十度是很正常的，如果相差五十度，那即是质量问题了。"}}},
-							{type:"user",msg:{id:3,type:"voice",time:"12:59",userinfo:{uid:1,username:"售后客服008",face:"https://lets-team--public.oss-cn-hangzhou.aliyuncs.com/user/alias/alias (1).jpg"},content:{url:"/static/voice/1.mp3",length:"00:06"}}},
-							{type:"user",msg:{id:4,type:"voice",time:"13:05",userinfo:{uid:0,username:"大黑哥",face:"https://lets-team--public.oss-cn-hangzhou.aliyuncs.com/user/alias/alias (2).jpg"},content:{url:"/static/voice/1.mp3",length:"00:06"}}},
+							{type:0,msg:{id:1,type:0,time:"12:56",userinfo:{uid:0,username:"大黑哥",face:"https://lets-team--public.oss-cn-hangzhou.aliyuncs.com/user/alias/alias (2).jpg"},content:{text:"为什么温度会相差那么大？"}}},
+							{type:0,msg:{id:2,type:0,time:"12:57",userinfo:{uid:1,username:"售后客服008",face:"https://lets-team--public.oss-cn-hangzhou.aliyuncs.com/user/alias/alias (1).jpg"},content:{text:"这个是有偏差的，两个温度相差十几二十度是很正常的，如果相差五十度，那即是质量问题了。"}}},
+							{type:0,msg:{id:3,type:2,time:"12:59",userinfo:{uid:1,username:"售后客服008",face:"https://lets-team--public.oss-cn-hangzhou.aliyuncs.com/user/alias/alias (1).jpg"},content:{url:"/static/voice/1.mp3",length:"00:06"}}},
+							{type:0,msg:{id:4,type:2,time:"13:05",userinfo:{uid:0,username:"大黑哥",face:"https://lets-team--public.oss-cn-hangzhou.aliyuncs.com/user/alias/alias (2).jpg"},content:{url:"/static/voice/1.mp3",length:"00:06"}}},
 						];
 						reject(list);
 					},1000);
@@ -359,14 +353,14 @@
 			getMsgList(){
 				// 消息列表
 				let list = [
-					{type:"system",msg:{id:0,type:"text",content:{text:"欢迎进入HM-chat聊天室"}}},
-					{type:"user",msg:{id:1,type:"text",time:"12:56",userinfo:{uid:0,username:"大黑哥",face:"https://lets-team--public.oss-cn-hangzhou.aliyuncs.com/user/alias/alias (1).jpg"},content:{text:"为什么温度会相差那么大？"}}},
-					{type:"user",msg:{id:2,type:"text",time:"12:57",userinfo:{uid:1,username:"售后客服008",face:"https://lets-team--public.oss-cn-hangzhou.aliyuncs.com/user/alias/alias (2).jpg"},content:{text:"这个是有偏差的，两个温度相差十几二十度是很正常的，如果相差五十度，那即是质量问题了。"}}},
-					{type:"user",msg:{id:3,type:"voice",time:"12:59",userinfo:{uid:1,username:"售后客服008",face:"https://lets-team--public.oss-cn-hangzhou.aliyuncs.com/user/alias/alias (2).jpg"},content:{url:"/static/voice/1.mp3",length:"00:06"}}},
-					{type:"user",msg:{id:4,type:"voice",time:"13:05",userinfo:{uid:0,username:"大黑哥",face:"https://lets-team--public.oss-cn-hangzhou.aliyuncs.com/user/alias/alias (1).jpg"},content:{url:"/static/voice/1.mp3",length:"00:06"}}},
-					{type:"user",msg:{id:5,type:"img",time:"13:05",userinfo:{uid:0,username:"大黑哥",face:"https://lets-team--public.oss-cn-hangzhou.aliyuncs.com/user/alias/alias (1).jpg"},content:{url:"https://stea.ryanalexander.cn/navbar/11.jpg",w:200,h:200}}},
-					{type:"user",msg:{id:6,type:"img",time:"12:59",userinfo:{uid:1,username:"售后客服008",face:"https://lets-team--public.oss-cn-hangzhou.aliyuncs.com/user/alias/alias (2).jpg"},content:{url:"https://stea.ryanalexander.cn/navbar/22.jpg",w:1920,h:1080}}},
-					{type:"system",msg:{id:7,type:"text",content:{text:"欢迎进入HM-chat聊天室"}}},
+					{type:1,msg:{id:0,type:"text",content:{text:"欢迎进入HM-chat聊天室"}}},
+					{type:0,msg:{id:1,type:"text",time:"12:56",userinfo:{uid:0,username:"大黑哥",face:"https://lets-team--public.oss-cn-hangzhou.aliyuncs.com/user/alias/alias (1).jpg"},content:{text:"为什么温度会相差那么大？"}}},
+					{type:0,msg:{id:2,type:"text",time:"12:57",userinfo:{uid:1,username:"售后客服008",face:"https://lets-team--public.oss-cn-hangzhou.aliyuncs.com/user/alias/alias (2).jpg"},content:{text:"这个是有偏差的，两个温度相差十几二十度是很正常的，如果相差五十度，那即是质量问题了。"}}},
+					{type:0,msg:{id:3,type:"voice",time:"12:59",userinfo:{uid:1,username:"售后客服008",face:"https://lets-team--public.oss-cn-hangzhou.aliyuncs.com/user/alias/alias (2).jpg"},content:{url:"/static/voice/1.mp3",length:"00:06"}}},
+					{type:0,msg:{id:4,type:"voice",time:"13:05",userinfo:{uid:0,username:"大黑哥",face:"https://lets-team--public.oss-cn-hangzhou.aliyuncs.com/user/alias/alias (1).jpg"},content:{url:"/static/voice/1.mp3",length:"00:06"}}},
+					{type:0,msg:{id:5,type:"img",time:"13:05",userinfo:{uid:0,username:"大黑哥",face:"https://lets-team--public.oss-cn-hangzhou.aliyuncs.com/user/alias/alias (1).jpg"},content:{url:"https://stea.ryanalexander.cn/navbar/11.jpg",w:200,h:200}}},
+					{type:0,msg:{id:6,type:"img",time:"12:59",userinfo:{uid:1,username:"售后客服008",face:"https://lets-team--public.oss-cn-hangzhou.aliyuncs.com/user/alias/alias (2).jpg"},content:{url:"https://stea.ryanalexander.cn/navbar/22.jpg",w:1920,h:1080}}},
+					{type:1,msg:{id:7,type:"text",content:{text:"欢迎进入HM-chat聊天室"}}},
 				]
 				// 获取消息中的图片,并处理显示尺寸
 				for(let i=0;i<list.length;i++){
@@ -562,9 +556,6 @@
 				this.msgImgList.push(msg.msg.content.url);
 				this.msgList.push(msg);
 			},
-			addRedEnvelopeMsg(msg){
-				this.msgList.push(msg);
-			},
 			// 添加系统文字消息到列表
 			addSystemTextMsg(msg){
 				this.msgList.push(msg);
@@ -573,7 +564,7 @@
 			sendSystemMsg(content,type){
 				let lastid = this.msgList[this.msgList.length-1].msg.id;
 				lastid++;
-				let row = {type:"system",msg:{id:lastid,type:type,content:content}};
+				let row = {type:1,msg:{id:lastid,type:type,content:content}};
 				this.screenMsg(row)
 			},
 			//领取详情

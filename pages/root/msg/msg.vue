@@ -1,6 +1,5 @@
 <template>
 	<view>
-		<r-float :imgLists="imgLists"></r-float>
 		<view class="header">
 			
 			<view class="wrapper_search trans" 
@@ -15,43 +14,60 @@
 			</view>
 			
 			<view class="u-tabs-box">
-				<u-tabs-swiper activeColor="#007aff" ref="tabs" :list="tab_list" :current="current"
-				 @change="change" :is-scroll="false" swiperWidth="750"></u-tabs-swiper>
+				<u-tabs-swiper 
+				:is-scroll="false" 
+				activeColor="#007aff" 
+				ref="tabs" :list="tab_list" :current="current"
+				@change="change" swiperWidth="750"></u-tabs-swiper>
 			</view>
 		</view>
 		
-		<view class="wrap" id="target" 
-			:style="{marginTop:info.bottom+100/info.ratio+10+'px',height: info.windowHeight+'px'}">
-			<swiper class="swiper-box" :current="swiperCurrent" @transition="transition" @animationfinish="animationfinish">
-				<swiper-item class="swiper-item">
-					<scroll-view scroll-y style="height: 100%;width: 100%;" @scrolltolower="reachBottom">
-						<view :style="[{marginTop: '20px'}]"></view>
-						<u-button type="primary" @click="navigate('/pages/im/dialog/dialog?userId=11')">Dialog</u-button>
-						
-						<u-loadmore :status="loadStatus[0]" bgColor="transparent"></u-loadmore>
-					</scroll-view>
-				</swiper-item>
-				<swiper-item class="swiper-item">
-					<scroll-view scroll-y style="height: 100%;width: 100%;" @scrolltolower="reachBottom">
-						
-						<u-loadmore :status="loadStatus[1]" bgColor="transparent"></u-loadmore>
-					</scroll-view>
-				</swiper-item>
-				<swiper-item class="swiper-item">
-					<scroll-view scroll-y style="height: 100%;width: 100%;" @scrolltolower="reachBottom">
-						
-						<u-loadmore :status="loadStatus[2]" bgColor="transparent"></u-loadmore>
-					</scroll-view>
-				</swiper-item>
-			</swiper>
+		<view :class="current==0?'wrap':'wrap-none'"
+			:style="{marginTop:info.bottom+100/info.ratio+10+'px'}">
+				
+
+			<u-swipe-action 
+				v-for="(item, index) in dialogData"
+				:show="item.show" 
+				:index="index" 
+				:key="item.sender.uid"
+				@click="click" 
+				@content-click="contentClick"
+				@open="open" :options="options"
+				@close="close"
+			>
+				<view class="item u-border-bottom">
+					<image class="image" mode="aspectFill" :src="item.sender.avatar" />
+					
+					<!-- 此层wrap在此为必写的，否则可能会出现标题定位错误 -->
+					<view class="title-wrap">
+						<text class="title u-line-2">{{ item.sender.alias }}</text>
+						<text class="title u-line-2">{{ item.latestMessage.content }}</text>
+					</view>
+				</view>
+			</u-swipe-action>
 			
+			<u-loadmore :status="loadStatus[0]" bgColor="transparent"></u-loadmore>
 		</view>
+			
+			
+			
+			
+		<view :class="current==1?'wrap':'wrap-none'"
+			:style="{marginTop:info.bottom+100/info.ratio+10+'px'}">
+			
+			
+			
+			<u-loadmore :status="loadStatus[1]" bgColor="transparent"></u-loadmore>
+		</view>	
 	</view>
 </template>
 
 <script>
 	import {
-		index_data_refresh
+		index_data_refresh,
+		getDialogData,
+		getNoticeData
 	} from "@/api/api.js";
 	import float from "@/components/r-float/r-float.vue";
 	import search from "@/components/search/search.vue";
@@ -68,21 +84,29 @@
 		},
 		data() {
 			return {
-				imgLists:[
-					"https://stea.ryanalexander.cn/float/0.png",
-					"https://stea.ryanalexander.cn/float/1.png",
-					"https://stea.ryanalexander.cn/float/2.png",
-					"https://stea.ryanalexander.cn/float/3.png",
-					"https://stea.ryanalexander.cn/float/4.png",
-					"https://stea.ryanalexander.cn/float/5.png",
+				options: [
+					{
+						text: '收藏',
+						style: {
+							backgroundColor: '#007aff'
+						}
+					},
+					{
+						text: '删除',
+						style: {
+							backgroundColor: '#dd524d'
+						}
+					}
 				],
-				title_text_class: ["title_text_selected","title_text_unselected"],
-				scrollTop: "0px",
-				dx: 0,
-				loadStatus: ['loadmore', 'loadmore', 'loadmore', 'loadmore'],
+				dialogData: [],
+				dialogPage: 0,
+				noticeData: [],
+				noticePage: 0,
+				
+				loadStatus: ['loadmore', 'loadmore'],
 
 				current: 0, // tabs组件的current值，表示当前活动的tab选项
-				swiperCurrent: 0, // swiper组件的current值，表示当前那个swiper-item是活动的
+				
 				tab_list: [{
 					name: '通知',
 					num: 1
@@ -91,53 +115,90 @@
 					num: 2
 				}],
 				
-				index_project: [],
-
-				index_talent: [],
-				// 首先  可以选择是否展示自己头像和组织等等 有些名人需要用自己的名人效应来增加问题被回答的可能性
-				// 另外  高分回答也是为了抛砖引玉 至于显示不显示回答者的头像那些 也由他们选择 默认是有的 
-				// 注意  两者最好区分一下 否则会造成意义不明 到底是提问者还是回答者
-				index_qa: [],
-				info: {}
+				info: {},
 			};
 		},
 		onLoad() {
 			this.info = getApp().globalData.info;
 			
-			// index_data_refresh(0,4).then((value)=>{
-			// 	this.index_project=value;
-			// });
+			getDialogData(0,6).then((value)=>{
+				for (var i = 0; i < value.length; i++) {
+					value[i].show = false;
+				}
+				// 一定要在这里添加show属性 否则无用！！！
+				this.dialogData.push.apply(this.dialogData,value);
+				
+			})
+			
+			getNoticeData(0,6).then((value)=>{
+				this.noticeData.push.apply(this.noticeData,value);
+			})
+			
+			
 		},
 		
 		methods: {
-			changeTitle(code){
-				this.title_text_class = ["title_text_unselected","title_text_unselected"];
-				this.title_text_class[code] = "title_text_selected";
+			close(index) {
+				this.dialogData[index].show = false;
+			},
+			open(index) {
+				console.log(index)
+				// 先将正在被操作的swipeAction标记为打开状态，否则由于props的特性限制，
+				// 原本为'false'，再次设置为'false'会无效
+				this.dialogData[index].show = true;
+				this.dialogData.map((val, idx) => {
+					if(index != idx) this.dialogData[idx].show = false;
+				})
+			},
+			contentClick(index){
+				let targetUserId = this.dialogData[index].sender.uid;
+				uni.navigateTo({
+					url: '/pages/root/msg/dialog/dialog?userId='+targetUserId,
+					success: res => {},
+					fail: () => {},
+					complete: () => {}
+				});
+			},
+			click(index, index_side) {
+				console.log(index,index_side)
+				if(index_side == 1) {
+					this.dialogData[index].show = false;
+					this.dialogData.splice(index, 1);
+					this.$u.toast(`删除了第${index}个cell`);
+				} else {
+					this.dialogData[index].show = false;
+					this.info = {};
+					this.$u.toast(`收藏成功`);
+					
+				}
+			},
+			
+			change(index) {
+				this.current = index;
 			},
 			reachTop() {
 			},
 			reachBottom() {
-				
-				let index = [this.index_project,this.index_talent,this.index_qa];
+				let index = [this.dialogData,this.noticeData];
 				this.loadStatus.splice(this.current,1,"loading")
-				index_data_refresh(this.current,2).then((value)=>{
-					index[this.current].push.apply(index[this.current],value);
-
-					this.loadStatus.splice(this.current,1,"loadmore")
-				});
-				
+				if(this.current==1){
+					getDialogData(dialogPage++,6).then((value)=>{
+						for (var i = 0; i < value.length; i++) {
+							value[i].show = false;
+						}
+						this.dialogData.push.apply(this.dialogData,value);
+					})
+				}
+				else{
+					getNoticeData(noticePage++,6).then((value)=>{
+						for (var i = 0; i < value.length; i++) {
+							value[i].show = false;
+						}
+						this.noticeData.push.apply(this.noticeData,value);
+					})
+				}
 			},
-			change(index) {
-				this.swiperCurrent = index;
-			},
-			transition({detail: {dx}}) {
-				this.$refs.tabs.setDx(dx);
-			},
-			animationfinish({detail: {current}}) {
-				this.$refs.tabs.setFinishCurrent(current);
-				this.swiperCurrent = current;
-				this.current = current;
-			},
+			
 			navigate(navigation) {
 				uni.navigateTo({
 					url: navigation,
@@ -149,12 +210,6 @@
 		}
 	};
 </script>
-<style>
-	page {
-		height: calc(200vh);
-		background: linear-gradient(to bottom,  #ECF5FE 0%,#ffffff 70%);
-	}
-</style>
 <style lang="scss" scoped>
 	@import "@/common/uni.scss";
 
@@ -197,18 +252,37 @@
 	}
 	
 	.wrap {
-		// scrollTop?
 		position: relative;
 		background-color: $cardColor;
 		display: flex;
 		flex-direction: column;
 		width: 100%;
 		
-		.swiper-box {
-			flex: 1;
-			.swiper-item {
-				height: 100%;
-			}
+		transition: all 0.3s ease-out;
+	}
+	.wrap-none{
+		display: none;
+	}
+	
+	.item {
+		display: flex;
+		padding: 20rpx;
+		
+		.image {
+			width: 120rpx;
+			flex: 0 0 120rpx;
+			height: 120rpx;
+			margin-right: 20rpx;
+			border-radius: 12rpx;
+		}
+		
+		.title {
+			text-align: left;
+			font-size: 28rpx;
+			color: $u-content-color;
+			margin-top: 20rpx;
 		}
 	}
+	
+	
 </style>

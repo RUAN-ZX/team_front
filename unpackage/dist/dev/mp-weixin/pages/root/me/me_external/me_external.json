@@ -1,6 +1,4 @@
 {
-  "navigationBarTitleText": "",
-  "enablePullDownRefresh": false,
   "usingComponents": {
     "u-tag": "/uview-ui/components/u-tag/u-tag",
     "u-cell-item": "/uview-ui/components/u-cell-item/u-cell-item",

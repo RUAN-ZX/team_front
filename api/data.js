@@ -293,7 +293,264 @@ var index_project=[
 
 
 var baseURL_alias = 'https://lets-team--public.oss-cn-hangzhou.aliyuncs.com/user/alias/'
-
+var noticeData=[
+	{
+		"type":0,
+		"title":"初次见面 多多关照1",
+		"content":"Hello 命运让我们在这里相遇~",
+		"sendingTime":"2021-05-04T17:13:49.887+00:00",
+		"readStatus":0 //0 已经读 1 未读
+	},
+	{
+		"type":0,
+		"title":"初次见面 多多关照2",
+		"content":"Hello 命运让我们在这里相遇~",
+		"sendingTime":"2021-05-04T17:13:49.887+00:00",
+		"readStatus":0 //0 已经读 1 未读
+	},
+	{
+		"type":0,
+		"title":"初次见面 多多关照2",
+		"content":"Hello 命运让我们在这里相遇~",
+		"sendingTime":"2021-05-04T17:13:49.887+00:00",
+		"readStatus":0 //0 已经读 1 未读
+	},
+	{
+		"type":0,
+		"title":"初次见面 多多关照3",
+		"content":"Hello 命运让我们在这里相遇~",
+		"sendingTime":"2021-05-04T17:13:49.887+00:00",
+		"readStatus":0 //0 已经读 1 未读
+	},
+	{
+		"type":0,
+		"title":"初次见面 多多关照4",
+		"content":"Hello 命运让我们在这里相遇~",
+		"sendingTime":"2021-05-04T17:13:49.887+00:00",
+		"readStatus":0 //0 已经读 1 未读
+	},
+	{
+		"type":0,
+		"title":"初次见面 多多关照2",
+		"content":"Hello 命运让我们在这里相遇~",
+		"sendingTime":"2021-05-04T17:13:49.887+00:00",
+		"readStatus":0 //0 已经读 1 未读
+	},
+	{
+		"type":0,
+		"title":"初次见面 多多关照3",
+		"content":"Hello 命运让我们在这里相遇~",
+		"sendingTime":"2021-05-04T17:13:49.887+00:00",
+		"readStatus":0 //0 已经读 1 未读
+	},
+	{
+		"type":0,
+		"title":"初次见面 多多关照4",
+		"content":"Hello 命运让我们在这里相遇~",
+		"sendingTime":"2021-05-04T17:13:49.887+00:00",
+		"readStatus":0 //0 已经读 1 未读
+	},
+	{
+		"type":0,
+		"title":"初次见面 多多关照2",
+		"content":"Hello 命运让我们在这里相遇~",
+		"sendingTime":"2021-05-04T17:13:49.887+00:00",
+		"readStatus":0 //0 已经读 1 未读
+	},
+	{
+		"type":0,
+		"title":"初次见面 多多关照3",
+		"content":"Hello 命运让我们在这里相遇~",
+		"sendingTime":"2021-05-04T17:13:49.887+00:00",
+		"readStatus":0 //0 已经读 1 未读
+	},
+	{
+		"type":0,
+		"title":"初次见面 多多关照4",
+		"content":"Hello 命运让我们在这里相遇~",
+		"sendingTime":"2021-05-04T17:13:49.887+00:00",
+		"readStatus":0 //0 已经读 1 未读
+	}
+]
+var dialogData=[
+	{
+		sender:{
+			uid:0,
+			alias:"姚懿",
+			avatar:baseURL_alias+'alias (1).jpg',
+		},
+		unreadCount: 10,
+		latestMessage:{
+			// 0 用户 1 系统
+			"type":0, //站内信类型 比如会话内的系统信息 或者前端生成的系统信息之类的
+			// 0 text | 1 img | 2 voice
+			"contentType":0,
+			"content":"你好哇：）",
+			"sendingTime":"2021-05-04T17:13:49.887+00:00",
+			// ？？这个看下服务端格式
+		}
+	},
+	{
+		sender:{
+			uid:1,
+			alias:"xiye",
+			avatar:baseURL_alias+'alias (7).jpg',
+		},
+		unreadCount: 19,
+		latestMessage:{
+			// 0 用户 1 系统
+			"type":0, //站内信类型 比如会话内的系统信息 或者前端生成的系统信息之类的
+			// 0 text | 1 img | 2 voice
+			"contentType":0,
+			"content":"这个项目你打算怎么做",
+			"sendingTime":"2021-05-04T17:13:49.887+00:00",
+		}
+	},
+	{
+		sender:{
+			uid:2,
+			alias:"alexander",
+			avatar:baseURL_alias+'alias (8).jpg',
+		},
+		unreadCount: 11,
+		latestMessage:{
+			// 0 用户 1 系统
+			"type":0, //站内信类型 比如会话内的系统信息 或者前端生成的系统信息之类的
+			// 0 text | 1 img | 2 voice
+			"contentType":0,
+			"content":"请问你们的技术栈大概是什么",
+			"sendingTime":"2021-05-04T17:13:49.887+00:00",
+		}
+	},
+	{
+		sender:{
+			uid:13,
+			alias:"rookie",
+			avatar:baseURL_alias+'alias (6).jpg',
+		},
+		unreadCount: 8,
+		latestMessage:{
+			// 0 用户 1 系统
+			"type":0, //站内信类型 比如会话内的系统信息 或者前端生成的系统信息之类的
+			// 0 text | 1 img | 2 voice
+			"contentType":0,
+			"content":"最近打算打比赛嘛",
+			"sendingTime":"2021-05-04T17:13:49.887+00:00",
+		}
+	},
+	{
+		sender:{
+			uid:22,
+			alias:"doinb",
+			avatar:baseURL_alias+'alias (5).jpg',
+		},
+		unreadCount: 7,
+		latestMessage:{
+			// 0 用户 1 系统
+			"type":0, //站内信类型 比如会话内的系统信息 或者前端生成的系统信息之类的
+			// 0 text | 1 img | 2 voice
+			"contentType":0,
+			"content":"兄弟 这个项目要参加哪些比赛捏",
+			"sendingTime":"2021-05-04T17:13:49.887+00:00",
+		}
+	},
+	{
+		sender:{
+			uid:34,
+			alias:"alice",
+			avatar:baseURL_alias+'alias (4).jpg',
+		},
+		unreadCount: 0,
+		latestMessage:{
+			// 0 用户 1 系统
+			"type":0, //站内信类型 比如会话内的系统信息 或者前端生成的系统信息之类的
+			// 0 text | 1 img | 2 voice
+			"contentType":0,
+			"content":"Hi, I'm impressed by your project, wanna talk?",
+			"sendingTime":"2021-05-04T17:13:49.887+00:00",
+		}
+	},
+	{
+		sender:{
+			uid:65,
+			alias:"阮智祥",
+			avatar:baseURL_alias+'alias (3).jpg',
+		},
+		unreadCount: 0,
+		latestMessage:{
+			// 0 用户 1 系统
+			"type":0, //站内信类型 比如会话内的系统信息 或者前端生成的系统信息之类的
+			// 0 text | 1 img | 2 voice
+			"contentType":0,
+			"content":"大佬你好哇 这项目小弟能够帮上什么嘛",
+			"sendingTime":"2021-05-04T17:13:49.887+00:00",
+		}
+	},
+	{
+		sender:{
+			uid:77,
+			alias:"闪闪兔",
+			avatar:baseURL_alias+'alias (2).jpg',
+		},
+		unreadCount: 1,
+		latestMessage:{
+			// 0 用户 1 系统
+			"type":0, //站内信类型 比如会话内的系统信息 或者前端生成的系统信息之类的
+			// 0 text | 1 img | 2 voice
+			"contentType":0,
+			"content":"大佬 能不能带带萌新",
+			"sendingTime":"2021-05-04T17:13:49.887+00:00",
+		}
+	},
+	{
+		sender:{
+			uid:88,
+			alias:"闪闪兔",
+			avatar:baseURL_alias+'alias (2).jpg',
+		},
+		unreadCount: 1,
+		latestMessage:{
+			// 0 用户 1 系统
+			"type":0, //站内信类型 比如会话内的系统信息 或者前端生成的系统信息之类的
+			// 0 text | 1 img | 2 voice
+			"contentType":0,
+			"content":"大佬 能不能带带萌新",
+			"sendingTime":"2021-05-04T17:13:49.887+00:00",
+		}
+	},
+	{
+		sender:{
+			uid:99,
+			alias:"闪闪兔",
+			avatar:baseURL_alias+'alias (2).jpg',
+		},
+		unreadCount: 1,
+		latestMessage:{
+			// 0 用户 1 系统
+			"type":0, //站内信类型 比如会话内的系统信息 或者前端生成的系统信息之类的
+			// 0 text | 1 img | 2 voice
+			"contentType":0,
+			"content":"大佬 能不能带带萌新",
+			"sendingTime":"2021-05-04T17:13:49.887+00:00",
+		}
+	},
+	{
+		sender:{
+			uid:111,
+			alias:"闪闪兔",
+			avatar:baseURL_alias+'alias (2).jpg',
+		},
+		unreadCount: 1,
+		latestMessage:{
+			// 0 用户 1 系统
+			"type":0, //站内信类型 比如会话内的系统信息 或者前端生成的系统信息之类的
+			// 0 text | 1 img | 2 voice
+			"contentType":0,
+			"content":"大佬 能不能带带萌新",
+			"sendingTime":"2021-05-04T17:13:49.887+00:00",
+		}
+	}
+];
 var index_talent=[
 	{
 		talentId: "000000",
@@ -636,4 +893,4 @@ var index_qa=[
 					
 ];
 
-export {index_project, index_talent, index_qa};
+export {index_project, index_talent, index_qa, dialogData, noticeData};

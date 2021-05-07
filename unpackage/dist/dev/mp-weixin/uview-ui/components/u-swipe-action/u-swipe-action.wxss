@@ -25,28 +25,13 @@
 /* 透明度 */
 /* 文章场景相关 */
 /* uni.scss */
-.u-model.data-v-3626fcec {
-  height: auto;
+.u-swipe-action.data-v-49234740 {
+  width: auto;
+  height: initial;
+  position: relative;
   overflow: hidden;
-  font-size: 32rpx;
-  background-color: #fff;
 }
-.u-model__btn--hover.data-v-3626fcec {
-  background-color: #e6e6e6;
-}
-.u-model__title.data-v-3626fcec {
-  padding-top: 48rpx;
-  font-weight: 500;
-  text-align: center;
-  color: #303133;
-}
-.u-model__content__message.data-v-3626fcec {
-  padding: 48rpx;
-  font-size: 30rpx;
-  text-align: center;
-  color: #606266;
-}
-.u-model__footer.data-v-3626fcec {
+.u-swipe-view.data-v-49234740 {
 
   display: -webkit-box;
   display: -webkit-flex;
@@ -55,19 +40,26 @@
   -webkit-box-direction: normal;
   -webkit-flex-direction: row;
           flex-direction: row;
+
+  height: initial;
+  position: relative;
+  /* 这一句很关键，覆盖默认的绝对定位 */
 }
-.u-model__footer__button.data-v-3626fcec {
+.u-swipe-content.data-v-49234740 {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
           flex: 1;
-  height: 100rpx;
-  line-height: 100rpx;
-  font-size: 32rpx;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  cursor: pointer;
-  text-align: center;
-  -webkit-border-radius: 4rpx;
-          border-radius: 4rpx;
+}
+.u-swipe-del.data-v-49234740 {
+  position: relative;
+  font-size: 30rpx;
+  color: #ffffff;
+}
+.u-btn-text.data-v-49234740 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 

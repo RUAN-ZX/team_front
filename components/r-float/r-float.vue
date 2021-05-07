@@ -291,7 +291,7 @@
 	
 	.u-dropdown {
 		width: 100vw;
-		height: 200vh; // 可以滑动的长度不会超过200vh 故遮罩完全
+		height: 100vh; 
 		position: relative;
 		&__content {
 			position: absolute;

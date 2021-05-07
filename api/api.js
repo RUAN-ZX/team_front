@@ -72,7 +72,7 @@ function getRndInteger(min, max) {
 
 // 首页数据刷新 ---------------------------------------------
 
-import {index_project,index_talent,index_qa} from "./data.js";
+import {index_project,index_talent,index_qa,dialogData,noticeData} from "./data.js";
 
 export function index_data_refresh(current,num) {
 	return new Promise((resolute, reject)=>{
@@ -170,3 +170,44 @@ export function getUserInfo(rawUserInfo){
 }
 
 
+// 对话数据 ----------------------------------------------
+export function getDialogData(pageNum,pageSize){
+	return new Promise((resolute, reject)=>{
+		
+		setTimeout(()=> {
+			try{
+				let result = []
+				for(let i=pageNum*pageSize;i<(pageNum+1)*pageSize;i++){
+					if(i>dialogData.length) break;
+					result.push(dialogData[i]);
+				}
+				resolute(result);
+			} catch (e) {
+				//模拟接口请求失败
+				reject(e);
+			}
+		},1000)
+	})
+}
+
+export function getNoticeData(pageNum,pageSize){
+	return new Promise((resolute, reject)=>{
+		
+		setTimeout(()=> {
+			try{
+				let result = []
+				for(let i=pageNum*pageSize;i<(pageNum+1)*pageSize;i++){
+					if(i>noticeData.length) break;
+					result.push(dialogData[i]);
+					
+				}
+				//模拟接口请求成功
+				// console.log(result);
+				resolute(result);
+			} catch (e) {
+				//模拟接口请求失败
+				reject(e);
+			}
+		},1000)
+	})
+}

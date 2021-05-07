@@ -1,6 +1,4 @@
 {
-  "navigationBarTitleText": "",
-  "enablePullDownRefresh": false,
   "usingComponents": {
     "u-toast": "/uview-ui/components/u-toast/u-toast",
     "uni-tag-set": "/components/uni-tag-set/uni-tag-set",
