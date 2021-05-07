@@ -111,7 +111,7 @@
 			},
 			msg(){
 				uni.navigateTo({
-					url: '/pages/im/dialog/dialog?userId='+this.userId,
+					url: '/pages/root/msg/dialog/dialog?userId='+this.userId,
 					success: res => {},
 					fail: () => {},
 					complete: () => {}

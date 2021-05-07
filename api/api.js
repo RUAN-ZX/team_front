@@ -198,7 +198,7 @@ export function getNoticeData(pageNum,pageSize){
 				let result = []
 				for(let i=pageNum*pageSize;i<(pageNum+1)*pageSize;i++){
 					if(i>noticeData.length) break;
-					result.push(dialogData[i]);
+					result.push(noticeData[i]);
 					
 				}
 				//模拟接口请求成功
@@ -210,4 +210,32 @@ export function getNoticeData(pageNum,pageSize){
 			}
 		},1000)
 	})
+}
+
+export function dateTransform(iso8061){
+	// "2021-05-07T11:48:15.128+00:00"
+	let old = new Date(iso8061);
+	let now = new Date();
+	let oldStamp = Date.parse(old);
+	let nowStamp = Date.parse(now);
+	// 一天
+	if(nowStamp-oldStamp<=1440000 || old.getDate()==now.getDate()){
+		let hours = old.getHours()<10?('0'+old.getHours()):old.getHours();
+		let minutes = old.getMinutes()<10?('0'+old.getMinutes()):old.getMinutes();
+		let seconds = old.getSeconds()<10?('0'+old.getSeconds()):old.getSeconds();
+		return hours+':'+minutes+':'+seconds;
+	}
+	// 两天
+	else if(nowStamp-oldStamp<=2880000 || old.getDate()==now.getDate()-1 ){
+		return "昨天"+old.getHours()+"点";
+	}
+	// 三天
+	else if(nowStamp-oldStamp<=4320000 || old.getDate()==now.getDate()-2 ){
+		return "前天"+old.getHours()+"点";
+	}
+	else{
+		let days = old.getDate()<10?('0'+old.getDate()):old.getDate();
+		let months = old.getMonth()<10?('0'+old.getMonth()):old.getMonth();
+		return old.getFullYear()+'-'+months+'-'+days;
+	} 
 }

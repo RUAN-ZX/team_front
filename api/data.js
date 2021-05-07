@@ -295,81 +295,92 @@ var index_project=[
 var baseURL_alias = 'https://lets-team--public.oss-cn-hangzhou.aliyuncs.com/user/alias/'
 var noticeData=[
 	{
-		"type":0,
-		"title":"初次见面 多多关照1",
-		"content":"Hello 命运让我们在这里相遇~",
-		"sendingTime":"2021-05-04T17:13:49.887+00:00",
-		"readStatus":0 //0 已经读 1 未读
+		id: 0, //接口里没有 到时候必须修改一下
+		type:0,
+		title:"初次见面 多多关照1",
+		content:"Hello 命运让我们在这里相遇~",
+		sendingTime:"2021-05-07T13:04:08.007+00:00",
+		readStatus:0 //0 已经读 1 未读
 	},
 	{
-		"type":0,
-		"title":"初次见面 多多关照2",
-		"content":"Hello 命运让我们在这里相遇~",
-		"sendingTime":"2021-05-04T17:13:49.887+00:00",
-		"readStatus":0 //0 已经读 1 未读
+		id: 1,
+		type:0,
+		title:"初次见面 多多关照2",
+		content:"Hello 命运让我们在这里相遇~",
+		sendingTime:"2021-05-04T17:13:49.887+00:00",
+		readStatus:0 //0 已经读 1 未读
 	},
 	{
-		"type":0,
-		"title":"初次见面 多多关照2",
-		"content":"Hello 命运让我们在这里相遇~",
-		"sendingTime":"2021-05-04T17:13:49.887+00:00",
-		"readStatus":0 //0 已经读 1 未读
+		id: 2,
+		type:0,
+		title:"初次见面 多多关照2",
+		content:"Hello 命运让我们在这里相遇~",
+		sendingTime:"2021-05-04T17:13:49.887+00:00",
+		readStatus:0 //0 已经读 1 未读
 	},
 	{
-		"type":0,
-		"title":"初次见面 多多关照3",
-		"content":"Hello 命运让我们在这里相遇~",
-		"sendingTime":"2021-05-04T17:13:49.887+00:00",
-		"readStatus":0 //0 已经读 1 未读
+		id: 3,
+		type:0,
+		title:"初次见面 多多关照3",
+		content:"Hello 命运让我们在这里相遇~",
+		sendingTime:"2021-05-04T17:13:49.887+00:00",
+		readStatus:0 //0 已经读 1 未读
 	},
 	{
-		"type":0,
-		"title":"初次见面 多多关照4",
-		"content":"Hello 命运让我们在这里相遇~",
-		"sendingTime":"2021-05-04T17:13:49.887+00:00",
-		"readStatus":0 //0 已经读 1 未读
+		id: 4,
+		type:0,
+		title:"初次见面 多多关照4",
+		content:"Hello 命运让我们在这里相遇~",
+		sendingTime:"2021-05-04T17:13:49.887+00:00",
+		readStatus:0 //0 已经读 1 未读
 	},
 	{
-		"type":0,
-		"title":"初次见面 多多关照2",
-		"content":"Hello 命运让我们在这里相遇~",
-		"sendingTime":"2021-05-04T17:13:49.887+00:00",
-		"readStatus":0 //0 已经读 1 未读
+		id: 5,
+		type:0,
+		title:"初次见面 多多关照2",
+		content:"Hello 命运让我们在这里相遇~",
+		sendingTime:"2021-05-04T17:13:49.887+00:00",
+		readStatus:0 //0 已经读 1 未读
 	},
 	{
-		"type":0,
-		"title":"初次见面 多多关照3",
-		"content":"Hello 命运让我们在这里相遇~",
-		"sendingTime":"2021-05-04T17:13:49.887+00:00",
-		"readStatus":0 //0 已经读 1 未读
+		id: 6,
+		type:0,
+		title:"初次见面 多多关照3",
+		content:"Hello 命运让我们在这里相遇~",
+		sendingTime:"2021-05-04T17:13:49.887+00:00",
+		readStatus:0 //0 已经读 1 未读
 	},
 	{
-		"type":0,
-		"title":"初次见面 多多关照4",
-		"content":"Hello 命运让我们在这里相遇~",
-		"sendingTime":"2021-05-04T17:13:49.887+00:00",
-		"readStatus":0 //0 已经读 1 未读
+		id: 7,
+		type:0,
+		title:"初次见面 多多关照4",
+		content:"Hello 命运让我们在这里相遇~",
+		sendingTime:"2021-05-04T17:13:49.887+00:00",
+		readStatus:0 //0 已经读 1 未读
 	},
 	{
-		"type":0,
-		"title":"初次见面 多多关照2",
-		"content":"Hello 命运让我们在这里相遇~",
-		"sendingTime":"2021-05-04T17:13:49.887+00:00",
-		"readStatus":0 //0 已经读 1 未读
+		id: 8,
+		type:0,
+		title:"初次见面 多多关照2",
+		content:"Hello 命运让我们在这里相遇~",
+		sendingTime:"2021-05-04T17:13:49.887+00:00",
+		readStatus:0 //0 已经读 1 未读
 	},
 	{
-		"type":0,
-		"title":"初次见面 多多关照3",
-		"content":"Hello 命运让我们在这里相遇~",
-		"sendingTime":"2021-05-04T17:13:49.887+00:00",
-		"readStatus":0 //0 已经读 1 未读
+		id: 9,
+		type:0,
+		title:"初次见面 多多关照3",
+		content:"Hello 命运让我们在这里相遇~",
+		sendingTime:"2021-05-04T17:13:49.887+00:00",
+		readStatus:0 //0 已经读 1 未读
 	},
 	{
-		"type":0,
-		"title":"初次见面 多多关照4",
-		"content":"Hello 命运让我们在这里相遇~",
-		"sendingTime":"2021-05-04T17:13:49.887+00:00",
-		"readStatus":0 //0 已经读 1 未读
+		id: 10,
+		type:0,
+		title:"初次见面 多多关照4",
+		content:"Hello 命运让我们在这里相遇~",
+		sendingTime:"2021-05-07T13:04:08.007+00:00",
+		readStatus:0 //0 已经读 1 未读
 	}
 ]
 var dialogData=[
@@ -382,11 +393,11 @@ var dialogData=[
 		unreadCount: 10,
 		latestMessage:{
 			// 0 用户 1 系统
-			"type":0, //站内信类型 比如会话内的系统信息 或者前端生成的系统信息之类的
+			type:0, //站内信类型 比如会话内的系统信息 或者前端生成的系统信息之类的
 			// 0 text | 1 img | 2 voice
-			"contentType":0,
-			"content":"你好哇：）",
-			"sendingTime":"2021-05-04T17:13:49.887+00:00",
+			contentType:0,
+			content:"你好哇：）",
+			sendingTime:"2021-05-02T17:13:49.887+00:00",
 			// ？？这个看下服务端格式
 		}
 	},
@@ -399,11 +410,11 @@ var dialogData=[
 		unreadCount: 19,
 		latestMessage:{
 			// 0 用户 1 系统
-			"type":0, //站内信类型 比如会话内的系统信息 或者前端生成的系统信息之类的
+			type:0, //站内信类型 比如会话内的系统信息 或者前端生成的系统信息之类的
 			// 0 text | 1 img | 2 voice
-			"contentType":0,
-			"content":"这个项目你打算怎么做",
-			"sendingTime":"2021-05-04T17:13:49.887+00:00",
+			contentType:0,
+			content:"这个项目你打算怎么做",
+			sendingTime:"2021-05-03T17:13:49.887+00:00",
 		}
 	},
 	{
@@ -415,11 +426,11 @@ var dialogData=[
 		unreadCount: 11,
 		latestMessage:{
 			// 0 用户 1 系统
-			"type":0, //站内信类型 比如会话内的系统信息 或者前端生成的系统信息之类的
+			type:0, //站内信类型 比如会话内的系统信息 或者前端生成的系统信息之类的
 			// 0 text | 1 img | 2 voice
-			"contentType":0,
-			"content":"请问你们的技术栈大概是什么",
-			"sendingTime":"2021-05-04T17:13:49.887+00:00",
+			contentType:0,
+			content:"请问你们的技术栈大概是什么",
+			sendingTime:"2021-05-04T17:13:49.887+00:00",
 		}
 	},
 	{
@@ -431,11 +442,11 @@ var dialogData=[
 		unreadCount: 8,
 		latestMessage:{
 			// 0 用户 1 系统
-			"type":0, //站内信类型 比如会话内的系统信息 或者前端生成的系统信息之类的
+			type:0, //站内信类型 比如会话内的系统信息 或者前端生成的系统信息之类的
 			// 0 text | 1 img | 2 voice
-			"contentType":0,
-			"content":"最近打算打比赛嘛",
-			"sendingTime":"2021-05-04T17:13:49.887+00:00",
+			contentType:0,
+			content:"最近打算打比赛嘛",
+			sendingTime:"2021-05-04T17:13:49.887+00:00",
 		}
 	},
 	{
@@ -447,11 +458,11 @@ var dialogData=[
 		unreadCount: 7,
 		latestMessage:{
 			// 0 用户 1 系统
-			"type":0, //站内信类型 比如会话内的系统信息 或者前端生成的系统信息之类的
+			type:0, //站内信类型 比如会话内的系统信息 或者前端生成的系统信息之类的
 			// 0 text | 1 img | 2 voice
-			"contentType":0,
-			"content":"兄弟 这个项目要参加哪些比赛捏",
-			"sendingTime":"2021-05-04T17:13:49.887+00:00",
+			contentType:0,
+			content:"兄弟 这个项目要参加哪些比赛捏",
+			sendingTime:"2021-05-04T17:13:49.887+00:00",
 		}
 	},
 	{
@@ -463,11 +474,11 @@ var dialogData=[
 		unreadCount: 0,
 		latestMessage:{
 			// 0 用户 1 系统
-			"type":0, //站内信类型 比如会话内的系统信息 或者前端生成的系统信息之类的
+			type:0, //站内信类型 比如会话内的系统信息 或者前端生成的系统信息之类的
 			// 0 text | 1 img | 2 voice
-			"contentType":0,
-			"content":"Hi, I'm impressed by your project, wanna talk?",
-			"sendingTime":"2021-05-04T17:13:49.887+00:00",
+			contentType:0,
+			content:"Hi, I'm really impressed at your project, wanna talk?",
+			sendingTime:"2021-05-04T17:13:49.887+00:00",
 		}
 	},
 	{
@@ -479,11 +490,11 @@ var dialogData=[
 		unreadCount: 0,
 		latestMessage:{
 			// 0 用户 1 系统
-			"type":0, //站内信类型 比如会话内的系统信息 或者前端生成的系统信息之类的
+			type:0, //站内信类型 比如会话内的系统信息 或者前端生成的系统信息之类的
 			// 0 text | 1 img | 2 voice
-			"contentType":0,
-			"content":"大佬你好哇 这项目小弟能够帮上什么嘛",
-			"sendingTime":"2021-05-04T17:13:49.887+00:00",
+			contentType:0,
+			content:"大佬你好哇 这项目小弟能够帮上什么嘛",
+			sendingTime:"2021-05-04T17:13:49.887+00:00",
 		}
 	},
 	{
@@ -495,11 +506,11 @@ var dialogData=[
 		unreadCount: 1,
 		latestMessage:{
 			// 0 用户 1 系统
-			"type":0, //站内信类型 比如会话内的系统信息 或者前端生成的系统信息之类的
+			type:0, //站内信类型 比如会话内的系统信息 或者前端生成的系统信息之类的
 			// 0 text | 1 img | 2 voice
-			"contentType":0,
-			"content":"大佬 能不能带带萌新",
-			"sendingTime":"2021-05-04T17:13:49.887+00:00",
+			contentType:0,
+			content:"大佬 能不能带带萌新",
+			sendingTime:"2021-05-04T17:13:49.887+00:00",
 		}
 	},
 	{
@@ -511,11 +522,11 @@ var dialogData=[
 		unreadCount: 1,
 		latestMessage:{
 			// 0 用户 1 系统
-			"type":0, //站内信类型 比如会话内的系统信息 或者前端生成的系统信息之类的
+			type:0, //站内信类型 比如会话内的系统信息 或者前端生成的系统信息之类的
 			// 0 text | 1 img | 2 voice
-			"contentType":0,
-			"content":"大佬 能不能带带萌新",
-			"sendingTime":"2021-05-04T17:13:49.887+00:00",
+			contentType:0,
+			content: "大佬 能不能带带萌新",
+			sendingTime:"2021-05-04T17:13:49.887+00:00",
 		}
 	},
 	{
@@ -527,11 +538,11 @@ var dialogData=[
 		unreadCount: 1,
 		latestMessage:{
 			// 0 用户 1 系统
-			"type":0, //站内信类型 比如会话内的系统信息 或者前端生成的系统信息之类的
+			type:0, //站内信类型 比如会话内的系统信息 或者前端生成的系统信息之类的
 			// 0 text | 1 img | 2 voice
-			"contentType":0,
-			"content":"大佬 能不能带带萌新",
-			"sendingTime":"2021-05-04T17:13:49.887+00:00",
+			contentType:0,
+			content:"大佬 能不能带带萌新",
+			sendingTime:"2021-05-04T17:13:49.887+00:00",
 		}
 	},
 	{
@@ -543,11 +554,11 @@ var dialogData=[
 		unreadCount: 1,
 		latestMessage:{
 			// 0 用户 1 系统
-			"type":0, //站内信类型 比如会话内的系统信息 或者前端生成的系统信息之类的
+			type:0, //站内信类型 比如会话内的系统信息 或者前端生成的系统信息之类的
 			// 0 text | 1 img | 2 voice
-			"contentType":0,
-			"content":"大佬 能不能带带萌新",
-			"sendingTime":"2021-05-04T17:13:49.887+00:00",
+			contentType:0,
+			content:"大佬 能不能带带萌新",
+			sendingTime:"2021-05-04T17:13:49.887+00:00",
 		}
 	}
 ];

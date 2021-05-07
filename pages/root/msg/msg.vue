@@ -22,44 +22,73 @@
 			</view>
 		</view>
 		
-		<view :class="current==0?'wrap':'wrap-none'"
-			:style="{marginTop:info.bottom+100/info.ratio+10+'px'}">
+		<view :style="{marginTop:info.bottom+100/info.ratio+10+'px'}">
 				
-
-			<u-swipe-action 
-				v-for="(item, index) in dialogData"
-				:show="item.show" 
-				:index="index" 
-				:key="item.sender.uid"
-				@click="click" 
-				@content-click="contentClick"
-				@open="open" :options="options"
-				@close="close"
-			>
-				<view class="item u-border-bottom">
-					<image class="image" mode="aspectFill" :src="item.sender.avatar" />
+			<view :class="current==0?'wrap':'wrap-none'">
+				<u-swipe-action
+					v-for="(item, index) in dialogData"
+					:show="item.show" 
+					:index="index" 
+					:key="item.sender.uid"
+					@click="click" 
+					@content-click="contentClick"
+					@open="open" :options="options"
+					@close="close"
+				>
+					<view class="dialog">
+						<image class="dialog-left" mode="aspectFill" :src="item.sender.avatar" />
 					
-					<!-- 此层wrap在此为必写的，否则可能会出现标题定位错误 -->
-					<view class="title-wrap">
-						<text class="title u-line-2">{{ item.sender.alias }}</text>
-						<text class="title u-line-2">{{ item.latestMessage.content }}</text>
+						
+						<view class="dialog-right">
+							<view class="dialog-top">
+								<text class="title ellipsis">{{ item.sender.alias }}</text>
+								<text class="time">{{item.latestMessage.sendingTime}}</text>
+							</view>
+							
+							<view class="dialog-bottom">
+								<text class="last-message">{{ item.latestMessage.content }}</text>
+								<view class="unread red-dot">{{item.unreadCount}}</view>
+							</view>
+						</view>
 					</view>
-				</view>
-			</u-swipe-action>
+				</u-swipe-action>
+				
+				<u-loadmore :status="loadStatus[0]" bgColor="transparent"></u-loadmore>
+			</view>
 			
-			<u-loadmore :status="loadStatus[0]" bgColor="transparent"></u-loadmore>
+			<view :class="current==1?'wrap':'wrap-none'">	
+				<u-swipe-action
+					v-for="(item, index) in noticeData"
+					:show="item.show" 
+					:index="index" 
+					:key="item.id"
+					@click="click" 
+					@content-click="contentClick"
+					@open="open" :options="options"
+					@close="close"
+				>
+					<view class="dialog">
+						<image class="dialog-left" mode="aspectFill" :src="avatar_default" />
+					
+						
+						<view class="dialog-right">
+							<view class="dialog-top">
+								<text class="title ellipsis">{{ item.title }}</text>
+								<text class="time">{{item.sendingTime}}</text>
+							</view>
+							
+							<view class="dialog-bottom">
+								<text class="last-message">{{ item.content }}</text>
+								<view class="unread red-dot">未读</view>
+							</view>
+						</view>
+					</view>
+				</u-swipe-action>
+				
+				
+				<u-loadmore :status="loadStatus[1]" bgColor="transparent"></u-loadmore>
+			</view>	
 		</view>
-			
-			
-			
-			
-		<view :class="current==1?'wrap':'wrap-none'"
-			:style="{marginTop:info.bottom+100/info.ratio+10+'px'}">
-			
-			
-			
-			<u-loadmore :status="loadStatus[1]" bgColor="transparent"></u-loadmore>
-		</view>	
 	</view>
 </template>
 
@@ -67,7 +96,8 @@
 	import {
 		index_data_refresh,
 		getDialogData,
-		getNoticeData
+		getNoticeData,
+		dateTransform
 	} from "@/api/api.js";
 	import float from "@/components/r-float/r-float.vue";
 	import search from "@/components/search/search.vue";
@@ -108,14 +138,17 @@
 				current: 0, // tabs组件的current值，表示当前活动的tab选项
 				
 				tab_list: [{
-					name: '通知',
+					name: '交流',
 					num: 1
 				}, {
-					name: '交流',
+					name: '通知',
 					num: 2
 				}],
 				
 				info: {},
+				
+				avatar_default: "https://lets-team--public.oss-cn-hangzhou.aliyuncs.com/user/alias/alias%20(4).jpg",
+				
 			};
 		},
 		onLoad() {
@@ -124,6 +157,7 @@
 			getDialogData(0,6).then((value)=>{
 				for (var i = 0; i < value.length; i++) {
 					value[i].show = false;
+					value[i].latestMessage.sendingTime = dateTransform(value[i].latestMessage.sendingTime)
 				}
 				// 一定要在这里添加show属性 否则无用！！！
 				this.dialogData.push.apply(this.dialogData,value);
@@ -131,6 +165,10 @@
 			})
 			
 			getNoticeData(0,6).then((value)=>{
+				for (var i = 0; i < value.length; i++) {
+					value[i].sendingTime = dateTransform(value[i].sendingTime)
+					value[i].show = false;
+				}
 				this.noticeData.push.apply(this.noticeData,value);
 			})
 			
@@ -244,7 +282,7 @@
 			margin-top: 20rpx;
 			
 			background-color: $cardColor;
-			z-index:2;
+			z-index:$zindex_navbar;
 			width: 100vw;
 			position: relative;
 		}
@@ -254,33 +292,83 @@
 	.wrap {
 		position: relative;
 		background-color: $cardColor;
+		z-index: $zindex_content;
 		display: flex;
 		flex-direction: column;
 		width: 100%;
-		
+		margin-top: $padding-half;
 		transition: all 0.3s ease-out;
 	}
 	.wrap-none{
 		display: none;
 	}
 	
-	.item {
+	.dialog {
 		display: flex;
-		padding: 20rpx;
-		
-		.image {
-			width: 120rpx;
-			flex: 0 0 120rpx;
-			height: 120rpx;
-			margin-right: 20rpx;
-			border-radius: 12rpx;
+		flex-direction: row;
+		align-items: center;
+		padding: $padding;
+		width: 100vw;
+		.dialog-left {
+			width: 100rpx;
+			flex: 0 0 100rpx;
+			// 可以 0 0 指代收放的量 而80rpx指代基础 意味着其他部分可以自由缩放！
+			height: 100rpx;
+			margin-right: $padding;
+			border-radius: 100%;
 		}
-		
-		.title {
+		.dialog-right{
+			// 没办法 因为这个组件实际宽度超过屏幕宽度 你不限定死就出屏幕了
+			width: calc(100vw - 100rpx - 3*#{$padding});
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
 			text-align: left;
-			font-size: 28rpx;
-			color: $u-content-color;
-			margin-top: 20rpx;
+			
+			.dialog-top{
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				align-items: center;
+				margin-bottom: $padding-half;
+				.title {
+					flex: 1;
+					font-size: 32rpx;
+					color: $labelColor2;
+					font-weight: bold;
+				}
+				.time{
+					flex: 0 0 auto;
+					color: $labelColor;
+					font-size: 24rpx;
+					margin-left: $padding;
+				}
+			}
+			.dialog-bottom{
+				width: 100%;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				align-items: center;
+				
+				.last-message{
+					flex: 1;
+					color: $labelColor;
+					font-size: 28rpx;
+					
+					word-break: break-all;
+					white-space:nowrap; 
+					text-overflow: ellipsis;  /* 超出部分省略号 */
+					
+					overflow: hidden;  /*超出隐藏*/
+				}
+				.unread{
+					flex: 0 0 auto;
+					width: auto;
+					margin-left: $padding;
+				}
+			}
+			
 		}
 	}
 	

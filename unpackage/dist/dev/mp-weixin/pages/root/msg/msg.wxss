@@ -72,6 +72,22 @@
   z-index: 0;
   position: relative;
 }
+.red-dot.data-v-2a0d81bf {
+  height: 16px;
+  padding: 0 5px;
+  line-height: 16px;
+  font-size: 24rpx;
+  -webkit-border-radius: 15px;
+          border-radius: 15px;
+  background-color: red;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  color: #efefef;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-pack: center;
+}
 .header.data-v-2a0d81bf {
   background-color: #ffffff;
   z-index: 4;
@@ -101,13 +117,14 @@
 .header .u-tabs-box.data-v-2a0d81bf {
   margin-top: 20rpx;
   background-color: #ffffff;
-  z-index: 2;
+  z-index: 3;
   width: 100vw;
   position: relative;
 }
 .wrap.data-v-2a0d81bf {
   position: relative;
   background-color: #ffffff;
+  z-index: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -116,32 +133,117 @@
   -webkit-flex-direction: column;
           flex-direction: column;
   width: 100%;
+  margin-top: 4px;
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
 .wrap-none.data-v-2a0d81bf {
   display: none;
 }
-.item.data-v-2a0d81bf {
+.dialog.data-v-2a0d81bf {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
-  padding: 20rpx;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  padding: 10px;
+  width: 100vw;
 }
-.item .image.data-v-2a0d81bf {
-  width: 120rpx;
+.dialog .dialog-left.data-v-2a0d81bf {
+  width: 100rpx;
   -webkit-box-flex: 0;
-  -webkit-flex: 0 0 120rpx;
-          flex: 0 0 120rpx;
-  height: 120rpx;
-  margin-right: 20rpx;
-  -webkit-border-radius: 12rpx;
-          border-radius: 12rpx;
+  -webkit-flex: 0 0 100rpx;
+          flex: 0 0 100rpx;
+  height: 100rpx;
+  margin-right: 10px;
+  -webkit-border-radius: 100%;
+          border-radius: 100%;
 }
-.item .title.data-v-2a0d81bf {
+.dialog .dialog-right.data-v-2a0d81bf {
+  width: calc(100vw - 100rpx - 3*10px);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
   text-align: left;
+}
+.dialog .dialog-right .dialog-top.data-v-2a0d81bf {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  margin-bottom: 4px;
+}
+.dialog .dialog-right .dialog-top .title.data-v-2a0d81bf {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  font-size: 32rpx;
+  color: #646464;
+  font-weight: bold;
+}
+.dialog .dialog-right .dialog-top .time.data-v-2a0d81bf {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 auto;
+          flex: 0 0 auto;
+  color: #afafaf;
+  font-size: 24rpx;
+  margin-left: 10px;
+}
+.dialog .dialog-right .dialog-bottom.data-v-2a0d81bf {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.dialog .dialog-right .dialog-bottom .last-message.data-v-2a0d81bf {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  color: #afafaf;
   font-size: 28rpx;
-  color: #606266;
-  margin-top: 20rpx;
+  word-break: break-all;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  /* 超出部分省略号 */
+  overflow: hidden;
+  /*超出隐藏*/
+}
+.dialog .dialog-right .dialog-bottom .unread.data-v-2a0d81bf {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 auto;
+          flex: 0 0 auto;
+  width: auto;
+  margin-left: 10px;
 }
 

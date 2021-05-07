@@ -72,6 +72,22 @@
   z-index: 0;
   position: relative;
 }
+.red-dot {
+  height: 16px;
+  padding: 0 5px;
+  line-height: 16px;
+  font-size: 24rpx;
+  -webkit-border-radius: 15px;
+          border-radius: 15px;
+  background-color: red;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  color: #efefef;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-pack: center;
+}
 .header {
   position: relative;
   width: 100vw;
