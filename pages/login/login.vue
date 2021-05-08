@@ -16,11 +16,11 @@
 		<view class="login">
 			<view class="tabs-box">
 				<u-tabs-swiper activeColor="#007aff" ref="tabs" :list="tab_list" :current="current" @change="change"
-					:is-scroll="true" swiperWidth="750"></u-tabs-swiper>
+					:is-scroll="false" swiperWidth="750"></u-tabs-swiper>
 			</view>
 			<swiper class="swiperWrap" :current="swiperCurrent" @transition="transition"
 				@animationfinish="animationfinish">
-				<swiper-item class="swiper-item">
+				<swiper-item :scroll-y="false" class="swiper-item">
 					<scroll-view scroll-y style="height: 100%;width: 100%;" @scrolltolower="reachBottom">
 						<view class="wechat">
 							微信登录
@@ -28,7 +28,7 @@
 					</scroll-view>
 				</swiper-item>
 				<swiper-item class="swiper-item">
-					<scroll-view scroll-y style="height: 100%;width: 100%;" @scrolltolower="reachBottom">
+					<scroll-view :scroll-y="false" style="height: 100%;width: 100%;" @scrolltolower="reachBottom">
 						<view class="nonCaptcha">
 							<span class="nonCaptcha_iconfont psl_font icon-user"></span>
 							<u-input class="nonCaptcha_input" placeholder-class="nonCaptcha_text" type="text"
@@ -76,7 +76,7 @@
 				</swiper-item>
 			
 				<swiper-item class="swiper-item">
-					<scroll-view scroll-y style="height: 100%;width: 100%;" @scrolltolower="reachBottom">
+					<scroll-view :scroll-y="false" style="height: 100%;width: 100%;" @scrolltolower="reachBottom">
 						<view class="nonCaptcha">
 							<span class="nonCaptcha_iconfont psl_font icon-user"></span>
 							<u-input class="nonCaptcha_input" placeholder-class="nonCaptcha_text" type="text"
@@ -124,7 +124,7 @@
 				</swiper-item>
 			
 				<swiper-item class="swiper-item">
-					<scroll-view scroll-y style="height: 100%;width: 100%;" @scrolltolower="reachBottom">
+					<scroll-view :scroll-y="false" style="height: 100%;width: 100%;" @scrolltolower="reachBottom">
 						<view class="nonCaptcha">
 							<span class="nonCaptcha_iconfont psl_font icon-user"></span>
 							<u-input class="nonCaptcha_input" placeholder-class="nonCaptcha_text" type="text"

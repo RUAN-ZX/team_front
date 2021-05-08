@@ -25,6 +25,69 @@
 /* 透明度 */
 /* 文章场景相关 */
 /* uni.scss */
+.boxShadow {
+  background-color: #ffff0000;
+  -webkit-box-shadow: 6rpx 6rpx 15rpx 3rpx rgba(0, 0, 0, 0.125);
+          box-shadow: 6rpx 6rpx 15rpx 3rpx rgba(0, 0, 0, 0.125);
+}
+.background {
+  z-index: -1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  height: 100vh;
+  position: fixed;
+  width: 100vw;
+}
+.background .preface {
+  width: 100%;
+}
+.ellipsis {
+  word-break: break-all;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  /* 超出部分省略号 */
+  overflow: hidden;
+  /*超出隐藏*/
+}
+.ellipsis-2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.card {
+  background-color: #ffffff;
+  -webkit-box-shadow: 6rpx 6rpx 15rpx 3rpx rgba(0, 0, 0, 0.21);
+          box-shadow: 6rpx 6rpx 15rpx 3rpx rgba(0, 0, 0, 0.21);
+  -webkit-border-radius: 10px;
+          border-radius: 10px;
+  z-index: 0;
+  position: relative;
+}
+.red-dot {
+  height: 16px;
+  padding: 0 5px;
+  line-height: 16px;
+  font-size: 24rpx;
+  -webkit-border-radius: 15px;
+          border-radius: 15px;
+  background-color: red;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  color: #efefef;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-pack: center;
+}
 page {
   background-color: #e5e5e5;
 }
@@ -148,7 +211,7 @@ page {
   height: 18vw;
   -webkit-border-radius: 20rpx;
           border-radius: 20rpx;
-  background-color: #fff;
+  background-color: #ffffff;
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -224,10 +287,10 @@ page {
   -webkit-box-align: center;
   -webkit-align-items: center;
           align-items: center;
-  background: -webkit-gradient(linear, left top, right top, from(#f09b37), to(#eb632c));
-  background: -webkit-linear-gradient(left, #f09b37, #eb632c);
-  background: linear-gradient(to right, #f09b37, #eb632c);
-  color: #fff;
+  background: -webkit-gradient(linear, left top, right top, from(#55aaff), to(#007aff));
+  background: -webkit-linear-gradient(left, #55aaff, #007aff);
+  background: linear-gradient(to right, #55aaff, #007aff);
+  color: #ffffff;
   -webkit-border-radius: 6rpx;
           border-radius: 6rpx;
   font-size: 24rpx;
@@ -253,7 +316,7 @@ page {
   -webkit-align-items: center;
           align-items: center;
   font-size: 28rpx;
-  background-color: #fff;
+  background-color: #ffffff;
   color: #555;
 }
 .input-box .textbox .voice-mode.recording {
@@ -265,7 +328,7 @@ page {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
-  background-color: #fff;
+  background-color: #ffffff;
   -webkit-border-radius: 40rpx;
           border-radius: 40rpx;
 }
@@ -381,16 +444,16 @@ page {
 }
 }
 .record .ing .icon {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#f09b37), color-stop(50%, #fff));
-  background-image: -webkit-linear-gradient(top, #f09b37, #fff 50%);
-  background-image: linear-gradient(to bottom, #f09b37, #fff 50%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#55aaff), color-stop(50%, #ffffff));
+  background-image: -webkit-linear-gradient(top, #55aaff, #ffffff 50%);
+  background-image: linear-gradient(to bottom, #55aaff, #ffffff 50%);
   background-size: 100% 200%;
   -webkit-animation: volatility 1.5s ease-in-out -1.5s infinite alternate;
           animation: volatility 1.5s ease-in-out -1.5s infinite alternate;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 150rpx;
-  color: #f09b37;
+  color: #55aaff;
 }
 .record .cancel {
   width: 100%;
@@ -406,7 +469,7 @@ page {
           align-items: center;
 }
 .record .cancel .icon {
-  color: #fff;
+  color: #ffffff;
   font-size: 150rpx;
 }
 .record .tis {
@@ -419,10 +482,10 @@ page {
   -webkit-justify-content: center;
           justify-content: center;
   font-size: 28rpx;
-  color: #fff;
+  color: #ffffff;
 }
 .record .tis.change {
-  color: #f09b37;
+  color: #55aaff;
 }
 .content {
   width: 100%;
@@ -476,7 +539,7 @@ page {
           justify-content: space-between;
 }
 .content .msg-list .loading .spinner view {
-  background-color: #f06c7a;
+  background-color: #007aff;
   height: 50rpx;
   width: 6rpx;
   -webkit-border-radius: 6rpx;
@@ -524,15 +587,10 @@ page {
   -webkit-align-items: center;
           align-items: center;
   background-color: #c9c9c9;
-  color: #fff;
+  color: #ffffff;
   font-size: 24rpx;
   -webkit-border-radius: 40rpx;
           border-radius: 40rpx;
-}
-.content .msg-list .row .system .red-envelope image {
-  margin-right: 5rpx;
-  width: 30rpx;
-  height: 30rpx;
 }
 .content .msg-list .row:first-child {
   margin-top: 20rpx;
@@ -567,39 +625,6 @@ page {
   max-width: 350rpx;
   max-height: 350rpx;
 }
-.content .msg-list .row .my .left .bubble.red-envelope, .content .msg-list .row .other .right .bubble.red-envelope {
-  background-color: transparent;
-  padding: 0;
-  overflow: hidden;
-  position: relative;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-          justify-content: center;
-  -webkit-box-align: start;
-  -webkit-align-items: flex-start;
-          align-items: flex-start;
-}
-.content .msg-list .row .my .left .bubble.red-envelope image, .content .msg-list .row .other .right .bubble.red-envelope image {
-  width: 250rpx;
-  height: 313rpx;
-}
-.content .msg-list .row .my .left .bubble.red-envelope .tis, .content .msg-list .row .other .right .bubble.red-envelope .tis {
-  position: absolute;
-  top: 6%;
-  font-size: 26rpx;
-  color: #9c1712;
-}
-.content .msg-list .row .my .left .bubble.red-envelope .blessing, .content .msg-list .row .other .right .bubble.red-envelope .blessing {
-  position: absolute;
-  bottom: 14%;
-  color: #e9b874;
-  width: 80%;
-  text-align: center;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-}
 .content .msg-list .row .my .left .bubble.voice .icon, .content .msg-list .row .other .right .bubble.voice .icon {
   font-size: 40rpx;
   display: -webkit-box;
@@ -631,8 +656,8 @@ page {
 .content .msg-list .row .my .right image, .content .msg-list .row .other .left image {
   width: 80rpx;
   height: 80rpx;
-  -webkit-border-radius: 10rpx;
-          border-radius: 10rpx;
+  -webkit-border-radius: 100%;
+          border-radius: 100%;
 }
 .content .msg-list .row .my {
   width: 100%;
@@ -653,11 +678,11 @@ page {
           justify-content: flex-end;
 }
 .content .msg-list .row .my .left .bubble {
-  background-color: #f06c7a;
-  color: #fff;
+  background-color: #007aff;
+  color: #ffffff;
 }
 .content .msg-list .row .my .left .bubble.voice .icon {
-  color: #fff;
+  color: #ffffff;
 }
 .content .msg-list .row .my .left .bubble.voice .length {
   margin-right: 20rpx;
@@ -683,7 +708,7 @@ page {
 }
 }
 .content .msg-list .row .my .left .bubble.play .icon:after {
-  border-left: solid 10rpx rgba(240, 108, 122, 0.5);
+  border-left: solid 10rpx rgba(0, 122, 255, 0.8);
   -webkit-animation: my-play 1s linear infinite;
           animation: my-play 1s linear infinite;
 }
@@ -695,34 +720,45 @@ page {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
 }
-.content .msg-list .row .other .left {
-  margin-right: 15rpx;
-}
-.content .msg-list .row .other .right {
-  -webkit-flex-wrap: wrap;
-          flex-wrap: wrap;
-}
-.content .msg-list .row .other .right .username {
-  width: 100%;
-  height: 45rpx;
+.content .msg-list .row .other .other_time {
   font-size: 24rpx;
-  color: #999;
+  color: #afafaf;
+  height: 45rpx;
+  text-align: center;
+}
+.content .msg-list .row .other .other_rest {
+  width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
 }
-.content .msg-list .row .other .right .username .name {
-  margin-right: 50rpx;
+.content .msg-list .row .other .other_rest .left {
+  margin-right: 15rpx;
 }
-.content .msg-list .row .other .right .bubble {
-  background-color: #fff;
-  color: #333;
+.content .msg-list .row .other .other_rest .right {
+  -webkit-flex-wrap: wrap;
+          flex-wrap: wrap;
 }
-.content .msg-list .row .other .right .bubble.voice .icon {
-  color: #333;
+.content .msg-list .row .other .other_rest .right .username_wrap {
+  width: 100%;
+  height: 45rpx;
+  font-size: 24rpx;
+  color: #afafaf;
 }
-.content .msg-list .row .other .right .bubble.voice .length {
+.content .msg-list .row .other .other_rest .right .username_wrap .username {
+  width: 70%;
+}
+.content .msg-list .row .other .other_rest .right .bubble {
+  background-color: #ffffff;
+  color: #646464;
+  margin-bottom: 10px;
+}
+.content .msg-list .row .other .other_rest .right .bubble.voice .length {
   margin-left: 20rpx;
 }
 @-webkit-keyframes other-play {
@@ -745,7 +781,7 @@ page {
             transform: translateX(0%);
 }
 }
-.content .msg-list .row .other .right .bubble.play .icon:after {
+.content .msg-list .row .other .other_rest .right .bubble.play .icon:after {
   border-right: solid 10rpx rgba(255, 255, 255, 0.8);
   -webkit-animation: other-play 1s linear infinite;
           animation: other-play 1s linear infinite;
@@ -794,150 +830,7 @@ page {
   top: 0;
   opacity: 0;
 }
-.open-redenvelope {
-  width: 100%;
-  height: 70vh;
-  background-color: #cf3c35;
-  position: relative;
-}
-.open-redenvelope .top {
-  width: 100%;
-  background-color: #fe5454;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-          justify-content: center;
-  -webkit-flex-wrap: wrap;
-          flex-wrap: wrap;
-  -webkit-border-radius: 0 0 100% 100%;
-          border-radius: 0 0 100% 100%;
-  -webkit-box-shadow: inset 0 -20rpx 0 #9c1712;
-          box-shadow: inset 0 -20rpx 0 #9c1712;
-  margin-bottom: 65rpx;
-}
-.open-redenvelope .top .close-btn {
-  width: 100%;
-  height: 80rpx;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-          justify-content: flex-end;
-  margin-bottom: 30rpx;
-}
-.open-redenvelope .top .close-btn .icon {
-  color: #9c1712;
-  margin-top: 10rpx;
-  margin-right: 10rpx;
-}
-.open-redenvelope .top image {
-  width: 130rpx;
-  height: 130rpx;
-  border: solid 12rpx #cf3c35;
-  -webkit-border-radius: 100%;
-          border-radius: 100%;
-  margin-bottom: -65rpx;
-}
-.open-redenvelope .from, .open-redenvelope .blessing, .open-redenvelope .money, .open-redenvelope .showDetails {
-  width: 90%;
-  padding: 5rpx 5%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-          justify-content: center;
-  font-size: 32rpx;
-  color: #fff;
-}
-.open-redenvelope .money {
-  font-size: 100rpx;
-  color: #f8d757;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
-  padding-top: 20rpx;
-}
-.open-redenvelope .showDetails {
-  position: absolute;
-  bottom: 20rpx;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-          align-items: center;
-  font-size: 28rpx;
-  color: #f8d757;
-}
-.open-redenvelope .showDetails .icon {
-  font-size: 26rpx;
-  color: #f8d757;
-}
-.boxShadow {
-  background-color: #ffff0000;
-  -webkit-box-shadow: 6rpx 6rpx 15rpx 3rpx rgba(0, 0, 0, 0.125);
-          box-shadow: 6rpx 6rpx 15rpx 3rpx rgba(0, 0, 0, 0.125);
-}
-.background {
-  z-index: -1;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-          justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-          align-items: center;
-  height: 100vh;
-  position: fixed;
-  width: 100vw;
-}
-.background .preface {
-  width: 100%;
-}
-.ellipsis {
-  word-break: break-all;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  /* 超出部分省略号 */
-  overflow: hidden;
-  /*超出隐藏*/
-}
-.ellipsis-2 {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-}
-.card {
-  background-color: #ffffff;
-  -webkit-box-shadow: 6rpx 6rpx 15rpx 3rpx rgba(0, 0, 0, 0.21);
-          box-shadow: 6rpx 6rpx 15rpx 3rpx rgba(0, 0, 0, 0.21);
-  -webkit-border-radius: 10px;
-          border-radius: 10px;
-  z-index: 0;
-  position: relative;
-}
-.red-dot {
-  height: 16px;
-  padding: 0 5px;
-  line-height: 16px;
-  font-size: 24rpx;
-  -webkit-border-radius: 15px;
-          border-radius: 15px;
-  background-color: red;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
-  color: #efefef;
-  -webkit-justify-content: center;
-          justify-content: center;
-  -webkit-box-pack: center;
-}
-.friend {
+.title {
   color: #ffffff;
   font-weight: bolder;
   text-align: center;

@@ -99,7 +99,7 @@ page{
 				width: 18vw;
 				height: 18vw;
 				border-radius: 20upx;
-				background-color: #fff;
+				background-color: $cardColor;
 				display: flex;
 				justify-content: center;
 				align-items: center;
@@ -148,8 +148,8 @@ page{
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			background:linear-gradient(to right,#f09b37,#eb632c);
-			color: #fff;
+			background:linear-gradient(to right,$themeColor2,$themeColor);
+			color: $cardColor;
 			border-radius: 6upx;
 			font-size: 24upx;
 		}
@@ -167,7 +167,7 @@ page{
 			justify-content: center;
 			align-items: center;
 			font-size: 28upx;
-			background-color: #fff;
+			background-color: $cardColor;
 			color: #555;
 			&.recording{
 				background-color: #e5e5e5;
@@ -177,7 +177,7 @@ page{
 			width: 100%;
 			min-height: 70upx;
 			display: flex;
-			background-color: #fff;
+			background-color: $cardColor;
 			border-radius: 40upx;
 			.box{
 				width: 100%;
@@ -228,13 +228,13 @@ page{
 			100% {background-position: 0% 135%;}
 		}
 		.icon{
-			background-image:linear-gradient(to bottom,#f09b37,#fff 50%); 
+			background-image:linear-gradient(to bottom,$themeColor2,$cardColor 50%); 
 			background-size:100% 200%;
 			animation: volatility 1.5s ease-in-out -1.5s infinite alternate;
 			-webkit-background-clip:text; 
 			-webkit-text-fill-color:transparent; 
 			font-size: 150upx;
-			color: #f09b37;
+			color: $themeColor2;
 		}
 	}
 	.cancel{
@@ -244,7 +244,7 @@ page{
 		justify-content: center;
 		align-items: center;
 		.icon{
-			color: #fff;
+			color: $cardColor;
 			font-size: 150upx;
 		}
 	}
@@ -254,9 +254,9 @@ page{
 		display: flex;
 		justify-content: center;
 		font-size: 28upx;
-		color: #fff;
+		color: $cardColor;
 		&.change{
-			color: #f09b37;
+			color: $themeColor2;
 		}
 	}
 }
@@ -289,7 +289,7 @@ page{
 				align-items: center;
 				justify-content: space-between;
 				view {
-					background-color: #f06c7a;
+					background-color: $themeColor;
 					height: 50upx;
 					width: 6upx;
 					border-radius: 6upx;
@@ -310,6 +310,7 @@ page{
 			}
 		}
 		.row{
+			padding: 20upx 0;
 			.system{
 				display: flex;
 				justify-content: center;
@@ -320,22 +321,16 @@ page{
 					justify-content: center;
 					align-items: center;
 					background-color: #c9c9c9;
-					color: #fff;
+					color: $cardColor;
 					font-size: 24upx;
 					border-radius: 40upx;
-				}
-				.red-envelope{
-					image{
-						margin-right: 5upx;
-						width: 30upx;
-						height: 30upx;
-					}
 				}
 			}
 			&:first-child{
 				margin-top: 20upx;
 			}
-			padding: 20upx 0;
+			
+			
 			.my .left,.other .right{
 				width: 100%;
 				display: flex;
@@ -355,34 +350,6 @@ page{
 						image{
 							max-width: 350upx;
 							max-height: 350upx;
-						}
-					}
-					&.red-envelope{
-						background-color: transparent;
-						padding:0;
-						overflow: hidden;
-						position: relative;
-						justify-content: center;
-						align-items: flex-start;
-						image{
-							width: 250upx;
-							height: 313upx;
-						}
-						.tis{
-							position: absolute;
-							top: 6%;
-							font-size: 26upx;
-							color: #9c1712;
-						}
-						.blessing{
-							position: absolute;
-							bottom: 14%;
-							color: #e9b874;
-							width: 80%;
-							text-align: center;
-							overflow: hidden;
-							// 最多两行
-							display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;
 						}
 					}
 					&.voice{
@@ -413,7 +380,7 @@ page{
 				image{
 					width: 80upx;
 					height: 80upx;
-					border-radius: 10upx;
+					border-radius: 100%;
 				}
 			}
 			.my{
@@ -426,12 +393,12 @@ page{
 					align-items: center;
 					justify-content: flex-end;
 					.bubble{
-						background-color: #f06c7a;
-						color: #fff;
+						background-color: $themeColor;
+						color: $cardColor;
 						
 						&.voice{
 							.icon{
-								color: #fff;
+								color: $cardColor;
 							}
 							.length{
 								margin-right: 20upx;
@@ -448,7 +415,7 @@ page{
 							}
 							.icon:after
 							{
-								border-left: solid 10upx rgba(240,108,122,.5);
+								border-left: solid 10upx rgba(0,122,255,0.8);
 								animation: my-play 1s linear infinite;
 							}
 						}
@@ -461,47 +428,58 @@ page{
 			.other{
 				width: 100%;
 				display: flex;
-				.left{
-					margin-right: 15upx;
+				flex-direction: column;
+				
+				.other_time{
+					font-size: 24upx;
+					color: $labelColor;
+					height: 45upx;
+					text-align: center;
 				}
-				.right{
-					flex-wrap: wrap;
-					.username{
-						width: 100%;
-						height: 45upx;
-						font-size: 24upx;
-						color: #999;
-						display: flex;
-						.name{
-							margin-right: 50upx;
-						}
+				.other_rest{
+					width: 100%;
+					display: flex;
+					
+					.left{
+						margin-right: 15upx;
 					}
-					.bubble{
-						background-color: #fff;
-						color: #333;
-						&.voice{
-							.icon{
-								color: #333;
-								
+					.right{
+						flex-wrap: wrap;
+						.username_wrap{
+							width: 100%;
+							height: 45upx;
+							font-size: 24upx;
+							color: $labelColor;
+							
+							.username{
+								width: 70%;
 							}
-							.length{
-								margin-left: 20upx;
-							}
+							
 						}
-						&.play{
-							@keyframes other-play {
-								0% {
-									transform: translateX(-80%);
-								}
-								100% {
-									transform: translateX(0%);
+						.bubble{
+							background-color: $cardColor;
+							color: $labelColor2;
+							margin-bottom: $padding;
+							&.voice{
+								.length{
+									margin-left: 20upx;
 								}
 							}
-							.icon:after
-							{
-								border-right: solid 10upx rgba(255,255,255,.8);
-								
-								animation: other-play 1s linear infinite;
+							&.play{
+								@keyframes other-play {
+									0% {
+										transform: translateX(-80%);
+									}
+									100% {
+										transform: translateX(0%);
+									}
+								}
+								.icon:after
+								{
+									border-right: solid 10upx rgba(255,255,255,.8);
+									
+									animation: other-play 1s linear infinite;
+								}
 							}
 						}
 					}
@@ -552,67 +530,6 @@ page{
 		}
 		.layer{
 			//transform: translate3d(0,-85vh,0) scale3d(.5,.5,1);
-		}
-	}
-}
-.open-redenvelope{
-	width: 100%;
-	height: 70vh;
-	background-color: #cf3c35; 
-	position: relative;
-	.top{
-		width: 100%;
-		background-color: #fe5454;
-		display: flex;
-		justify-content: center;
-		flex-wrap: wrap;
-		border-radius: 0 0 100% 100%;
-		box-shadow: inset 0 -20upx 0 #9c1712;
-		.close-btn{
-			width: 100%;
-			height: 80upx;
-			display: flex;
-			justify-content: flex-end;
-			margin-bottom: 30upx;
-			.icon{
-				color: #9c1712;
-				margin-top: 10upx;
-				margin-right: 10upx;
-			}
-		}
-		image{
-			width: 130upx;
-			height: 130upx;
-			border: solid 12upx #cf3c35;
-			border-radius: 100%;
-			
-			margin-bottom: -65upx;
-		}
-		margin-bottom: 65upx;
-	}
-	.from,.blessing,.money,.showDetails{
-		width: 90%;
-		padding: 5upx 5%;
-		display: flex;
-		justify-content: center;
-		font-size: 32upx;
-		color: #fff;
-	}
-	.money{
-		font-size: 100upx;
-		color: #f8d757;
-		display: flex;
-		padding-top: 20upx;
-	}
-	.showDetails{
-		position: absolute;
-		bottom: 20upx;
-		align-items: center;
-		font-size: 28upx;
-		color: #f8d757;
-		.icon{
-			font-size: 26upx;
-			color: #f8d757;
 		}
 	}
 }

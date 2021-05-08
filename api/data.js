@@ -386,6 +386,38 @@ var noticeData=[
 var dialogData=[
 	{
 		sender:{
+			uid:11,
+			alias:"阮智祥",
+			avatar:baseURL_alias+'alias (3).jpg',
+		},
+		unreadCount: 0,
+		latestMessage:{
+			// 0 用户 1 系统
+			type:0, //站内信类型 比如会话内的系统信息 或者前端生成的系统信息之类的
+			// 0 text | 1 img | 2 voice
+			contentType:0,
+			content:"大佬你好哇 这项目小弟能够帮上什么嘛",
+			sendingTime:"2021-05-04T17:13:49.887+00:00",
+		}
+	},
+	{
+		sender:{
+			uid:12,
+			alias:"alexander",
+			avatar:baseURL_alias+'alias (8).jpg',
+		},
+		unreadCount: 11,
+		latestMessage:{
+			// 0 用户 1 系统
+			type:0, //站内信类型 比如会话内的系统信息 或者前端生成的系统信息之类的
+			// 0 text | 1 img | 2 voice
+			contentType:0,
+			content:"请问你们的技术栈大概是什么",
+			sendingTime:"2021-05-04T17:13:49.887+00:00",
+		}
+	},
+	{
+		sender:{
 			uid:0,
 			alias:"姚懿",
 			avatar:baseURL_alias+'alias (1).jpg',
@@ -415,22 +447,6 @@ var dialogData=[
 			contentType:0,
 			content:"这个项目你打算怎么做",
 			sendingTime:"2021-05-03T17:13:49.887+00:00",
-		}
-	},
-	{
-		sender:{
-			uid:2,
-			alias:"alexander",
-			avatar:baseURL_alias+'alias (8).jpg',
-		},
-		unreadCount: 11,
-		latestMessage:{
-			// 0 用户 1 系统
-			type:0, //站内信类型 比如会话内的系统信息 或者前端生成的系统信息之类的
-			// 0 text | 1 img | 2 voice
-			contentType:0,
-			content:"请问你们的技术栈大概是什么",
-			sendingTime:"2021-05-04T17:13:49.887+00:00",
 		}
 	},
 	{
@@ -478,22 +494,6 @@ var dialogData=[
 			// 0 text | 1 img | 2 voice
 			contentType:0,
 			content:"Hi, I'm really impressed at your project, wanna talk?",
-			sendingTime:"2021-05-04T17:13:49.887+00:00",
-		}
-	},
-	{
-		sender:{
-			uid:65,
-			alias:"阮智祥",
-			avatar:baseURL_alias+'alias (3).jpg',
-		},
-		unreadCount: 0,
-		latestMessage:{
-			// 0 用户 1 系统
-			type:0, //站内信类型 比如会话内的系统信息 或者前端生成的系统信息之类的
-			// 0 text | 1 img | 2 voice
-			contentType:0,
-			content:"大佬你好哇 这项目小弟能够帮上什么嘛",
 			sendingTime:"2021-05-04T17:13:49.887+00:00",
 		}
 	},

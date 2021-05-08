@@ -1,17 +1,16 @@
 <template>
 	<view>
 		<u-toast ref="uToast" />
-		<u-navbar
+		<u-navbar back-text="返回"
 			:is-fixed="true"
 			:background="background"
 			:back-text-style="color"
-			back-text=" "
 			title-color="#f5f5f5"
 			back-icon-color="#f5f5f5">
-				<view class="title ellipsis" 
+				<view class="friend" 
 					@click="navigate"
-					:style="[{width:info.windowWidth - info.width-60+'px'}]">
-					{{targetUserInfo.alias}}
+					title="">
+					{{userId}}
 				</view>
 		</u-navbar>
 		<view class="content" @touchstart="hideDrawer">
@@ -34,72 +33,64 @@
 						<view class="rect5"></view>
 					</view>
 				</view>
-				<view class="row" v-for="(row,index) in msgList" :key="index" :id="index">
+				<view class="row" v-for="(row,index) in msgList" :key="index" :id="'msg'+row.msg.id">
 					<!-- 系统消息 -->
-					<block v-if="row.type==1">
+					<block v-if="row.type=='system'" >
 						<view class="system">
 							<!-- 文字消息 -->
-							<view v-if="row.contentType==0" class="text">
-								{{row.content}}
+							<view v-if="row.msg.type=='text'" class="text">
+								{{row.msg.content.text}}
 							</view>
 						</view>
 					</block>
 					<!-- 用户消息 -->
-					<block v-if="row.type==0">
+					<block v-if="row.type=='user'">
 						<!-- 自己发出的消息 -->
-						<view class="my" v-if="row.senderUserId==app.userInfo.userId">
+						<view class="my" v-if="row.msg.userinfo.uid==myuid">
 							<!-- 左-消息 -->
 							<view class="left">
 								<!-- 文字消息 -->
-								<view v-if="row.contentType==0" class="bubble">
-									<rich-text :nodes="row.content"></rich-text>
+								<view v-if="row.msg.type=='text'" class="bubble">
+									<rich-text :nodes="row.msg.content.text"></rich-text>
 								</view>
 								<!-- 语言消息 -->
-								<view v-if="row.contentType==2" class="bubble voice" @tap="playVoice(row.msg)" :class="playMsgid == row.msg.id?'play':''">
-									<view class="length">{{row.length}}</view>
+								<view v-if="row.msg.type=='voice'" class="bubble voice" @tap="playVoice(row.msg)" :class="playMsgid == row.msg.id?'play':''">
+									<view class="length">{{row.msg.content.length}}</view>
 									<view class="icon my-voice"></view>
 								</view>
 								<!-- 图片消息 -->
-								<view v-if="row.contentType==1" class="bubble img" @tap="showPic(row.msg)">
-									<image :src="row.url"></image>
+								<view v-if="row.msg.type=='img'" class="bubble img" @tap="showPic(row.msg)">
+									<image :src="row.msg.content.url" :style="{'width': row.msg.content.w+'px','height': row.msg.content.h+'px'}"></image>
 								</view>
 							</view>
 							<!-- 右-头像 -->
 							<view class="right">
-								<image :src="app.userInfo_.avatar"></image>
+								<image :src="row.msg.userinfo.face"></image>
 							</view>
 						</view>
 						<!-- 别人发出的消息 -->
-						<view class="other" v-if="row.senderUserId==targetUserInfo.userId">
-							<!-- 顶上 -->
-							<view class="other_time">{{row.sendingTime}}</view>
-							
-							<view class="other_rest">
-								<!-- 左-头像 -->
-								<view class="left">
-									<image :src="targetUserInfo.avatar"></image>
+						<view class="other" v-if="row.msg.userinfo.uid!=myuid">
+							<!-- 左-头像 -->
+							<view class="left">
+								<image :src="row.msg.userinfo.face"></image>
+							</view>
+							<!-- 右-用户名称-时间-消息 -->
+							<view class="right">
+								<view class="username">
+									<view class="name">{{row.msg.userinfo.username}}</view> <view class="time">{{row.msg.time}}</view>
 								</view>
-								<!-- 右-用户名称-时间-消息 -->
-								<view class="right">
-									<view class="username_wrap">
-										<view class="username ellipsis">
-											{{targetUserInfo.alias}}
-										</view>
-									</view> 
-										
-									<!-- 文字消息 -->
-									<view v-if="row.contentType==0" class="bubble">
-										<rich-text :nodes="row.content"></rich-text>
-									</view>
-									<!-- 语音消息 -->
-									<view v-if="row.contentType==2" class="bubble voice" @tap="playVoice(row.msg)" :class="playMsgid == row.msg.id?'play':''">
-										<view class="icon other-voice"></view>
-										<view class="length">{{row.length}}</view>
-									</view>
-									<!-- 图片消息 -->
-									<view v-if="row.contentType==1" class="bubble img" @tap="showPic(row.msg)">
-										<image :src="row.url" mode="widthFix"></image>
-									</view>
+								<!-- 文字消息 -->
+								<view v-if="row.msg.type=='text'" class="bubble">
+									<rich-text :nodes="row.msg.content.text"></rich-text>
+								</view>
+								<!-- 语音消息 -->
+								<view v-if="row.msg.type=='voice'" class="bubble voice" @tap="playVoice(row.msg)" :class="playMsgid == row.msg.id?'play':''">
+									<view class="icon other-voice"></view>
+									<view class="length">{{row.msg.content.length}}</view>
+								</view>
+								<!-- 图片消息 -->
+								<view v-if="row.msg.type=='img'" class="bubble img" @tap="showPic(row.msg)">
+									<image :src="row.msg.content.url" :style="{'width': row.msg.content.w+'px','height': row.msg.content.h+'px'}"></image>
 								</view>
 							</view>
 						</view>
@@ -169,18 +160,14 @@
 	</view>
 </template>
 <script>
-	import {getUserInfo} from "@/api/api.js";
 	export default {
 		data() {
 			return {
-				targetUserInfo: -1,
+				userId: -1,
 				app: {},
 				durationPullDownRefresh: 400,
 				refresh_status: false,
-				
 				info: {},
-				
-				
 				background: {
 					background: 'url(https://stea.ryanalexander.cn/navbar/22.jpg) no-repeat',
 					backgroundSize: '100% 100%'
@@ -232,14 +219,11 @@
 			};
 		},
 		onLoad(res) {
+			this.userId = res.userId;
+			
+			
 			this.info = getApp().globalData.info;
-			this.app = getApp().globalData;
-			
-			this.initTargetUserInfo(res.userId);
-			
 			this.getMsgList();
-			
-			
 			//语音自然播放结束
 			this.AUDIO.onEnded((res)=>{
 				this.playMsgid=null;
@@ -261,17 +245,6 @@
 			
 		},
 		methods:{
-			initTargetUserInfo(targetUserId){
-				uni.request({
-					method: 'get',
-					url: this.app.url + "/userInfo/"+targetUserId,
-					header: this.app.genHeader(this.app.token.a,this.app.token.r),
-					success: (res) => {
-						this.targetUserInfo = getUserInfo(res.data.data);
-					},
-					fail: (res)=>{console.log(res)},
-				})
-			},
 			navigate(){
 				uni.navigateTo({
 					url: '/pages/root/me/me_external/me_external?userId='+this.userId,
@@ -291,14 +264,14 @@
 				//从长连接处转发给这个方法，进行筛选处理
 				if(msg.type==1){
 					// 系统消息
-					switch (msg.type){
+					switch (msg.msg.type){
 						case 0:
 							this.addSystemTextMsg(msg);
 							break;
 					}
 				}else if(msg.type==0){
 					// 用户消息
-					switch (msg.contentType){
+					switch (msg.msg.type){
 						case 0:
 							this.addTextMsg(msg);
 							break;
@@ -311,7 +284,7 @@
 					}
 					console.log('用户消息');
 					//非自己的消息震动
-					if(msg.senderUserId!=this.app.userInfo.userId){
+					if(msg.msg.userinfo.uid!=this.myuid){
 						console.log('振动');
 						uni.vibrateLong();
 					}
@@ -323,7 +296,6 @@
 			},
 			getHistory() {
 				return new Promise((resolve, reject) => {
-					
 					setTimeout(()=>{
 						// 消息列表
 						let list = [
@@ -380,42 +352,25 @@
 			// 加载初始页面消息
 			getMsgList(){
 				// 消息列表
-				this.msgList = [
-					{type:1,contentType:0,content:"欢迎进入HM-chat聊天室"},
-					{type:0,contentType:0,content:"为什么温度会相差那么大？",sendingTime:"12:56",senderUserId: 11},
-					
-					{type:0,contentType:0,content:"这个是有偏差的，两个温度相差十几二十度是很正常的，如果相差五十度，那即是质量问题了。",
-					sendingTime:"12:57",senderUserId: 12},
-					
-					
-					{type:0,contentType:2,length:"00:06",sendingTime:"12:59",
-					senderUserId: 12,url:"/static/voice/1.mp3"},
-					{type:0,contentType:2,length:"00:08",sendingTime:"13:05",
-					senderUserId: 11,url:"/static/voice/1.mp3"},
-					
-					{type:0,contentType:1,url: "https://stea.ryanalexander.cn/navbar/11.jpg",sendingTime:"13:05",senderUserId: 11,},
-				
-					{type:1,contentType:0,content:"欢迎进入HM-chat聊天室"},
-					{type:0,contentType:0,content:"为什么温度会相差那么大？",sendingTime:"12:56",senderUserId: 11},
-					
-					{type:0,contentType:0,content:"这个是有偏差的，两个温度相差十几二十度是很正常的，如果相差五十度，那即是质量问题了。",
-					sendingTime:"12:57",senderUserId: 12},
-					
-					
-					{type:0,contentType:2,length:"00:06",sendingTime:"12:59",
-					senderUserId: 12,url:"/static/voice/1.mp3"},
-					{type:0,contentType:2,length:"00:08",sendingTime:"13:05",
-					senderUserId: 11,url:"/static/voice/1.mp3"},
-					
-					{type:0,contentType:1,url: "https://stea.ryanalexander.cn/navbar/11.jpg",sendingTime:"13:05",senderUserId: 11,},
-									
-				];
-				this.scrollToLastMsg();
-				
-			},
-			scrollToLastMsg(){
-				// TODO 每次发送到最新消息！ 另外 如何保存消息记录？？ 
-				// 可能需要全局 似乎退出页面以后啥都没了
+				let list = [
+					{type:1,msg:{id:0,type:"text",content:{text:"欢迎进入HM-chat聊天室"}}},
+					{type:0,msg:{id:1,type:"text",time:"12:56",userinfo:{uid:0,username:"大黑哥",face:"https://lets-team--public.oss-cn-hangzhou.aliyuncs.com/user/alias/alias (1).jpg"},content:{text:"为什么温度会相差那么大？"}}},
+					{type:0,msg:{id:2,type:"text",time:"12:57",userinfo:{uid:1,username:"售后客服008",face:"https://lets-team--public.oss-cn-hangzhou.aliyuncs.com/user/alias/alias (2).jpg"},content:{text:"这个是有偏差的，两个温度相差十几二十度是很正常的，如果相差五十度，那即是质量问题了。"}}},
+					{type:0,msg:{id:3,type:"voice",time:"12:59",userinfo:{uid:1,username:"售后客服008",face:"https://lets-team--public.oss-cn-hangzhou.aliyuncs.com/user/alias/alias (2).jpg"},content:{url:"/static/voice/1.mp3",length:"00:06"}}},
+					{type:0,msg:{id:4,type:"voice",time:"13:05",userinfo:{uid:0,username:"大黑哥",face:"https://lets-team--public.oss-cn-hangzhou.aliyuncs.com/user/alias/alias (1).jpg"},content:{url:"/static/voice/1.mp3",length:"00:06"}}},
+					{type:0,msg:{id:5,type:"img",time:"13:05",userinfo:{uid:0,username:"大黑哥",face:"https://lets-team--public.oss-cn-hangzhou.aliyuncs.com/user/alias/alias (1).jpg"},content:{url:"https://stea.ryanalexander.cn/navbar/11.jpg",w:200,h:200}}},
+					{type:0,msg:{id:6,type:"img",time:"12:59",userinfo:{uid:1,username:"售后客服008",face:"https://lets-team--public.oss-cn-hangzhou.aliyuncs.com/user/alias/alias (2).jpg"},content:{url:"https://stea.ryanalexander.cn/navbar/22.jpg",w:1920,h:1080}}},
+					{type:1,msg:{id:7,type:"text",content:{text:"欢迎进入HM-chat聊天室"}}},
+				]
+				// 获取消息中的图片,并处理显示尺寸
+				for(let i=0;i<list.length;i++){
+					if(list[i].type=='user'&&list[i].msg.type=="img"){
+						list[i].msg.content = this.setPicSize(list[i].msg.content);
+						this.msgImgList.push(list[i].msg.content.url);
+					}
+				}
+				this.msgList = list;
+				// 滚动到底部
 				this.$nextTick(() => {
 					//进入页面滚动到底部
 					this.scrollTop = 9999;
@@ -425,6 +380,19 @@
 					
 				});
 			},
+			//处理图片尺寸，如果不处理宽高，新进入页面加载图片时候会闪
+			setPicSize(content){
+				// 让图片最长边等于设置的最大长度，短边等比例缩小，图片控件真实改变，区别于aspectFit方式。
+				let maxW = uni.upx2px(350);//350是定义消息图片最大宽度
+				let maxH = uni.upx2px(350);//350是定义消息图片最大高度
+				if(content.w>maxW||content.h>maxH){
+					let scale = content.w/content.h;
+					content.w = scale>1?maxW:maxH*scale;
+					content.h = scale>1?maxW/scale:maxH;
+				}
+				return content;
+			},
+			
 			//更多功能(点击+弹出) 
 			showMore(){
 				this.isVoice = false;
@@ -506,8 +474,8 @@
 					return;
 				}
 				let content = this.replaceEmoji(this.textMsg);
-				
-				this.sendMsg(content,0);
+				let msg = {text:content}
+				this.sendMsg(msg,'text');
 				this.textMsg = '';//清空输入框
 				
 				
@@ -535,25 +503,25 @@
 			},
 			
 			// 发送消息
-			sendMsg(content,contentType){
+			sendMsg(content,type){
+				//实际应用中，此处应该提交长连接，模板仅做本地处理。
 				var nowDate = new Date();
-				
-				let msg = {contentType: contentType, type:0, sendTime:nowDate.getHours()+":"+nowDate.getMinutes(),
-				senderUserId: this.app.userInfo.userId, content:content}
-				
+				let lastid = this.msgList[this.msgList.length-1].msg.id;
+				lastid++;
+				let msg = {type:'user',msg:{id:lastid,time:nowDate.getHours()+":"+nowDate.getMinutes(),type:type,userinfo:{uid:0,username:"大黑哥",face:"/static/img/face.jpg"},content:content}}
+				// 发送消息
+				this.screenMsg(msg);
 				uni.request({
 					method: 'post',
 					url: this.app.url + "/message",
 					data: {
-						"receiverUserId": this.targetUserInfo.userId,
-						"contentType": contentType,
-						"content": content
+						"receiverUserId": uni.getStorageSync("i"),
+						"contentType": 100,
+						"content": "Hello"
 					},
 					header: this.app.genHeader(this.app.token.a,""),
 					success: (res) => {
 						console.log(res);
-						this.screenMsg(msg);
-						this.scrollToLastMsg();
 					},
 					
 					fail: (res)=>{
@@ -562,6 +530,16 @@
 						
 					//ryan_alexander@hzbytecloud.cn
 				})
+				
+				
+				// 定时器模拟对方回复,三秒
+				setTimeout(()=>{
+					lastid = this.msgList[this.msgList.length-1].msg.id;
+					lastid++;
+					msg = {type:'user',msg:{id:lastid,time:nowDate.getHours()+":"+nowDate.getMinutes(),type:type,userinfo:{uid:1,username:"售后客服008",face:"/static/img/im/face/face_2.jpg"},content:content}}
+					// 本地模拟发送消息
+					this.screenMsg(msg);
+				},3000)
 			},
 			
 			// 添加文字消息到列表
@@ -574,8 +552,8 @@
 			},
 			// 添加图片消息到列表
 			addImgMsg(msg){
-				// msg.msg.content = this.setPicSize(msg.msg.content);
-				// this.msgImgList.push(msg.msg.content.url);
+				msg.msg.content = this.setPicSize(msg.msg.content);
+				this.msgImgList.push(msg.msg.content.url);
 				this.msgList.push(msg);
 			},
 			// 添加系统文字消息到列表
@@ -694,11 +672,12 @@
 	}
 </script>
 <style lang="scss">
-	@import "@/common/uni.scss";
 	@import "./dialog.scss"; 
-	.title{
+	@import "@/common/uni.scss";
+	.friend{
 		color: $cardColor;
 		font-weight: bolder;
 		text-align: center;
+		
 	}
 </style>

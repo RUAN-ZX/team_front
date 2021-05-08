@@ -11,7 +11,7 @@
 			userInfo_: {},
 			// url :"http://localhost:8080",
 			// url :"https://www.hzbytecloud.cn",
-			
+			wsUrl: "ws://www.hzbytecloud.cn/team",
 			url :"https://www.hzbytecloud.cn/team",
 			imgUrl: "https://lets-team--public.oss-cn-hangzhou.aliyuncs.com",
 			token: {
@@ -47,7 +47,6 @@
 				windowHeight: other.windowHeight,
 				windowWidth: other.windowWidth
 			};
-			console.log(this.globalData.info);
 		},
 		onShow: function() {
 			console.log('App Show')

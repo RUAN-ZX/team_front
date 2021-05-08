@@ -146,36 +146,41 @@
 				}],
 				
 				info: {},
-				
+				app: {},
 				avatar_default: "https://lets-team--public.oss-cn-hangzhou.aliyuncs.com/user/alias/alias%20(4).jpg",
 				
 			};
 		},
 		onLoad() {
 			this.info = getApp().globalData.info;
+			this.app = getApp().globalData;
 			
-			getDialogData(0,6).then((value)=>{
-				for (var i = 0; i < value.length; i++) {
-					value[i].show = false;
-					value[i].latestMessage.sendingTime = dateTransform(value[i].latestMessage.sendingTime)
-				}
-				// 一定要在这里添加show属性 否则无用！！！
-				this.dialogData.push.apply(this.dialogData,value);
-				
-			})
+			this.initMsgData();
 			
-			getNoticeData(0,6).then((value)=>{
-				for (var i = 0; i < value.length; i++) {
-					value[i].sendingTime = dateTransform(value[i].sendingTime)
-					value[i].show = false;
-				}
-				this.noticeData.push.apply(this.noticeData,value);
-			})
 			
 			
 		},
 		
 		methods: {
+			initMsgData(){
+				getDialogData(0,9).then((value)=>{
+					for (var i = 0; i < value.length; i++) {
+						value[i].show = false;
+						value[i].latestMessage.sendingTime = dateTransform(value[i].latestMessage.sendingTime)
+					}
+					// 一定要在这里添加show属性 否则无用！！！
+					this.dialogData.push.apply(this.dialogData,value);
+					
+				})
+				
+				getNoticeData(0,9).then((value)=>{
+					for (var i = 0; i < value.length; i++) {
+						value[i].sendingTime = dateTransform(value[i].sendingTime)
+						value[i].show = false;
+					}
+					this.noticeData.push.apply(this.noticeData,value);
+				})
+			},
 			close(index) {
 				this.dialogData[index].show = false;
 			},

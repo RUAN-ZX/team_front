@@ -47,8 +47,7 @@
 		</view>
 		
 		<view class="card function">
-			<u-cell-item icon="setting-fill" title="个人设置"></u-cell-item>
-			<u-cell-item icon="integral-fill" title="会员等级" value="新版本"></u-cell-item>
+			<u-button type="primary" @click="logout">登出</u-button>
 		</view>
 	</view>
 </template>
@@ -58,6 +57,7 @@
 	export default {
         data() {
             return {
+				cellIndex: 0,
 				info: {},
 				userInfo: {},
 				socialData:[
@@ -81,7 +81,26 @@
 			}
         },
         methods: {
-            
+            logout(){
+				// uni.onSocketOpen(() => {
+				//   uni.closeSocket();
+				// });
+				
+				// uni.onSocketClose((res) => {
+				//   console.log('WebSocket 已关闭！');
+				  
+				// });
+				uni.navigateTo({
+					url: '/pages/login/login',
+					success: res => {
+						uni.removeStorageSync("a");
+						uni.removeStorageSync("r");
+						uni.removeStorageSync("i");
+					},
+					fail: () => {},
+					complete: () => {}
+				});
+			}
         },
 		onLoad() {
 			

@@ -186,28 +186,16 @@
 			this.app = getApp().globalData;
 			this.info = getApp().globalData.info;
 			
-			index_data_refresh(0,4).then((value)=>{
-				this.aniStyleIsShow = false;
-				this.aniStyleDuration = 1;
-				
-				this.index[0].push.apply(this.index[0],value);
-				
-				setTimeout(()=>{
-					this.aniStyleIsShow = true;
-					this.aniStyleDuration = 300;
-				},100);
-			});
-			index_data_refresh(1,6).then((value)=>{
-				this.index[1].push.apply(this.index[1],value);
-			});
-			index_data_refresh(2,5).then((value)=>{
-				this.index[2].push.apply(this.index[2],value);
-			});
-			
-			
-			
 			this.initUserInfo();
+			
+			
+			this.initIndexData();
+			
+			
 			this.initMessage();
+			
+			this.initWebsocket();
+			
 			this.spread();
 			
 			
@@ -223,6 +211,53 @@
 			}
 		},
 		methods: {
+			initWebsocket(){
+				// uni.onSocketOpen(() => {
+				// 	console.log("将要关闭webSocket");
+				//   uni.closeSocket();
+				// });
+				
+				// uni.onSocketClose((res) => {
+				// 	console.log("确定websocket已关闭");
+				// });
+				
+				uni.connectSocket({
+					url:this.app.wsUrl + "/im",
+					header:this.app.genHeader(this.app.token.a,this.app.token.r),
+					success: (res) => {
+						console.log("success"+res);
+						// uni.onSocketMessage( (res) => {
+						//   console.log('收到服务器内容：' + res.data);
+						// });
+					},
+					fail: (res)=>{
+						console.log("fail"+res)
+					},
+					
+				})
+				
+				
+				
+			},
+			initIndexData(){
+				index_data_refresh(0,4).then((value)=>{
+					this.aniStyleIsShow = false;
+					this.aniStyleDuration = 1;
+					
+					this.index[0].push.apply(this.index[0],value);
+					
+					setTimeout(()=>{
+						this.aniStyleIsShow = true;
+						this.aniStyleDuration = 300;
+					},100);
+				});
+				index_data_refresh(1,6).then((value)=>{
+					this.index[1].push.apply(this.index[1],value);
+				});
+				index_data_refresh(2,5).then((value)=>{
+					this.index[2].push.apply(this.index[2],value);
+				});
+			},
 			scroll(e){
 				let temp = e.detail.scrollTop;
 				if(temp>100){
@@ -279,6 +314,7 @@
 					success: (res) => {
 						this.app.userInfo = res.data.data;
 						this.app.userInfo_ = getUserInfo(res.data.data);
+						uni.setStorageSync("i",res.data.data.userId);
 					},
 					fail: (res)=>{console.log(res)},
 				})
