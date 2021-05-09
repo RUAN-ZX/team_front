@@ -239,3 +239,32 @@ export function dateTransform(iso8061){
 		return old.getFullYear()+'-'+months+'-'+days;
 	} 
 }
+
+var baseURL_alias = 'https://lets-team--public.oss-cn-hangzhou.aliyuncs.com/user/alias/'
+
+export function msgTransform(rawData){
+	let result = [];
+	
+	for (var i = 0; i < rawData.length; i++) {
+		let raw = rawData[i];
+		let avatar = (raw.targetUser.avatarUrl==null)?baseURL_alias+'alias (3).jpg':raw.targetUser.avatarUrl;
+		let now = {
+			sender:{
+				uid: raw.targetUser.userId,
+				alias: raw.targetUser.nickname,
+				avatar: avatar,
+			},
+			unreadCount: raw.unreadCount,
+			latestMessage:{
+				type: raw.latestMessage.type,
+				contentType: raw.latestMessage.contentType,
+				content: raw.latestMessage.content,
+				sendingTime: dateTransform(raw.latestMessage.sendingTime),
+			}
+		};
+		
+		
+		result.push(now)
+	}
+	return result;
+}

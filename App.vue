@@ -7,6 +7,8 @@
 <script>
 	export default {
 		globalData: {
+			dialogData: [],
+			isSocketOpen: false,
 			userInfo: {},
 			userInfo_: {},
 			// url :"http://localhost:8080",
@@ -22,6 +24,7 @@
 				a: ""
 			},
 			info: {},
+			
 			genHeader: (access,refresh)=>{
 				return {
 					'x-auth-token': refresh,
@@ -50,6 +53,9 @@
 				windowHeight: other.windowHeight,
 				windowWidth: other.windowWidth
 			};
+			
+			
+			
 		},
 		onShow: function() {
 			console.log('App Show')

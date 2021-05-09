@@ -26,7 +26,7 @@
 				
 			<view :class="current==0?'wrap':'wrap-none'">
 				<u-swipe-action
-					v-for="(item, index) in dialogData"
+					v-for="(item, index) in app.dialogData"
 					:show="item.show" 
 					:index="index" 
 					:key="item.sender.uid"
@@ -155,7 +155,7 @@
 			this.info = getApp().globalData.info;
 			this.app = getApp().globalData;
 			
-			this.initMsgData();
+			// this.initMsgData();
 			
 			
 			
@@ -163,15 +163,6 @@
 		
 		methods: {
 			initMsgData(){
-				getDialogData(0,9).then((value)=>{
-					for (var i = 0; i < value.length; i++) {
-						value[i].show = false;
-						value[i].latestMessage.sendingTime = dateTransform(value[i].latestMessage.sendingTime)
-					}
-					// 一定要在这里添加show属性 否则无用！！！
-					this.dialogData.push.apply(this.dialogData,value);
-					
-				})
 				
 				getNoticeData(0,9).then((value)=>{
 					for (var i = 0; i < value.length; i++) {
@@ -182,19 +173,19 @@
 				})
 			},
 			close(index) {
-				this.dialogData[index].show = false;
+				this.app.dialogData[index].show = false;
 			},
 			open(index) {
 				console.log(index)
 				// 先将正在被操作的swipeAction标记为打开状态，否则由于props的特性限制，
 				// 原本为'false'，再次设置为'false'会无效
-				this.dialogData[index].show = true;
-				this.dialogData.map((val, idx) => {
-					if(index != idx) this.dialogData[idx].show = false;
+				this.app.dialogData[index].show = true;
+				this.app.dialogData.map((val, idx) => {
+					if(index != idx) this.app.dialogData[idx].show = false;
 				})
 			},
 			contentClick(index){
-				let targetUserId = this.dialogData[index].sender.uid;
+				let targetUserId = this.app.dialogData[index].sender.uid;
 				uni.navigateTo({
 					url: '/pages/root/msg/dialog/dialog?userId='+targetUserId,
 					success: res => {},
@@ -205,11 +196,11 @@
 			click(index, index_side) {
 				console.log(index,index_side)
 				if(index_side == 1) {
-					this.dialogData[index].show = false;
-					this.dialogData.splice(index, 1);
+					this.app.dialogData[index].show = false;
+					this.app.dialogData.splice(index, 1);
 					this.$u.toast(`删除了第${index}个cell`);
 				} else {
-					this.dialogData[index].show = false;
+					this.app.dialogData[index].show = false;
 					this.info = {};
 					this.$u.toast(`收藏成功`);
 					
@@ -218,28 +209,6 @@
 			
 			change(index) {
 				this.current = index;
-			},
-			reachTop() {
-			},
-			reachBottom() {
-				let index = [this.dialogData,this.noticeData];
-				this.loadStatus.splice(this.current,1,"loading")
-				if(this.current==1){
-					getDialogData(dialogPage++,6).then((value)=>{
-						for (var i = 0; i < value.length; i++) {
-							value[i].show = false;
-						}
-						this.dialogData.push.apply(this.dialogData,value);
-					})
-				}
-				else{
-					getNoticeData(noticePage++,6).then((value)=>{
-						for (var i = 0; i < value.length; i++) {
-							value[i].show = false;
-						}
-						this.noticeData.push.apply(this.noticeData,value);
-					})
-				}
 			},
 			
 			navigate(navigation) {
