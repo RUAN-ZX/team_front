@@ -212,29 +212,40 @@
 		},
 		methods: {
 			initWebsocket(){
-				// uni.onSocketOpen(() => {
-				// 	console.log("将要关闭webSocket");
-				//   uni.closeSocket();
-				// });
-				
-				// uni.onSocketClose((res) => {
-				// 	console.log("确定websocket已关闭");
-				// });
-				
+				//监听socket打开
+				uni.onSocketOpen(()=>{
+					// this.isSocketOpen=true
+					console.log('WebSocket连接已打开！');
+				})
+				//监听socket关闭
+				uni.onSocketClose(()=>{
+					// this.isSocketOpen=false
+					console.log('WebSocket连接已关闭！');
+				})
+				//监听socket错误
+				uni.onSocketError(()=>{
+					// this.isSocketOpen=false
+					console.log('WebSocket连接打开失败');
+				})
+							
+								
 				uni.connectSocket({
-					url:this.app.wsUrl + "/im",
-					header:this.app.genHeader(this.app.token.a,this.app.token.r),
+					url: this.app.wsUrl + "/im?token="+this.app.token.a+"&platformId=1",
 					success: (res) => {
-						console.log("success"+res);
-						// uni.onSocketMessage( (res) => {
-						//   console.log('收到服务器内容：' + res.data);
-						// });
+						console.log("success");
+						console.log(res);
 					},
 					fail: (res)=>{
 						console.log("fail"+res)
 					},
 					
-				})
+				});
+				
+				uni.onSocketMessage((res)=>{
+					//let infos=JSON.parse(res.data)  //socket信息是字符串，需要先转成json形式再去解析内容
+					console.log(res);
+					}
+				);
 				
 				
 				
@@ -291,7 +302,7 @@
 					method: 'get',
 					url: this.app.url + "/message/session/history",
 					data: {
-						"pageNum": 0,
+						"pageNum": 1,
 						"pageSize": 100
 					},
 					header: this.app.genHeader(this.app.token.a,""),
@@ -301,10 +312,8 @@
 					
 					fail: (res)=>{
 						console.log(res)
-					},
-						
-					//ryan_alexander@hzbytecloud.cn
-				})
+					}
+				});
 			},
 			initUserInfo(){
 				uni.request({

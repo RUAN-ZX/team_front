@@ -237,7 +237,7 @@
 			
 			this.initTargetUserInfo(res.userId);
 			
-			this.getMsgList();
+			this.initMsgList(res.userId);
 			
 			
 			//语音自然播放结束
@@ -268,6 +268,7 @@
 					header: this.app.genHeader(this.app.token.a,this.app.token.r),
 					success: (res) => {
 						this.targetUserInfo = getUserInfo(res.data.data);
+						
 					},
 					fail: (res)=>{console.log(res)},
 				})
@@ -378,7 +379,7 @@
 				
 			},
 			// 加载初始页面消息
-			getMsgList(){
+			initMsgList(targetUserId){
 				// 消息列表
 				this.msgList = [
 					{type:1,contentType:0,content:"欢迎进入HM-chat聊天室"},
@@ -411,7 +412,21 @@
 									
 				];
 				this.scrollToLastMsg();
-				
+				// console.log(this.targetUserInfo.userId);
+				uni.request({
+					method: 'get',
+					url: this.app.url + "/message?targetUserId="+targetUserId,
+					
+					header: this.app.genHeader(this.app.token.a,""),
+					success: (res) => {
+						console.log("success");
+						console.log(res);
+					},
+					
+					fail: (res)=>{
+						console.log(res)
+					}
+				})
 			},
 			scrollToLastMsg(){
 				// TODO 每次发送到最新消息！ 另外 如何保存消息记录？？ 
@@ -505,9 +520,10 @@
 				if(!this.textMsg){
 					return;
 				}
+				// TODO 这玩意不是应该用来显示的嘛 为啥要保存 并且push到List里面了
 				let content = this.replaceEmoji(this.textMsg);
 				
-				this.sendMsg(content,0);
+				this.sendMsg(this.textMsg,0);
 				this.textMsg = '';//清空输入框
 				
 				

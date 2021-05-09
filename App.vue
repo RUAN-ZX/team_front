@@ -11,8 +11,11 @@
 			userInfo_: {},
 			// url :"http://localhost:8080",
 			// url :"https://www.hzbytecloud.cn",
-			wsUrl: "ws://www.hzbytecloud.cn/team",
-			url :"https://www.hzbytecloud.cn/team",
+			// wsUrl: "ws://www.hzbytecloud.cn/team",
+			// url :"https://www.hzbytecloud.cn/team",
+			
+			url: "http://krakens.tpddns.cn:12001",
+			wsUrl: "ws://krakens.tpddns.cn:12001",
 			imgUrl: "https://lets-team--public.oss-cn-hangzhou.aliyuncs.com",
 			token: {
 				r: "",
