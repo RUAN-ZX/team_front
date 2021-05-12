@@ -12,55 +12,15 @@
 					<u-input :border="border" placeholder="项目标题 标题朗朗上口 项目事事顺利" v-model="model.title" type="text"></u-input>
 				</u-form-item>
 				<u-form-item prop="type">
-					<u-input :border="border" type="select" :select-open="actionSheetShow" v-model="model.type"
-						placeholder="组队目的" @click="actionSheetShow = true"></u-input>
+					<u-input :border="border" type="select" :select-open="actionSheetShow" v-model="type_string"
+						placeholder="组队类型" @click="actionSheetShow = true"></u-input>
 				</u-form-item>
 				
 				<u-form-item prop="projectTag" :label-position="labelPosition" label="项目标签">
-					<u-input type="textarea" :border="false" :placeholder="labelInfo[typeNum]" disabled="true"> 
+					<u-input type="textarea" :border="false" :placeholder="labelInfo[model.type]" disabled="true"> 
 					</u-input>
 					<r-free-tag v-model="model.projectTag" tagMaxLength="5" @pop-tag-result="(data)=>{model.projectTag=data}"></r-free-tag>
 				</u-form-item>
-				
-				<u-form-item :label-position="labelPosition" label="项目简介" prop="intro">
-					<u-input type="textarea" :border="border" placeholder="请填写简介" v-model="model.intro" />
-				</u-form-item>
-				
-				<view class="varible_form_wrapper">
-					<view class="varible_form" :style="{'display':(typeNum==0)?'':'none'}">
-						<u-form-item prop="purposeTag" label="目标比赛" :label-position="labelPosition">
-							<u-input :border="false" :disabled="true" placeholder="参加的竞技比赛" type="text"></u-input>
-							<r-free-tag v-model="model.purposeTag" tagMaxLength="5" @pop-tag-result="(data)=>{model.purposeTag=data}"></r-free-tag>
-						</u-form-item>
-					</view>
-					
-					<view class="varible_form" :style="{'display':(typeNum==1)?'':'none'}">
-						<u-form-item prop="purposeTag" label="目标比赛" :label-position="labelPosition">
-							<u-input :border="border" :disabled="true" placeholder="拟参加的项目比赛" type="text"></u-input>
-							<r-free-tag v-model="model.purposeTag" tagMaxLength="5" @pop-tag-result="(data)=>{model.purposeTag=data}"></r-free-tag>
-						</u-form-item>
-					</view>
-					<view class="varible_form" :style="{'display':(typeNum==2)?'':'none'}">
-						<u-form-item prop="purposeTag" label="社会价值" :label-position="labelPosition">
-							<u-input :border="border" :disabled="true" placeholder="项目预期 社会价值" type="text"></u-input>
-							<r-free-tag v-model="model.purposeTag" tagMaxLength="5" @pop-tag-result="(data)=>{model.purposeTag=data}"></r-free-tag>
-						</u-form-item>
-					</view>
-					
-					<view class="varible_form" :style="{'display':(typeNum==3)?'':'none'}">
-						<u-form-item prop="purposeTag" label="福利说明" :label-position="labelPosition">
-							<u-input :border="border" :disabled="true" placeholder="福利说明 可以不填" type="text"></u-input>
-							<r-free-tag v-model="model.purposeTag" tagMaxLength="5" @pop-tag-result="(data)=>{model.purposeTag=data}"></r-free-tag>
-						</u-form-item>
-					</view>
-					
-					<view class="varible_form" :style="{'display':(typeNum==4)?'':'none'}">
-						<u-form-item prop="purposeTag" label="预期成果" :label-position="labelPosition">
-							<u-input :border="border" :disabled="true" placeholder="预期科研目标 科研成果" type="text"></u-input>
-							<r-free-tag v-model="model.purposeTag" tagMaxLength="5" @pop-tag-result="(data)=>{model.purposeTag=data}"></r-free-tag>
-						</u-form-item>
-					</view>
-				</view>
 				
 				
 				<u-form-item prop="contest" label="队友需求" :label-position="labelPosition">
@@ -69,21 +29,18 @@
 					</view>
 				</u-form-item>
 				
-				<u-form-item>
-					<u-button type="error"
-						@click="preview"
-						shape="square" :plain="true" :ripple="true">
-						预览</u-button>
-				</u-form-item>
-				
-				<u-form-item>
-					<u-button type="error"
-					@click="commit"
-					shape="square" :plain="false" :ripple="true">
-						提交</u-button>
-				</u-form-item>	
-				
 			</u-form>
+			<view class="footBar">
+				<u-button type="error"
+				@click="getBack"
+				shape="square" :plain="true" :ripple="true">
+					返回</u-button>
+					
+				<u-button type="error"
+				@click="preview"
+				shape="square" :plain="false" :ripple="true">
+					详情页编辑</u-button>
+			</view>
 			<u-action-sheet :list="actionSheetList" v-model="actionSheetShow" @click="actionSheetCallback">
 			</u-action-sheet>
 		</view>
@@ -98,7 +55,6 @@
 		},
 		data() {
 			return {
-				typeNum: 0,
 				background: {
 					background: 'url(https://stea.ryanalexander.cn/navbar/11.jpg) no-repeat',
 					backgroundSize: '100% 100%'
@@ -108,11 +64,8 @@
 				},
 				model: {
 					title: '',
-					type: '',
-					intro: '',
-					projectTag: [],
-					otherInfo: '',
-					purposeTag: []
+					type: 0,
+					projectTag: []
 				},
 				rules: {
 					title: [{
@@ -125,21 +78,6 @@
 							max: 20,
 							message: '项目名称长度在3到20个字符',
 							trigger: ['change'],
-						}
-					],
-					purpose: [{
-						required: true,
-						message: '请选择比赛目的',
-						trigger: 'change'
-					}, ],
-					intro: [{
-							required: true,
-							message: '请填写简介'
-						},
-						{
-							min: 5,
-							message: '简介不能少于5个字',
-							trigger: 'change',
 						}
 					],
 					projectTag: [{
@@ -156,24 +94,8 @@
 						}
 						
 					],
-					purposeTag:[
-						{
-							required: false,
-							message: '请填写相关标签'
-						},
-						{
-							trigger: ['change'],
-							validator: (rule, value, callback) => {
-								// 调用uView自带的js验证规则，详见：https://www.uviewui.com/js/test.html
-								return this.model.purposeTag.length>0;
-							},
-							message: '至少有一个标签',
-						},
-					],
-			
 				},
 				border: false,
-				check: false,
 				labelInfo:[
 					"数模 电设 智能车之类竞技性的比赛 可以直接设置比赛名为标签 这样您的组队消息 会更容易被推荐到志同道合的兄弟手中",
 					"项目类比赛注重项目本身的现有基础 包含软件基础——队员才能 硬件基础——现有成果",
@@ -204,13 +126,15 @@
 				pickerShow: false,
 				selectShow: false,
 				
+				type_string: "",
+				
 				labelPosition: 'left',
 				
 				errorType: ['message'],
 			};
 		},
 		onLoad() {
-			this.typeChange(this.typeNum);
+			this.typeChange(this.model.type);
 			this.border = true;
 			this.labelPosition = 'top';
 		},
@@ -218,15 +142,19 @@
 			this.$refs.uForm.setRules(this.rules);
 		},
 		methods: {
+			getBack(){
+				uni.navigateBack();
+			},
 			preview(){
 				this.$refs.uForm.validate(valid => {
 					if (valid) {
 						uni.navigateTo({
-							url: '/pages/release/project/project_preview?model='+JSON.stringify(this.model),
+							url: '/pages/release/editor/editor',
 							success: res => {},
 							fail: () => {},
 							complete: () => {}
 						});
+						
 					} else {
 						console.log('验证失败');
 					}
@@ -234,8 +162,8 @@
 				
 			},
 			typeChange(index){
-				this.typeNum = index;
-				this.model.type = this.actionSheetList[index].text;
+				this.model.type = index;
+				this.type_string = this.actionSheetList[index].text;
 			},
 			// 点击actionSheet回调
 			actionSheetCallback(index) {
@@ -285,6 +213,26 @@
 			color: $labelColor;
 		}
 		
+		
+	}
+	.footBar{
+		padding: $padding;
+		width: 100vw;
+		z-index: $zindex_navbar;
+		
+		position: fixed; 
+		bottom: 0;
+		left: 0;
+		right: 0;
+		
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		align-items: center;
+		
+		background-color: $cardColor;
+		
+		box-shadow: 15rpx 3rpx 6rpx 6rpx rgba(0,0,0,0.125);
 		
 	}
 </style>

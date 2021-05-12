@@ -243,8 +243,6 @@
 						let n = this.app.dialogData.length-1;
 						for (var i = n; i >= 0; i--) {
 							let item = this.app.dialogData[i];
-							console.log("2333")
-							console.log(newDialog.data);
 							if(newDialog.data.senderUserId==item.sender.uid){
 								item.latestMessage={
 									type: newDialog.type,
@@ -257,7 +255,6 @@
 							}
 						}
 					}
-					
 				});
 			},
 			initIndexData() {

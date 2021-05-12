@@ -1,30 +1,36 @@
 <template>
 	<view @touchend.stop="format">
 		<view>
-			<u-navbar back-text="返回" title="发布组队" :is-fixed="true" :background="background" :back-text-style="color"
-				title-color="#f5f5f5" back-icon-color="#f5f5f5"></u-navbar>
+			<u-navbar back-text="返回" title="发布组队" :is-fixed="true" :background="background"
+				title-color="#f5f5f5" back-icon-color="#f5f5f5" :back-text-style="{color:'#f5f5f5'}"></u-navbar>
 		</view>
 		
 		<view class="back-top">
-				<u-back-top :scroll-top="scrollTop"></u-back-top>
+			<u-back-top :scroll-top="scrollTop"></u-back-top>
 		</view>
 
-		<view class="container">
-			<editor id="editor" show-img-size :read-only="isEdit" show-img-resize show-img-toolbar class="ql-container"
-			 :placeholder="placeholder" @statuschange="onStatusChange" @ready="onEditorReady">
-			</editor>
-		</view>
 
-		<view class="foot" >
-			<i class="foot-item iconfont icon-baocun" @tap="store" id="1">保存</i>
+
+		<view class="footBar">
+			<u-button type="error"
+			@click="getBack"
+			shape="square" :plain="true" :ripple="true">
+				返回</u-button>
 			
-			<i class="foot-item iconfont icon-shanchu" @tap="clear">删除</i>
-			
-			<i class="foot-item iconfont icon-preview" @tap="store" id="2">预览</i>
-			
-			<!-- <i class="iconfont icon-quanping"></i> -->
-			
-			
+			<u-button type="error"
+			@click="store"
+			shape="square" :plain="true" :ripple="true">
+				保存</u-button>
+				
+			<u-button type="error"
+			@click="clear"
+			shape="square" :plain="true" :ripple="true">
+				清空</u-button>
+				
+			<u-button type="error"
+			@click="preview"
+			shape="square" :plain="false" :ripple="true">
+				预览</u-button>
 		</view>
 
 		<view class="toolbar"
@@ -38,123 +44,123 @@
 				easing-function="easeOutCubic"
 				:current="swiperCurrent"
 				circular="true"
-				@change="change"
-				:style="[{height: '100px'},{backgroundColor: '#f3f4f6'}]">
+				@change="change">
 				
 				
 				<swiper-item class="swiper-item">
 					
 					
 					<view class="toolbar-row">
-						<i :class="'iconfont icon-format-header-1 ' + (formats.header === 1 ? 'ql-active' : '')" data-name="header"
-						 :data-value="1"></i>
-						<i :class="'iconfont icon-format-header-2 ' + (formats.header === 2 ? 'ql-active' : '')" data-name="header"
-						 :data-value="2"></i>
-						<i :class="'iconfont icon-format-header-3 ' + (formats.header === 3 ? 'ql-active' : '')" data-name="header"
-						 :data-value="3"></i>
-						<i :class="'iconfont icon-format-header-4 ' + (formats.header === 4 ? 'ql-active' : '')" data-name="header"
-						 :data-value="4"></i>
-						<i :class="'iconfont icon-format-header-5 ' + (formats.header === 5 ? 'ql-active' : '')" data-name="header"
-						 :data-value="5"></i>
-						<i :class="'iconfont icon-format-header-6 ' + (formats.header === 6 ? 'ql-active' : '')" data-name="header"
-						 :data-value="6"></i>
+						<view :class="'iconfont icon-format-header-1 ' + (formats.header === 1 ? 'ql-active' : '')" data-name="header"
+						 :data-value="1"></view>
+						<view :class="'iconfont icon-format-header-2 ' + (formats.header === 2 ? 'ql-active' : '')" data-name="header"
+						 :data-value="2"></view>
+						<view :class="'iconfont icon-format-header-3 ' + (formats.header === 3 ? 'ql-active' : '')" data-name="header"
+						 :data-value="3"></view>
+						<view :class="'iconfont icon-format-header-4 ' + (formats.header === 4 ? 'ql-active' : '')" data-name="header"
+						 :data-value="4"></view>
+						<view :class="'iconfont icon-format-header-5 ' + (formats.header === 5 ? 'ql-active' : '')" data-name="header"
+						 :data-value="5"></view>
+						<view :class="'iconfont icon-format-header-6 ' + (formats.header === 6 ? 'ql-active' : '')" data-name="header"
+						 :data-value="6"></view>
 					</view>
 					
 					<view class="toolbar-row">
-						<i :class="'iconfont icon-zitijiacu ' + (formats.bold ? 'ql-active' : '')" data-name="bold"></i>
-						<i :class="'iconfont icon-zitixieti ' + (formats.italic ? 'ql-active' : '')" data-name="italic"></i>
-						<i :class="'iconfont icon-zitixiahuaxian ' + (formats.underline ? 'ql-active' : '')" data-name="underline"></i>
+						<view :class="'iconfont icon-zitijiacu ' + (formats.bold ? 'ql-active' : '')" data-name="bold"></view>
+						<view :class="'iconfont icon-zitixieti ' + (formats.italic ? 'ql-active' : '')" data-name="italic"></view>
+						<view :class="'iconfont icon-zitixiahuaxian ' + (formats.underline ? 'ql-active' : '')" data-name="underline"></view>
 						
-						<i :class="'iconfont icon-zitishanchuxian ' + (formats.strike ? 'ql-active' : '')" data-name="strike"></i>
+						<view :class="'iconfont icon-zitishanchuxian ' + (formats.strike ? 'ql-active' : '')" data-name="strike"></view>
 						
-						<i :class="'iconfont icon-text_color ' + (formats.color === fontColor ? 'ql-active' : '')" data-name="color"
-						 :data-value="fontColor" @tap="open"></i>
-						<i :class="'iconfont icon-fontbgcolor ' + (formats.backgroundColor === '#00ff00' ? 'ql-active' : '')" data-name="backgroundColor"
-						 data-value="#00ff00"></i>
+						<view :class="'iconfont icon-text_color ' + (formats.color === fontColor ? 'ql-active' : '')" data-name="color"
+						 :data-value="fontColor" @tap="open"></view>
+						<view :class="'iconfont icon-fontbgcolor ' + (formats.backgroundColor === '#00ff00' ? 'ql-active' : '')" data-name="backgroundColor"
+						 data-value="#00ff00"></view>
 					</view>
+					<view class="indicator">{{ swiperCurrent + 1 }}/3 {{swiper_list[swiperCurrent]}}</view> 
 				</swiper-item>
 				
 				<swiper-item class="swiper-item">
-					<!-- <i :class="'iconfont icon-font ' + (formats.fontFamily ? 'ql-active' : '')" data-name="fontFamily" data-value="Pacifico"></i>
-					<i :class="'iconfont icon-fontsize ' + (formats.fontSize === '24px' ? 'ql-active' : '')" data-name="fontSize"
-					 data-value="24px"></i> -->
+					<!-- <view :class="'iconfont icon-font ' + (formats.fontFamily ? 'ql-active' : '')" data-name="fontFamily" data-value="Pacifico"></view>
+					<view :class="'iconfont icon-fontsize ' + (formats.fontSize === '24px' ? 'ql-active' : '')" data-name="fontSize"
+					 data-value="24px"></view> -->
 					<view class="toolbar-row">
 						<!-- 对齐 -->
-						<i :class="'iconfont icon-zuoduiqi ' + (formats.align === 'left' ? 'ql-active' : '')" data-name="align" data-value="left"></i>
-						<i :class="'iconfont icon-juzhongduiqi ' + (formats.align === 'center' ? 'ql-active' : '')" data-name="align"
-						 data-value="center"></i>
-						<i :class="'iconfont icon-youduiqi ' + (formats.align === 'right' ? 'ql-active' : '')" data-name="align" data-value="right"></i>
-						<i :class="'iconfont icon-zuoyouduiqi ' + (formats.align === 'justify' ? 'ql-active' : '')" data-name="align"
-						 data-value="justify"></i>
+						<view :class="'iconfont icon-zuoduiqi ' + (formats.align === 'left' ? 'ql-active' : '')" data-name="align" data-value="left"></view>
+						<view :class="'iconfont icon-juzhongduiqi ' + (formats.align === 'center' ? 'ql-active' : '')" data-name="align"
+						 data-value="center"></view>
+						<view :class="'iconfont icon-youduiqi ' + (formats.align === 'right' ? 'ql-active' : '')" data-name="align" data-value="right"></view>
+						<view :class="'iconfont icon-zuoyouduiqi ' + (formats.align === 'justify' ? 'ql-active' : '')" data-name="align"
+						 data-value="justify"></view>
 						 
 						 <!-- 排版 -->
-						 <i class="iconfont icon--checklist" data-name="list" data-value="check"></i>
-						 <i :class="'iconfont icon-youxupailie ' + (formats.list === 'ordered' ? 'ql-active' : '')" data-name="list"
-						 	 data-value="ordered"></i>
-						 <i :class="'iconfont icon-wuxupailie ' + (formats.list === 'bullet' ? 'ql-active' : '')" data-name="list" data-value="bullet"></i>
+						 <view class="iconfont icon--checklist" data-name="list" data-value="check"></view>
+						 <view :class="'iconfont icon-youxupailie ' + (formats.list === 'ordered' ? 'ql-active' : '')" data-name="list"
+						 	 data-value="ordered"></view>
+						 <view :class="'iconfont icon-wuxupailie ' + (formats.list === 'bullet' ? 'ql-active' : '')" data-name="list" data-value="bullet"></view>
 						 
 					</view>
 					<view class="toolbar-row">
 						
 						<!-- 行距 列距 -->
-						<i :class="'iconfont icon-722bianjiqi_duanqianju ' + (formats.marginTop ? 'ql-active' : '')" data-name="marginTop"
-						 data-value="20px"></i>
-						<i :class="'iconfont icon-723bianjiqi_duanhouju ' + (formats.micon-previewarginBottom ? 'ql-active' : '')" data-name="marginBottom"
-						 data-value="20px"></i>
-						<i :class="'iconfont icon-line-height ' + (formats.lineHeight ? 'ql-active' : '')" data-name="lineHeight" data-value="2"></i>
+						<view :class="'iconfont icon-722bianjiqi_duanqianju ' + (formats.marginTop ? 'ql-active' : '')" data-name="marginTop"
+						 data-value="20px"></view>
+						<view :class="'iconfont icon-723bianjiqi_duanhouju ' + (formats.micon-previewarginBottom ? 'ql-active' : '')" data-name="marginBottom"
+						 data-value="20px"></view>
+						<view :class="'iconfont icon-line-height ' + (formats.lineHeight ? 'ql-active' : '')" data-name="lineHeight" data-value="2"></view>
 						
 						<!-- 列距 -->
-						<i :class="'iconfont icon-Character-Spacing ' + (formats.letterSpacing ? 'ql-active' : '')" data-name="letterSpacing"
-						  data-value="2em"></i>
-						<i class="iconfont icon-outdent" data-name="indent" data-value="-1"></i>
-						<i class="iconfont icon-indent" data-name="indent" data-value="+1"></i>		
+						<view :class="'iconfont icon-Character-Spacing ' + (formats.letterSpacing ? 'ql-active' : '')" data-name="letterSpacing"
+						  data-value="2em"></view>
+						<view class="iconfont icon-outdent" data-name="indent" data-value="-1"></view>
+						<view class="iconfont icon-indent" data-name="indent" data-value="+1"></view>		
 					</view>
 					
+					<view class="indicator">{{ swiperCurrent + 1 }}/3 {{swiper_list[swiperCurrent]}}</view> 
 				</swiper-item>
 				<swiper-item class="swiper-item">
 					<view class="toolbar-row">
 						<!-- 日期 分割线 -->
-						<i class="iconfont icon-date" @tap="insertDate"></i>
-						<i class="iconfont icon-fengexian" @tap="insertDivider"></i>
+						<view class="iconfont icon-date" @tap="insertDate"></view>
+						<view class="iconfont icon-fengexian" @tap="insertDivider"></view>
 						<!-- 上下标 -->
-						<i :class="'iconfont icon-zitixiabiao ' + (formats.script === 'sub' ? 'ql-active' : '')" data-name="script"
-						 data-value="sub"></i>
-						<i :class="'iconfont icon-zitishangbiao ' + (formats.script === 'super' ? 'ql-active' : '')" data-name="script"
-						 data-value="super"></i>
+						<view :class="'iconfont icon-zitixiabiao ' + (formats.script === 'sub' ? 'ql-active' : '')" data-name="script"
+						 data-value="sub"></view>
+						<view :class="'iconfont icon-zitishangbiao ' + (formats.script === 'super' ? 'ql-active' : '')" data-name="script"
+						 data-value="super"></view>
 						 
-						 <i :class="'iconfont icon-direction-rtl ' + (formats.direction === 'rtl' ? 'ql-active' : '')" data-name="direction"
-						  data-value="rtl"></i>
+						 <view :class="'iconfont icon-direction-rtl ' + (formats.direction === 'rtl' ? 'ql-active' : '')" data-name="direction"
+						  data-value="rtl"></view>
 					</view>
-					 
+					<view class="toolbar-row"></view>	
+					<view class="indicator">{{ swiperCurrent + 1 }}/3 {{swiper_list[swiperCurrent]}}</view> 
 				</swiper-item>
 				
 			</swiper>
-			<view class="u-swiper-indicator" :style="{
-					top: 'auto',
-					bottom: '12rpx',
-					justifyContent: 'center',
-					padding: '0 24rpx'
-				}">
-				
-				<view class="u-indicator-item-number">{{ swiperCurrent + 1 }}/3 {{swiper_list[swiperCurrent]}}</view>
-			</view>
-		
+			
 		
 			<!-- 核心四功能 -->
 			<view class="toolbar-solid">
-				<i class="iconfont icon-charutupian" @touchend.stop="insertImage"></i>
+				<view class="iconfont icon-charutupian" @touchend.stop="insertImage"></view>
 				
 				
-				<i class="iconfont icon-undo" @tap="undo"></i>
-				<i class="iconfont icon-redo" @tap="redo"></i>
+				<view class="iconfont icon-undo" @tap="undo"></view>
+				<view class="iconfont icon-redo" @tap="redo"></view>
 				
-				<i class="iconfont icon-clearedformat" @tap="removeFormat"></i>
+				<view class="iconfont icon-clearedformat" @tap="removeFormat"></view>
 			</view>
 		</view>
-		
-		
+		<view class="topBlock">
 			
-		
+		</view>
+		<view class="container">
+			
+			<editor id="editor" show-img-size :read-only="isEdit" show-img-resize show-img-toolbar class="ql-container"
+			 :placeholder="placeholder" @statuschange="onStatusChange" @ready="onEditorReady">
+			</editor>
+			
+		</view>
+		<view class="bottomBlock"></view>
 		<t-color-picker ref="colorPicker" :color="color" @confirm="confirm" @cancel="cancel"></t-color-picker>
 	
 	
@@ -181,12 +187,6 @@
 				swiper_list: ["字体大小 样式 颜色","字体大小 样式 颜色","字体大小 样式 颜色",],
 				swiperCurrent:0,
 				scrollTop: 0,
-				color: {
-					r: 255,
-					g: 0,
-					b: 0,
-					a: 0.6
-				},
 				isEdit: false,
 				fontColor: '#000',
 				formats: {},
@@ -199,10 +199,12 @@
 				m_header_color: 'transparent',
 				m_side_toolbar_show: false,
 				
-				info: {}
+				info: {},
+				app: {}
 			};
 		},
 		onLoad() {
+			this.app = getApp().globalData;
 			this.info = getApp().globalData.info;
 			// this.statusHeight = uni.getStorageSync("statusHeight");
 		},
@@ -290,14 +292,20 @@
 
 			store(e) {
 				this.editorCtx.getContents({
-					success: function(res) {
-						e.currentTarget.id == 1 ? console.log('保存内容:', res.html) : uni.navigateTo({
+					success: (res) => {
+						uni.navigateTo({
 							url: `/pages/release/project/project_preview?customContent=${encodeURIComponent(res.html)}`
 						});
 					}
 				});
 			},
-
+			preview() {
+				this.editorCtx.getContents({
+					success: (res) => {
+						console.log('保存内容:', res.html);
+					}
+				});
+			},
 			clear() {
 				this.editorCtx.clear({
 					success: function(res) {
@@ -358,25 +366,55 @@
 </style>
 <style lang="scss">
 	@import "@/common/uni.scss";
+	@import "@/uview-ui/libs/css/style.components.scss";
 	page{
 		display: flex;
 		flex-direction: column;
 	}
-	.container {
-		top: 200px;
-		flex: 1;
+	.footBar{
+		padding: $padding;
+		width: 100vw;
+		z-index: $zindex_navbar;
+		
+		position: fixed; 
+		bottom: 0;
+		left: 0;
+		right: 0;
+		
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		align-items: center;
+		
+		background-color: $cardColor;
+		
+		box-shadow: 15rpx 3rpx 6rpx 6rpx rgba(0,0,0,0.125);
+		
+	}
+	.topBlock{
+		height: 400rpx;
 		position: relative;
+	}
+	.bottomBlock{
+		height: 120rpx;
+		position: relative;
+	}
+	.container {
+		position: relative;
+		height: calc(100vh - 400rpx - 120rpx);
+		
 		width: 100%;
-		height: auto;
 		
 		.ql-container {
-			box-sizing: border-box;
+			position: absolute;
 			width: 100%;
+			
+			box-sizing: border-box;
 			height: 100%;
 			font-size: 16px;
 			line-height: 1.5;
 			overflow: auto;
-			padding: 20px 10px 20px 10px;
+			padding: 0 $padding;
 		}
 	}
 	
@@ -387,104 +425,63 @@
 	}
 	
 	
-	.side-toolbar-btn{
-		z-index: 99;
-		position: absolute;
-		width: 20px;
-		height: 60px;
-		top: 400px;
-		right: 0;
-		background-color: $themeColor;
-		color: $bgColor;
-		
-	}
-	
 	
 	.toolbar {
-		z-index: 99;
+		z-index: $zindex_navbar;
 		padding: $padding;
 		
-		
-		text-align: left;
 		position: fixed;
-		// top: 32; // 动态
+		
 		left: 0;
 		right: 0;
 		bottom: 0;
-		height: 160px;
-		
-		width: 100%;
-		
-		flex-wrap: wrap;
-		text-align: center;
-		.swiper-item{
-			/* #ifndef APP-NVUE */
-			display: flex;
-			/* #endif */
-			flex-direction: column;
-			.toolbar-row{
-				flex: 1;
-				width: 100%;
+		height: 400rpx;
+		.swiper-box{
+			height: 240rpx;
+			background-color: #f3f4f6;
+			padding: $padding;
+			.swiper-item{
 				display: flex;
-				flex-direction: row;
-				.iconfont{
-					flex: 1;
+				flex-direction: column;
+				justify-content: space-around;
+				align-items: center;
+				.toolbar-row{
+					width: 100%;
+					
+					display: flex;
+					flex-direction: row;
+					justify-content: space-around;
+					align-items: center;
+					
+					.iconfont{
+						width: auto;
+						height: auto;
+					}
+				}
+				.indicator {
+					text-align: center;
+					padding: 6rpx 16rpx;
+					background-color: rgba(0, 0, 0, 0.3);
+					border-radius: 30rpx;
+					font-size: 26rpx;
+					color: rgba(255, 255, 255, 0.8);
 				}
 			}
 		}
-		
-	
-	}
-	.toolbar-solid{
-		margin-top: 10px;
-		width: 100%;
-		display: flex;
-		flex-direction: row;
-		.iconfont{
-			flex: 1;
+		.toolbar-solid{
+			height: 80rpx;
+			padding: $padding;
+			width: 100%;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+			.iconfont{
+				width: auto;
+				height: auto;
+			}
 		}
 	}
 	
 	
-	.foot{
-		position: fixed;
-		width: 100%;
-		bottom: 0;
-		right: 0;
-		left: 0;
-		
-		background-color: #333333;
-		color: #F3F4F6;
-		display: flex;
-		flex-direction: row;
-		height: 30px;
-		line-height: 30px;
-		.foot-item{
-			display: inline-block;
-			vertical-align: middle;
-			flex: 1;
-			font-size: 16px;
-			justify-content: center;
-			text-align: center;
-		}
-	}
-	
-</style>
-
-<style lang="scss" scoped>
-	@import "@/uview-ui/libs/css/style.components.scss";
-	.u-swiper-indicator {
-		@include vue-flex;
-		width: 100%;
-		z-index: 1;
-	}
-	.u-indicator-item-number {
-		padding: 6rpx 16rpx;
-		line-height: 1;
-		background-color: rgba(0, 0, 0, 0.3);
-		border-radius: 100rpx;
-		font-size: 26rpx;
-		color: rgba(255, 255, 255, 0.8);
-	}
 </style>
 

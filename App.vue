@@ -7,7 +7,14 @@
 <script>
 	export default {
 		globalData: {
+			// msg dialog 会话维护
 			dialogData: [],
+			// release 组队 经验等全局变量临时保存
+			release_project:{
+				title: "",
+				type: 0,
+				projectTag: []
+			},
 			isSocketOpen: false,
 			userInfo: {},
 			userInfo_: {},

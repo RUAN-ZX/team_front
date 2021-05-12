@@ -75,13 +75,8 @@
 		<view class="footBar">
 			<u-button type="error"
 			@click="getBack"
-			shape="square" :plain="false" :ripple="true">
-				返回</u-button>
-			
-			<u-button type="error"
-			@click="customize"
 			shape="square" :plain="true" :ripple="true">
-				自定义页面</u-button>
+				返回</u-button>
 				
 			<u-button type="error"
 			@click="commit"
@@ -195,14 +190,6 @@
 				
 				uni.navigateTo({
 					url: '/pages/root/index/index',
-					success: res => {},
-					fail: () => {},
-					complete: () => {}
-				});
-			},
-			customize(){
-				uni.navigateTo({
-					url: '/pages/release/editor/editor',
 					success: res => {},
 					fail: () => {},
 					complete: () => {}
