@@ -96,6 +96,7 @@
 			return {
 				height_swiper: 200,
 				app: {},
+				websocketInterval: null,
 				imgLists: [
 					"https://stea.ryanalexander.cn/float/0.png",
 					"https://stea.ryanalexander.cn/float/1.png",
@@ -166,7 +167,6 @@
 
 			this.initIndexData();
 
-
 			this.initMessage();
 
 			this.initWebsocket();
@@ -201,38 +201,49 @@
 			},
 			initWebsocket() {
 				this.connectWebSocket();
-
+				
+				let sendHeartBeats = ()=>{
+					uni.sendSocketMessage({
+						data:JSON.stringify({"type": 0}),
+						success() {console.log("HeartBit sended");}
+					});
+				}
+				
+				let sendHeartBeatsStart = ()=>{//启动计时器函数
+					if(this.websocketInterval!=null){
+						clearInterval(this.websocketInterval);
+						this.websocketInterval=null;
+					}
+					this.websocketInterval = setInterval(sendHeartBeats,4000);
+				}
+				
+				let sendHeartBeatsStop = () =>{   
+					clearInterval(this.websocketInterval);
+					this.websocketInterval = null;
+				}
+				
 				//监听socket打开
 				uni.onSocketOpen(() => {
 					this.app.isSocketOpen = true;
-					uni.sendSocketMessage({
-						data:JSON.stringify(
-							{
-								"type": 1,
-								"data": {
-									"receiverUserId": 12,
-									"content": "cnm"
-								}
-							}
-						),
-						success() {
-							console.log("HeartBit sended");
-						}
-					});
+					
+					sendHeartBeatsStart();
+
 					console.log('WebSocket连接已打开！');
 				})
 				//监听socket关闭
 				uni.onSocketClose(() => {
+					this.app.isSocketOpen = false;
+					sendHeartBeatsStop();
+					console.log('WebSocket连接已关闭！');
+					
 					setTimeout(() => {
 						this.connectWebSocket();
 					}, 2000);
-
-					this.app.isSocketOpen = false;
-					console.log('WebSocket连接已关闭！');
 				})
 				//监听socket错误
 				uni.onSocketError(() => {
-					this.app.isSocketOpen = false
+					this.app.isSocketOpen = false;
+					sendHeartBeatsStop();
 					console.log('WebSocket连接打开失败');
 				})
 

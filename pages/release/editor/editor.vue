@@ -11,7 +11,7 @@
 
 
 
-		<view class="footBar">
+		<view class="footBar" :style="[{display: footBarIsShow?'flex':'none'}]">
 			<u-button type="error"
 			@click="getBack"
 			shape="square" :plain="true" :ripple="true">
@@ -34,7 +34,7 @@
 		</view>
 
 		<view class="toolbar"
-			:style="[{bottom: (isIOS ? keyboardHeight : 0) + 'px'},
+			:style="[
 			{top: info.top+info.height+10+'px'},
 			{backgroundColor:'#ffff'+m_header_opacity},
 			{boxShadow: '6rpx 6rpx 15rpx 3rpx #0000'+m_header_shadow}]">
@@ -150,17 +150,16 @@
 				<view class="iconfont icon-clearedformat" @tap="removeFormat"></view>
 			</view>
 		</view>
-		<view class="topBlock">
-			
-		</view>
+		
 		<view class="container">
+			<!-- :style="[{height: containerHeight},
+			{top: containerTop}]"> -->
 			
 			<editor id="editor" show-img-size :read-only="isEdit" show-img-resize show-img-toolbar class="ql-container"
 			 :placeholder="placeholder" @statuschange="onStatusChange" @ready="onEditorReady">
 			</editor>
-			
 		</view>
-		<view class="bottomBlock"></view>
+		
 		<t-color-picker ref="colorPicker" :color="color" @confirm="confirm" @cancel="cancel"></t-color-picker>
 	
 	
@@ -174,14 +173,66 @@
 		components: {
 			't-color-picker': tColorPicke
 		},
+		computed:{
+			containerHeight(){
+				let info = this.info;
+				// let topFoot = 0;
+				// let bottomTool = 0;
+				// const query = uni.createSelectorQuery().in(this);
+				// query.select('.footBar').boundingClientRect(data => {
+				// 	console.log("footBar")
+				// 	console.log(data);
+				// 	topFoot = data.top;
+				// }).exec();
+				
+				// query.select('.toolbar').boundingClientRect(data => {
+				// 	console.log("toolbar")
+				// 	console.log(data)
+				// 	bottomTool = data.bottom;
+				// }).exec();
+				// return topFoot-bottomTool;
+				
+				// return 1000 + 'px';
+				// return info.windowHeight - info.top - info.height - 10 - 580/info.ratio +'px';
+				
+				
+			},
+			containerTop(){
+				let info = this.info;
+				// let topFoot = 0;
+				// let bottomTool = 0;
+				// const query = uni.createSelectorQuery().in(this);
+				// query.select('.footBar').boundingClientRect(data => {
+				// 	console.log("footBar")
+				// 	console.log(data);
+				// 	topFoot = data.top;
+				// }).exec();
+				
+				// query.select('.toolbar').boundingClientRect(data => {
+				// 	console.log("toolbar")
+				// 	console.log(data)
+				// 	bottomTool = data.bottom;
+				// }).exec();
+				// return bottomTool;
+				
+				return info.top+info.height+info.statusHeight+ 400/info.ratio + 100+'px';
+			}
+		},
 		data() {
 			return {
+				footBarIsShow: true,
 				background: {
 					background: 'url(https://stea.ryanalexander.cn/navbar/11.jpg) no-repeat',
 					backgroundSize: '100% 100%'
 				},
 				color: {
 					color: '#f5f5f5'
+				},
+				color: {
+					r: 255,
+					g: 0,
+					b: 0,
+					a: 0.6
 				},
 				// 这里应当与之前的相同 这样更符合主题 比如project就是红色的
 				swiper_list: ["字体大小 样式 颜色","字体大小 样式 颜色","字体大小 样式 颜色",],
@@ -206,7 +257,11 @@
 		onLoad() {
 			this.app = getApp().globalData;
 			this.info = getApp().globalData.info;
-			// this.statusHeight = uni.getStorageSync("statusHeight");
+			
+			uni.onWindowResize((res) => {
+				console.log(res);
+				// footBarIsShow
+			})
 		},
 		onPageScroll: function(e) {
 			this.scrollTop = e.scrollTop;
@@ -222,6 +277,23 @@
 			}
 		},
 		methods: {
+			getBack(){
+				let info = this.info;
+				let topFoot = 0;
+				let bottomTool = 0;
+				const query = uni.createSelectorQuery().in(this);
+				query.select('.footBar').boundingClientRect(data => {
+					console.log("footBar")
+					console.log(data);
+					topFoot = data.top;
+				}).exec();
+				
+				query.select('.toolbar').boundingClientRect(data => {
+					console.log("toolbar")
+					console.log(data)
+					bottomTool = data.bottom;
+				}).exec();
+			},
 			change(e) {
 				let current = e.detail.current;
 				this.swiperCurrent = current;
@@ -367,15 +439,16 @@
 <style lang="scss">
 	@import "@/common/uni.scss";
 	@import "@/uview-ui/libs/css/style.components.scss";
-	page{
-		display: flex;
-		flex-direction: column;
-	}
+	// page{
+	// 	display: flex;
+	// 	flex-direction: column;
+	// }
 	.footBar{
 		padding: $padding;
 		width: 100vw;
 		z-index: $zindex_navbar;
 		
+		// height: 180rpx;
 		position: fixed; 
 		bottom: 0;
 		left: 0;
@@ -391,22 +464,12 @@
 		box-shadow: 15rpx 3rpx 6rpx 6rpx rgba(0,0,0,0.125);
 		
 	}
-	.topBlock{
-		height: 400rpx;
-		position: relative;
-	}
-	.bottomBlock{
-		height: 120rpx;
-		position: relative;
-	}
 	.container {
-		position: relative;
-		height: calc(100vh - 400rpx - 120rpx);
-		
+		position: absolute;
+		left: 0;
 		width: 100%;
-		
+		top: 300px;
 		.ql-container {
-			position: absolute;
 			width: 100%;
 			
 			box-sizing: border-box;
@@ -427,6 +490,7 @@
 	
 	
 	.toolbar {
+		box-sizing: border-box;
 		z-index: $zindex_navbar;
 		padding: $padding;
 		

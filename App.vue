@@ -57,8 +57,8 @@
 				bottom : menuButton.bottom,
 				ratio: other.pixelRatio,
 				statusHeight: other.statusBarHeight,
-				windowHeight: other.windowHeight,
-				windowWidth: other.windowWidth
+				windowHeight: other.safeArea.height,
+				windowWidth: other.safeArea.width
 			};
 			
 			

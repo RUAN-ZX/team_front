@@ -106,15 +106,29 @@
           flex-direction: column;
 }
 .content .talentDemand.data-v-5960d432 {
+  margin-bottom: 10px;
+  border: 2px solid #efefef;
+  height: auto;
+  -webkit-border-radius: 10px;
+          border-radius: 10px;
+  color: #afafaf;
+  padding: 10px;
+}
+.content .talentDemand-last.data-v-5960d432 {
+  margin-bottom: 10px;
   border: 2px dashed #efefef;
-  height: 140rpx;
-  line-height: 140rpx;
-  -webkit-border-radius: 10rpx;
-          border-radius: 10rpx;
+  height: 200rpx;
+  line-height: 200rpx;
+  -webkit-border-radius: 10px;
+          border-radius: 10px;
   text-align: center;
   font-size: 50rpx;
   font-weight: bolder;
   color: #afafaf;
+}
+.bottomBlock.data-v-5960d432 {
+  position: relative;
+  height: 140rpx;
 }
 .footBar.data-v-5960d432 {
   padding: 10px;

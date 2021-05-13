@@ -1,7 +1,8 @@
 <template>
 	<view>
+		<u-toast ref="uToast"></u-toast>
 		<view>
-			<u-navbar back-text="返回" title="发布组队" :is-fixed="true" :background="background" :back-text-style="color"
+			<u-navbar back-text="返回" title="招贤纳士" :is-fixed="true" :background="background" :back-text-style="color"
 				title-color="#f5f5f5" back-icon-color="#f5f5f5"></u-navbar>
 
 		</view>
@@ -13,7 +14,7 @@
 				</u-form-item>
 				<u-form-item prop="type">
 					<u-input :border="border" type="select" :select-open="actionSheetShow" v-model="type_string"
-						placeholder="组队类型" @click="actionSheetShow = true"></u-input>
+						placeholder="项目类型" @click="actionSheetShow = true"></u-input>
 				</u-form-item>
 				
 				<u-form-item prop="projectTag" :label-position="labelPosition" label="项目标签">
@@ -22,19 +23,41 @@
 					<r-free-tag v-model="model.projectTag" tagMaxLength="5" @pop-tag-result="(data)=>{model.projectTag=data}"></r-free-tag>
 				</u-form-item>
 				
-				
-				<u-form-item prop="contest" label="队友需求" :label-position="labelPosition">
-					<view class="talentDemand">
-						+添加招聘人才需求
+				<u-form-item prop="talentDemand" label="人才要求" :label-position="labelPosition">
+					<view class="talentDemand" :key="demandIndex" v-for="(demandItem,demandIndex) in model.talentDemandList">
+						<u-form-item label="人才职责" :label-position="labelPosition">
+							
+							<!-- <u-input type="textarea" :border="false" 
+								placeholder="人才职责 比如 前端后端 产品经理等" disabled="true">
+							</u-input> -->
+							<r-free-tag v-model="model.talentDemandList[demandIndex].demandDuty" addText="+人才职责"
+							tagMaxLength="1" @pop-tag-result="(data)=>{model.talentDemandList[demandIndex].demandDuty=data}"></r-free-tag>
+						</u-form-item>
+						
+						<u-form-item label="需求标签" :label-position="labelPosition">
+							<!-- <u-input type="textarea" :border="false" 
+							placeholder="需求标签 可以是具体的技术点 比如SpringBoot 也可以是抽象的 文案能力" disabled="true">
+							</u-input> -->
+							<r-free-tag v-model="model.talentDemandList[demandIndex].demandtag" addText="+需求标签"
+							tagMaxLength="5" @pop-tag-result="(data)=>{model.talentDemandList[demandIndex].demandTag=data}"></r-free-tag>
+						</u-form-item>
+						
+					</view>
+					<view class="talentDemand-last" @click="addTalentDemand">
+						+添加招聘人才要求
 					</view>
 				</u-form-item>
 				
 			</u-form>
+			<view class="bottomBlock">
+				
+			</view>
 			<view class="footBar">
 				<u-button type="error"
 				@click="getBack"
 				shape="square" :plain="true" :ripple="true">
 					返回</u-button>
+				
 					
 				<u-button type="error"
 				@click="preview"
@@ -65,13 +88,12 @@
 				model: {
 					title: '',
 					type: 0,
-					projectTag: []
+					projectTag: [],
+					talentDemandList: []
 				},
 				rules: {
 					title: [{
-							required: true,
-							message: '请输入项目名称',
-							trigger: 'blur',
+							message: '请输入项目名称'
 						},
 						{
 							min: 3,
@@ -81,18 +103,34 @@
 						}
 					],
 					projectTag: [{
-							required: true,
-							message: '请填写项目标签'
-						},
-						{
+							message: '至少有一个标签',
 							trigger: ['change'],
 							validator: (rule, value, callback) => {
-								// 调用uView自带的js验证规则，详见：https://www.uviewui.com/js/test.html
 								return this.model.projectTag.length>0;
 							},
-							message: '至少有一个标签',
 						}
-						
+					],
+					talentDemand: [{
+							message: '至少有一个人才要求',
+							validator: (rule, value, callback) => {
+								return this.model.talentDemandList.length>0;
+							}
+						}, {
+							trigger: ['change'],
+							validator: (rule, value, callback) => {
+								let list = this.model.talentDemandList;
+								let n = this.model.talentDemandList.length;
+								while(n--){
+									if(list[n].demandDuty.length<1&&list[n].demandTag.length<1){
+										
+										return false;
+									}	
+								}
+								return true;
+							},
+							
+							message: '您填写的人才需求不够完整 麻烦检查一下',
+						},
 					],
 				},
 				border: false,
@@ -142,6 +180,25 @@
 			this.$refs.uForm.setRules(this.rules);
 		},
 		methods: {
+			addTalentDemand(){
+				let list = this.model.talentDemandList;
+				if(list.length<=5){
+					list.push({
+						demandDuty: [],
+						demandTag: []
+					});
+				}
+				else{
+					this.$refs.uToast.show({
+						title: '最多五个人才需求哟',
+						type: 'warning',
+						position: "bottom"
+					})
+				}
+			},
+			deleteTalentDemand(index){
+				this.model.talentDemandList.splice(index,1);
+			},
 			getBack(){
 				uni.navigateBack();
 			},
@@ -199,21 +256,34 @@
 		display: flex;
 		flex-direction: column;
 
-		.varible_form_wrapper {}
 		
 		.talentDemand{
-			border: 2px dashed $lineColor;
-			height: 140rpx;
-			line-height: 140rpx;
+			margin-bottom: $padding;
+			border: 2px solid $lineColor;
+			height: auto;
 			
-			border-radius: 10rpx;
+			border-radius: $padding;
+			color: $labelColor;
+			
+			padding: $padding;
+		}
+		.talentDemand-last{
+			margin-bottom: $padding;
+			border: 2px dashed $lineColor;
+			height: 200rpx;
+			line-height: 200rpx;
+			
+			border-radius: $padding;
 			text-align: center;
 			font-size: 50rpx;
 			font-weight: bolder;
 			color: $labelColor;
 		}
 		
-		
+	}
+	.bottomBlock{
+		position: relative;
+		height: 140rpx;
 	}
 	.footBar{
 		padding: $padding;

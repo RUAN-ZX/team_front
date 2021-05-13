@@ -12,6 +12,12 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
+  display: inline-block;
+  width: 32px;
+  height: 30px;
+  /* cursor: pointer; */
+  font-size: 20px;
 }
 .icon-redo:before {
   content: "\e627";
@@ -282,15 +288,6 @@
           justify-content: center;
   -webkit-box-pack: center;
 }
-page {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-          flex-direction: column;
-}
 .footBar {
   padding: 10px;
   width: 100vw;
@@ -315,21 +312,13 @@ page {
   -webkit-box-shadow: 15rpx 3rpx 6rpx 6rpx rgba(0, 0, 0, 0.125);
           box-shadow: 15rpx 3rpx 6rpx 6rpx rgba(0, 0, 0, 0.125);
 }
-.topBlock {
-  height: 400rpx;
-  position: relative;
-}
-.bottomBlock {
-  height: 120rpx;
-  position: relative;
-}
 .container {
-  position: relative;
-  height: calc(100vh - 400rpx - 120rpx);
+  position: absolute;
+  left: 0;
   width: 100%;
+  top: 300px;
 }
 .container .ql-container {
-  position: absolute;
   width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -343,6 +332,8 @@ page {
   color: #007aff;
 }
 .toolbar {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   z-index: 3;
   padding: 10px;
   position: fixed;

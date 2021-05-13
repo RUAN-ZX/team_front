@@ -13,6 +13,12 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
+  display: inline-block;
+  width: 32px;
+  height: 30px;
+  /* cursor: pointer; */
+  font-size: 20px;
 }
 
 .icon-redo:before {

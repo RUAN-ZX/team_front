@@ -1,1 +1,1 @@
-<view class="u-demo data-v-4ed9d9e5"><view class="item data-v-4ed9d9e5" style="{{$root.s0}}"></view><u-button bind:click="__e" vue-id="e73c387e-1" data-event-opts="{{[['^click',[['change']]]]}}" class="data-v-4ed9d9e5" bind:__l="__l"></u-button></view>
+<view class="_div data-v-4ed9d9e5"></view>

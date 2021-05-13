@@ -25,11 +25,4 @@
 /* 透明度 */
 /* 文章场景相关 */
 /* uni.scss */
-.item.data-v-4ed9d9e5 {
-  background-color: blue;
-  height: 150px;
-  width: 50px;
-  -webkit-transition: all 0.4s ease-out;
-  transition: all 0.4s ease-out;
-}
 

@@ -9,11 +9,12 @@
 					@close="tag_close(tagIndex)">
 				</u-tag>
 			</view>
-			<view class="tag_item_ trans">
-				<u-tag text="+添加标签" shape="square" mode="light" 
+			<view class="tag_item_ trans"
+				:style="[{display: Number(m_tag.length) >= Number(tagMaxLength) ? 'none': 'flex'}]">
+				<u-tag :text="addText" shape="square" mode="light" 
 					:closeable="false" 
 					type="info"
-					@click="show = true;"></u-tag>
+					@click="show = true"></u-tag>
 			</view>
 		</view>
 		<u-popup mode="bottom" v-model="show"
@@ -65,6 +66,10 @@
 			};
 		},
 		props:{
+			addText: {
+				type: String,
+				default: "+添加标签"
+			},
 			NoDuplicate: {
 				type: Boolean,
 				default: true
@@ -102,7 +107,7 @@
 						position: "bottom"
 					})
 				}
-				else if(this.m_pop_tag.length+this.m_tag.length>=5){
+				else if(this.m_pop_tag.length+this.m_tag.length>=this.tagMaxLength){
 					this.$refs.uToast.show({
 						title: '最多添加'+this.tagMaxLength+'个标签~',
 						type: 'warning',
